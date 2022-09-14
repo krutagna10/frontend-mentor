@@ -1,0 +1,154 @@
+/* Spacing System -> 2px / 4px / 8px / 12px / 16px / 24px / 32px / 64px / 80px / 96px / 128px */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --Outfit: 'Outfit', sans-serif;
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Dark-blue-background: hsl(217, 54%, 11%);
+    --Dark-blue-card: hsl(216, 50%, 16%);
+    --Dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--Dark-blue-background);
+    color: var(--White);
+    font-family: var(--Outfit);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+
+.NFT-Preview-Card {
+    max-width: 35rem;
+    background-color: var(--Dark-blue-card);
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+    margin: 2.4rem 1.8rem;
+    transition: all 0.5s ease;
+}
+
+.NFT-Preview-Card:hover {
+    /* Some additional styling */
+    transform: translateY(-2rem);
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    display: block;
+    max-width: 100%;
+    border-radius: 1.2rem;
+    margin-bottom: 1.8rem;
+    
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background-color:hsl(178, 100%, 50%, 50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.image-overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.image-overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.heading {
+    font-size: 2.2rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.paragraph {
+    font-weight: 300;
+    color: var(--Soft-blue);
+}
+
+.crypto-information {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--Dark-blue-line);
+    padding-bottom: 2rem;
+}
+
+.ethereum {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--Cyan);
+}
+
+.days-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--Soft-blue);
+}
+
+
+.author-information {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.author-image img {
+    display: block;
+    height: 3.6rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.created-by {
+    color: var(--Soft-blue);
+}
+
+.author-name {
+    color: var(--White);
+    transition: all 0.4s ease;
+}
+
+.heading:hover,
+.author-name:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+
+
+
+
+

@@ -1,0 +1,146 @@
+/* Spacing System ->   2px / 4px / 8px / 12px / 16px / 24px / 32px / 64px / 80px / 96px / 128px */
+
+/* Importing Font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --Barlow-Semi-Condensed: 'Barlow Semi Condensed', sans-serif;
+
+    /* Primary Colors */
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Neutral Colors */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210 46% 95%);
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--Barlow-Semi-Condensed);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: var(--Light-grayish-blue);
+}
+
+
+.testimonial {
+    padding: 2.4rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    border-radius: 1rem;
+    color: var(--White);
+}
+
+.testimonial-grid {
+    display: grid;
+    gap: 2.4rem;
+    max-width: 125rem;
+    margin: 2.4rem 1.8rem;
+}
+
+.person-information {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+
+}
+
+.person-image img {
+    border-radius: 50%;
+}
+
+
+.person-information .name {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.person-information .position {
+    font-size: 1.4rem;
+    opacity: 70%;
+}
+
+.testimonial-heading {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.testimonial-paragraph {
+    opacity: 50%;
+    line-height: 1.6;
+}
+.testimonial.Daniel-Clifford {
+    background-color: var(--Moderate-violet);  
+}
+
+.testimonial.Jonathan-Walters {
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.testimonial.Jeanette-Harmon {
+    font-size: 1.6rem;
+}
+.testimonial.Jeanette-Harmon, 
+.testimonial.Kira-Whittle {
+    background-color: var(--White);
+    color: var(--Very-dark-grayish-blue);
+}
+
+.testimonial.Jeanette-Harmon .position,
+.testimonial.Kira-Whittle .position {
+    opacity: 70%;
+}
+
+.testimonial.Jeanette-Harmon .testimonial-paragraph,
+.testimonial.Kira-Whittle .testimonial-paragraph {
+   opacity: 70%;
+}
+
+.testimonial.Patrick-Abrams {
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+@media (min-width: 850px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.4rem;
+        max-width: 125rem;
+        margin: 3.2rem;
+    }
+
+    .testimonial.Daniel-Clifford {
+        grid-column: span 2;   
+    }
+    .testimonial.Patrick-Abrams {
+        grid-column: span 2;
+    }
+    .testimonial.Kira-Whittle {
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+}
+
+
+
+
+
+
