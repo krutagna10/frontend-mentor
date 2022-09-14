@@ -6,8 +6,8 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/01%20-%20QR%20Code%20Component]
+- Live Site URL: [https://qr-code-component-10.netlify.app/]
 
 ### Built with
 
