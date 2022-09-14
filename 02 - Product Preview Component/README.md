@@ -9,8 +9,6 @@
 - Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/02%20-%20Product%20Preview%20Component]
 - Live Site URL: [https://product-preview-component-10.netlify.app/]
 
-## My process
-
 ### Built with
 
 - Semantic HTML5 markup
