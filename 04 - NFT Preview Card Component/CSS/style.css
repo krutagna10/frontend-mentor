@@ -39,7 +39,7 @@ body {
     background-color: var(--Dark-blue-card);
     padding: 2.4rem;
     border-radius: 1.2rem;
-    margin: 2.4rem 1.8rem;
+    margin: 0.8rem 1.8rem;
     transition: all 0.5s ease;
 }
 
