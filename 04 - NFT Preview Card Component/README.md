@@ -6,10 +6,8 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
+- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/04%20-%20NFT%20Preview%20Card%20Component]
+- Live Site URL: [https://nft-preview-card-component-10.netlify.app/]
 
 ### Built with
 
