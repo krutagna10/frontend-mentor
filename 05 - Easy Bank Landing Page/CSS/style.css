@@ -178,7 +178,7 @@ body {
 .hero-image img {
     display: block;
     height: 85rem;
-    transform: translate(26rem, -10rem);
+    transform: translate(24rem, -10rem);
     object-position: center left;
     object-fit: cover;
 }
