@@ -154,12 +154,13 @@
     .main-nav {
         position: absolute;
         width: 80%;
-        height: 50vh;
-        top:10rem;
-        left: 50%;
+        height: 35vh;
+        top: 10rem;
+        left: 10%;
         right: 50%;
         margin: 0 auto;
         background-color: rgba(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         border-radius: 1.6rem;
         display: flex;
         justify-content: center;
@@ -313,7 +314,7 @@
 /*********************/
 @media (max-width: 26em) {
     .hero-image img {
-        max-height: 45rem;
+        max-height: 40rem;
         transform: translate(0rem, -9rem);
     }
 
@@ -326,4 +327,14 @@
         right: -8%;
     }
 
+}
+
+
+@media (max-width: 18em) {
+    .hero-image {
+        display: none;
+    }
+    .main-cta {
+        padding: 1.2 0.8rem;
+    }
 }
