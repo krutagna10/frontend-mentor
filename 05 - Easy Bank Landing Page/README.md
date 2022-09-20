@@ -6,7 +6,7 @@
 
 ### Links
 
-- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/04%20-%20NFT%20Preview%20Card%20Component]
+- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/05%20-%20Easy%20Bank%20Landing%20Page]
 - Live Site URL: [https://easy-bank-landing-page-10.netlify.app/]
 
 ### Built with
