@@ -60,10 +60,3 @@ body {
     font-size: 15px;
     color: var(--Grayish-Blue);
 }
-
-
-@media (max-width: 23em) {
-    html {
-        font-size: 12px;
-    }
-}
