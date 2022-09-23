@@ -22,9 +22,9 @@ function update() {
    })
 }
 
-// submitButton.addEventListener('click', () => {
-//    console.log(`You have selected ${userRating} stars`);
-// })
+submitButton.addEventListener('click', () => {
+   console.log(`You have selected ${userRating} stars`);
+})
 
 
 
