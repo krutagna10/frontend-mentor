@@ -1,0 +1,14 @@
+.primary-heading, .secondary-heading {
+    color: var(--white);
+    font-size: var(--fontSize32);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.primary-heading {
+    font-size: var(--fontSize32);
+}
+
+.secondary-heading {
+    font-size: var(--fontSize24);
+}

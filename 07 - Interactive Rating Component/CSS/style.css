@@ -42,6 +42,10 @@ body {
    font-family: var(--overPass);
 }
 
+.rating-component {
+    padding: 0rem 2rem;
+}
+
 .container {
     max-width: 25rem;
     background: linear-gradient(to bottom right, hsla(213, 20%, 18%, 0.868),hsla(213, 12%, 14%, 0.996));
@@ -50,7 +54,7 @@ body {
     gap: 2rem;
     padding: 1.5rem 2rem;
     border-radius: 1.5rem;
-
+    height: 26rem;
 }
 
 .logo-container {
@@ -66,14 +70,6 @@ body {
 .logo-container img {
     display: block;
     max-width: 100%;
-}
-
-
-.tertiary-heading {
-    color: var(--white);
-    font-size: var(--fontSize32);
-    margin-bottom: 1rem;
-    font-weight: 400;
 }
 
 .text {
@@ -128,5 +124,37 @@ body {
 .submit-button:hover {
     background-color: var(--white);
     color: var(--orange);
+}
+
+/* End State */
+.container.end-state {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding-bottom: 2rem;
+}
+
+.image-container img {
+    max-width: 100%;
+    display: block;
+}
+
+.user-choice {
+    color: var(--orange);
+    background-color: hsl(216, 12%, 54%, 0.1);
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+}
+
+.text-content {
+  text-align: center;
+}
+
+.ratings-submitted .container.start-state {
+     display: none;
+}
+
+.ratings-submitted .container.end-state {
+    display: flex;
 }
 
