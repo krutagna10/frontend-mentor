@@ -6,8 +6,8 @@
 
 ### Links
 
-- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/05%20-%20Easy%20Bank%20Landing%20Page]
-- Live Site URL: [https://easy-bank-landing-page-10.netlify.app/]
+- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/06%20-%203%20Column%20Preview%20Card%20Component]
+- Live Site URL: [https://3-column-preview-card-component-10.netlify.app/]
 
 ### Built with
 
