@@ -1,0 +1,129 @@
+/* Spacing-System (in pixels) ->  2px / 4px / 8px / 12px / 16px / 24px / 32px /    64px / 80px / 96px / 128px */
+/* Font sizes (in pixels) -> 10px / 12px / 14px / 16px / 18px / 20px / 24px / 30px / 36px / 44px / 52px / 62px / 74px / 86px /  */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    /* Colours */
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --lightGrey: hsl(217, 12%, 63%);
+    --mediumGrey: hsl(216, 12%, 54%);
+    --darkBlue:  hsl(213, 19%, 18%);
+    --veryDarkBlue: hsl(216, 12%, 8%);
+
+    /* Font Family */
+    --overPass: 'Overpass', sans-serif;
+
+    /* Font Sizes */
+    --fontSizeVerySmall: 0.5rem;
+    --fontSizeSmall: 0.75rem;
+    --fontSizeMedium: 1rem;
+    --fontSizeLarge: 1.25rem;
+    --fontSizeVeryLarge: 1.5rem;
+    --fontSizeExtraLarge: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   background-color: var(--veryDarkBlue);
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: var(--overPass);
+}
+
+.container {
+    max-width: 25rem;
+    background: linear-gradient(to bottom right, hsla(213, 20%, 18%, 0.868),hsla(213, 12%, 14%, 0.996));
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+
+}
+
+.logo-container {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: hsl(216, 12%, 54%, 0.1);
+}
+
+.logo-container img {
+    display: block;
+    max-width: 100%;
+}
+
+
+.tertiary-heading {
+    color: var(--white);
+    font-size: var(--fontSizeExtraLarge);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.text {
+    color: var(--lightGrey);
+    font-size: var(--fontSizeMedium);
+    line-height: 1.6;
+}
+
+.ratings {
+    display: flex;
+    gap: 1.4rem;
+}
+
+.rating {
+    width: 3rem;
+    height: 3rem;
+    color: var(--lightGrey);
+    background-color: var(--darkBlue);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer
+}
+
+.rating.active {
+    background-color: var(--lightGrey);
+    color: var(--white);
+}
+
+.rating:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.submit-button {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+}
+

@@ -1,0 +1,47 @@
+.primary-heading, 
+.secondary-heading, 
+.tertiary-heading {
+    font-family: var(--bigShouldersDisplay);
+    font-weight: var(--fontWeightBold);
+    color: var(--veryLightGray);
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 65rem;
+    padding: 0 2rem;
+}
+
+.primary-heading {
+    font-size: var(--fontSize48);
+}
+
+.secondary-heading {
+    font-size: var(--fontSize32);
+    margin-bottom: 1.5rem;
+}
+
+.tertiary-heading {
+    font-size: var(--fontSize24);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid--1-columns {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid--2-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.flex {
+    display: flex;
+    gap: 2.4rem;
+}
