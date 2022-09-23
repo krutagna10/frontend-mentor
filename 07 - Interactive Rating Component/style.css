@@ -13,16 +13,18 @@
     --darkBlue:  hsl(213, 19%, 18%);
     --veryDarkBlue: hsl(216, 12%, 8%);
 
-    /* Font Family */
+    /* Typography */
     --overPass: 'Overpass', sans-serif;
-
-    /* Font Sizes */
-    --fontSizeVerySmall: 0.5rem;
-    --fontSizeSmall: 0.75rem;
-    --fontSizeMedium: 1rem;
-    --fontSizeLarge: 1.25rem;
-    --fontSizeVeryLarge: 1.5rem;
-    --fontSizeExtraLarge: 2rem;
+    --fontWeightMedium: 400;
+    --fontWeightBold: 700;
+    --fontSize12: 0.75rem;
+    --fontSize14: 0.875rem;
+    --fontSize16: 1rem;
+    --fontSize18: 1.125rem;
+    --fontSize20: 1.25rem;
+    --fontSize24: 1.5rem;
+    --fontSize32: 2rem;
+    --fontSize48: 3rem;
 }
 
 * {
@@ -69,14 +71,14 @@ body {
 
 .tertiary-heading {
     color: var(--white);
-    font-size: var(--fontSizeExtraLarge);
+    font-size: var(--fontSize32);
     margin-bottom: 1rem;
     font-weight: 400;
 }
 
 .text {
     color: var(--lightGrey);
-    font-size: var(--fontSizeMedium);
+    font-size: var(--fontSize16);
     line-height: 1.6;
 }
 
@@ -112,6 +114,7 @@ body {
 .submit-button {
     background-color: var(--orange);
     color: var(--white);
+    border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 1.5rem;
     text-transform: uppercase;
