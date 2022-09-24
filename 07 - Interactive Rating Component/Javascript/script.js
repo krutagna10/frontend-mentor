@@ -1,8 +1,8 @@
 const ratings = document.querySelectorAll('.rating');
 const submitButton = document.querySelector('.submit-button');
 const ratingComponent = document.querySelector(".rating-component");
-const input = document.querySelector(".input");
-
+const input = document.querySelector('.input');
+const rateAgainButton = document.querySelector('.rate-again');
 currentActive = -1;
 let userRating = 0;
 
@@ -24,10 +24,13 @@ function update() {
    })
 }
 
-
 submitButton.addEventListener('click', () => {
-   ratingComponent.classList.add("ratings-submitted");
+   ratingComponent.classList.add('ratings-submitted');
    input.textContent = userRating;
+})
+
+rateAgainButton.addEventListener('click', () => {
+   ratingComponent.classList.remove('ratings-submitted');
 })
 
 

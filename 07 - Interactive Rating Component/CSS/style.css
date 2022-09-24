@@ -46,17 +46,6 @@ body {
     padding: 0rem 2rem;
 }
 
-.container {
-    max-width: 25rem;
-    background: linear-gradient(to bottom right, hsla(213, 20%, 18%, 0.868),hsla(213, 12%, 14%, 0.996));
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1.5rem 2rem;
-    border-radius: 1.5rem;
-    height: 26rem;
-}
-
 .logo-container {
     position: relative;
     width: 3rem;
@@ -78,15 +67,16 @@ body {
     line-height: 1.6;
 }
 
-.ratings {
+.ratings-container {
     display: flex;
-    gap: 1.4rem;
+    justify-content: space-between;
 }
 
 .rating {
     width: 3rem;
     height: 3rem;
     color: var(--lightGrey);
+    border: none;
     background-color: var(--darkBlue);
     border-radius: 50%;
     font-size: 1.2rem;
@@ -107,24 +97,7 @@ body {
     color: var(--white);
 }
 
-.submit-button {
-    background-color: var(--orange);
-    color: var(--white);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 1.5rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-family: inherit;
-    cursor: pointer;
-}
 
-.submit-button:hover {
-    background-color: var(--white);
-    color: var(--orange);
-}
 
 /* End State */
 .container.end-state {
@@ -132,6 +105,7 @@ body {
     align-items: center;
     display: none;
     padding-bottom: 2rem;
+    gap: 1.5rem;
 }
 
 .image-container img {
@@ -139,15 +113,15 @@ body {
     display: block;
 }
 
+.end-state .text-content {
+    text-align: center;
+}
+
 .user-choice {
     color: var(--orange);
     background-color: hsl(216, 12%, 54%, 0.1);
     padding: 0.75rem 1.25rem;
     border-radius: 1rem;
-}
-
-.text-content {
-  text-align: center;
 }
 
 .ratings-submitted .container.start-state {
