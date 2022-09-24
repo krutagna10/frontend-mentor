@@ -1,0 +1,23 @@
+/* Below 400 pixels */
+@media (max-width: 25em) {
+   .container {
+    padding: 1rem 1rem;
+    height: 28rem;
+   }
+   
+   .no-rating {
+    font-size: var(--fontSize12);
+    bottom: 15%;
+   }
+   .rating {
+    width: 2.5rem;
+    height: 2.5rem;
+   }
+
+   .image-container img {
+    width: 80%;
+   }
+
+
+
+}
