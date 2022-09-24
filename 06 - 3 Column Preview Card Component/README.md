@@ -6,9 +6,9 @@
 
 ### Links
 
-- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/07%20-%20Interactive%20Rating%20Component]
+- Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/06%20-%203%20Column%20Preview%20Card%20Component]
 
-- Live Site URL: [https://interactive-rating-component-10.netlify.app/]
+- Live Site URL: [https://3-column-preview-card-component-10.netlify.app/]
 
 ### Built with
 
