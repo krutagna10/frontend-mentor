@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
 :root {
-    --Outfit-Regular: 'Outfit', sans-serif;
-    --White : hsl(0, 0%, 100%);
-    --Light-Gray: hsl(212, 45%, 89%);
-    --Grayish-Blue: hsl(220, 15%, 55%);
-    --Dark-Blue: hsl(218, 44%, 22%);
+    --outfitRegular: 'Outfit', sans-serif;
+    --white : hsl(0, 0%, 100%);
+    --lightGray: hsl(212, 45%, 89%);
+    --grayishBlue: hsl(220, 15%, 55%);
+    --darkBlue: hsl(218, 44%, 22%);
+    --veryLightBlue: #e7f5ff;
+    --lightBlue: #a5d8ff;
+    --darkModeBackground1: hsla(233, 32%, 10%, 1);
+    --darkModeBackground2: hsla(259, 60%, 15%, 1);
+    --containerDarkBackground: rgb(61, 51, 85);
 }
 
 * {
@@ -20,44 +25,124 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--Light-Gray);
+    background: linear-gradient(var(--veryLightBlue), var(--lightBlue));
+    font-family: var(--outfitRegular);
+    position: relative;
 }
 
 .container {
-    max-width: 16rem;
-    background-color: var(--White);
+    max-width: 19rem;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem 0.8rem 2.2rem 0.8rem;
-    border-radius: 1.2rem;
-    gap: 1.6rem;
+    padding: 0.8rem 0.8rem 2.75rem 0.8rem;
+    border-radius: 1rem;
+    gap: 2rem;
+    margin: 0 1.5rem;
 
 }
 
 .text {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1.5rem;
+    padding: 0rem 0.5rem;
 }
 
 .image {
     display: block;
     max-width: 100%;
-    border-radius: 1.2rem;
+    border-radius: 1rem;
 }
 
 .heading {
+    font-size: 1.375rem;
     text-align: center;
-    font-family: var(--Outfit-Regular);
     font-weight: 700;
 }
 
 .para {
-    font-family: var(--Outfit-Regular);
     text-align: center;
     font-weight: 400;
-    font-size: 15px;
-    color: var(--Grayish-Blue);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--grayishBlue);
 }
+
+/* Dark Mode */
+
+
+.icons{
+    display: block;
+    font-size: 2rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+}
+
+.light-mode-icon {
+    display: none;
+}
+
+/* When the dark mode is enabled */
+.dark-mode {
+    background: linear-gradient(var(--darkModeBackground1),var(--darkModeBackground2))
+}
+
+.dark-mode .container {
+    background-color: var(--containerDarkBackground);
+}
+
+.dark-mode .heading{
+    color: var(--white);
+}
+
+.dark-mode .para {
+    color: rgb(227, 217, 217);
+}
+
+.dark-mode .dark-mode-icon {
+    display: none;
+}
+
+.dark-mode-icon:hover {
+    color: rgb(107, 19, 107);
+}
+
+
+.dark-mode .light-mode-icon {
+    display: block;
+    color: white;
+}
+
+.light-mode-icon:hover {
+    color: orange;
+}
+
+
+@media (max-width: 25em) {
+    .heading {
+        font-size: 1.25rem;
+    }
+
+    .para {
+        font-size: 0.75rem;
+    }
+
+    .icons {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .container {
+        max-width: 17rem;
+        gap: 1rem;
+    }
+
+    .text {
+        gap: 0.5rem;
+    }
+}
+
