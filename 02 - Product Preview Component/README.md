@@ -7,7 +7,8 @@
 ### Links
 
 - Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/02%20-%20Product%20Preview%20Component]
-- Live Site URL: [https://product-preview-component-10.netlify.app/]
+
+- Live Site URL: [https://product-preview-component-10.vercel.app/]
 
 ### Built with
 
