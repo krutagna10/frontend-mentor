@@ -15,13 +15,10 @@
     /* Neutral Colors */
     --Light-gray: hsl(0, 0%, 81%);
     --Light-grayish-blue: hsl(210 46% 95%);
-
-    --veryLightBlue: #e7f5ff;
-    --lightBlue: #a5d8ff;
+    --lightModeBackground: linear-gradient(111.34deg, #F6F9FB 0%, #CCDDEE 100%);
 
     /* Dark mode colours */
-    --darkModeBackground1: hsla(233, 32%, 10%, 1);
-    --darkModeBackground2: hsla(259, 60%, 15%, 1);
+    --darkModeBackground: linear-gradient(180deg, #293343 0%, #1d1f31 100%);
     --containerDarkBackground: rgb(61, 51, 85);
     --greenCardBackground: linear-gradient(180deg, #32ebc9 0%, rgba(52, 215, 185, 0.9) 100%)
 }
@@ -44,17 +41,24 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    background: linear-gradient(white, lightblue);
+    background: var(--lightModeBackground);
+    position: relative;
 }
 
 
+.testimonial-grid {
+    padding: 3.6rem 0rem;
+}
+
 .testimonial {
-    padding: 2.4rem 3.2rem;
+    padding: 1.6rem 2.4rem;
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
     border-radius: 1rem;
     color: var(--White);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.6s ease;
 }
 
 .testimonial-grid {
@@ -87,25 +91,28 @@ body {
 }
 
 .testimonial-heading {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 600;
 }
 
 .testimonial-paragraph {
     opacity: 50%;
     line-height: 1.6;
+    font-size: 1.4rem;
 }
+
 .testimonial.Daniel-Clifford {
     background-color: var(--Moderate-violet);  
 }
 
 .testimonial.Jonathan-Walters {
-    background-color: var(--Very-dark-grayish-blue);
+    background-color: var(--Very-dark-grayish-blue);   
 }
 
 .testimonial.Jeanette-Harmon {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
+
 .testimonial.Jeanette-Harmon, 
 .testimonial.Kira-Whittle {
     background-color: var(--White);
@@ -124,54 +131,66 @@ body {
 
 .testimonial.Patrick-Abrams {
     background-color: var(--Very-dark-blackish-blue);
+    grid-row-start: 4;
 }
 
+
+
+
 /* Dark Mode */
+.icons{
+    display: block;
+    font-size: 2.2rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+}
+
+.light-mode-icon {
+    display: none;
+}
+
+.dark-mode .dark-mode-icon {
+    display: none;
+}
+
+.dark-mode-icon:hover {
+    color: rgb(107, 19, 107);
+}
+
+.dark-mode .light-mode-icon {
+    display: block;
+    color: white;
+}
+
+.light-mode-icon:hover {
+    color: orange;
+}
+
 .dark-mode {
-    background: linear-gradient(var(--darkModeBackground1),var(--darkModeBackground2))
+    background: var(--darkModeBackground);
 }
 
 .dark-mode .testimonial.Daniel-Clifford {
     background: linear-gradient(180deg, #21e8c4 0%, rgba(21, 183, 153, 0.9) 100%);
 }
 
+.dark-mode .testimonial.Kira-Whittle {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+}
+
 .dark-mode .testimonial.Patrick-Abrams {
-    background-color: var(--containerDarkBackground);
+    background-image: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.85) 100%);
 }
 
 .dark-mode .testimonial.Jeanette-Harmon {
-    background-color: var(--Moderate-violet);
+    background: linear-gradient(180deg, #9357F5 0%, rgba(131, 55, 255, 0.81) 100%);
     color: white;
 
 }
 
-.dark-mode .testimonial.Kira-Whittle {
-    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
 
-    color: white;
-}
-
-@media (min-width: 850px) {
-    .testimonial-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2.4rem;
-        max-width: 125rem;
-        margin: 3.2rem;
-    }
-
-    .testimonial.Daniel-Clifford {
-        grid-column: span 2;   
-    }
-    .testimonial.Patrick-Abrams {
-        grid-column: span 2;
-    }
-    .testimonial.Kira-Whittle {
-        grid-column-start: 4;
-        grid-row-start: 1;
-        grid-row-end: 3;
-    }
-    
-}
 
 
 
