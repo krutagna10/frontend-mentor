@@ -15,6 +15,15 @@
     /* Neutral Colors */
     --Light-gray: hsl(0, 0%, 81%);
     --Light-grayish-blue: hsl(210 46% 95%);
+
+    --veryLightBlue: #e7f5ff;
+    --lightBlue: #a5d8ff;
+
+    /* Dark mode colours */
+    --darkModeBackground1: hsla(233, 32%, 10%, 1);
+    --darkModeBackground2: hsla(259, 60%, 15%, 1);
+    --containerDarkBackground: rgb(61, 51, 85);
+    --greenCardBackground: linear-gradient(180deg, #32ebc9 0%, rgba(52, 215, 185, 0.9) 100%)
 }
 
 /* CSS Reset */
@@ -35,7 +44,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    background-color: var(--Light-grayish-blue);
+    background: linear-gradient(white, lightblue);
 }
 
 
@@ -115,6 +124,31 @@ body {
 
 .testimonial.Patrick-Abrams {
     background-color: var(--Very-dark-blackish-blue);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: linear-gradient(var(--darkModeBackground1),var(--darkModeBackground2))
+}
+
+.dark-mode .testimonial.Daniel-Clifford {
+    background: linear-gradient(180deg, #21e8c4 0%, rgba(21, 183, 153, 0.9) 100%);
+}
+
+.dark-mode .testimonial.Patrick-Abrams {
+    background-color: var(--containerDarkBackground);
+}
+
+.dark-mode .testimonial.Jeanette-Harmon {
+    background-color: var(--Moderate-violet);
+    color: white;
+
+}
+
+.dark-mode .testimonial.Kira-Whittle {
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+
+    color: white;
 }
 
 @media (min-width: 850px) {
