@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:200,300,regular,500,600,700,800,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+
+:root {
+    /* Colours */
+    --red: hsl(1, 90%, 64%);
+    --blue: hsl(219, 85%, 26%);
+    --white: hsl(0, 0%, 100%);
+    --very-light-grayish-blue: hsl(210, 60%, 98%);
+    --light-grayish-blue-1: hsl(211, 68%, 94%);
+    --light-grayish-blue-2: hsl(205, 33%, 90%);
+    --grayish-blue: hsl(219, 14%, 63%) --dark-grayish-blue: hsl(219, 12%, 42%);
+    --very-dark-blue: hsl(224, 21%, 14%);
+
+    /* Typography */
+    --plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-weight-medium: 400;
+    --font-weight-bold: 700;
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-32: 2rem;
+    --font-size-48: 3rem;
+    --font-size-64: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--plus-jakarta-sans);
+    background-color: var(--very-light-grayish-blue);
+}
+
+.container {
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    max-width: 60rem;
+}
+
+/* Notification Header */
+.notification-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.primary-heading {
+    font-size: var(--font-size-32);
+    font-weight: 800;
+}
+
+.number {
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: 800;
+    font-size: var(--font-size-20);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.mark-as-read {
+    margin-left: auto;
+}
+
+/* Notifications */
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.notification {
+    display: flex;
+}
+
+.profile-container img {
+    max-width: 60%;
+    display: block;
+}
+
+.user-photo-container img {
+    max-width: 60%;
+    display: block;
+}
+
+.light-blue-background {
+    background-color: var(--light-grayish-blue-1);
+}
