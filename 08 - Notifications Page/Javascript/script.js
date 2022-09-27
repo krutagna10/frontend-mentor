@@ -1,20 +1,8 @@
 const markAsReadButton = document.querySelector('.mark-as-read');
 const notifications = document.querySelector('.notifications');
 const numberOfNotifications = document.querySelector('.number-of-notifications');
-const lightModeIcon = document.querySelector('.light-mode-icon');
-const darkModeIcon = document.querySelector('.dark-mode-icon');
-const body = document.querySelector('body');
 const notificationList = document.querySelectorAll('.notification');
-
-// Dark mode toggle
-darkModeIcon.addEventListener('click', () => {
-  body.classList.add('dark-mode');
-})
-
-lightModeIcon.addEventListener('click', () => {
-  body.classList.remove('dark-mode')
-})
-
+const unreadIcons = document.querySelectorAll('.unread-icon');
 
 // When the user clicks markAsReadButton
 markAsReadButton.addEventListener('click', () => {
@@ -23,6 +11,27 @@ markAsReadButton.addEventListener('click', () => {
   for (let notification of notificationList) {
     notification.classList.remove('unread-background');
   }
+})
+
+// When the user clicks notification button
+notificationList.forEach((notification, index) => {
+  notification.addEventListener('click', () => {
+     notification.classList.remove('unread-background');
+     unreadIcons[index].style.display = 'none';
+  })
+})
+
+// Dark mode toggle
+const lightModeIcon = document.querySelector('.light-mode-icon');
+const darkModeIcon = document.querySelector('.dark-mode-icon');
+const body = document.querySelector('body');
+
+darkModeIcon.addEventListener('click', () => {
+  body.classList.add('dark-mode');
+})
+
+lightModeIcon.addEventListener('click', () => {
+  body.classList.remove('dark-mode')
 })
 
 

@@ -111,6 +111,7 @@ body {
     display: flex;
     padding: 1rem 1.5rem;
     gap: 1.25rem;
+    transition: all 0.3s ease;
 }
 
 /* Photos */
@@ -208,6 +209,7 @@ body {
     background-color: var(--very-light-grayish-blue);
     transition: all 0.3s ease;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
  .no-unread-message .unread-icon {
