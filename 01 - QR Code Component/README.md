@@ -8,7 +8,7 @@
 
 - Solution URL: [https://github.com/krutagna10/Frontend-Mentor/tree/master/01%20-%20QR%20Code%20Component]
 
-- Live Site URL: [https://qr-code-component-10.vercel.app/]
+- Live Site URL: [https://qr-code-component-10.netlify.app/]
 
 ### Built with
 
