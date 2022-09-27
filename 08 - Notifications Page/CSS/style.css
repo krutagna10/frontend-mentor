@@ -17,7 +17,7 @@
     /* Dark Mode Colors */
     --lightBlue: #15aabf;
     --darkModeBackground: #212121;
-    --containerDarkBackground: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.85) 100%);
+    --containerDarkBackground: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.8) 100%);
     --darkModeTextColor: #adb5bd;
     --darkModeGroupMessage: #1098ad;
 
