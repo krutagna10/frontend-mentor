@@ -18,6 +18,7 @@ notificationList.forEach((notification, index) => {
   notification.addEventListener('click', () => {
      notification.classList.remove('unread-background');
      unreadIcons[index].style.display = 'none';
+     numberOfNotifications.textContent = numberOfNotifications.textContent - 1;
   })
 })
 
