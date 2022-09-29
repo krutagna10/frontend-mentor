@@ -9,6 +9,7 @@
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --very-light-grayish-cyan: hsl(180, 27%, 94%);
     --white: hsl(0, 0%, 100%);
+    --disabled-button-color: hsla(183, 100%, 15%, 0.657);
 
     /* Typography */
    --space-mono: 'Space Mono', monospace;;
@@ -101,22 +102,26 @@ input {
 
 /* Another way to select input:number instead of using classes or IDs */
 input[type="number"] {
+
     width: 100%;
     height: 2.75rem;
     font-family: inherit;
     display: block;
     color: var(--very-dark-cyan);
     background-color: var(--very-light-grayish-cyan);
-    border: none;
+    border: 2px solid transparent;
     border-radius: 0.4rem;
     text-align: right;
     padding: 0.25rem 1.5rem 0.25rem 3.5rem;
-    
 }
 
+input[type="number"]:hover {
+    border-color: var(--strong-cyan);
+}
 /* When user clicks on input */
 input[type="number"]:focus {
-    outline: none;
+    outline: 2px solid var(--strong-cyan);
+    border: none;
 }
 
 /* Removing input:number arrows (Because they look ugly :( ) */
@@ -141,6 +146,20 @@ input::-webkit-inner-spin-button {
     transform: translateY(-50%);
 }
 
+.error-message {
+    opacity: 0;
+}
+
+.error .error-message {
+    margin-left: auto;
+    color: red;
+    opacity: 100;
+}
+
+.error #number-input {
+    border: 2px solid red;
+}
+
 
 /* tip button styling */
 .tip-button,
@@ -153,8 +172,13 @@ input::-webkit-inner-spin-button {
     font-family: inherit;
     font-size: var(--font-size-24);
     border-radius: 0.25rem;
+    cursor: pointer;
 }
 
+.current-active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
 
 .light-blue-background {
     background-color: var(--strong-cyan);
@@ -189,10 +213,6 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 
-.text-box {
-    
-}
-
 .per-person {
     font-size: var(--font-size-14);
     color: var(--grayish-cyan);
@@ -215,8 +235,21 @@ input::-webkit-inner-spin-button {
     border: none;
     text-transform: uppercase;
     border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
  }
 
+ .reset-button:hover {
+    background-color: var(--light-grayish-cyan);
+ }
+
+ .reset-button:active {
+    transform: scale(0.97);
+ }
+
+ .reset-button:disabled {
+    background-color: hsla(183, 65%, 33%, 0.637);
+ }
 
  /* Media Queries */
  @media (max-width: 48em) {

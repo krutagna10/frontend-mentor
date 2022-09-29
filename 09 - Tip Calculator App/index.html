@@ -36,7 +36,7 @@
             <button class="tip-button">
               <span class="tip-value">10</span>%
             </button>
-            <button class="tip-button">
+            <button class="tip-button current-active">
               <span class="tip-value">15</span>%
             </button>
             <button class="tip-button">
@@ -50,7 +50,10 @@
           </div>
 
           <div class="number-of-people">
+            <div class="flex">
             <label class="label-heading" for="number-input">Number of People</label>
+            <span class="error-message">Can't be zero</span>
+            </div>
             <div class="number-input-box">
               <input type="number" name="number-input" id="number-input">
               <img class="input-icon" src="Images/icon-person.svg" alt="Person logo">
@@ -78,7 +81,6 @@
     </section>
 
   </main>
-  <button class="calculate">Calculate </button>
   <script src="Javascript/script.js"></script>
 </body>
 
