@@ -14,7 +14,7 @@
   <main>
     <section class="split-bill-section">
       <div class="heading-container">
-      <h1 class="primary-heading">SPLI <br> TTER</h1>
+        <h1 class="primary-heading">SPLI <br> TTER</h1>
       </div>
 
       <div class="container grid grid--2-columns">
@@ -28,31 +28,34 @@
           </div>
 
           <div class="tip-buttons">
-            <p class="heading">Select tip %</p>
+            <div class="flex">
+              <p class="heading">Select tip %</p>
+              <span class="error-message-tip">Please select a tip</span>
+            </div>
             <div class="grid grid--3-columns">
-            <button class="tip-button">
-              <span class="tip-value">5</span>%
-            </button>
-            <button class="tip-button">
-              <span class="tip-value">10</span>%
-            </button>
-            <button class="tip-button current-active">
-              <span class="tip-value">15</span>%
-            </button>
-            <button class="tip-button">
-              <span class="tip-value">25</span>%
-            </button>
-            <button class="tip-button">
-              <span class="tip-value">50</span>%
-            </button>
-            <button class="custom-tip-button very-light-background">Custom</button>
+              <button class="tip-button">
+                <span class="tip-value">5</span>%
+              </button>
+              <button class="tip-button">
+                <span class="tip-value">10</span>%
+              </button>
+              <button class="tip-button current-active">
+                <span class="tip-value">15</span>%
+              </button>
+              <button class="tip-button">
+                <span class="tip-value">25</span>%
+              </button>
+              <button class="tip-button">
+                <span class="tip-value">50</span>%
+              </button>
+              <input type="number" placeholder="Custom" name="custom-tip" id="custom-tip">
             </div>
           </div>
 
           <div class="number-of-people">
             <div class="flex">
-            <label class="label-heading" for="number-input">Number of People</label>
-            <span class="error-message">Can't be zero</span>
+              <label class="label-heading" for="number-input">Number of People</label>
+              <span class="error-message">Can't be zero</span>
             </div>
             <div class="number-input-box">
               <input type="number" name="number-input" id="number-input">

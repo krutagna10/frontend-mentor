@@ -48,6 +48,7 @@ body {
     padding: 2rem 2rem;
     background-color: var(--white);
     border-radius: 1rem;
+    max-width: 50rem;
  }
  
  .grid {
@@ -101,7 +102,8 @@ input {
 }
 
 /* Another way to select input:number instead of using classes or IDs */
-input[type="number"] {
+#bill-input,
+#number-input {
 
     width: 100%;
     height: 2.75rem;
@@ -146,12 +148,14 @@ input::-webkit-inner-spin-button {
     transform: translateY(-50%);
 }
 
-.error-message {
+.error-message, 
+.error-message-tip {
     opacity: 0;
+    margin-left: auto;
 }
 
-.error .error-message {
-    margin-left: auto;
+.error .error-message,
+.error .error-message-tip {
     color: red;
     opacity: 100;
 }
@@ -162,8 +166,7 @@ input::-webkit-inner-spin-button {
 
 
 /* tip button styling */
-.tip-button,
-.custom-tip-button {
+.tip-button {
     display: inline-block;
     border: none;
     background-color: var(--very-dark-cyan);
@@ -180,15 +183,24 @@ input::-webkit-inner-spin-button {
     color: var(--very-dark-cyan);
 }
 
-.light-blue-background {
-    background-color: var(--strong-cyan);
-    color: var(--very-dark-cyan);
-}
-
-.very-light-background {
+#custom-tip {
     background-color: var(--very-light-grayish-cyan);
     color: var(--very-dark-cyan);
+    display: inline-block;
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    font-size: var(--font-size-22);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: right;
+    padding: 0.5rem 0.75rem;
 }
+
+#custom-tip::placeholder {
+    text-align: center;
+}
+
 
 /**********************************/
  /* amount-container styling */
