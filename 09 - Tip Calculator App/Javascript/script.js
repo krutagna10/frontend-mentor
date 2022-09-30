@@ -47,7 +47,7 @@ tipButtons.forEach((tipBtn, index) => {
         currentActive = index;
         // Assigning current active class to clicked button and removing current active class from other button.
         tipButtons.forEach((tipButton, index) => {
-            if (index == currentActive) {
+            if (index === currentActive) {
                 tipButton.classList.add('current-active');
             } else {
                 tipButton.classList.remove('current-active');
