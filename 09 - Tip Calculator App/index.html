@@ -2,93 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png">
+    <link rel="stylesheet" href="CSS/style.css">
 
-  <title>Frontend Mentor | Tip calculator app</title>
+    <title>Frontend Mentor | Tip calculator app</title>
 </head>
 
 <body>
-  <main>
+<main>
     <section class="split-bill-section">
-      <div class="heading-container">
-        <h1 class="primary-heading">SPLI <br> TTER</h1>
-      </div>
-
-      <div class="container grid grid--2-columns">
-        <div class="user-input-container">
-
-          <div class="bill">
-            <div class="flex">
-              <label class="label-heading" for="bill-input">Bill</label>
-              <span class="error-message">Bill cannot be negative</span>
-            </div>
-            <div class="bill-input-box">
-              <input type="number" name="bill-input" id="bill-input">
-              <img class="input-icon" src="Images/icon-dollar.svg" alt="Dollar icon">
-            </div>
-          </div>
-
-          <div class="tip-buttons">
-            <div class="flex">
-              <p class="heading">Select tip %</p>
-              <span class="error-message">Please select a tip</span>
-            </div>
-            <div class="grid grid--3-columns">
-              <button class="tip-button">
-                <span class="tip-value">5</span>%
-              </button>
-              <button class="tip-button">
-                <span class="tip-value">10</span>%
-              </button>
-              <button class="tip-button current-active">
-                <span class="tip-value">15</span>%
-              </button>
-              <button class="tip-button">
-                <span class="tip-value">25</span>%
-              </button>
-              <button class="tip-button">
-                <span class="tip-value">50</span>%
-              </button>
-              <input type="number" placeholder="Custom" name="custom-tip" id="custom-tip">
-            </div>
-          </div>
-
-          <div class="number-of-people">
-            <div class="flex">
-              <label class="label-heading" for="number-input">Number of People</label>
-              <span class="error-message">Can't be zero</span>
-            </div>
-            <div class="number-input-box">
-              <input type="number" name="number-input" id="number-input">
-              <img class="input-icon" src="Images/icon-person.svg" alt="Person logo">
-            </div>
-          </div>
+        <div class="heading-container">
+            <h1 class="primary-heading">SPLI <br> TTER</h1>
         </div>
-        <div class="amount-container">
-          <div class="tip-amount-box flex">
-            <div class="text-box">
-              <p class="">Tip Amount</p>
-              <p class="per-person">/ person</p>
+
+        <div class="container grid grid--2-columns">
+            <div class="user-input-container">
+
+                <div class="bill">
+                    <div class="flex">
+                        <label class="label-heading" for="bill-input">Bill</label>
+                        <span class="error-message">Bill cannot be negative</span>
+                    </div>
+                    <div class="bill-input-box">
+                        <input type="number" name="bill-input" id="bill-input">
+                        <img class="input-icon" src="Images/icon-dollar.svg" alt="Dollar icon">
+                    </div>
+                </div>
+
+                <div class="tip-buttons">
+                    <div class="flex">
+                        <p class="heading">Select tip %</p>
+                        <span class="error-message">Please select a tip</span>
+                    </div>
+                    <div class="grid grid--3-columns">
+                        <button class="tip-button">
+                            <span class="tip-value">5</span>%
+                        </button>
+                        <button class="tip-button">
+                            <span class="tip-value">10</span>%
+                        </button>
+                        <button class="tip-button current-active">
+                            <span class="tip-value">15</span>%
+                        </button>
+                        <button class="tip-button">
+                            <span class="tip-value">25</span>%
+                        </button>
+                        <button class="tip-button">
+                            <span class="tip-value">50</span>%
+                        </button>
+                        <input type="number" placeholder="Custom" name="custom-tip" id="custom-tip">
+                    </div>
+                </div>
+
+                <div class="number-of-people">
+                    <div class="flex">
+                        <label class="label-heading" for="number-input">Number of People</label>
+                        <span class="error-message">Can't be zero</span>
+                    </div>
+                    <div class="number-input-box">
+                        <input type="number" name="number-input" id="number-input">
+                        <img class="input-icon" src="Images/icon-person.svg" alt="Person logo">
+                    </div>
+                </div>
             </div>
-            <p class="amount">$<span class="tip-amount">4.27</span></p>
-          </div>
-          <div class="total-amount-box flex">
-            <div class="text-box">
-              <p>Total</p>
-              <p class="per-person">/ person</p>
+            <div class="amount-container">
+                <div class="tip-amount-box flex">
+                    <div class="text-box">
+                        <p class="">Tip Amount</p>
+                        <p class="per-person">/ person</p>
+                    </div>
+                    <p class="amount">$<span class="tip-amount">4.27</span></p>
+                </div>
+                <div class="total-amount-box flex">
+                    <div class="text-box">
+                        <p>Total</p>
+                        <p class="per-person">/ person</p>
+                    </div>
+                    <p class="amount">$<span class="total-amount">32.79</span></p>
+                </div>
+                <button class="reset-button">Reset</button>
             </div>
-            <p class="amount">$<span class="total-amount">32.79</span></p>
-          </div>
-          <button class="reset-button">Reset</button>
         </div>
-      </div>
     </section>
 
-  </main>
-  <script src="Javascript/script.js"></script>
+</main>
+<script src="Javascript/script.js"></script>
 </body>
 
 </html>
