@@ -14,6 +14,8 @@
     /* Typography */
    --space-mono: 'Space Mono', monospace;;
    --font-weight-bold: 700;
+   --font-size-12: 0.75rem;
+   --font-size-13: 0.8125rem;
    --font-size-14: 0.875rem;
    --font-size-16: 1rem;
    --font-size-20: 1.25rem;
@@ -101,7 +103,6 @@ input {
     font-size: var(--font-size-24);
 }
 
-/* Another way to select input:number instead of using classes or IDs */
 #bill-input,
 #number-input {
 
@@ -148,6 +149,7 @@ input::-webkit-inner-spin-button {
     transform: translateY(-50%);
 }
 
+/* Error message styling */
 .error-message {
     opacity: 0;
     margin-left: auto;
@@ -158,11 +160,13 @@ input::-webkit-inner-spin-button {
     opacity: 100;
 }
 
-.error #number-input {
+.error #number-input,
+.error #bill-input {
     border: 2px solid red;
 }
 
-.error #number-input:focus {
+.error #number-input:focus,
+.error #bill-input:focus {
    outline: none;
 }
 
@@ -271,10 +275,30 @@ input::-webkit-inner-spin-button {
     .grid--2-columns {
         grid-template-columns: 1fr;
     }
+ }
 
+ @media (max-width: 28em) {
+    .container {
+        padding: 2rem 1rem;
+    }
     .grid--3-columns {
         grid-template-columns: 1fr 1fr;
     }
+
+    .amount {
+        font-size: var(--font-size-28);
+    }
+
+    .amount-container {
+        padding: 1.5rem;
+    }
+    
+    .label-heading,
+    .heading,
+    .error-message {
+        font-size: var(--font-size-13);
+    }
+
  }
 
 

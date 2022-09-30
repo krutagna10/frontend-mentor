@@ -32,6 +32,7 @@ resetButton.addEventListener('click', () => {
     }
     currentActive = -1;
     resetButton.disabled = true;
+    update();
 })
 
 // When the user inputs bill value 
@@ -79,9 +80,11 @@ function update() {
 
     // Enabling reset button
     resetButton.disabled = false;
+
     if (billInput < 0) {
         // When the value of bill is negative
         billContainer.classList.add('error');
+        billErrorMessage.textContent = 'Bill cannot be negative';
     } else if (numberOfPersons == '') {
         //   If the code reaches here, then we will remove error class from bill container
         billContainer.classList.remove('error');
@@ -98,7 +101,7 @@ function update() {
         personContainer.classList.add('error');
         personErrorMessage.textContent = "Can't be negative";
 
-    } else if (currentActive === -1 && billInput != ' ') {
+    } else if (currentActive === -1 && billInput !== ' ') {
         //    Remove error from other classes
         billContainer.classList.remove('error');
         personContainer.classList.remove('error');
