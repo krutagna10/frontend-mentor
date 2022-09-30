@@ -48,7 +48,7 @@ body {
     padding: 2rem 2rem;
     background-color: var(--white);
     border-radius: 1rem;
-    max-width: 50rem;
+    max-width: 52rem;
  }
  
  .grid {
@@ -148,20 +148,22 @@ input::-webkit-inner-spin-button {
     transform: translateY(-50%);
 }
 
-.error-message, 
-.error-message-tip {
+.error-message {
     opacity: 0;
     margin-left: auto;
 }
 
-.error .error-message,
-.error .error-message-tip {
+.error .error-message {
     color: red;
     opacity: 100;
 }
 
 .error #number-input {
     border: 2px solid red;
+}
+
+.error #number-input:focus {
+   outline: none;
 }
 
 

@@ -19,8 +19,12 @@
 
       <div class="container grid grid--2-columns">
         <div class="user-input-container">
+
           <div class="bill">
-            <label class="label-heading" for="bill-input">Bill</label>
+            <div class="flex">
+              <label class="label-heading" for="bill-input">Bill</label>
+              <span class="error-message">Bill cannot be negative</span>
+            </div> 
             <div class="bill-input-box">
               <input type="number" name="bill-input" id="bill-input">
               <img class="input-icon" src="Images/icon-dollar.svg" alt="Dollar icon">
@@ -30,7 +34,7 @@
           <div class="tip-buttons">
             <div class="flex">
               <p class="heading">Select tip %</p>
-              <span class="error-message-tip">Please select a tip</span>
+              <span class="error-message">Please select a tip</span>
             </div>
             <div class="grid grid--3-columns">
               <button class="tip-button">
