@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap');
+
+:root {
+    /* Colors */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --shadowGreen: hsl(154, 76%, 35%);
+    --button-hover-color: hsl(154, 62%, 71%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+    --white: #fff;
+
+    /* Typography */
+    --poppins: 'Poppins', sans-serif;
+
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-15: 0.9375rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-24: 1.5rem;
+    --font-size-32: 2rem;
+    --font-size-36: 2.25rem;
+    --font-size-48: 3rem;
+
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--poppins);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+    background-image: url('../Images/bg-intro-mobile.png');
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 75rem;
+    align-items: center;
+    gap: 3rem;
+    padding: 0.5rem 1.5rem;
+    color: var(--dark-blue);
+}
+
+/* Text-content */
+.primary-heading {
+    font-size: var(--font-size-48);
+    font-weight: var(--font-weight-700);
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    color: var(--white);
+    line-height: 1.6;
+    word-spacing: 0.2rem;
+}
+
+/* Input-content */
+.heading-container {
+    background-color: var(--blue);
+    padding: 1rem 4rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-heading {
+    color: var(--white);
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-500);
+}
+
+.free {
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-700);
+}
+
+/* Input Styling */
+
+.form-container {
+    border: 1px solid white;
+    padding: 2rem 1.5rem;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+input {
+    display: inline-block;
+    font-family: inherit;
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-600);
+    width: 100%;
+    padding: 1rem 1.75rem;
+    border: 1px solid var(--dark-blue);
+}
+
+.input::placeholder {
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-600);
+}
+
+/* Claim button */
+.claim-button {
+    font-family: inherit;
+    color: var(--white);
+    font-size: var(--font-size-18);
+    background-color: var(--green);
+    border: none;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    /* box-shadow: horizontal-offset vertical-offset blur-radius spread-radius*/
+    box-shadow: 2px 3px 2px var(--shadowGreen);
+}
+
+.claim-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.terms-text {
+    font-size: var(--font-size-14);
+    color: var(--grayish-blue);
+    text-align: center;
+}
+
+.terms-and-services {
+    color: var(--red);
+    font-weight: 700;
+}
+
+/* Error message styling*/
+#first-name:required {
+    color: var(--red);
+
+}
+
+.form > div {
+    position: relative;
+}
+
+.error-icon {
+    display: none;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.error .error-icon {
+    display: block;
+}
+
+.error-message {
+    color: var(--red);
+    position: absolute;
+    font-size: var(--font-size-15);
+    right: 1%;
+    display: none;
+}
+
+.error .error-message {
+    display: block;
+}
+
+.error input {
+    border: 2px solid red;
+}
+
+.error input:focus {
+    outline: none;
+}
+
+#input-email:invalid {
+    color: red;
+}
+
+.thank-you-container {
+    background: linear-gradient(#8ce99a, #51cf66);
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    padding: 15rem 1.5rem;
+    display: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.submitted .thank-you-container {
+    display: flex;
+}
+
+.submitted .input-content {
+    display: none;
+}
+
+.trophy-icon {
+    display: block;
+    color: gold;
+    font-size: var(--font-size-48);
+    margin-bottom: 2rem;
+}
+
+.thank-you-message {
+    font-size: var(--font-size-24);
+    text-align: center;
+}
+
+/* Media queries*/
+@media (max-width: 58em) {
+    .container {
+        grid-template-columns: 1fr;
+         padding: 3rem 5rem;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .secondary-heading {
+        text-align: center;
+    }
+}
+
+
+
+@media (max-width: 38em) {
+    body {
+        background-image: url('../Images/bg-intro-desktop.png');
+    }
+
+    .container {
+        padding: 6rem 1.5rem;
+    }
+
+    .primary-heading {
+        font-size: var(--font-size-32);
+    }
+    .text {
+        font-size: var(--font-size-15);
+    }
+}
+
+
+
+
+
