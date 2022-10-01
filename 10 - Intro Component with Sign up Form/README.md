@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://tip-calculator-app-10.netlify.app/]
+- Live Site URL: [https://intro-component-with-sign-up-form-10.netlify.app/]
 
 ### Built with
 
