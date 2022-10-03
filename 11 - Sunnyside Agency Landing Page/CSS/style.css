@@ -30,6 +30,7 @@
     --dark-desaturated-cyan: hsl(167, 40%, 24%);
     --dark-blue: hsl(198, 62%, 26%);
     --dark-moderate-cyan: hsl(168, 34%, 41%);
+    --footer-background: #8ed0c4;
     --very-dark-desaturated-blue: hsl(212, 27%, 19%);
     --very-dark-grayish-blue: hsl(213, 9%, 39%);
     --dark-grayish-blue: hsl(232, 10%, 55%);
@@ -89,7 +90,7 @@ header {
     color: var(--white);
     display: block;
     transition: all 0.4s ease;
-    padding: 0.75rem 0;
+    padding: 0.6rem 0;
     position: relative;
     cursor: pointer;
 }
@@ -105,7 +106,7 @@ header {
 }
 
 .main-nav-link:hover::before {
-    animation: border_animation 1s linear forwards;
+    animation: border_animation 0.5s linear forwards;
 }
 
 @keyframes border_animation {
@@ -117,16 +118,21 @@ header {
     }
 }
 
-
 .contact-link {
+    display: block;
     text-decoration: none;
     background-color: var(--white);
-    color: var(--very-dark-desaturated-blue);
-    padding: 0.75rem 1.75rem;
+    color: #2695b9;
+    padding: 0.5rem 1.5rem;
     border-radius: 2rem;
-    font-family: var(--fraunces);
-    font-weight: var(--font-weight-700);
-    text-transform: uppercase;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
 }
 
 .down-arrow-container {
@@ -172,20 +178,34 @@ header {
 
 .learn-more-btn {
     font-size: var(--font-size-18);
-    font-family: var(--fraunces);
-    background: transparent;
-    border: none;
     display: block;
     align-self: flex-start;
-    text-transform: uppercase;
-    font-weight: var(--font-weight-900);
-    color: var(--dark-desaturated-cyan);
-    text-decoration-style: wavy;
-    text-decoration-color: var(--yellow);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.learn-more-btn.red-underline {
-    text-decoration-color: var(--soft-red);
+.learn-more-btn.yellow-background {
+    background-color: var(--yellow);
+}
+
+.learn-more-btn.yellow-background:hover {
+    background-color: transparent;
+    color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.learn-more-btn.red-background {
+    background-color: var(--soft-red);
+}
+
+.learn-more-btn.red-background:hover {
+    background-color: transparent;
+    color: var(--soft-red);
+    border-color: var(--soft-red);
 }
 
 .graphic-design-content,
@@ -265,6 +285,9 @@ header {
 /************************/
 /* Gallery - Section */
 /************************/
+.image-gallery {
+    height: 40rem;
+}
 
 .image-gallery .image-container:nth-child(1) {
     background-image: url('../Images/Desktop/image-gallery-milkbottles.jpg');
@@ -281,3 +304,69 @@ header {
 .image-gallery .image-container:nth-child(4) {
     background-image: url('../Images/Desktop/image-gallery-sugarcubes.jpg');
 }
+
+
+/************************/
+/* Footer */
+/************************/
+.footer {
+    padding: 4rem 0;
+    background-color: var(--footer-background);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-logo {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(18%) saturate(1123%) hue-rotate(116deg) brightness(100%) contrast(90%);
+    transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+    filter: none;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2.25rem;
+
+}
+
+.footer-nav-link {
+    color: var(--dark-desaturated-cyan);
+    transition: all 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: var(--white);
+}
+
+.social-media-logos {
+    display: flex;
+    gap: 1.75rem;
+}
+
+.social-media-logo {
+    color: var(--dark-desaturated-cyan);
+    font-size: var(--font-size-24);
+    transition: all 0.3s ease;
+}
+
+.social-media-logo:hover {
+    color: var(--white);
+}
+
+
+
+
+

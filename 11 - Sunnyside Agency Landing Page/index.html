@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
     <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/general.css">
     <title>Frontend Mentor | Sunnyside Agency landing page</title>
@@ -38,7 +40,7 @@
                     We are a full-service creative agency specializing in helping brands grow fast.
                     Engage your clients through compelling visuals that do most of the marketing for you.
                 </p>
-                <a href="#" class="learn-more-btn">Learn More</a>
+                <button class="learn-more-btn yellow-background">Learn More</button>
             </div>
             <div class="image-container egg-image"></div>
         </div>
@@ -52,7 +54,7 @@
                     copywriters,
                     we’ll build and extend your brand in digital places.
                 </p>
-                <a href="#" class="learn-more-btn red-underline">Learn More</a>
+                <button class="learn-more-btn red-background">Learn More</button>
             </div>
         </div>
 
@@ -84,10 +86,10 @@
                     <figure class="image-box">
                         <img src="Images/image-emily.jpg" alt="Emily image">
                     </figure>
-                    <p class="testimonial-text">
+                    <blockquote class="testimonial-text">
                         We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines
                         were always hit.
-                    </p>
+                    </blockquote>
                     <div class="client-information">
                         <p class="client-name">Emily R.</p>
                         <p class="client-post">Marketing Director</p>
@@ -98,10 +100,10 @@
                     <figure class="image-box">
                         <img src="Images/image-thomas.jpg" alt="Thomas Image">
                     </figure>
-                    <p class="testimonial-text">
+                    <blockquote class="testimonial-text">
                         We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines
                         were always hit.
-                    </p>
+                    </blockquote>
                     <div class="client-information">
                         <p class="client-name">Thomas S.</p>
                         <p class="client-post">Chief Operating Officer</p>
@@ -112,10 +114,10 @@
                     <figure class="image-box">
                         <img src="Images/image-jennie.jpg" alt="Jennie Image">
                     </figure>
-                    <p class="testimonial-text">
+                    <blockquote class="testimonial-text">
                         Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly
                         recommended!
-                    </p>
+                    </blockquote>
                     <div class="client-information">
                         <p class="client-name">Jennie F.</p>
                         <p class="client-post">Business Owner</p>
@@ -136,18 +138,25 @@
 
 </main>
 
-<footer>
-
+<footer class="footer">
+    <div class="footer-container">
+        <a href="#"><img src="Images/logo.svg" alt="Sunnyside Logo" class="footer-logo"></a>
+        <nav class="footer-nav">
+            <ul class="footer-nav-list">
+                <li><a href="#" class="footer-nav-link">About</a></li>
+                <li><a href="#" class="footer-nav-link">Services</a></li>
+                <li><a href="#" class="footer-nav-link">Projects</a></li>
+            </ul>
+        </nav>
+        <div class="social-media-logos">
+            <a href="#"><ion-icon class="social-media-logo" name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon class="social-media-logo" name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon class="social-media-logo" name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon class="social-media-logo" name="logo-pinterest"></ion-icon></a>
+        </div>
+    </div>
 </footer>
 
-
-<!-- -->
-<!--  .-->
-<!--  -->
-
-<!-- -->
-<!--  ->
-<!--  -->
 
 <!--  About-->
 <!--  Services-->
