@@ -1,0 +1,283 @@
+/*
+ Spacing System -> 2px / 4px / 8px / 12px / 16px / 24px / 32px /    64px / 80px / 96px / 128px
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+:root {
+
+    /* Typography */
+    --barlow: 'Barlow', sans-serif;
+    --fraunces: 'Fraunces', serif;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-900: 900;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-28: 1.75rem;
+    --font-size-32: 2rem;
+    --font-size-36: 2.25rem;
+    --font-size-48: 3rem;
+    --font-size-64: 4rem;
+    --font-size-80: 5rem;
+
+    /* Colors */
+    --soft-red: hsl(7, 99%, 70%);
+    --yellow: hsl(51, 100%, 49%);
+    --dark-desaturated-cyan: hsl(167, 40%, 24%);
+    --dark-blue: hsl(198, 62%, 26%);
+    --dark-moderate-cyan: hsl(168, 34%, 41%);
+    --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue: hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--barlow);
+    font-size: var(--font-size-18);
+    color: var(--very-dark-desaturated-blue);
+}
+
+/**************************/
+/* Header Styling*/
+/**************************/
+
+header {
+    background-image: url('../Images/Desktop/image-header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 2rem 0;
+    height: 100vh;
+    position: relative;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.main-nav-list {
+    display: flex;
+    gap: 2.75rem;
+    list-style: none;
+    align-items: center;
+}
+
+.main-nav-link {
+    text-decoration: none;
+    font-family: var(--barlow);
+    font-size: var(--font-size-18);
+    color: var(--white);
+    display: block;
+    transition: all 0.4s ease;
+    padding: 0.75rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.main-nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid var(--white);
+    width: 0;
+
+}
+
+.main-nav-link:hover::before {
+    animation: border_animation 1s linear forwards;
+}
+
+@keyframes border_animation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+.contact-link {
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--very-dark-desaturated-blue);
+    padding: 0.75rem 1.75rem;
+    border-radius: 2rem;
+    font-family: var(--fraunces);
+    font-weight: var(--font-weight-700);
+    text-transform: uppercase;
+}
+
+.down-arrow-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/**************************/
+/* Intro section styling */
+/**************************/
+.intro-section .container {
+    justify-content: center;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 3rem 10rem;
+    justify-content: center;
+}
+
+.text {
+    color: var(--dark-grayish-blue);
+    line-height: 1.6;
+}
+
+.image-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-container.egg-image {
+    background-image: url('../Images/Desktop/image-transform.jpg');
+}
+
+.image-container.glass-image {
+    background-image: url('../Images/Desktop/image-stand-out.jpg');
+}
+
+.learn-more-btn {
+    font-size: var(--font-size-18);
+    font-family: var(--fraunces);
+    background: transparent;
+    border: none;
+    display: block;
+    align-self: flex-start;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-900);
+    color: var(--dark-desaturated-cyan);
+    text-decoration-style: wavy;
+    text-decoration-color: var(--yellow);
+}
+
+.learn-more-btn.red-underline {
+    text-decoration-color: var(--soft-red);
+}
+
+.graphic-design-content,
+.photography-content {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 10rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.dark-text {
+    color: var(--dark-desaturated-cyan);
+    line-height: 1.6;
+}
+
+.graphic-design-content {
+    background-image: url('../Images/Desktop/image-graphic-design.jpg');
+}
+
+.photography-content {
+    background-image: url('../Images/Desktop/image-photography.jpg');
+}
+
+/**************************/
+/* Testimonial Section */
+/**************************/
+
+.testimonial-container {
+    padding: 12rem 12rem;
+}
+
+.testimonials {
+    gap: 2.25rem;
+}
+
+.testimonial-heading {
+    font-family: var(--fraunces);
+    font-weight: var(--font-weight-700);
+    color: var(--grayish-blue) !important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-bottom: 6rem;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    align-items: center;
+    color: var(--very-dark-grayish-blue);
+}
+
+.image-box img {
+    border-radius: 50%;
+    max-width: 80%;
+}
+
+.client-name {
+    font-family: var(--fraunces);
+    font-weight: var(--font-weight-700);
+    font-size: var(--font-size-20);
+    color: var(--very-dark-desaturated-blue);
+    margin-bottom: 0.75rem;
+}
+
+.client-post {
+    color: var(--grayish-blue);
+}
+
+/************************/
+/* Gallery - Section */
+/************************/
+
+.image-gallery .image-container:nth-child(1) {
+    background-image: url('../Images/Desktop/image-gallery-milkbottles.jpg');
+}
+
+.image-gallery .image-container:nth-child(2) {
+    background-image: url('../Images/Desktop/image-gallery-orange.jpg');
+}
+
+.image-gallery .image-container:nth-child(3) {
+    background-image: url('../Images/Desktop/image-gallery-cone.jpg');
+}
+
+.image-gallery .image-container:nth-child(4) {
+    background-image: url('../Images/Desktop/image-gallery-sugarcubes.jpg');
+}
