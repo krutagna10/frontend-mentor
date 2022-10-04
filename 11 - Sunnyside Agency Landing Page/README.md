@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://intro-component-with-sign-up-form-10.netlify.app/]
+- Live Site URL: [https://sunnyside-agency-landing-page-10.netlify.app/]
 
 ### Built with
 
