@@ -4,15 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
-  <title>Frontend Mentor | Easybank landing page</title>
-
+  <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/general.css">
   <link rel="stylesheet" href="CSS/queries.css">
+
+  <title>Frontend Mentor | Easybank landing page</title>
+
 </head>
 
 <body>
@@ -36,6 +37,8 @@
       <a class="main-cta header-cta" href="#">Request Invite</a>
     </div>
   </header>
+
+  <div class="overlay hidden"></div>
 
   <main>
     <section class="section-hero">
@@ -119,7 +122,6 @@
             <h3 class="heading-tertiary">
               Open API
             </h3>
-            </p>
             <p class="feature-description">
               Manage your savings, investments, pension, and much more from one account. Tracking your money has never
               been easier.
@@ -218,11 +220,11 @@
           <img src="Images/footer-logo.svg" alt="Easybank logo">
         </a>
         <div class="social-logos">
-          <a href="#"> <img src="Images/icon-facebook.svg" alt="Facebook logo"></a>
-          <a href="#"> <img src="Images/icon-youtube.svg" alt="Youtube logo"></a>
-          <a href="#"> <img src="Images/icon-twitter.svg" alt="Twitter logo"></a>
-          <a href="#"> <img src="Images/icon-pinterest.svg" alt="Pinterest logo"></a>
-          <a href="#"> <img src="Images/icon-instagram.svg" alt="Instagram logo"></a>
+          <a href="#"><ion-icon name="logo-facebook" class="social-logo" alt="Youtube logo"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-youtube" class="social-logo" alt="Twitter logo"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter" class="social-logo" alt="Twitter logo"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-pinterest" class="social-logo" alt="Pinterest logo"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram" class="social-logo" alt="Instagram logo"></ion-icon></a>
         </div>
       </div>
       <nav class="footer-navigation">
