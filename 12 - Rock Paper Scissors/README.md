@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://sunnyside-agency-landing-page-10.netlify.app/]
+- Live Site URL: [https://rock-paper-scissors-10.netlify.app/]
 
 ### Built with
 
