@@ -138,9 +138,9 @@ body {
 }
 
 
-/****************/
-/* Game Section */
-/****************/
+/**************************/
+/*  Original Game Section */
+/**************************/
 .original-game-section {
     padding: 6rem 0;
     display: block;
@@ -220,6 +220,90 @@ body {
 
 .original-game-container .rock-container {
     grid-column-start: 2;
+}
+
+/**************************/
+/*  Bonus Game Section */
+/**************************/
+
+.bonus-game-section {
+    padding: 4rem 0;
+    display: none;
+}
+
+.difficulty-hard .bonus-game-section {
+    display: block;
+}
+
+.game-finished .bonus-game-section {
+    display: none;
+}
+
+.bonus-game-container {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-image: url('../Images/bg-pentagon.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+}
+
+.row2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.row3 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bonus-game-container .logo-container {
+    width: 9rem;
+    height: 9rem;
+}
+
+.bonus-game-container .logo-container::before {
+    width: 7rem;
+    height: 7rem;
+}
+
+.spock-container {
+    background: var(--cyan)
+}
+
+.lizard-container {
+    background: var(--lizard-gradient);
+}
+
+.bonus-game-container .scissors-container {
+    grid-column-start: 3;
+}
+
+.bonus-game-container .spock-container {
+    grid-row-start: 2;
+}
+
+.bonus-game-container .paper-container {
+    grid-row-start: 2;
+    grid-column-start: 5;
+}
+
+.bonus-game-container .lizard-container {
+    grid-row-start: 3;
+    grid-column-start: 2;
+}
+
+.bonus-game-container .rock-container {
+    grid-row-start: 3;
+    grid-column-start: 4;
 }
 
 /************************/
@@ -339,6 +423,11 @@ body {
 }
 
 .close-icon {
+    border: none;
+    background: transparent;
+}
+
+.close-icon img {
     height: 1.5rem
 }
 
@@ -354,67 +443,3 @@ body {
     opacity: 0.5;
 }
 
-/**************************/
-/* Media - section styling*/
-/**************************/
-
-@media (max-width: 50em) {
-    .header-container {
-        gap: 10rem;
-    }
-}
-
-@media (max-width: 37.5em) {
-    .header {
-        padding: 2rem 1rem;
-    }
-
-    .header-container {
-        gap: 3rem;
-    }
-
-    .original-game-section {
-        padding: 3rem 0;
-    }
-
-    .logo-container {
-        width: 7.25rem;
-        height: 7.25rem;
-    }
-
-    .logo-container::before {
-        width: 5.25rem;
-        height: 5.25rem;
-    }
-
-    .result-container {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 3rem;
-    }
-
-    .result-box {
-        grid-row-start: 2;
-        grid-column: span 2;
-    }
-
-    .rules-button {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 6rem;
-    }
-
-    .rules-content {
-        inset: 0;
-        transform: translate(0, 0);
-        width: 100%;
-        height: 100%;
-    }
-
-    .rules-image-box img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 0;
-    }
-}

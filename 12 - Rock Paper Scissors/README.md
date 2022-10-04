@@ -1,4 +1,4 @@
-# Rock Paper Scissors Game
+# Frontend Mentor - Rock Paper Scissors
 
 ### Screenshot
 
@@ -6,11 +6,16 @@
 
 ### Links
 
-- Live Site URL: [https://rock-paper-scissors-10.vercel.app/]
+- Live Site URL: [https://sunnyside-agency-landing-page-10.netlify.app/]
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS Grid
+- CSS Flexbox
 - Vanilla Javascript
+
+## Author
+- Frontend Mentor - [@krutagna10](https://www.frontendmentor.io/profile/krutagna10)
+
 

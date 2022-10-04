@@ -1,0 +1,131 @@
+/* Below 600 pixels*/
+
+@media (max-width: 50em) {
+    .header-container {
+        gap: 10rem;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .header {
+        padding: 2rem 0.5rem;
+    }
+
+    .header-container {
+        gap: 2rem;
+    }
+
+    .bonus-game-section{
+        padding: 4rem 0 6rem 0;
+    }
+
+    .original-game-section {
+        padding: 4rem 2rem 8rem 2rem;
+    }
+
+    .original-game-container {
+        background-position: center;
+    }
+
+    .logo-container {
+        width: 8rem !important;
+        height: 8rem !important;
+    }
+
+    .logo-container::before {
+        width: 6rem !important;
+        height: 6rem !important;
+    }
+
+    .row2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .result-container {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 3rem;
+    }
+
+    .result-box {
+        grid-row-start: 2;
+        grid-column: span 2;
+    }
+
+    .rules-button {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6rem;
+    }
+
+    .rules-content {
+        inset: 0;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+    }
+
+    .close-icon {
+        position: absolute;
+        bottom: 3.5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .rules-heading {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+    }
+
+    .rules-image-box img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem 1.75rem;
+    }
+
+    .score {
+        font-size: var(--fontSize32);
+    }
+}
+
+/* Below 448 pixels*/
+
+@media (max-width: 28em) {
+    .original-game-section {
+        padding-inline: 0.75rem;
+    }
+
+    .header {
+        padding-inline: 1rem;
+    }
+
+    .header-container {
+        gap: 1rem;
+    }
+
+    .score-container {
+        padding: 0.25rem 1rem;
+    }
+
+    .logo-container {
+        width: 5.75rem !important;
+        height: 5.75rem !important;
+    }
+
+    .logo-container img {
+        width: 40%;
+    }
+
+    .logo-container::before {
+        width: 4.25rem !important;
+        height: 4.25rem !important;
+    }
+
+    .pick-text {
+        font-size: var(--fontSize16);
+    }
+
+}
