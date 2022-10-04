@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/media-queries.css">
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-container">
+        <div class="header-logo-container">
+            <img src="Images/logo.svg" alt="Logo image">
+        </div>
+        <div class="score-container">
+            <p class="score-text">Score</p>
+            <p class="score">0</p>
+        </div>
+    </div>
+</header>
+
+<section class="game-section">
+    <div class="container">
+        <figure class="logo-container paper-container">
+            <img src="Images/icon-paper.svg" class="paper-icon" alt="Paper icon">
+        </figure>
+        <figure class="logo-container scissors-container">
+            <img src="Images/icon-scissors.svg" alt="Scissor icon">
+        </figure>
+        <figure class="logo-container rock-container">
+            <img src="Images/icon-rock.svg" alt="Rock icon">
+        </figure>
+    </div>
+</section>
+
+<section class="rules">
+    <div class="rules-content">
+        <div class="rules-header">
+            <h1 class="rules-heading">Rules</h1>
+            <img src="Images/icon-close.svg" alt="close icon" class="close-icon">
+        </div>
+        <figure class="rules-image-box">
+            <img src="Images/image-rules.svg" alt="Rules image">
+        </figure>
+    </div>
+    <button class="rules-button">Rules</button>
+</section>
+
+<section class="result-screen">
+    <div class="result-container">
+        <div class="user-pick-box">
+            <p class="pick-text">User Pick</p>
+            <figure class="logo-container user-pick-container">
+                <img src="Images/icon-paper.svg" alt="user pick image" class="user-pick-image">
+            </figure>
+        </div>
+        <div class="result-box">
+            <p class="result">You Win</p>
+            <button class="play-again-btn">Play Again</button>
+        </div>
+        <div class="computer-pick-box">
+            <p class="pick-text">The House Picked</p>
+            <figure class="logo-container computer-pick-container">
+                <img src="Images/icon-rock.svg" alt="computer pick image" class="computer-pick-image">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<div class="overlay overlay-hidden"></div>
+
+<script src="Javascript/script.js"></script>
+</body>
+</html>
+
+<!--  Score-->
+<!--  Rules-->
+
+<!--  You Picked-->
+<!--  The House Picked-->
+
+<!--  You Win-->
+<!--  You Lose-->
+
+<!--  Play Again-->
