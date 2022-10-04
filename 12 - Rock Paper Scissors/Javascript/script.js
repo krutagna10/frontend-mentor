@@ -15,6 +15,11 @@ const userPickImage = document.querySelector('.user-pick-image');
 const computerPickImage = document.querySelector('.computer-pick-image');
 const playAgainButton = document.querySelector('.play-again-btn');
 const result = document.querySelector('.result');
+const easyDifficulty = document.querySelector('.difficulty-buttons .one');
+const hardDifficulty = document.querySelector('.difficulty-buttons .two');
+const rulesImageElement = document.querySelector('.rules-image');
+const headingLogo = document.querySelector('.heading-logo');
+const resultScreenOriginal = document.querySelector('.result-screen-original');
 
 //Initializing variables
 let userChoice;
@@ -49,10 +54,8 @@ const decrementScore = () => {
 // Display images on result tab
 function displayChoiceImage() {
     userPickContainer.classList.add(`${userChoice}-container`);
-    console.log(userPickContainer.classList);
     userPickImage.src = `Images/icon-${userChoice}.svg`;
     computerPickContainer.classList.add(`${computerChoiceValue}-container`);
-    console.log(computerPickContainer.classList);
     computerPickImage.src = `Images/icon-${computerChoiceValue}.svg`;
 }
 
@@ -127,6 +130,23 @@ playAgainButton.addEventListener('click', () => {
     computerPickContainer.classList.remove(`${computerChoiceValue}-container`);
 })
 
+// Difficulty
+easyDifficulty.addEventListener('click', () => {
+    body.classList.remove('difficulty-hard');
+    easyDifficulty.classList.add('current-active');
+    hardDifficulty.classList.remove('current-active');
+    headingLogo.src = 'Images/logo.svg';
+    rulesImageElement.src = 'Images/image-rules.svg';
+})
+
+hardDifficulty.addEventListener('click', () => {
+    body.classList.add('difficulty-hard');
+    hardDifficulty.classList.add('current-active');
+    easyDifficulty.classList.remove('current-active');
+    headingLogo.src = 'Images/logo-bonus.svg';
+    rulesImageElement.src = 'Images/image-rules-bonus.svg';
+})
+
 // Rules
 const closeRules = () => {
     rulesElement.classList.remove('show');
@@ -148,5 +168,8 @@ document.addEventListener('keydown', (event) => {
         }
     }
 })
+
+
+// Difficulty
 
 

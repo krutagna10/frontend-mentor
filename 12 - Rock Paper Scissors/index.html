@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/media-queries.css">
+    <link rel="stylesheet" href="CSS/bonus-game.css">
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 </head>
 <body>
 <header class="header">
     <div class="header-container">
         <div class="header-logo-container">
-            <img src="Images/logo.svg" alt="Logo image">
+            <img src="Images/logo.svg" alt="Logo image" class="heading-logo">
         </div>
         <div class="score-container">
             <p class="score-text">Score</p>
@@ -21,8 +21,18 @@
     </div>
 </header>
 
-<section class="game-section">
-    <div class="container">
+<section class="difficulty-section">
+    <div class="difficulty-container">
+        <h1 class="difficulty-text">Difficulty</h1>
+        <div class="difficulty-buttons">
+            <button class="difficulty-button one current-active">1</button>
+            <button class="difficulty-button two">2</button>
+        </div>
+    </div>
+</section>
+
+<section class="original-game-section">
+    <div class="original-game-container">
         <figure class="logo-container paper-container">
             <img src="Images/icon-paper.svg" class="paper-icon" alt="Paper icon">
         </figure>
@@ -35,6 +45,32 @@
     </div>
 </section>
 
+<section class="bonus-game-section">
+    <div class="bonus-game-container">
+        <div class="row1">
+            <figure class="logo-container scissors-container">
+                <img src="Images/icon-scissors.svg" class="scissors-icon " alt="Scissor icon">
+            </figure>
+        </div>
+        <div class="row2">
+            <figure class="logo-container spock-container">
+                <img src="Images/icon-spock.svg" class="spock-icon" alt="spock-icon">
+            </figure>
+            <figure class="logo-container paper-container">
+                <img src="Images/icon-paper.svg" class="paper-icon" alt="Paper icon">
+            </figure>
+        </div>
+        <div class="row3">
+            <figure class="logo-container lizard-container">
+                <img src="Images/icon-lizard.svg" class="lizard-icon" alt="lizard icon">
+            </figure>
+            <figure class="logo-container rock-container">
+                <img src="Images/icon-rock.svg" alt="Rock icon">
+            </figure>
+        </div>
+    </div>
+</section>
+
 <section class="rules">
     <div class="rules-content">
         <div class="rules-header">
@@ -42,13 +78,13 @@
             <img src="Images/icon-close.svg" alt="close icon" class="close-icon">
         </div>
         <figure class="rules-image-box">
-            <img src="Images/image-rules.svg" alt="Rules image">
+            <img src="Images/image-rules.svg" alt="Rules image" class="rules-image">
         </figure>
     </div>
     <button class="rules-button">Rules</button>
 </section>
 
-<section class="result-screen">
+<section class="result-screen-original">
     <div class="result-container">
         <div class="user-pick-box">
             <p class="pick-text">User Pick</p>
