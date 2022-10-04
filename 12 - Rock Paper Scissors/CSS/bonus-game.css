@@ -7,6 +7,10 @@
     display: block;
 }
 
+.game-finished .bonus-game-section {
+    display: none;
+}
+
 .bonus-game-container {
     max-width: 30rem;
     margin: 0 auto;

@@ -5,9 +5,11 @@ const rulesButton = document.querySelector('.rules-button');
 const rulesElement = document.querySelector('.rules');
 const closeIcon = document.querySelector('.close-icon');
 const overlay = document.querySelector('.overlay');
-const paper = document.querySelector('.paper-container');
-const scissors = document.querySelector('.scissors-container');
-const rock = document.querySelector('.rock-container');
+const paperElement = document.querySelectorAll('.paper-container');
+const scissorsElement = document.querySelectorAll('.scissors-container');
+const rockElement = document.querySelectorAll('.rock-container');
+const spockElement = document.querySelector('.spock-container');
+const lizardElement = document.querySelector('.lizard-container');
 const scoreElement = document.querySelector('.score');
 const userPickContainer = document.querySelector('.user-pick-container');
 const computerPickContainer = document.querySelector('.computer-pick-container');
@@ -19,7 +21,6 @@ const easyDifficulty = document.querySelector('.difficulty-buttons .one');
 const hardDifficulty = document.querySelector('.difficulty-buttons .two');
 const rulesImageElement = document.querySelector('.rules-image');
 const headingLogo = document.querySelector('.heading-logo');
-const resultScreenOriginal = document.querySelector('.result-screen-original');
 
 //Initializing variables
 let userChoice;
@@ -27,14 +28,29 @@ let computerChoiceValue;
 let score = 0;
 
 // Computer Choice
-let computerChoice = () => {
-    let random = 1 + parseInt(Math.random() * 3);
-    if (random === 1) {
-        return 'rock';
-    } else if (random === 2) {
-        return 'paper';
+let computerChoice = (game) => {
+    if (game === 'original') {
+        let random = 1 + parseInt(Math.random() * 3);
+        if (random === 1) {
+            return 'rock';
+        } else if (random === 2) {
+            return 'paper';
+        } else {
+            return 'scissors';
+        }
     } else {
-        return 'scissors';
+        let random = 1 + parseInt(Math.random() * 5);
+        if (random === 1) {
+            return 'scissors';
+        } else if (random === 2) {
+            return 'spock';
+        } else if (random === 3) {
+            return 'paper';
+        } else if (random === 4) {
+            return 'lizard';
+        } else {
+            return 'rock';
+        }
     }
 }
 
@@ -75,9 +91,9 @@ function draw() {
     displayChoiceImage();
 }
 
-// Game logic
-function game() {
-    computerChoiceValue = computerChoice();
+// Original Game logic
+function originalGame() {
+    computerChoiceValue = computerChoice('original');
     if (userChoice === computerChoiceValue) {
         draw();
     } else if (userChoice === 'rock') {
@@ -107,21 +123,110 @@ function game() {
     }
 }
 
-paper.addEventListener('click', () => {
-    userChoice = 'paper';
-    game();
+// Bonus Game Logic
+function bonusGame() {
+    computerChoiceValue = computerChoice('bonus-game');
+    if (userChoice === computerChoiceValue) {
+        draw();
+    } else if (userChoice === 'scissors') {
+        if (computerChoiceValue === 'paper' || computerChoiceValue === 'lizard') {
+            incrementScore();
+            userWin();
+        } else {
+            decrementScore();
+            userLose();
+        }
+    } else if (userChoice === 'paper') {
+        if (computerChoiceValue === 'rock' || computerChoiceValue === 'spock') {
+            incrementScore();
+            userWin();
+        } else {
+            decrementScore();
+            userLose();
+        }
+    } else if (userChoice === 'rock') {
+        if (computerChoiceValue === 'lizard' || computerChoiceValue === 'scissors') {
+            incrementScore();
+            userWin();
+        } else {
+            decrementScore();
+            userLose();
+        }
+    } else if (userChoice === 'lizard') {
+        if (computerChoiceValue === 'spock' || computerChoiceValue === 'paper') {
+            incrementScore();
+            userWin();
+        } else {
+            decrementScore();
+            userLose();
+        }
+    } else {
+        if (computerChoiceValue === 'scissor' || computerChoiceValue === 'rock') {
+            incrementScore();
+            userWin();
+        } else {
+            decrementScore();
+            userLose();
+        }
+    }
+}
+
+for (let paper of paperElement) {
+    paper.addEventListener('click', () => {
+        if (body.classList.contains('difficulty-hard')) {
+           userChoice = 'paper';
+           bonusGame();
+            body.classList.add('game-finished');
+        } else {
+            userChoice = 'paper';
+            originalGame();
+            body.classList.add('game-finished');
+        }
+    })
+}
+
+for (let scissors of scissorsElement) {
+    scissors.addEventListener('click', () => {
+        if (body.classList.contains('difficulty-hard')) {
+            userChoice = 'scissors';
+            bonusGame();
+            body.classList.add('game-finished');
+        } else {
+            userChoice = 'scissors';
+            originalGame();
+            body.classList.add('game-finished');
+        }
+    })
+}
+
+for (let rock of rockElement) {
+    rock.addEventListener('click', () => {
+        if (body.classList.contains('difficulty-hard')) {
+            userChoice = 'rock';
+            bonusGame();
+            body.classList.add('game-finished');
+        } else {
+            userChoice = 'rock';
+            originalGame();
+            body.classList.add('game-finished');
+
+        }
+    })
+}
+
+spockElement.addEventListener('click', () => {
+    userChoice = 'spock';
+    bonusGame();
     body.classList.add('game-finished');
 })
-scissors.addEventListener('click', () => {
-    userChoice = 'scissors';
-    game();
+
+lizardElement.addEventListener('click', () => {
+    userChoice = 'lizard';
+    bonusGame();
     body.classList.add('game-finished');
 })
-rock.addEventListener('click', () => {
-    userChoice = 'rock';
-    game();
-    body.classList.add('game-finished');
-})
+
+
 
 //Play again Button
 playAgainButton.addEventListener('click', () => {
@@ -133,16 +238,30 @@ playAgainButton.addEventListener('click', () => {
 // Difficulty
 easyDifficulty.addEventListener('click', () => {
     body.classList.remove('difficulty-hard');
+    body.classList.remove('game-finished');
     easyDifficulty.classList.add('current-active');
     hardDifficulty.classList.remove('current-active');
+
+    // Making the score 0
+    score = 0;
+    scoreElement.textContent = 0;
+
+    // Changing images according to difficulty level
     headingLogo.src = 'Images/logo.svg';
     rulesImageElement.src = 'Images/image-rules.svg';
 })
 
 hardDifficulty.addEventListener('click', () => {
     body.classList.add('difficulty-hard');
+    body.classList.remove('game-finished');
     hardDifficulty.classList.add('current-active');
     easyDifficulty.classList.remove('current-active');
+
+    // Making the score 0
+    score = 0;
+    scoreElement.textContent = 0;
+
+    // Changing images according to difficulty level
     headingLogo.src = 'Images/logo-bonus.svg';
     rulesImageElement.src = 'Images/image-rules-bonus.svg';
 })
@@ -170,6 +289,5 @@ document.addEventListener('keydown', (event) => {
 })
 
 
-// Difficulty
 
 

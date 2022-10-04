@@ -234,10 +234,6 @@ body {
     display: block;
 }
 
-.difficulty-hard.game-finished .result-screen-original {
-    display: none;
-}
-
 .result-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
