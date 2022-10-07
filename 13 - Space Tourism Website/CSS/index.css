@@ -1,8 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+/* Custom Properties*/
 :root {
-    --bellefair: 'Bellefair', serif;;
+    /* Colors*/
+    --clr-dark: 230 35% 7%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+
+    /* Font-families*/
+    --font-family-bellefair: 'Bellefair', serif;;
+    --font-family-barlow-condensed: 'Barlow Condensed', sans-serif;
+    --font-family-barlow: 'Barlow', serif;
+
+    /* Font-sizes*/
+    --font-size-900: 9.375rem;
+    --font-size-800: 6.25rem;
+    --font-size-700: 3.5rem;
+    --font-size-600: 2rem;
+    --font-size-500: 1.75rem;
+    --font-size-400: 1.125rem;
+    --font-size-300: 1rem;
+    --font-size-200: 0.875rem;
+    --font-size-100: 0.75rem;
+
+      /* Spacing */
+    --gap: 1rem;
 }
+
+/* Resets */
 
 * {
     margin: 0;
@@ -10,35 +39,36 @@
     box-sizing: border-box;
 }
 
-img {
+img,
+picture {
     display: block;
     max-width: 100%;
 }
 
+input,
+button {
+    font: inherit;
+}
+
+h1, h2, h3, h4, h5,h6,p {
+    font-weight: 400;
+}
+
+
+/* Setting up body*/
 body {
+    font-family: var(--font-family-barlow);
+    font-size: var(--font-size-400);
     min-height: 100vh;
-    font-family: var(--bellefair);
+    line-height: 1.5;
     background-image: url('../Images/Home/background-home-desktop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 3rem 2rem;
-    border: 1px solid red;
-}
 
-.main-nav-list {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
 
-.main-nav-link {
-    text-decoration: none;
-}
+
 
 

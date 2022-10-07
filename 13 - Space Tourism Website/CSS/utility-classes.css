@@ -1,0 +1,127 @@
+.flex {
+    display: flex;
+    gap: var(--gap);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap)
+}
+
+.flow > * + * {
+    margin-top: 1rem;
+
+}
+
+.container {
+    padding-inline: 2rem;
+    margin-inline: auto;
+    max-width: 80rem;
+}
+
+/* Colors */
+.background-dark {
+    background-color: hsl(var(--clr-dark));
+}
+
+.background-light {
+    background-color: hsl(var(--clr-light));
+}
+
+.background-white {
+    background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+    color: hsl(var(--clr-dark));
+}
+
+.text-light {
+    color: hsl(var(--clr-light));
+}
+
+.text-white {
+    color: hsl(var(--clr-white));
+}
+
+/* Typography */
+.font-family-bellefair {
+    font-family: var(--font-family-bellefair);
+}
+
+.font-family-barlow {
+    font-family: var(--font-family-barlow);
+}
+
+.font-family-barlow-condensed {
+    font-family: var(--font-family-barlow-condensed);
+}
+
+.letter-spacing-1 {
+    letter-spacing: 4.75px;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+    letter-spacing: 2.35px;
+}
+
+.font-size-900 {
+    font-size: var(--font-size-900);
+}
+
+.font-size-800 {
+    font-size: var(--font-size-800);
+}
+
+.font-size-700 {
+    font-size: var(--font-size-700);
+}
+
+.font-size-600 {
+    font-size: var(--font-size-600);
+}
+
+.font-size-500 {
+    font-size: var(--font-size-500);
+}
+
+.font-size-400 {
+    font-size: var(--font-size-400);
+}
+
+.font-size-300 {
+    font-size: var(--font-size-300);
+}
+
+.font-size-900,
+.font-size-800,
+.font-size-700,
+.font-size-600 {
+    line-height: 1.1;
+}
+
+.font-size-200 {
+    font-size: var(--font-size-200);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.numbered-title {
+    font-family: var(--font-family-barlow-condensed);
+    font-size: var(--font-size-500);
+    text-transform: uppercase;
+    letter-spacing: 4.72px;
+}
+
+.numbered-title span {
+    margin-right: .5em;
+    font-weight: 700;
+
+
+}
