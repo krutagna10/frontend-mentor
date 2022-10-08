@@ -29,6 +29,7 @@
 
       /* Spacing */
     --gap: 1rem;
+    --flow-space: 1rem;
 }
 
 /* Resets */
@@ -50,7 +51,7 @@ button {
     font: inherit;
 }
 
-h1, h2, h3, h4, h5,h6,p {
+h1, h2, h3, h4, h5, h6, p {
     font-weight: 400;
 }
 
@@ -65,6 +66,105 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    color: hsl(var(--clr-light));
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
+/**************/
+/*   Header   */
+/**************/
+
+.primary-header {
+    padding: 2.5rem 0 2.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.main-nav {
+    padding: 0 10rem;
+    backdrop-filter: blur(20px);
+}
+
+
+.main-nav-list {
+    display: flex;
+    gap: 3.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.main-nav-link {
+    display: block;
+    color: hsl(var(--clr-white));
+    font-size: var(--font-size-400);
+    font-family: var(--font-family-barlow-condensed);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 1.75rem 0;
+    transition: all 0.3s ease;
+}
+
+.main-nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 0.2rem solid hsl(var(--clr-white) / 0.6);
+}
+
+.main-nav-link:hover::before,
+.main-nav-link:focus::before{
+    animation: border-animation 0.8s linear forwards;
+}
+
+.main-nav-link.active::before {
+    border-bottom: 0.2rem solid hsl(var(--clr-white));
+    animation: none !important;
+    width: 100%;
+}
+
+@keyframes border-animation {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.number {
+    font-size: var(--font-size-400);
+    font-weight: 700;
+    margin-right: 0.75rem;
+}
+
+/*********************/
+/*   Hero Section   */
+/********************/
+
+.grid-container {
+    padding-inline: 2rem;
+    display: grid;
+    max-width: 80rem;
+    margin-inline: auto;
+    gap: 1rem;
+    border: 1px solid red;
+}
+
+@media (min-width: 45rem) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-nav {
+        display: none;
+    }
 }
 
 
