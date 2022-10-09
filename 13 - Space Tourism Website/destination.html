@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/utility-classes.css">
+
+    <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body class="destination">
+<header class="primary-header">
+    <div class="logo-container">
+        <img src="Images/Icons/logo.svg" alt="Space Tourism logo" class="logo">
+    </div>
+    <nav class="main-nav">
+        <ul class="main-nav-list underline-indicators">
+            <li><a href="index.html" class="main-nav-link active letter-spacing-2"><span class="number">00</span>
+                Home</a></li>
+            <li><a href="destination.html" class="main-nav-link letter-spacing-2"><span class="number">01</span>Destination</a>
+            </li>
+            <li><a href="crew.html" class="main-nav-link letter-spacing-2"><span class="number">02</span>Crew</a></li>
+            <li><a href="technology.html" class="main-nav-link letter-spacing-2"><span class="number">03</span>Technology</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="mobile-navigation">
+        <button class="menu-button"><img src="Images/Icons/icon-hamburger.svg" class="nav-icon" alt="hamburger icon">
+        </button>
+        <button class="close-button"><img src="Images/Icons/icon-close.svg" class="nav-icon" alt="close icon"></button>
+    </div>
+</header>
+
+<main>
+    <section class="hero-section destination-hero">
+        <div class="destination-grid-container">
+            <div class="numbered-heading-container">
+                <h1 class="numbered-heading text-white"><span class="heading-number">01</span> Pick your Destination</h1>
+            </div>
+
+            <div class="planet-container">
+                <img src="Images/Destination/image-moon.webp" alt="Moon image" class="planet-image">
+            </div>
+
+            <div class="intro-content">
+                <nav class="secondary-nav">
+                    <ul class="secondary-nav-list">
+                        <li><a href="index.html" class="secondary-nav-link active letter-spacing-2">Moon</a></li>
+                        <li><a href="destination.html" class="secondary-nav-link letter-spacing-2">Mars</a></li>
+                        <li><a href="crew.html" class="secondary-nav-link letter-spacing-2">Europa</a></li>
+                        <li><a href="technology.html" class="secondary-nav-link letter-spacing-2">Titan</a></li>
+                    </ul>
+                </nav>
+                <div class="destination-planet destination-moon">
+                    <h2 class="planet-heading font-size-800 uppercase text-white font-family-bellefair">Moon</h2>
+                    <p class="planet-text font-size-400">
+                        See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+                        regain perspective and come back refreshed. While you’re there, take in some history
+                        by visiting the Luna 2 and Apollo 11 landing sites.
+                    </p>
+                    <div class="horizontal-line"></div>
+                    <div class="planet-details grid">
+                        <div class="distance">
+                            <h3 class="distance-label">Avg. distance</h3>
+                            <p class="distance-text">384,400 km</p>
+                        </div>
+                        <div class="travel-time">
+                            <h3 class="time-label">Est. travel time</h3>
+                            <p class="days-text">3 days</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<script src="Javascript/script.js"></script>
+</body>
+</html>

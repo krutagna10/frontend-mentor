@@ -8,16 +8,28 @@
     gap: var(--gap)
 }
 
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
-    outline: 1px solid red;
-}
-
 .container {
     padding-inline: 2rem;
     margin-inline: auto;
     max-width: 80rem;
 }
+
+
+/* Headings */
+.primary-heading {
+    font-family: var(--font-family-barlow-condensed);
+    font-size: var(--font-size-500);
+    text-transform: uppercase;
+}
+
+
+
+.numbered-heading span {
+    color: hsl(var(--clr-light) / 0.5);
+    margin-right: 1rem;
+}
+
+
 
 
 
@@ -114,12 +126,6 @@
     text-transform: uppercase;
 }
 
-.numbered-title {
-    font-family: var(--font-family-barlow-condensed);
-    font-size: var(--font-size-500);
-    text-transform: uppercase;
-    letter-spacing: 4.72px;
-}
 
 .numbered-title span {
     margin-right: .5em;
@@ -128,32 +134,5 @@
 }
 
 /* Components */
-.large-button {
-    position: relative;
-    display: inline-grid;
-    z-index: 1;
-    place-items: center;
-    text-decoration: none;
-    padding: 0 2em;
-    aspect-ratio: 1;
-    border-radius: 50%;
-}
 
-.large-button::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: hsl(var(--clr-white) / 0.15  );
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.large-button:hover::after,
-.large-button:focus::after{
-   transform: scale(1.5);
-    opacity: 1;
-}
 
