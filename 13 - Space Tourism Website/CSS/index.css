@@ -490,6 +490,11 @@ body {
     animation: border-animation-secondary 0.8s linear forwards;
 }
 
+.secondary-nav-link.active-link::before {
+    animation: none !important;
+    width: 100%;
+}
+
 @keyframes border-animation-secondary {
     0% {
         width: 0;
@@ -502,9 +507,13 @@ body {
 
 .destination-planet {
     text-align: center;
-    display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    display: none;
+}
+
+.current-active-destination.destination-planet {
+    display: flex;
 }
 
 .horizontal-line {
@@ -572,7 +581,7 @@ body {
         max-width: 92%;
     }
 
-    .destination-moon {
+    .destination-planet {
         text-align: left;
     }
 }
