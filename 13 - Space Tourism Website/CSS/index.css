@@ -854,6 +854,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .technology-nav-link.active-link {
@@ -928,6 +929,10 @@ body {
 }
 
 @media(min-width: 55em) {
+    .technology-grid-container {
+        grid-template-columns: 55fr 45fr;
+    }
+
     .technology-intro-content {
         display: flex;
     }
@@ -941,7 +946,7 @@ body {
     }
 
     .technology-nav-list {
-        margin-right: 3rem;
+        margin-right: 2rem;
         margin-bottom: 0;
         align-items: center;
         gap: 2.75rem;

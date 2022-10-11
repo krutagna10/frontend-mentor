@@ -54,7 +54,7 @@ function updateCrewLink() {
     })
 }
 
-function changeCrewPicture() {
+function updateCrewPicture() {
   if (currentActiveCrewLink === 0) {
       crewImage.src = 'Images/Crew/image-douglas-hurley.webp';
   } else if (currentActiveCrewLink === 1) {
@@ -70,11 +70,52 @@ crewNavLinks.forEach((crewNavLink, index) => {
     crewNavLink.addEventListener('click', () => {
         currentActiveCrewLink = index;
         updateCrewLink();
-        changeCrewPicture();
+        updateCrewPicture();
     })
 })
 
 
 // Technology Page
+const technologyNavLinks = document.querySelectorAll('.technology-nav-link');
+const technologyTextContent = document.querySelectorAll('.technology-text-content');
+const landScapeTechnologyImage = document.querySelector('.landscape-image');
+const potraitTechnologyImage = document.querySelector('.portrait-image');
+
+let currentActiveTechnologyLink = 0;
+
+
+const updateTechnologyLink = () => {
+    technologyNavLinks.forEach((technologyLink, index) => {
+        if (currentActiveTechnologyLink === index) {
+            technologyLink.classList.add('active-link');
+            technologyTextContent[index].classList.add('current-technology-text');
+        } else {
+            technologyLink.classList.remove('active-link');
+            technologyTextContent[index].classList.remove('current-technology-text');
+        }
+    })
+}
+
+const updateTechnologyImage = () => {
+    if (currentActiveTechnologyLink === 0) {
+        landScapeTechnologyImage.src = 'Images/Technology/image-launch-vehicle-landscape.jpg';
+        potraitTechnologyImage.src = 'Images/Technology/image-launch-vehicle-portrait.jpg';
+    } else if (currentActiveTechnologyLink === 1) {
+        landScapeTechnologyImage.src = 'Images/Technology/image-spaceport-landscape.jpg';
+        potraitTechnologyImage.src = 'Images/Technology/image-spaceport-portrait.jpg';
+    } else {
+        landScapeTechnologyImage.src = 'Images/Technology/image-space-capsule-landscape.jpg';
+        potraitTechnologyImage.src = 'Images/Technology/image-space-capsule-portrait.jpg';
+    }
+}
+
+technologyNavLinks.forEach((technologyLink, index) => {
+    technologyLink.addEventListener('click', () => {
+        currentActiveTechnologyLink = index;
+        updateTechnologyLink();
+        updateTechnologyImage();
+    })
+})
+
 
 
