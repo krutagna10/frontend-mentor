@@ -1,6 +1,6 @@
 // Destination Page
 const destinationPlanets = document.querySelectorAll('.destination-planet');
-const secondaryNavLinks = document.querySelectorAll('.secondary-nav-link');
+const secondaryNavLinks = document.querySelectorAll('.destination-nav-link');
 const planetImage = document.querySelector('.planet-image');
 let currentDestinationLink = 0;
 let currentDestination = 0;
@@ -74,5 +74,7 @@ crewNavLinks.forEach((crewNavLink, index) => {
     })
 })
 
+
+// Technology Page
 
 
