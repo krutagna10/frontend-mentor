@@ -34,5 +34,45 @@ secondaryNavLinks.forEach((navLink, index) => {
 })
 
 
+// Crew Page
+
+const crewNavLinks = document.querySelectorAll('.crew-nav-link');
+const crewImage = document.querySelector('.crew-image');
+crewTextContents = document.querySelectorAll('.crew-text-content');
+let currentActiveCrewLink = 0;
+
+
+function updateCrewLink() {
+    crewNavLinks.forEach((crewNavLink, index) => {
+        if (currentActiveCrewLink === index) {
+            crewNavLink.classList.add('active');
+            crewTextContents[index].classList.add('current-crew-text');
+        } else {
+            crewNavLink.classList.remove('active');
+            crewTextContents[index].classList.remove('current-crew-text');
+        }
+    })
+}
+
+function changeCrewPicture() {
+  if (currentActiveCrewLink === 0) {
+      crewImage.src = 'Images/Crew/image-douglas-hurley.webp';
+  } else if (currentActiveCrewLink === 1) {
+      crewImage.src = 'Images/Crew/image-mark-shuttleworth.webp'
+  } else if (currentActiveCrewLink === 2) {
+      crewImage.src = 'Images/Crew/image-victor-glover.webp'
+  } else {
+      crewImage.src = 'Images/Crew/image-anousheh-ansari.webp'
+  }
+}
+
+crewNavLinks.forEach((crewNavLink, index) => {
+    crewNavLink.addEventListener('click', () => {
+        currentActiveCrewLink = index;
+        updateCrewLink();
+        changeCrewPicture();
+    })
+})
+
 
 
