@@ -181,6 +181,7 @@ body {
     border: none;
     position: relative;
     z-index: 999;
+    cursor: pointer;
 }
 
 .nav-icon {
