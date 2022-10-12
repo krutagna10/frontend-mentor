@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://space-tourism-10.netlify.app/]
+- Live Site URL: [https://space-tourism-website-10.netlify.app/]
 
 ### Built with
 
