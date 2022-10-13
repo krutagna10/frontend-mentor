@@ -4,23 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+  <link rel="stylesheet" href="CSS/style.css">
   <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+<main>
+  <section class="calculator-section">
+    <div class="container">
+      <header class="calculator-header">
+        <h1 class="primary-heading">calc</h1>
+        <div class="slider">
 
+        </div>
+      </header>
+      <div class="output-screen">
+        396,173
+      </div>
+      <div class="calculator-buttons">
+        <div class="btn number-btn">7</div>
+        <div class="btn number-btn">8</div>
+        <div class="btn number-btn">9</div>
+        <div class="btn delete-btn">DEL</div>
+        <div class="btn number-btn">4</div>
+        <div class="btn number-btn">5</div>
+        <div class="btn number-btn">6</div>
+        <div class="btn operator">+</div>
+        <div class="btn number-btn">1</div>
+        <div class="btn number-btn">2</div>
+        <div class="btn number-btn">3</div>
+        <div class="btn operator">-</div>
+        <div class="btn">.</div>
+        <div class="btn number-btn">0</div>
+        <div class="btn operator">/</div>
+        <div class="btn operator">x</div>
+        <div class="btn reset-btn">Reset</div>
+        <div class="btn equals-btn">=</div>
+      </div>
+    </div>
+  </section>
+</main>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<script src="Javascript/script.js"></script>
 </body>
 </html>
