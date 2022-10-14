@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Font Family*/
+    --jetbrains-mono: 'JetBrains Mono', monospace;
+
+    /* Font Sizes */
+    --font-size-300: 1.5rem;
+    --font-size-200: 1.125rem;
+    --font-size-100: 1rem;
+
+    /* Colors */
+    --grey: hsl(251, 9%, 53%);
+    --almost-white: hsl(252, 11%, 91%);
+    --very-dark-gray: hsl(248, 10%, 15%);
+    --dark-gray: 251 9% 53%;
+    --neon-green: hsl(127, 100%, 82%);
+    --red: hsl(0, 91%, 63%);
+    --orange: hsl(13, 95%, 66%);
+    --yellow: hsl(42, 91%, 68%);
+
+    /* Spacing*/
+    --gap: 1rem;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --font-size-300: 2rem;
+        --font-size-200: 1.5rem;
+        --font-size-100: 1.125rem;
+    }
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+p,
+button {
+    font-weight: 700;
+}
+
+/* Utility Classes */
+
+.flex {
+    display: flex;
+}
+
+.flex-justify-space-between {
+    justify-content: space-between;
+}
+
+.flex-justify-content-center {
+    justify-content: center;
+}
+
+.flex-align-items-center {
+    align-items: center;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.font-size-300 {
+    font-size: var(--font-size-300);
+}
+
+.font-size-200 {
+    font-size: var(--font-size-200);
+}
+
+.font-size-100 {
+    font-size: var(--font-size-100);
+}
+
+.text-neon-green {
+    color: var(--neon-green);
+}
+
+.text-grey {
+    color: var(--grey);
+}
+
+/* Styling up the body */
+body {
+    font-family: var(--jetbrains-mono);
+    background-color: var(--very-dark-gray);
+    color: var(--almost-white);
+    font-size: var(--font-size-100);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password-generator-section {
+    padding: 2rem 0;
+}
+
+.container {
+    padding-inline: 2rem;
+}
+
+.generated-password-box {
+    background-color: hsl(var(--dark-gray) / 0.175);
+    padding: 1rem;
+    gap: 6rem;
+}
+
+.user-choice-content {
+    background-color: hsl(var(--dark-gray) / 0.175);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.slider {
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--very-dark-gray);
+    margin: 0.25rem 0;
+    position: relative;
+}
+
+.slider::before {
+    content: '';
+    box-sizing: border-box;
+    background-color: var(--almost-white);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translateY(-50%);
+}
+
+.slider::after {
+    content: '';
+    box-sizing: border-box;
+    background-color: var(--neon-green);
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    left: 0;
+}
+
+.check-boxes-container {
+    gap: 0.75rem;
+}
+
+.check-box {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--grey);
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.check-box-icon {
+    display: none;
+}
+
+.active.check-box {
+    background-color: var(--neon-green);
+}
+
+.active .check-box-icon {
+    display: block;
+}
+
+
+
+
+
