@@ -113,53 +113,43 @@ body {
 
 .container {
     padding-inline: 2rem;
+    max-width: 40rem;
+    min-width: 40rem;
 }
 
 .generated-password-box {
     background-color: hsl(var(--dark-gray) / 0.175);
     padding: 1rem;
-    gap: 6rem;
+    margin: 1rem 0;
 }
 
 .user-choice-content {
     background-color: hsl(var(--dark-gray) / 0.175);
     padding: 1rem;
-    gap: 1rem;
+    gap: 1.25rem;
 }
 
-.slider {
+.character-slider {
     width: 100%;
-    height: 0.5rem;
-    background-color: var(--very-dark-gray);
-    margin: 0.25rem 0;
-    position: relative;
+    accent-color: var(--neon-green);
 }
 
-.slider::before {
-    content: '';
-    box-sizing: border-box;
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
     background-color: var(--almost-white);
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    transform: translateY(-50%);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
 }
 
-.slider::after {
-    content: '';
-    box-sizing: border-box;
+input[type="range"]::-webkit-slider-thumb:hover {
     background-color: var(--neon-green);
-    position: absolute;
-    height: 100%;
-    width: 60%;
-    left: 0;
 }
+
 
 .check-boxes-container {
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .check-box {
@@ -176,10 +166,20 @@ body {
 
 .active.check-box {
     background-color: var(--neon-green);
+    border-color: transparent;
 }
 
 .active .check-box-icon {
     display: block;
+}
+
+.generate-button {
+    background-color: var(--neon-green);
+    text-transform: uppercase;
+    color: var(--very-dark-gray);
+    border: none;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
 }
 
 

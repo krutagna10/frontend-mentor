@@ -30,33 +30,39 @@
                     <p class="length-text">Character length</p>
                     <p class="length-number text-neon-green font-size-200">10</p>
                 </div>
-                <div class="slider"></div>
+                <div class="slider">
+                    <input type="range" min="0" max="20" name="character-range" class="character-slider" id="character-range">
+                </div>
 
                 <div class="check-boxes-container flex flex-direction-column">
                     <div class="flex flex-align-items-center">
-                        <div class="check-box active flex flex-align-items-center flex-justify-content-center">
+                        <div class="check-box upper-case-check-box flex flex-align-items-center flex-justify-content-center">
                             <img src="Images/icon-check.svg" class="check-box-icon flex " alt="Checkbox icon">
                         </div>
                         <p class="check-box-text">Include Uppercase Letters</p>
                     </div>
                     <div class="flex flex-align-items-center">
-                        <div class="check-box flex flex-align-items-center flex-justify-content-center">
+                        <div class="check-box lower-case-check-box  flex flex-align-items-center flex-justify-content-center">
                             <img src="Images/icon-check.svg" class="check-box-icon" alt="Checkbox icon">
                         </div>
                         <p class="check-box-text">Include Lowercase Letters</p>
                     </div>
                     <div class="flex flex-align-items-center">
-                        <div class="check-box flex flex-align-items-center flex-justify-content-center">
+                        <div class="check-box include-numbers-check-box flex flex-align-items-center flex-justify-content-center">
                             <img src="Images/icon-check.svg" class="check-box-icon" alt="Checkbox icon">
                         </div>
                         <p class="check-box-text">Include Numbers</p>
                     </div>
                     <div class="flex flex-align-items-center">
-                        <div class="check-box flex flex-align-items-center flex-justify-content-center">
+                        <div class="check-box include-symbols-check-box flex flex-align-items-center flex-justify-content-center">
                             <img src="Images/icon-check.svg" class="check-box-icon" alt="Checkbox icon">
                         </div>
                         <p class="check-box-text">Include Symbols</p>
                     </div>
+
+                    <button class="generate-button font-size-100">
+                        Generate
+                    </button>
 
                 </div>
             </div>
