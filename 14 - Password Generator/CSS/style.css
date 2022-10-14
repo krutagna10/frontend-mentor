@@ -91,8 +91,16 @@ button {
     color: var(--neon-green);
 }
 
+.text-almost-white {
+    color: var(--almost-white);
+}
+
 .text-grey {
     color: var(--grey);
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 /* Styling up the body */
@@ -112,21 +120,35 @@ body {
 }
 
 .container {
-    padding-inline: 2rem;
+    padding-inline: 1rem;
     max-width: 40rem;
-    min-width: 40rem;
 }
 
 .generated-password-box {
     background-color: hsl(var(--dark-gray) / 0.175);
-    padding: 1rem;
+    padding: 0.5rem;
     margin: 1rem 0;
 }
 
 .user-choice-content {
     background-color: hsl(var(--dark-gray) / 0.175);
-    padding: 1rem;
+    padding: 0.5rem;
     gap: 1.25rem;
+}
+
+
+@media (min-width: 35em) {
+    .container {
+        padding-inline: 2rem;
+    }
+
+    .generated-password-box {
+        padding: 1rem;
+    }
+
+    .user-choice-content {
+        padding: 1rem;
+    }
 }
 
 .character-slider {
@@ -181,6 +203,52 @@ input[type="range"]::-webkit-slider-thumb:hover {
     padding: 0.75rem 2rem;
     cursor: pointer;
 }
+
+.strength-box {
+    background-color: var(--very-dark-gray);
+    padding: 1rem 0.5rem;
+}
+
+.strength-bars-container {
+    gap: 0.5rem;
+}
+
+.strength-bars {
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.bar {
+    width: 0.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--almost-white);
+}
+
+
+.bar:nth-child(1).bar-active {
+    background-color: var(--red);
+    border: transparent;
+}
+
+.bar:nth-child(2).bar-active {
+    background-color: var(--orange);
+    border: transparent;
+}
+
+.bar:nth-child(3).bar-active {
+    background-color: var(--yellow);
+    border: transparent;
+}
+
+.bar:nth-child(4).bar-active {
+    background-color: var(--neon-green);
+    border: transparent;
+}
+
+
+
+
+
 
 
 
