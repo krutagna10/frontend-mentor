@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,400&display=swap');
+
+:root {
+    /* Font Family */
+    --font-family-jost: 'Jost', sans-serif;
+
+    /* Font Weight */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+
+    /* Font Sizes */
+    --font-size-500: 2rem;
+    --font-size-400: 1.75rem;
+    --font-size-300: 1.25rem;
+    --font-size-200: 0.9375rem;
+    --font-size-100: 0.875rem;
+
+    /* Colors */
+    --peach: hsl(11, 73%, 66%);
+    --black: hsl(270, 3%, 11%);
+    --white: hsl(0, 0%, 100%);
+    --light-peach: hsl(11, 100%, 80%);
+    --dark-grey: hsl(264, 5%, 20%);
+    --light-grey: hsl(210, 17%, 95%);
+
+}
+
+@media (min-width: 35rem) {
+}
+
+@media (min-width: 45rem) {
+    :root {
+        --font-size-500: 3rem;
+        --font-size-400: 2.5rem;
+        --font-size-200: 1rem;
+
+    }
+}
+
+/* CSS Reset*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Styling Body*/
+
+body {
+    font-family: var(--font-family-jost);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+
+}
+
