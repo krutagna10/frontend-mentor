@@ -38,7 +38,8 @@
     box-sizing: border-box;
 }
 
-button {
+button,
+input {
     font-family: inherit;
 }
 
@@ -115,13 +116,27 @@ body {
     align-items: center;
 }
 
+/* Generated Password Box*/
 .password-generator-section {
     padding: 2rem 0;
 }
 
 .container {
-    padding-inline: 1rem;
+    padding-inline: 0.5rem;
     max-width: 40rem;
+}
+
+@media (min-width: 35em) {
+    .container {
+        padding-inline: 2rem;
+    }
+}
+
+@media (min-width: 45em) {
+    .container {
+        min-width: 40rem;
+        max-width: 40rem;
+    }
 }
 
 .generated-password-box {
@@ -130,33 +145,67 @@ body {
     margin: 1rem 0;
 }
 
+.generated-password {
+    background: transparent;
+    border: none;
+    color: var(--almost-white);
+    width: 80%;
+}
+
+.generated-password:focus {
+    outline: none;
+}
+
+.copy-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+.copy-button:hover .copy-icon {
+    filter: brightness(450%) contrast(101%);
+}
+
+.copied-container {
+    gap: 1rem;
+}
+
+.copied-text.hidden {
+    display: none;
+}
+
+.copied-text {
+    display: block;
+}
+
+@media (min-width: 35em) {
+    .generated-password-box {
+        padding: 1rem;
+    }
+}
+
+
+/* User Choice content*/
 .user-choice-content {
     background-color: hsl(var(--dark-gray) / 0.175);
     padding: 0.5rem;
     gap: 1.25rem;
 }
 
-
 @media (min-width: 35em) {
-    .container {
-        padding-inline: 2rem;
-    }
-
-    .generated-password-box {
-        padding: 1rem;
-    }
-
     .user-choice-content {
         padding: 1rem;
     }
 }
 
+/* Slider Styling */
 .character-slider {
     width: 100%;
     accent-color: var(--neon-green);
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.character-slider::-webkit-slider-thumb {
     appearance: none;
     background-color: var(--almost-white);
     cursor: pointer;
@@ -165,11 +214,11 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 100%;
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
+.character-slider::-webkit-slider-thumb:hover {
     background-color: var(--neon-green);
 }
 
-
+/* CheckBoxes*/
 .check-boxes-container {
     gap: 1rem;
 }
@@ -195,15 +244,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     display: block;
 }
 
-.generate-button {
-    background-color: var(--neon-green);
-    text-transform: uppercase;
-    color: var(--very-dark-gray);
-    border: none;
-    padding: 0.75rem 2rem;
-    cursor: pointer;
-}
-
+/* Strength Bars*/
 .strength-box {
     background-color: var(--very-dark-gray);
     padding: 1rem 0.5rem;
@@ -218,10 +259,27 @@ input[type="range"]::-webkit-slider-thumb:hover {
     cursor: pointer;
 }
 
+
 .bar {
     width: 0.5rem;
     height: 1.5rem;
     border: 2px solid var(--almost-white);
+}
+
+@media (min-width: 45em) {
+    .strength-bars-container {
+        gap: 0.75rem;
+    }
+
+    .bar {
+        width: 0.75rem;
+        height: 1.75rem;
+    }
+
+    .strength-bars {
+        gap: 0.5rem;
+    }
+
 }
 
 
@@ -243,6 +301,23 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .bar:nth-child(4).bar-active {
     background-color: var(--neon-green);
     border: transparent;
+}
+
+/*  Generate Button*/
+.generate-button {
+    background-color: var(--neon-green);
+    text-transform: uppercase;
+    color: var(--very-dark-gray);
+    border: 2px solid transparent;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.generate-button:hover {
+    background-color: transparent;
+    border-color: var(--neon-green);
+    color: var(--neon-green);
 }
 
 
