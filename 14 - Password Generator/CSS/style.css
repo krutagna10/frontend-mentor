@@ -148,7 +148,7 @@ body {
 }
 
 .generated-password-box {
-    background-color: hsl(var(--dark-gray) / 0.15);
+    background-color: hsl(var(--dark-gray) / 0.1);
     padding: 0.5rem;
     margin: 1.5rem 0;
 }
@@ -196,7 +196,7 @@ body {
 
 /* User Choice content*/
 .user-choice-content {
-    background-color: hsl(var(--dark-gray) / 0.15);
+    background-color: hsl(var(--dark-gray) / 0.1);
     padding: 1.5rem 0.5rem;
     gap: 1.25rem;
 }
