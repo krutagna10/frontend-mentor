@@ -100,6 +100,10 @@ button {
     color: var(--grey);
 }
 
+.text-align-center {
+    text-align: center;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -126,6 +130,10 @@ body {
     max-width: 40rem;
 }
 
+.primary-heading {
+    margin-bottom: 0.5rem;
+}
+
 @media (min-width: 35em) {
     .container {
         padding-inline: 2rem;
@@ -140,9 +148,9 @@ body {
 }
 
 .generated-password-box {
-    background-color: hsl(var(--dark-gray) / 0.175);
+    background-color: hsl(var(--dark-gray) / 0.15);
     padding: 0.5rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 }
 
 .generated-password {
@@ -188,14 +196,14 @@ body {
 
 /* User Choice content*/
 .user-choice-content {
-    background-color: hsl(var(--dark-gray) / 0.175);
-    padding: 0.5rem;
+    background-color: hsl(var(--dark-gray) / 0.15);
+    padding: 1.5rem 0.5rem;
     gap: 1.25rem;
 }
 
 @media (min-width: 35em) {
     .user-choice-content {
-        padding: 1rem;
+        padding-inline: 1rem;
     }
 }
 
@@ -203,19 +211,6 @@ body {
 .character-slider {
     width: 100%;
     accent-color: var(--neon-green);
-}
-
-.character-slider::-webkit-slider-thumb {
-    appearance: none;
-    background-color: var(--almost-white);
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
-    border-radius: 100%;
-}
-
-.character-slider::-webkit-slider-thumb:hover {
-    background-color: var(--neon-green);
 }
 
 /* CheckBoxes*/
@@ -263,7 +258,27 @@ body {
 .bar {
     width: 0.5rem;
     height: 1.5rem;
+    transition: all 0.3s ease;
     border: 2px solid var(--almost-white);
+}
+
+.bar-text {
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 35em) {
+    .strength-bars-container {
+        gap: 0.6rem;
+    }
+
+    .bar {
+        width: 0.6rem;
+        height: 1.6rem;
+    }
+
+    .strength-bars {
+        gap: 0.45rem;
+    }
 }
 
 @media (min-width: 45em) {
