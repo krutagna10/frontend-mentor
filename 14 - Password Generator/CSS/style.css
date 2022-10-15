@@ -216,6 +216,21 @@ body {
 /* CheckBoxes*/
 .check-boxes-container {
     gap: 1rem;
+    position: relative;
+    padding: 0.75rem 0;
+}
+
+.hidden.error-message {
+    opacity: 0;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8125rem;
+    position: absolute;
+    opacity: 1;
+    top: -1rem;
+    left: 0;
 }
 
 .check-box {
@@ -253,7 +268,6 @@ body {
     gap: 0.4rem;
     cursor: pointer;
 }
-
 
 .bar {
     width: 0.5rem;

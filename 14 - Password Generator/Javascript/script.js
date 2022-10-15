@@ -13,6 +13,7 @@ const generatedPassword = document.querySelector('.generated-password');
 const generateButton = document.querySelector('.generate-button');
 const barsElement = document.querySelectorAll('.bar');
 const barText = document.querySelector('.bar-text');
+const errorMessage = document.querySelector('.error-message');
 
 // Initially
 let sliderValue = 10;
@@ -71,6 +72,10 @@ function displayPasswordStrength() {
         })
     }
 
+    if (strength === 0) {
+        errorMessage.classList.remove('hidden');
+    } else {
+        errorMessage.classList.add('hidden');
         if (strength === 1) {
             barText.textContent = 'Too Weak!';
             updateBarColor();
@@ -85,39 +90,39 @@ function displayPasswordStrength() {
             updateBarColor();
         }
     }
+}
 
 
 // Checkboxes
-    function userInputInformation() {
-        includeUpperCaseLetter = upperCaseCheckBox.classList.contains('active');
-        includeLowerCaseLetter = lowerCaseCheckBox.classList.contains('active');
-        includeNumbers = includeNumbersCheckBox.classList.contains('active');
-        includeSymbols = includeSymbolsCheckBox.classList.contains('active');
+function userInputInformation() {
+    includeUpperCaseLetter = upperCaseCheckBox.classList.contains('active');
+    includeLowerCaseLetter = lowerCaseCheckBox.classList.contains('active');
+    includeNumbers = includeNumbersCheckBox.classList.contains('active');
+    includeSymbols = includeSymbolsCheckBox.classList.contains('active');
 
-        keysArray = [includeNumbers, includeLowerCaseLetter, includeUpperCaseLetter, includeSymbols]
-    }
+    keysArray = [includeNumbers, includeLowerCaseLetter, includeUpperCaseLetter, includeSymbols]
+}
 
 // Password Generator
-    function generatePassword() {
-        modifiedString = '';
-        userInputInformation();
-        for (let i = 0; i < keysArray.length; i++) {
-            if (keysArray[i]) {
-                modifiedString = modifiedString + valuesArray[i];
-            }
+function generatePassword() {
+    modifiedString = '';
+    userInputInformation();
+    for (let i = 0; i < keysArray.length; i++) {
+        if (keysArray[i]) {
+            modifiedString = modifiedString + valuesArray[i];
         }
-
-        let password = '';
-        for (let i = 0; i < sliderValue; i++) {
-            let random = modifiedString.charAt(Math.random() * (modifiedString.length - 1));
-            password = password + random;
-        }
-        displayPasswordStrength();
-        generatedPassword.value = password;
     }
 
-    generateButton.addEventListener('click', generatePassword);
+    let password = '';
+    for (let i = 0; i < sliderValue; i++) {
+        let random = modifiedString.charAt(Math.random() * (modifiedString.length - 1));
+        password = password + random;
+    }
+    displayPasswordStrength();
+    generatedPassword.value = password;
+}
 
+generateButton.addEventListener('click', generatePassword);
 
 
 // Copy to clipboard
