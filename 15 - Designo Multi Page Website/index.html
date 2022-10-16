@@ -5,50 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/utility-classes.css">
     <title>Frontend Mentor | Designo Agency Website Challenge</title>
 </head>
 <body>
 <header class="main-header">
-    <div class="logo-container">
-        <img src="Images/shared/desktop/logo-dark.png" class="logo" alt="Designo logo">
+    <div class="container header-container flex flex-justify-space-between flex-align-items-center">
+        <div class="logo-container">
+            <img src="Images/shared/desktop/logo-dark.png" class="logo" alt="Designo logo">
+        </div>
+
+        <nav class="main-nav">
+            <ul class="main-nav-list flex">
+                <li><a href="#" class="main-nav-link font-size-300 uppercase">Our Content</a></li>
+                <li><a href="#" class="main-nav-link font-size-300 uppercase">Locations</a></li>
+                <li><a href="#" class="main-nav-link font-size-300 uppercase">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="mobile-navigation">
+            <button class="menu-open-button">
+                <img src="Images/shared/mobile/icon-hamburger.svg" alt="Hamburger icon" class="mobile-nav-icon">
+            </button>
+            <button class="menu-close-button">
+                <img src="Images/shared/mobile/icon-close.svg" alt="close icon" class="mobile-nav-icon">
+            </button>
+        </div>
+
     </div>
-    <nav class="main-nav">
-        <ul class="main-nav-list">
-            <li><a href="#" class="main-nav-link">Our Content</a></li>
-            <li><a href="#" class="main-nav-link">Locations</a></li>
-            <li><a href="#" class="main-nav-link">Contact</a></li>
-        </ul>
-    </nav>
 </header>
 
 <main>
-
+    <section class="hero-section">
+        <div class="hero-container background-peach grid grid--2-columns">
+            <div class="hero-text-box flow-space">
+                <h1 class="primary-heading">
+                    Award-winning custom designs and digital branding solutions
+                </h1>
+                <p class="hero-text font-size-100 text-white">
+                    With over 10 years in the industry, we are experienced in creating fully responsive websites, app
+                    design, and engaging brand experiences. Find out more about our services.
+                </p>
+                <button class="call-to-action-button">
+                    Learn more
+                </button>
+            </div>
+            <div class="hero-image-box">
+                <img src="Images/home/desktop/image-hero-phone.png" class="hero-image" alt="hero-image">
+            </div>
+        </div>
+    </section>
 </main>
 
+<section class="project-section">
+    Our Company
+    Locations
+    Contact
+
+    Award-winning custom designs and digital branding solutions
+
+
+    Learn more
+
+    Web Design
+    View Projects
+
+    App Design
+    View Projects
+
+    Graphic Design
+    View Projects
+
+</section>
+
+<script src="Javascript/script.js"></script>
 </body>
 </html>
-<!--  Our Company-->
-<!--  Locations-->
-<!--  Contact-->
-<!--  -->
-<!--  Award-winning custom designs and digital branding solutions-->
+  Our Company
+  Locations
+  Contact
 
-<!--  With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, -->
-<!--  and engaging brand experiences. Find out more about our services.-->
-<!--  -->
-<!--  Learn more-->
-<!--  -->
-<!--  Web Design-->
-<!--  View Projects-->
-<!--  -->
-<!--  App Design-->
-<!--  View Projects-->
-<!--  -->
-<!--  Graphic Design-->
-<!--  View Projects-->
-<!--  -->
+  Award-winning custom designs and digital branding solutions
+
+
+  Learn more
+
+  Web Design
+  View Projects
+
+  App Design
+  View Projects
+
+  Graphic Design
+  View Projects
+
 <!--  Passionate-->
 <!--  Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge-->
 <!--  art, design, and technology into exciting new solutions.-->

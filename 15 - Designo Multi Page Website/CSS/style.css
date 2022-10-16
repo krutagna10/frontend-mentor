@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
 
 :root {
     /* Font Family */
@@ -9,11 +9,12 @@
     --font-weight-medium: 500;
 
     /* Font Sizes */
-    --font-size-500: 2rem;
+    --font-size-500: 1.75rem;
     --font-size-400: 1.75rem;
-    --font-size-300: 1.25rem;
-    --font-size-200: 0.9375rem;
-    --font-size-100: 0.875rem;
+    --font-size-300: 1.5rem;
+    --font-size-200: 1.25rem;
+    --font-size-100: 0.9375rem;
+
 
     /* Colors */
     --peach: hsl(11, 73%, 66%);
@@ -23,16 +24,28 @@
     --dark-grey: hsl(264, 5%, 20%);
     --light-grey: hsl(210, 17%, 95%);
 
+    /* Spacing */
+    --flex-gap: 1rem;
+    --section-padding: 3.75rem 0;
+
 }
 
-@media (min-width: 35rem) {
+@media (min-width: 25rem) {
+    :root {
+        --font-size-500: 2rem;
+    }
 }
 
 @media (min-width: 45rem) {
     :root {
         --font-size-500: 3rem;
+        --font-size-300: 0.875rem;
         --font-size-400: 2.5rem;
-        --font-size-200: 1rem;
+        --font-size-100: 1rem;
+
+        /* Spacing */
+        --flex-gap: 1rem;
+        --section-padding: 5rem 0;
 
     }
 }
@@ -46,7 +59,7 @@
 
 img {
     display: block;
-    max-width: 100%;
+    /*max-width: 100%;*/
 }
 
 button,
@@ -54,12 +67,22 @@ input {
     font-family: inherit;
 }
 
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
+h1,
+h2,
+h3 {
+    font-weight: var(--font-weight-medium);
+}
+
+p {
+    font-weight: var(--font-weight-regular);
 }
 
 /* Styling Body*/
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 body {
     font-family: var(--font-family-jost);
@@ -67,6 +90,141 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Header */
+.main-header {
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.logo {
+    max-width: 60%;
+}
+
+.main-nav {
+    background-color: var(--black);
+    position: absolute;;
+    height: 45vh;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+
+    /* Hiding navigation */
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.4s ease;
+}
+
+.main-nav-list {
+    list-style: none;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.main-nav-link {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.menu-open-button,
+.menu-close-button {
+    border: none;
+    background: transparent;
+}
+
+.menu-close-button {
+    display: none;
+}
+
+/* When the navigation is open */
+.navigation-open .main-nav {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.navigation-open .menu-open-button {
+    display: none;
+}
+
+.navigation-open .menu-close-button {
+    display: block;
+}
+
+@media (min-width: 45em) {
+    /* Hiding mobile navigation */
+    .mobile-navigation {
+        display: none;
+    }
+
+    .main-nav {
+        background-color: var(--white);
+        position: static;
+        height: 100%;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+
+        /* Showing navigation */
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .main-nav-link {
+        color: var(--black);
+    }
+
+    .main-nav-list {
+        gap: 2rem;
+        flex-direction: row;
+    }
+}
+
+
+/* Hero-section*/
+
+.hero-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero-text-box {
+    padding: 3rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 
 }
+
+.hero-image-box {
+    min-height: 24rem;
+    position: relative;
+    background-color: var(--peach);
+}
+
+.hero-image {
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translateX(-50%);
+    object-position: center top;
+}
+
+.call-to-action-button {
+    align-self: center;
+    background-color: var(--white);
+    border: none;
+    color: var(--black);
+    padding: 0.5rem 1rem;
+}
+
+
+
+
 
