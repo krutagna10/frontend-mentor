@@ -1,11 +1,10 @@
-const mainHeader = document.querySelector('.main-header');
-const hamburgerButton = document.querySelector('.menu-open-button');
-const closeButton = document.querySelector('.menu-close-button');
+const mainHeader = document.querySelector('.main-header')
+const overlay = document.querySelector('.overlay');
 
-hamburgerButton.addEventListener('click', () => {
-    mainHeader.classList.add('navigation-open');
-})
+let mobileNavigationButton = document.querySelector('.mobile-navigation-button');
 
-closeButton.addEventListener('click', () => {
-    mainHeader.classList.remove('navigation-open');
+mobileNavigationButton.addEventListener('click', () => {
+    mainHeader.classList.toggle('navigation-open');
+    mobileNavigationButton.classList.toggle('active');
+    overlay.classList.toggle('hidden');
 })
