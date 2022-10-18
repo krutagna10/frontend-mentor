@@ -65,17 +65,12 @@
     }
 }
 
-@media (min-width: 55em) {
+@media (min-width: 65em) {
     :root {
-
+        --section-padding: 4rem 0;
     }
 }
 
-@media (min-width: 80em) {
-    :root {
-
-    }
-}
 
 /* CSS Reset*/
 * {
@@ -84,9 +79,9 @@
     padding: 0;
 }
 
-img {
+img:not(.hero-image) {
     display: block;
-    /*max-width: 100%;*/
+    max-width: 100%;
 }
 
 button,
@@ -377,6 +372,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     object-position: center top;
+
 }
 
 .call-to-action-button {
@@ -397,6 +393,12 @@ body {
 }
 
 @media (min-width: 45em) {
+    .hero-section {
+        padding-top: 1.2rem;
+        padding-bottom: 5rem;
+    }
+
+
     .hero-container {
         min-height: 40rem;
         gap: 1rem;
@@ -419,11 +421,6 @@ body {
         height: 28rem;
         border-radius: 50%;
         transform: translate(-50%, -50%);
-    }
-
-    .hero-section {
-        padding-top: 1.2rem;
-        padding-bottom: 5rem;
     }
 
     .hero-text-box {
@@ -583,6 +580,13 @@ body {
 }
 
 
+@media (min-width: 25em) {
+    .get-in-touch-section {
+        top: -35%;
+        transform: translate(-50%, 35%);
+    }
+}
+
 @media (min-width: 35em) {
     .get-in-touch-container.grid--2-columns {
         grid-template-columns: 1fr 1fr;
@@ -601,20 +605,29 @@ body {
     }
 }
 
-@media (min-width: 45em) {
+
+@media (min-width: 35em) {
     .get-in-touch-section {
-        position: absolute;
-        width: 90%;
         top: -50%;
-        left: 50%;
         transform: translate(-50%, 50%);
     }
 }
 
+@media (min-width: 45em) {
+    .get-in-touch-section {
+        top: -80%;
+        transform: translate(-50%, 80%);
+    }
+}
 
-@media (min-width: 65em) {
+@media (min-width: 75em) {
     .get-in-touch-container {
         padding-inline: 6rem;
+    }
+
+    .get-in-touch-section {
+        top: -60%;
+        transform: translate(-50%, 60%);
     }
 }
 
@@ -678,6 +691,23 @@ body {
     }
 
 }
+
+/* Pages  */
+
+/* Web Design Page */
+.project-container {
+    min-height: 18rem;
+    gap: 3rem;
+    border-radius: 0.75rem;
+}
+
+
+@media (min-width: 45em) {
+    .text-box-projects {
+        width: 50%;
+    }
+}
+
 
 
 

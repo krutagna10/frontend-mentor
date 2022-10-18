@@ -92,6 +92,10 @@
     text-decoration: none;
 }
 
+.text-align-center {
+    text-align: center
+}
+
 /* Letter Spacing*/
 
 .letter-spacing-3 {

@@ -1,60 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Designo Agency Website Challenge</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/utility-classes.css">
+
+    <title>Frontend Mentor | Designo Agency Website Challenge</title>
 </head>
 <body>
-  Our Company
-  Locations
-  Contact
+<header class="main-header">
+    <div class="container header-container flex flex-justify-space-between flex-align-items-center">
+        <a href="index.html" class="logo-container">
+            <img src="Images/shared/desktop/logo-dark.png" class="logo" alt="Designo logo">
+        </a>
 
-  Web design
-  We build websites that serve as powerful marketing tools and bring memorable brand experiences.
-  
-  Express
-  A multi-carrier shipping website for ecommerce businesses
+        <nav class="main-nav">
+            <ul class="main-nav-list flex">
+                <li><a href="#" class="main-nav-link font-size-300 uppercase letter-spacing-1">Our Content</a></li>
+                <li><a href="#" class="main-nav-link font-size-300 uppercase letter-spacing-1">Locations</a></li>
+                <li><a href="#" class="main-nav-link font-size-300 uppercase letter-spacing-1">Contact</a></li>
+            </ul>
+        </nav>
 
-  Transfer
-  Site for low-cost money transfers and sending money within seconds
+        <div class="mobile-navigation">
+            <div class="mobile-navigation-button">
+                <div class="layer1"></div>
+                <div class="layer2"></div>
+                <div class="layer3"></div>
+            </div>
+        </div>
 
-  Photon
-  A state-of-the-art music player with high-resolution audio and DSP effects
+    </div>
+</header>
 
-  Builder
-  Connects users with local contractors based on their location
+<main>
+    <section class="hero-section">
+        <div class="container project-container background-peach text-align-center flex flex-direction-column flex-justify-content-center flex-align-items-center">
+            <div class="text-box-projects flow">
+                <h1 class="primary-heading">Web design</h1>
+                <p class="font-size-100 text-white"> We build websites that serve as powerful marketing tools and bring
+                    memorable brand experiences.</p>
+            </div>
+        </div>
+    </section>
 
-  Blogr
-  Blogr is a platform for creating an online blog or publication
+    <section class="websites-section">
+        <div class="container grid grid--3-columns">
+            <div class="website">
+                <div class="image-container">
+                    <img src="Images/web-design/desktop/image-express.jpg" alt="Express website">
+                </div>
+                <div class="text-box text-align-center">
 
-  Camp
-  Get expert training in coding, data, design, and digital marketing
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!--  Web design-->
+<!--  We build websites that serve as powerful marketing tools and bring memorable brand experiences.-->
+<!--  -->
+<!--  Express-->
+<!--  A multi-carrier shipping website for ecommerce businesses-->
 
-  App Design
-  View Projects
-  
-  Graphic Design
-  View Projects
-  
-  Let’s talk about your project
-  Ready to take it to the next level? Contact us today and find out how our expertise can help 
-  your business grow.
-  Get in touch
-  
-  Our company
-  Locations
-  Contact
-  
-  Designo Central Office
-  3886 Wellington Street
-  Toronto, Ontario M9C 3J5
-  
-  Contact Us (Central Office)
-  P : +1 253-863-8967
-  M : contact@designo.co
+<!--  Transfer-->
+<!--  Site for low-cost money transfers and sending money within seconds-->
+
+<!--  Photon-->
+<!--  A state-of-the-art music player with high-resolution audio and DSP effects-->
+
+<!--  Builder-->
+<!--  Connects users with local contractors based on their location-->
+
+<!--  Blogr-->
+<!--  Blogr is a platform for creating an online blog or publication-->
+
+<!--  Camp-->
+<!--  Get expert training in coding, data, design, and digital marketing-->
+
+<!--  App Design-->
+<!--  View Projects-->
+<!--  -->
+<!--  Graphic Design-->
+<!--  View Projects-->
+
+<script src="Javascript/script.js"></script>
+
 </body>
 </html>
