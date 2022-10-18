@@ -44,6 +44,12 @@
     }
 }
 
+@media (min-width: 35em) {
+    :root {
+        --footer-container-padding-top: 9rem;
+    }
+}
+
 @media (min-width: 45rem) {
     :root {
         --font-size-500: 3rem;
@@ -55,14 +61,19 @@
         --flex-gap: 1rem;
         --section-padding: 5rem 0;
         --footer-margin-top: 18rem;
-        --footer-container-padding-top: 9rem;
 
     }
 }
 
-@media (min-width: 65em) {
+@media (min-width: 55em) {
     :root {
-        --footer-container-padding-top: 5rem;
+
+    }
+}
+
+@media (min-width: 80em) {
+    :root {
+
     }
 }
 
@@ -547,13 +558,12 @@ body {
     position: relative;
 }
 
-
 .get-in-touch-section {
     position: absolute;
     width: 90%;
-    top: -30%;
+    top: -50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
 
 }
 
@@ -578,11 +588,6 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
-    .get-in-touch-section {
-        top: -28%;
-
-    }
-
     .container.get-in-touch-container {
         padding-inline: 3rem;
     }
@@ -596,29 +601,83 @@ body {
     }
 }
 
-@media (min-width: 55em) {
-    .container.get-in-touch-container {
-        padding-inline: 6rem;
+@media (min-width: 45em) {
+    .get-in-touch-section {
+        position: absolute;
+        width: 90%;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
     }
 }
 
 
+@media (min-width: 65em) {
+    .get-in-touch-container {
+        padding-inline: 6rem;
+    }
+}
+
 /* Footer */
 .footer-container {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     place-items: center;
+    text-align: center;
     padding-top: var(--footer-container-padding-top);
 }
 
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer-logo {
-    max-width: 80%;
+    max-width: 50%;
 }
 
 .footer-nav-link {
     font-size: 0.875rem;
+    transition: all 0.3s ease;
 }
 
+.footer-contact-link {
+    display: block;
+}
+
+.footer-nav-link:hover {
+    color: var(--peach);
+}
+
+.social-logo {
+    font-size: 1.75rem;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.social-logo:hover {
+    color: var(--peach);
+}
+
+@media (min-width: 45em) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        row-gap: 5rem;
+        text-align: left;
+    }
+
+    .footer-nav-list {
+        flex-direction: row !important;
+        gap: 3rem !important;
+    }
+
+    .footer-nav {
+        grid-column: span 2;
+    }
+
+}
 
 
 
