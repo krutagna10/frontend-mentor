@@ -12,7 +12,7 @@
 
   <title>Frontend Mentor | Designo Agency Website Challenge</title>
 </head>
-<body>
+<body class="graphic-design-page">
 <header class="main-header">
   <div class="container header-container flex flex-justify-space-between flex-align-items-center">
     <a href="index.html" class="logo-container">
@@ -38,23 +38,157 @@
   </div>
 </header>
 
-<!--  Graphic design-->
-<!--  We deliver eye-catching branding materials that are tailored to meet your business objectives.-->
+<main>
+  <section class="hero-section">
+    <div class="container project-container background-peach text-align-center flex flex-direction-column flex-justify-content-center flex-align-items-center">
+      <div class="text-box-projects flow">
+        <h1 class="primary-heading text-color-white">Graphic design</h1>
+        <p class="font-size-100 text-color-white"> We deliver eye-catching branding materials that are tailored to meet your business objectives.</p>
+      </div>
+    </div>
+  </section>
 
-<!--  Tim Brown-->
-<!--  A book cover designed for Tim Brown’s new release, ‘Change’-->
+  <section class="projects-section section-padding">
+    <div class="container grid grid--3-columns">
 
-<!--  Boxed water-->
-<!--  A simple packaging concept made for Boxed Water-->
+      <div class="project background-very-light-peach">
+        <div class="image-container">
+          <img src="Images/graphic-design/desktop/image-change.jpg" class="project-picture"
+               alt="Timbrown book">
+        </div>
+        <div class="project-text-box text-align-center flow">
+          <h3 class="tertiary-heading uppercase letter-spacing-3 text-color-peach">
+            Tim Brown
+          </h3>
+          <p class="text text-color-dark-grey font-size-100">
+            A book cover designed for Tim Brown’s new release, ‘Change’
+          </p>
+        </div>
+      </div>
 
-<!--  Science!-->
-<!--  A poster made in collaboration with the Federal Art Project-->
+      <div class="project background-very-light-peach">
+        <div class="image-container">
+          <img src="Images/graphic-design/desktop/image-boxed-water.jpg" class="project-picture"
+               alt="Boxed Water">
+        </div>
+        <div class="project-text-box text-align-center flow">
+          <h3 class="tertiary-heading uppercase letter-spacing-3 text-color-peach">
+            Boxed water
+          </h3>
+          <p class="text text-color-dark-grey font-size-100">
+            A simple packaging concept made for Boxed Water
+          </p>
+        </div>
+      </div>
 
-<!--  App Design-->
-<!--  View Projects-->
+      <div class="project background-very-light-peach">
+        <div class="image-container">
+          <img src="Images/graphic-design/desktop/image-science.jpg" class="project-picture"
+               alt="Science image">
+        </div>
+        <div class="project-text-box text-align-center flow">
+          <h3 class="tertiary-heading uppercase letter-spacing-3 text-color-peach">
+            Science!
+          </h3>
+          <p class="text text-color-dark-grey font-size-100">
+            A poster made in collaboration with the Federal Art Project
+          </p>
+        </div>
+      </div>
 
-<!--  Web Design-->
-<!--  View Projects-->
+    </div>
+  </section>
+
+  <section class="project-selection-section section-padding">
+    <div class="container grid grid--2-columns">
+
+      <div class="project-type web-design flex flex-justify-content-center flex-align-items-center flex-direction-column flex-gap">
+        <h2 class="secondary-heading text-color-white uppercase letter-spacing-1">
+          Web Design
+        </h2>
+        <a class="view-projects-link font-size-100 text-color-white uppercase text-decoration-none letter-spacing-3">
+          View Projects <span class="link-symbol">&#62;</span>
+        </a>
+      </div>
+
+      <div class="project-type app-design flex flex-justify-content-center flex-align-items-center flex-direction-column flex-gap">
+        <h2 class="secondary-heading text-color-white uppercase letter-spacing-1">
+          App Design
+        </h2>
+        <a class="view-projects-link font-size-100 text-color-white uppercase text-decoration-none letter-spacing-3">
+          View Projects <span class="link-symbol">&#62;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer section-padding background-black">
+  <section class="get-in-touch-section">
+    <div class="container get-in-touch-container background-peach grid grid--2-columns">
+      <div class="get-in-touch-text-box flow">
+        <h2 class="secondary-heading text-color-white">
+          Let’s talk about your project
+        </h2>
+        <p class="font-size-100 text-color-white">
+          Ready to take it to the next level? Contact us today and find out how our expertise can help your
+          business grow.
+        </p>
+      </div>
+
+      <div class="button-container grid">
+        <button class="btn get-in-touch-button uppercase">
+          Get in Touch
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="container footer-container">
+    <div class="footer-logo-container">
+      <a class="flex flex-align-items-center flex-justify-content-center" href="#"><img src="Images/shared/desktop/logo-light.png" class="footer-logo" alt="Logo light"></a>
+    </div>
+
+    <nav class="footer-nav">
+      <ul class="footer-nav-list list-style-none flex flex-direction-column flex-gap">
+        <li><a href="#" class="footer-nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Our
+          company</a></li>
+        <li><a href="#" class="footer-nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Locations</a>
+        </li>
+        <li><a href="#" class="footer-nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="address">
+      <p class="main-address footer-text-color text-bold">Designo Central Office</p>
+      <p class="sub-address footer-text-color">3886 Wellington Street</p>
+      <p class="sub-address footer-text-color">Toronto, Ontario M9C 3J5</p>
+    </div>
+
+    <div class="contact-us-box">
+      <p class="contact-us-heading footer-text-color text-bold">Contact Us (Central Office)</p>
+      <a class="footer-contact-link footer-text-color text-decoration-none" href="tel: +1 253-863-8967">P : +1
+        253-863-8967</a>
+      <a class="footer-contact-link footer-text-color text-decoration-none" href="contact@designo.co">M :
+        contact@designo.co</a>
+    </div>
+
+    <div class="social-logos flex flex-gap">
+      <a href="#"><ion-icon name="logo-facebook" class="social-logo"></ion-icon></a>
+      <a href="#"><ion-icon name="logo-youtube" class="social-logo"></ion-icon></a>
+      <a href="#"><ion-icon name="logo-twitter" class="social-logo"></ion-icon></a>
+      <a href="#"><ion-icon name="logo-pinterest" class="social-logo"></ion-icon></a>
+      <a href="#"><ion-icon name="logo-instagram" class="social-logo"></ion-icon></a>
+    </div>
+
+  </div>
+</footer>
+
+<div class="overlay hidden"></div>
+<script src="Javascript/script.js"></script>
+
 
 </body>
 </html>

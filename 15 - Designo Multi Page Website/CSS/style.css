@@ -764,7 +764,8 @@ body {
 }
 
 /* App Design Page */
-.app-design-page .web-design {
+.app-design-page .web-design,
+.graphic-design-page .web-design{
     grid-row: span 1;
 }
 
