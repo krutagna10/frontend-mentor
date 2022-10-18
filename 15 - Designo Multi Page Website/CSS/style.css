@@ -22,6 +22,7 @@
     --black: hsl(270, 3%, 11%);
     --white: hsl(0, 0%, 100%);
     --light-peach: hsl(11, 100%, 80%);
+    --very-light-peach: #FDF3F0;
     --dark-grey: hsl(264, 5%, 20%);
     --light-grey: hsl(210, 17%, 95%);
     --footer-text-color: hsl(0, 0%, 100%, 0.65);
@@ -35,6 +36,7 @@
     --section-padding: 3.75rem 0;
     --footer-margin-top: 15rem;
     --footer-container-padding-top: 12rem;
+    --border-radius-container: 0;
 
 }
 
@@ -60,7 +62,6 @@
         /* Spacing */
         --flex-gap: 1rem;
         --section-padding: 5rem 0;
-        --footer-margin-top: 18rem;
 
     }
 }
@@ -68,6 +69,12 @@
 @media (min-width: 65em) {
     :root {
         --section-padding: 4rem 0;
+    }
+}
+
+@media (min-width: 75rem) {
+    :root {
+       --border-radius-container: 0.75rem;
     }
 }
 
@@ -125,7 +132,7 @@ body {
 }
 
 .logo {
-    max-width: 60%;
+    max-width: 60% !important;
 }
 
 .main-nav {
@@ -352,6 +359,7 @@ body {
     overflow: hidden;
     gap: 3rem !important;
     padding: 3rem 0;
+    border-radius: var(--border-radius-container);
     position: relative;
 }
 
@@ -398,12 +406,10 @@ body {
         padding-bottom: 5rem;
     }
 
-
     .hero-container {
         min-height: 40rem;
         gap: 1rem;
         place-items: center;
-        border-radius: 0.75rem;
     }
 
     .hero-image {
@@ -441,7 +447,7 @@ body {
 
 /* Projects Section */
 
-.project {
+.project-type {
     min-height: 15rem;
     border-radius: 0.75rem;
     background-position: center;
@@ -453,7 +459,7 @@ body {
     text-align: center
 }
 
-.project::before {
+.project-type::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -461,7 +467,7 @@ body {
     transition: all 0.4s ease;
 }
 
-.project:hover::before {
+.project-type:hover::before {
     background-color: hsl(var(--rawPeach), 0.5);
 }
 
@@ -476,47 +482,47 @@ body {
     margin-left: 0.5rem;
 }
 
-.project.web-design {
+.project-type.web-design {
     background-image: url('../Images/home/mobile/image-web-design.jpg');
 }
 
-.project.app-design {
+.project-type.app-design {
     background-image: url('../Images/home/mobile/image-app-design.jpg');
 }
 
-.project.graphic-design {
+.project-type.graphic-design {
     background-image: url('../Images/home/mobile/image-graphic-design.jpg');
 }
 
 @media (min-width: 35em) {
-    .project.web-design {
+    .project-type.web-design {
         background-image: url('../Images/home/tablet/image-web-design.jpg');
     }
 
-    .project.app-design {
+    .project-type.app-design {
         background-image: url('../Images/home/tablet/image-app-design.jpg');
     }
 
-    .project.graphic-design {
+    .project-type.graphic-design {
         background-image: url('../Images/home/tablet/image-graphic-design.jpg');
     }
 }
 
 @media (min-width: 45em) {
-    .project {
+    .project-type {
         min-height: 20rem;
     }
 
-    .project.web-design {
+    .project-type.web-design {
         background-image: url('../Images/home/desktop/image-web-design-large.jpg');
         grid-row: span 2;
     }
 
-    .project.app-design {
+    .project-type.app-design {
         background-image: url('../Images/home/desktop/image-app-design.jpg');
     }
 
-    .project.graphic-design {
+    .project-type.graphic-design {
         background-image: url('../Images/home/desktop/image-graphic-design.jpg');
     }
 }
@@ -698,7 +704,7 @@ body {
 .project-container {
     min-height: 18rem;
     gap: 3rem;
-    border-radius: 0.75rem;
+    border-radius: var(--border-radius-container);
 }
 
 
@@ -708,6 +714,59 @@ body {
     }
 }
 
+.project {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.websites-section .image-container {
+    overflow: hidden;
+}
+
+.project-picture {
+    transition: all 0.4s ease;
+}
+
+.project:hover {
+    background-color: var(--peach) !important;
+}
+
+.project:hover .tertiary-heading {
+    color: var(--white);
+}
+.project:hover .text {
+    color: var(--white);
+}
+
+.project:hover .project-picture {
+    transform: scale(1.03);
+}
+
+.project-text-box {
+    padding: 2.125rem;
+}
+
+@media (min-width: 30em) {
+    .project {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 45em) {
+    .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* App Design Page */
+.app-design-page .web-design {
+    grid-row: span 1;
+}
 
 
 

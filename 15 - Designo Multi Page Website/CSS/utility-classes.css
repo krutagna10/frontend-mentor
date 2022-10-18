@@ -21,12 +21,14 @@
 
 .primary-heading {
     font-size: var(--font-size-500);
-    color: var(--white);
 }
 
 .secondary-heading {
     font-size: var(--font-size-400);
-    color: var(--white);
+}
+
+.tertiary-heading {
+    font-size: var(--font-size-200);
 }
 
 .section-padding {
@@ -75,6 +77,14 @@
     background-color: var(--peach);
 }
 
+.background-light-peach {
+    background-color: var(--light-peach);
+}
+
+.background-very-light-peach {
+    background-color: var(--very-light-peach);
+}
+
 .background-white {
     background-color: var(--white);
 }
@@ -107,19 +117,23 @@
 }
 
 /* Text Colors */
-.text-dark-grey {
+.text-color-dark-grey {
     color: var(--dark-grey);
 }
 
-.text-light-grey {
+.text-color-peach {
+    color: var(--peach);
+}
+
+.text-color-light-grey {
     color: var(--light-grey);
 }
 
-.text-white {
+.text-color-white {
     color: var(--white);
 }
 
-.text-black {
+.text-color-black {
     color: var(--black);
 }
 
