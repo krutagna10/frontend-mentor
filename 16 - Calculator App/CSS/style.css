@@ -14,8 +14,9 @@
     --text-color-light: hsl(0, 0%, 100%);
 
     /*  Font Size  */
+    --font-size-300: 3rem;
+    --font-size-200: 1.25rem;
     --font-size-100: 1rem;
-    --font-size-200: 1.5rem;
 
 /*     Font family*/
     --league-spartan: 'League Spartan', sans-serif;
@@ -109,13 +110,28 @@ body {
 
 .output-box {
     background-color: var(--screen-background);
-    color: var(--text-color-light);
     padding: 1.5rem 2rem;
-    text-align: right;
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: none;
+    font-size: var(--font-size-300);
+    min-height: 6rem;
 }
 
-.output-text {
-    font-size: var(--font-size-200);
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.output-text:focus {
+    outline: none;
 }
 
 .buttons-box {
@@ -124,7 +140,6 @@ body {
 }
 
 .buttons-box > button {
-    font-size: var(--font-size-200);
     font-weight: 700;
     padding: 1rem 1.5rem;
     border: none;
@@ -140,6 +155,7 @@ body {
     background-color: var(--key-background-3);
     color: var(--text-color-dark);
     box-shadow: 0 4px 0 var(--key-background-3-shadow);
+    font-size: var(--font-size-200);
 }
 
 .reset-button,

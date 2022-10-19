@@ -4,9 +4,11 @@ const equalsButton = document.querySelector('.equals-button');
 const outputText = document.querySelector('.output-text');
 const resetButton = document.querySelector('.reset-button');
 
-const result = 0;
+let result = 0;
 let str = '';
-outputText.textContent = 0;
+outputText.textContent = '';
+let operatorIndexArray = [];
+
 
 const updateOutputText = () => {
  outputText.textContent = str;
@@ -31,19 +33,43 @@ operatorButtons.forEach((operatorButton, index) => {
 
 resetButton.addEventListener('click', () => {
     str = '';
-    outputText.textContent = 0;
+    outputText.textContent = str;
 })
 
-const evaluateExpression = () => {
-    for (const element of str) {
-        if (typeof(Number(element)) === 'number') {
-            console.log(`${element} is number`);
-        } else {
-            console.log(`${element} is not a number`);
-        }
-    }
+const displayResult = () => {
+    outputText.textContent = result;
 }
 
+// const evaluateExpression = () => {
+//     let operand1 = Number(str.slice(0, operatorIndex));
+//     let operand2 = Number(str.slice(operatorIndex + 1, str.length));
+//     let operatorValue = str[operatorIndex];
+//
+//     if (operatorValue === '+') {
+//         result = operand1 + operand2;
+//         str = result;
+//         displayResult();
+//     } else if (operatorValue === '-') {
+//         result = operand1 - operand2;
+//         str = result;
+//         displayResult()
+//     } else if (operatorValue === 'x') {
+//         result = operand1 * operand2;
+//         str = result;
+//         displayResult()
+//     } else if (operatorValue === '/') {
+//         result = operand1 / operand2;
+//         str = result;
+//         displayResult();
+//     }
+// }
+
 equalsButton.addEventListener('click', () => {
-  evaluateExpression();
+    for (const element of str) {
+        if (!parseInt(element)) {
+            operatorIndexArray.push(str.indexOf(element));
+        }
+    }
+    console.log(str);
+    console.log(operatorIndexArray);
 })
