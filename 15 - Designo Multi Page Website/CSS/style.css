@@ -74,7 +74,7 @@
 
 @media (min-width: 75rem) {
     :root {
-       --border-radius-container: 0.75rem;
+        --border-radius-container: 0.75rem;
     }
 }
 
@@ -736,6 +736,7 @@ body {
 .project:hover .tertiary-heading {
     color: var(--white);
 }
+
 .project:hover .text {
     color: var(--white);
 }
@@ -765,9 +766,88 @@ body {
 
 /* App Design Page */
 .app-design-page .web-design,
-.graphic-design-page .web-design{
+.graphic-design-page .web-design {
     grid-row: span 1;
 }
 
 
+/* About Us Page*/
+.about-us-container {
+    padding-inline: 0 !important;
+}
+
+.about-us-container .about-us-text-content {
+    padding: 4rem 1rem;
+    text-align: center
+}
+
+.about-us-image-container {
+    min-height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-inline: 0;
+}
+
+.hero-section .about-us-image-container {
+    background-image: url('../Images/about/mobile/image-about-hero.jpg');
+}
+
+.talent-section .about-us-image-container {
+    background-image: url('../Images/about/mobile/image-world-class-talent.jpg');
+}
+
+@media (min-width: 35em) {
+    .hero-section .about-us-image-container {
+        background-image: url('../Images/about/tablet/image-about-hero.jpg');
+    }
+
+    .talent-section .about-us-image-container {
+        background-image: url('../Images/about/tablet/image-world-class-talent.jpg');
+    }
+
+}
+
+@media (min-width: 45em) {
+    .hero-section .about-us-container {
+        padding-inline: 0 !important;
+        grid-template-columns: 55fr 45fr;
+    }
+
+    .hero-section .about-us-image-container {
+        min-height: 30rem;
+        background-image: url('../Images/about/desktop/image-about-hero.jpg');
+        grid-column-start: 2;
+    }
+
+    .talent-section .about-us-image-container {
+        background-image: url('../Images/about/desktop/image-world-class-talent.jpg');
+    }
+
+    .talent-section .about-us-container {
+        padding-inline: 0 !important;
+        grid-template-columns: 45fr 55fr;
+    }
+
+    .talent-section .about-us-image-container {
+        min-height: 40rem;
+    }
+
+    .about-us-text-content {
+        padding-inline: clamp(2rem, 3rem, 4rem);
+        text-align: left !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-section .about-us-text-content {
+        grid-row-start: 1;
+    }
+
+    .primary-heading {
+        text-align: left;
+    }
+
+}
 
