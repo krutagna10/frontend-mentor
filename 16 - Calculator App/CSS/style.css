@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+:root {
+    --main-background: hsl(222, 26%, 31%);
+    --toggle-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+    --key-background-1: hsl(225, 21%, 49%);
+    --key-background-1-shadow: hsl(224, 28%, 35%);
+    --key-background-2: hsl(6, 63%, 50%);
+    --key-background-2-shadow: hsl(6, 70%, 34%);
+    --key-background-3: hsl(30, 25%, 89%);
+    --key-background-3-shadow: hsl(28, 16%, 65%);
+    --text-color-dark: hsl(221, 14%, 31%);
+    --text-color-light: hsl(0, 0%, 100%);
+
+    /*  Font Size  */
+    --font-size-100: 1rem;
+    --font-size-200: 1.5rem;
+
+/*     Font family*/
+    --league-spartan: 'League Spartan', sans-serif;
+}
+
+@media (min-width: 45em) {
+    :root {
+        --font-size-100: 1.5rem;
+        --font-size-200: 2rem;
+    }
+}
+
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--league-spartan);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background);
+}
+
+/* Utility Class */
+.flow > * + * {
+    margin-top: 1rem;
+}
+
+.border-radius-container {
+    border-radius: 0.75rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-4-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-justify-content-space-between {
+    justify-content: space-between;
+}
+
+.flex-align-items-center {
+    align-items: center;
+}
+
+.flex-justify-content-center {
+    justify-content: center;
+}
+
+/* Calculator Section */
+.container {
+    max-width: 50rem;
+}
+.calculator-header {
+    padding-inline: 1rem;
+}
+
+.primary-heading {
+    color: var(--text-color-light);
+    font-size: var(--font-size-200);
+}
+
+.output-box {
+    background-color: var(--screen-background);
+    color: var(--text-color-light);
+    padding: 1.5rem 2rem;
+    text-align: right;
+}
+
+.output-text {
+    font-size: var(--font-size-200);
+}
+
+.buttons-box {
+    background-color: var(--toggle-background);
+    padding: 2rem;
+}
+
+.buttons-box > button {
+    font-size: var(--font-size-200);
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+.number-button,
+.operator-button{
+    background-color: var(--key-background-3);
+    color: var(--text-color-dark);
+    box-shadow: 0 4px 0 var(--key-background-3-shadow);
+}
+
+.reset-button,
+.equals-button,
+.delete-button {
+    font-size: var(--font-size-100);
+}
+
+.reset-button,
+.equals-button {
+    grid-column: span 2;
+    padding: 0.25rem 1rem;
+}
+
+.delete-button,
+.reset-button {
+    background-color: var(--key-background-1);
+    box-shadow: 0 4px 0 var(--key-background-1-shadow);
+    color: var(--text-color-light);
+}
+
+.equals-button {
+    background-color: var(--key-background-2);
+    box-shadow: 0 4px 0 var(--key-background-2-shadow);
+    color: var(--text-color-light);
+}
+
+
+
+
+
+
+
