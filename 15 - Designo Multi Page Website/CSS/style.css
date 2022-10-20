@@ -828,7 +828,6 @@ body {
 }
 
 
-
 @media (min-width: 35em) {
     .hero-section .about-us-image-container {
         background-image: url('../Images/about/tablet/image-about-hero.jpg');
@@ -904,7 +903,7 @@ body {
 
 }
 
-@media(min-width: 65em) {
+@media (min-width: 65em) {
     .about-us-text-content {
         padding-inline: 4rem;
     }
@@ -984,7 +983,7 @@ body {
 
 @media (min-width: 45em) {
     .canada-location-container.location-container,
-    .united-kingdom-location-container .location-container{
+    .united-kingdom-location-container .location-container {
         grid-template-columns: 70fr 30fr;
     }
 
@@ -993,7 +992,7 @@ body {
     }
 
     .canada-location-container .location-image-container,
-    .united-kingdom-location-container .location-image-container{
+    .united-kingdom-location-container .location-image-container {
         grid-column-start: 2;
     }
 }
@@ -1007,22 +1006,23 @@ body {
 }
 
 
-
 /* Contacts Page */
 .contact-us-container {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: var(--border-radius-container);
 }
-
 
 .input {
     display: block;
     background: transparent;
     border: none;
     color: var(--white);
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    padding: 1rem 0.75rem 0.5rem 0.75rem;
     border-bottom: 1px solid var(--white);
+    width: 100%;
 }
+
 
 .input:focus {
     outline: none;
@@ -1032,4 +1032,33 @@ body {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--white);
     opacity: 0.5;
+}
+
+.submit-button {
+    justify-self: center;
+}
+
+.contact-us-container .text-content {
+    text-align: center;
+}
+
+@media (min-width: 35em) {
+    .contact-us-container {
+        padding-inline: 4rem !important;
+    }
+
+    .submit-button {
+        justify-self: end;
+    }
+
+    .contact-us-container .text-content {
+        text-align: left;
+    }
+}
+
+@media (min-width: 45em) {
+
+    .contact-us-container .text-content {
+        padding-right: 4rem;
+    }
 }

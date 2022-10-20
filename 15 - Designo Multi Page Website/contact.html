@@ -39,9 +39,9 @@
 </header>
 
 <section class="hero-section">
-  <div class="container grid grid--2-columns contact-us-container background-peach">
+  <div class="container grid grid--2-columns  contact-us-container background-peach">
 
-    <div class="text-content flow">
+    <div class="text-content flow flex flex-direction-column flex-justify-content-center">
       <h1 class="primary-heading text-color-white">
         Contact us
       </h1>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="user-input-container">
-      <form action="#" class="flow">
+      <form action="#" class="flow grid">
         <label for="person-name">
           <input type="text" name="person-name" class="input" id="person-name" placeholder="Name">
         </label>
@@ -61,11 +61,63 @@
         <label for="phone-number">
           <input type="number" name="phone-number" class="input" id="phone-number" placeholder="Phone Number">
         </label>
-        <button class="submit btn-light uppercase">
+        <label for="message">
+          <textarea name="message" id="message" cols="30" rows="5" class="input" placeholder="Your Message"></textarea>
+        </label>
+        <button class="submit-button btn-light uppercase">
           Submit
         </button>
       </form>
     </div>
+  </div>
+</section>
+
+<section class="locations-section section-padding">
+
+  <div class="container grid grid--3-columns">
+
+    <div class="location flex flex-direction-column flex-align-items-center">
+      <div class="image-container">
+        <img src="Images/shared/desktop/illustration-canada.svg" alt="Canada illustration">
+      </div>
+      <div class="text-box grid grid-place-items-center text-align-center">
+        <h3 class="tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
+          Canada
+        </h3>
+        <a href="locations.html" class="btn-dark see-location-button uppercase text-decoration-none">
+          See Location
+        </a>
+      </div>
+    </div>
+
+    <div class="location flex flex-direction-column flex-align-items-center">
+      <div class="image-container">
+        <img src="Images/shared/desktop/illustration-australia.svg" alt="Australia illustration">
+      </div>
+      <div class="text-box grid grid-place-items-center text-align-center">
+        <h3 class="tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
+          Australia
+        </h3>
+        <a href="locations.html" class="btn-dark see-location-button uppercase text-decoration-none">
+          See Location
+        </a>
+      </div>
+    </div>
+
+    <div class="location flex flex-direction-column flex-align-items-center">
+      <div class="image-container">
+        <img src="Images/shared/desktop/illustration-united-kingdom.svg" alt="United Kingdom illustration">
+      </div>
+      <div class="text-box grid grid-place-items-center text-align-center">
+        <h3 class="tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
+          United Kingdom
+        </h3>
+        <a href="locations.html" class="btn-dark see-location-button uppercase text-decoration-none">
+          See Location
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
