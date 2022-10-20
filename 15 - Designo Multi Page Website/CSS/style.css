@@ -1009,3 +1009,27 @@ body {
 
 
 /* Contacts Page */
+.contact-us-container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+.input {
+    display: block;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    border-bottom: 1px solid var(--white);
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--white);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--white);
+    opacity: 0.5;
+}
