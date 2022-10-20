@@ -366,6 +366,8 @@ body {
 .hero-text-box {
     padding-inline: 1rem;
     text-align: center;
+    display: grid;
+    place-items: center;
 }
 
 .hero-image-box {
@@ -397,6 +399,7 @@ body {
 @media (min-width: 35em) {
     .hero-text-box {
         padding-inline: 6rem;
+        place-items: start;
     }
 }
 
@@ -798,6 +801,34 @@ body {
     background-image: url('../Images/about/mobile/image-world-class-talent.jpg');
 }
 
+.deal-section .about-us-image-container {
+    background-image: url('../Images/about/mobile/image-real-deal.jpg');
+}
+
+/* Locations Page */
+.location .text-box {
+    padding: 2rem 2rem;
+}
+
+.location .image-container {
+    position: relative;
+}
+
+.location .image-container::before {
+    content: '';
+    position: absolute;
+    background-image: url('../Images/shared/desktop/bg-pattern-small-circle.svg');
+    inset: 0;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.see-location-button {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+
+
 @media (min-width: 35em) {
     .hero-section .about-us-image-container {
         background-image: url('../Images/about/tablet/image-about-hero.jpg');
@@ -805,6 +836,10 @@ body {
 
     .talent-section .about-us-image-container {
         background-image: url('../Images/about/tablet/image-world-class-talent.jpg');
+    }
+
+    .deal-section .about-us-image-container {
+        background-image: url('../Images/about/tablet/image-real-deal.jpg');
     }
 
 }
@@ -825,12 +860,20 @@ body {
         background-image: url('../Images/about/desktop/image-world-class-talent.jpg');
     }
 
+    .deal-section .about-us-image-container {
+        background-image: url('../Images/about/desktop/image-real-deal.jpg');
+    }
+
     .talent-section .about-us-container {
         padding-inline: 0 !important;
         grid-template-columns: 45fr 55fr;
     }
 
     .talent-section .about-us-image-container {
+        min-height: 40rem;
+    }
+
+    .deal-section .about-us-image-container {
         min-height: 40rem;
     }
 
@@ -846,8 +889,17 @@ body {
         grid-row-start: 1;
     }
 
-    .primary-heading {
-        text-align: left;
+    .deal-section .about-us-container {
+        grid-template-columns: 55fr 45fr;
+    }
+
+    .deal-section .about-us-text-content {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    .deal-section .about-us-image-container {
+        grid-column-start: 2;
     }
 
 }
@@ -857,3 +909,61 @@ body {
         padding-inline: 4rem;
     }
 }
+
+
+/* Locations Page*/
+.location-container {
+    padding-inline: 0 !important;
+    gap: 0 !important;
+}
+
+.canada-location-section .location-image-container {
+    background-image: url('../Images/locations/desktop/image-map-canada.png');
+    min-height: 20rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-row-start: 1;
+}
+
+.canada-location-section .text-content {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+@media (min-width: 35em) {
+    .location-container {
+        gap: 1.25rem !important;
+        padding-inline: 1rem !important;
+    }
+
+    .location-container .secondary-heading {
+        grid-column: span 2;
+    }
+
+    .location-container .text-content {
+        text-align: left;
+        border-radius: 0.75rem;
+        padding-inline: 2rem;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .canada-location-section .location-image-container {
+        background-image: url('../Images/locations/tablet/image-map-canada.png');
+        border-radius: 0.75rem;
+    }
+}
+
+@media (min-width: 45em) {
+    .location-container {
+        grid-template-columns: 70fr 30fr;
+    }
+
+    .canada-location-section .location-image-container {
+        grid-column-start: 2;
+    }
+}
+
