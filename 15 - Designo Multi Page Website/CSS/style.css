@@ -774,9 +774,10 @@ body {
 /* About Us Page*/
 .about-us-container {
     padding-inline: 0 !important;
+    gap: 0 !important;
 }
 
-.about-us-container .about-us-text-content {
+.about-us-text-content {
     padding: 4rem 1rem;
     text-align: center
 }
@@ -834,7 +835,7 @@ body {
     }
 
     .about-us-text-content {
-        padding-inline: clamp(2rem, 3rem, 4rem);
+        padding-inline: 2rem;
         text-align: left !important;
         display: flex;
         flex-direction: column;
@@ -851,3 +852,8 @@ body {
 
 }
 
+@media(min-width: 65em) {
+    .about-us-text-content {
+        padding-inline: 4rem;
+    }
+}
