@@ -917,18 +917,33 @@ body {
     gap: 0 !important;
 }
 
-.canada-location-section .location-image-container {
-    background-image: url('../Images/locations/desktop/image-map-canada.png');
+.location-image-container {
     min-height: 20rem;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.canada-location-container .location-image-container {
+    background-image: url('../Images/locations/desktop/image-map-canada.png');
     grid-row-start: 1;
 }
 
-.canada-location-section .text-content {
+.australia-location-container .location-image-container {
+    background-image: url('../Images/locations/desktop/image-map-australia.png');
+}
+
+.united-kingdom-location-container .location-image-container {
+    background-image: url('../Images/locations/desktop/image-map-united-kingdom.png');
+    grid-row-start: 1;
+}
+
+.location-container .text-content {
     padding: 3rem 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media (min-width: 35em) {
@@ -951,19 +966,46 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
-    .canada-location-section .location-image-container {
+    .canada-location-container .location-image-container {
         background-image: url('../Images/locations/tablet/image-map-canada.png');
+        border-radius: 0.75rem;
+    }
+
+    .australia-location-container .location-image-container {
+        background-image: url('../Images/locations/tablet/image-map-australia.png');
+        border-radius: 0.75rem;
+    }
+
+    .united-kingdom-location-container .location-image-container {
+        background-image: url('../Images/locations/tablet/image-map-uk.png');
         border-radius: 0.75rem;
     }
 }
 
 @media (min-width: 45em) {
-    .location-container {
+    .canada-location-container.location-container,
+    .united-kingdom-location-container .location-container{
         grid-template-columns: 70fr 30fr;
     }
 
-    .canada-location-section .location-image-container {
+    .australia-location-container.location-container {
+        grid-template-columns: 30fr 70fr;
+    }
+
+    .canada-location-container .location-image-container,
+    .united-kingdom-location-container .location-image-container{
         grid-column-start: 2;
     }
 }
 
+@media (min-width: 65em) {
+    .location-container .text-content {
+        text-align: left;
+        border-radius: 0.75rem;
+        padding-inline: 4rem;
+    }
+}
+
+
+
+/* Contacts Page */
