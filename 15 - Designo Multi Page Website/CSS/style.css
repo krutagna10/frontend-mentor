@@ -580,6 +580,9 @@ body {
     position: absolute;
     background-image: url('../Images/shared/desktop/bg-pattern-small-circle.svg');
     inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media (min-width: 35em) {
