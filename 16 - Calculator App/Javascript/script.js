@@ -16,6 +16,10 @@ const updateOutputText = () => {
  outputText.textContent = str;
 }
 
+const displayResult = () => {
+    outputText.textContent = result;
+}
+
 const findOperatorIndex = () => {
     for (const element of str) {
         if (parseInt(element) !== 0 && !parseInt(element)) {
@@ -31,19 +35,19 @@ const evaluateExpression = () => {
 
     if (operatorValue === '+') {
         result = operand1 + operand2;
-        str = result;
+        str = String(result);
         displayResult();
     } else if (operatorValue === '-') {
         result = operand1 - operand2;
-        str = result;
+        str = String(result);
         displayResult()
     } else if (operatorValue === 'x') {
         result = operand1 * operand2;
-        str = result;
+        str = String(result);
         displayResult()
     } else if (operatorValue === '/') {
         result = operand1 / operand2;
-        str = result;
+        str = String(result);
         displayResult();
     }
 }
@@ -75,9 +79,6 @@ resetButton.addEventListener('click', () => {
     outputText.textContent = str;
 })
 
-const displayResult = () => {
-    outputText.textContent = result;
-}
 
 equalsButton.addEventListener('click', () => {
     findOperatorIndex();
