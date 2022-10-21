@@ -312,6 +312,7 @@ body {
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
+    pointer-events: none;
 }
 
 
@@ -341,6 +342,7 @@ body {
         opacity: 1;
         transform: translateX(0);
         visibility: visible;
+        pointer-events: auto;
     }
 
     .main-nav-link {
@@ -542,7 +544,7 @@ body {
 
 
 /* Intro Content */
-.intro-text {
+.advantages-text {
     text-align: center;
 }
 
@@ -550,8 +552,19 @@ body {
     gap: 1.25rem;
 }
 
-.intro-image-container > img {
+.advantage-image-container {
+    position: relative;
+}
+
+.advantage-image-container > img {
     margin: 0 auto;
+}
+
+.advantage-image-container::before {
+    content: '';
+    position: absolute;
+    background-image: url('../Images/shared/desktop/bg-pattern-small-circle.svg');
+    inset: 0;
 }
 
 @media (min-width: 35em) {
@@ -947,6 +960,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .canada-location-container .location-image-container {
@@ -1049,6 +1063,38 @@ body {
     width: 100%;
 }
 
+.input-container {
+    position: relative;
+}
+
+.error {
+    position: absolute;
+    top: 65%;
+    right: 0;
+    transform: translateY(-65%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.show-error .error {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.error-message {
+    font-size: 0.75rem;
+}
+
+/* Removing arrows in input:number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 
 .input:focus {
     outline: none;
@@ -1083,7 +1129,6 @@ body {
 }
 
 @media (min-width: 45em) {
-
     .contact-us-container .text-content {
         padding-right: 4rem;
     }
