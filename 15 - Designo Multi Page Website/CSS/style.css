@@ -1046,8 +1046,9 @@ body {
 }
 
 
-/* Contacts Page */
+/* Contact Page */
 .contact-us-container {
+    max-height: 33rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     border-radius: var(--border-radius-container);
@@ -1087,6 +1088,11 @@ body {
     font-size: 0.75rem;
 }
 
+/* Setting resize none*/
+textarea {
+    resize: none;
+}
+
 /* Removing arrows in input:number*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -1094,14 +1100,22 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+/* Changing autocomplete color*/
+input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
 
+/*Change text in autofill text box*/
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--white) !important;
+}
 
 .input:focus {
     outline: none;
     border-bottom: 2px solid var(--white);
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
     color: var(--white);
     opacity: 0.5;
 }

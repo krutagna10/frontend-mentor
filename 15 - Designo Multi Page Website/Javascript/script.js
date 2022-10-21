@@ -36,7 +36,8 @@ for (const graphicDesignProject of graphicDesignProjects) {
 }
 
 
-// Form
+// Form Validation
+
 const inputContainers = document.querySelectorAll('.input-container');
 const nameContainer = document.querySelector('.name-container')
 const emailContainer = document.querySelector('.email-container');
