@@ -830,6 +830,8 @@ body {
 .about-us-container {
     padding-inline: 0 !important;
     gap: 0 !important;
+    border-radius: var(--border-radius-container);
+    overflow: hidden;
 }
 
 .about-us-text-content {
