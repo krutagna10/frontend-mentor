@@ -15,7 +15,6 @@
     --font-size-200: 1.25rem;
     --font-size-100: 0.9375rem;
 
-
     /* Colors */
     --peach: hsl(11, 73%, 66%);
     --dark-peach: hsl(11, 66%, 64%);
@@ -26,16 +25,18 @@
     --dark-grey: hsl(264, 5%, 20%);
     --light-grey: hsl(210, 17%, 95%);
     --footer-text-color: hsl(0, 0%, 100%, 0.65);
-
     /* Raw Colors*/
     --rawBlack: 270, 3%, 11%;
     --rawPeach: 1, 73%, 66%;
+
     /* Spacing */
     --flex-gap: 1rem;
     --flow-space: 1.25rem;
     --section-padding: 3.75rem 0;
     --footer-margin-top: 15rem;
     --footer-container-padding-top: 12rem;
+
+    /* Border Radius*/
     --border-radius-container: 0;
 
 }
@@ -63,6 +64,7 @@
         --flex-gap: 1rem;
         --section-padding: 5rem 0;
 
+
     }
 }
 
@@ -72,12 +74,12 @@
     }
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 80rem) {
     :root {
+        /* Border Radius*/
         --border-radius-container: 0.75rem;
     }
 }
-
 
 /* CSS Reset*/
 * {
@@ -125,7 +127,9 @@ body {
     position: relative;
 }
 
-/* Header */
+/*************/
+/*  Header  */
+/************/
 .main-header {
     padding: 1.5rem 0;
     position: relative;
@@ -153,6 +157,14 @@ body {
     visibility: hidden;
 }
 
+/* When the navigation is open */
+.navigation-open .main-nav {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: none;
+}
+
 .main-nav-list {
     list-style: none;
     gap: 1rem;
@@ -173,12 +185,12 @@ body {
     background-color: hsl(var(--rawBlack), 0.4);
 }
 
+/* Showing overlay when user clicks on mobile navigation button*/
 .overlay.hidden {
     display: none;
 }
 
-/* Mobile nav */
-
+/* Mobile navigation */
 .mobile-navigation-button {
     background: transparent;
     cursor: pointer;
@@ -202,6 +214,7 @@ body {
     border-radius: 0.25rem;
 }
 
+/* Mobile Naviagtion animation*/
 .mobile-navigation-button.active .layer1 {
     animation: slide-down 0.35s ease-in-out forwards;
 }
@@ -306,18 +319,8 @@ body {
     }
 }
 
-
-/* When the navigation is open */
-.navigation-open .main-nav {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    pointer-events: none;
-}
-
-
 @media (min-width: 45em) {
-   .logo-container {
+    .logo-container {
         max-width: 40%;
     }
 
@@ -330,6 +333,7 @@ body {
         display: none;
     }
 
+    /* Changing position of main nav*/
     .main-nav {
         background-color: var(--white);
         position: static;
@@ -360,7 +364,11 @@ body {
 }
 
 
-/* Hero-section*/
+/*****************/
+/*  (Main Page)  */
+/*****************/
+
+/* Hero Section */
 .hero-section {
     padding-bottom: 3.75rem;
 }
@@ -461,7 +469,6 @@ body {
 }
 
 /* Projects Section */
-
 .project-type {
     min-height: 15rem;
     border-radius: 0.75rem;
@@ -543,7 +550,7 @@ body {
 }
 
 
-/* Intro Content */
+/* Advantages Section */
 .advantages-text {
     text-align: center;
 }
@@ -742,7 +749,9 @@ body {
 
 /* Pages  */
 
-/* Web Design Page */
+/*********************/
+/*  Web Design Page  */
+/********************/
 .project-container {
     min-height: 18rem;
     gap: 3rem;
@@ -806,14 +815,18 @@ body {
     }
 }
 
-/* App Design Page */
+/*********************************************/
+/*  App Design Page and Graphic Design Page  */
+/********************************************/
 .app-design-page .web-design,
 .graphic-design-page .web-design {
     grid-row: span 1;
 }
 
 
-/* About Us Page*/
+/*********************/
+/*  About Us Page  */
+/********************/
 .about-us-container {
     padding-inline: 0 !important;
     gap: 0 !important;
@@ -844,7 +857,7 @@ body {
     background-image: url('../Images/about/mobile/image-real-deal.jpg');
 }
 
-/* Locations Page */
+/* Location grid*/
 .location .text-box {
     padding: 2rem 2rem;
 }
@@ -949,7 +962,9 @@ body {
 }
 
 
-/* Locations Page*/
+/*********************/
+/*  Locations Page  */
+/********************/
 .location-container {
     padding-inline: 0 !important;
     gap: 0 !important;
@@ -1046,7 +1061,9 @@ body {
 }
 
 
-/* Contact Page */
+/*******************/
+/*  Contacts Page  */
+/******************/
 .contact-us-container {
     max-height: 33rem;
     padding-top: 3rem;
@@ -1106,7 +1123,7 @@ input:-webkit-autofill {
 }
 
 /*Change text in autofill text box*/
-input:-webkit-autofill{
+input:-webkit-autofill {
     -webkit-text-fill-color: var(--white) !important;
 }
 
