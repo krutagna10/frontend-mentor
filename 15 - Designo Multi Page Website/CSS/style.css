@@ -327,6 +327,12 @@ body {
 
 
 @media (min-width: 45em) {
+    .main-header {
+        padding: 2.5rem 0;
+        position: relative;
+    }
+
+
     .logo-container {
         max-width: 40%;
     }
