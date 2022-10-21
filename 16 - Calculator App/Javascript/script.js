@@ -3,11 +3,13 @@ const operatorButtons = document.querySelectorAll('.operator-button');
 const equalsButton = document.querySelector('.equals-button');
 const outputText = document.querySelector('.output-text');
 const resetButton = document.querySelector('.reset-button');
+const deleteButton = document.querySelector('.delete-button');
 
 let result = 0;
 let operatorIndex = -1;
 let str = '';
 outputText.textContent = '';
+let arr = [];
 
 
 const updateOutputText = () => {
@@ -46,7 +48,6 @@ const evaluateExpression = () => {
     }
 }
 
-
 numberButtons.forEach((numberButton, index) => {
     numberButton.addEventListener('click', () => {
         let numberValue =  numberButton.textContent;
@@ -57,11 +58,15 @@ numberButtons.forEach((numberButton, index) => {
 
 operatorButtons.forEach((operatorButton, index) => {
     operatorButton.addEventListener('click', () => {
-        console.log(operatorButton.textContent);
+        arr.push(str);
+        findOperatorIndex();
+        if (arr.length >= 2) {
+            evaluateExpression()
+        }
         let operatorValue = operatorButton.textContent;
         str = str + operatorValue;
         updateOutputText();
-        findOperatorIndex();
+
     })
 })
 
@@ -74,9 +79,12 @@ const displayResult = () => {
     outputText.textContent = result;
 }
 
-
-
 equalsButton.addEventListener('click', () => {
     findOperatorIndex();
     evaluateExpression();
+})
+
+deleteButton.addEventListener('click', () => {
+    str = str.replace(str.charAt(str.length - 1), '');
+    updateOutputText();
 })
