@@ -22,11 +22,21 @@ const hideMobileNavigation = () => {
     mobileNavigationButton.classList.remove('active')
 }
 
+// When the user click on escape key
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         hideMobileNavigation();
     }
 })
+
+// When the width is greater than 768 pixels
+window.addEventListener("resize", function() {
+    if (window.innerWidth > 768) {
+        hideMobileNavigation()
+    }
+});
+
+
 
 // When the user clicks on any project container
 for (const webDesignProject of webDesignProjects) {
