@@ -136,7 +136,7 @@ body {
 }
 
 .logo {
-    max-width: 50% !important;
+    max-width: 60% !important;
 }
 
 .main-nav {
@@ -150,7 +150,7 @@ body {
     display: flex;
     align-items: center;
     transition: all 0.4s ease;
-    z-index: 1;
+    z-index: 99;
     /* Hiding navigation */
     opacity: 0;
     transform: translateX(100%);
@@ -162,7 +162,7 @@ body {
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .main-nav-list {
@@ -185,7 +185,7 @@ body {
     background-color: hsl(var(--rawBlack), 0.4);
 }
 
-/* Showing overlay when user clicks on mobile navigation button*/
+ /* Showing overlay when user clicks on mobile navigation button */
 .overlay.hidden {
     display: none;
 }
@@ -214,7 +214,7 @@ body {
     border-radius: 0.25rem;
 }
 
-/* Mobile Naviagtion animation*/
+/* Mobile Navigation animation*/
 .mobile-navigation-button.active .layer1 {
     animation: slide-down 0.35s ease-in-out forwards;
 }
@@ -319,13 +319,16 @@ body {
     }
 }
 
+@media (min-width: 30em) {
+    .logo {
+        max-width: 50% !important;
+    }
+}
+
+
 @media (min-width: 45em) {
     .logo-container {
         max-width: 40%;
-    }
-
-    .logo {
-        max-width: 50% !important;
     }
 
     /* Hiding mobile navigation */
@@ -585,6 +588,12 @@ body {
     .advantage {
         flex-direction: column;
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 55em) {
+    .advantage-container {
+        gap: 3rem !important;
     }
 }
 
@@ -958,6 +967,12 @@ body {
 }
 
 @media (min-width: 65em) {
+    .location-demo-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 65em) {
     .about-us-text-content {
         padding-inline: 4rem;
     }
@@ -1067,7 +1082,6 @@ body {
 /*  Contacts Page  */
 /******************/
 .contact-us-container {
-    max-height: 33rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     border-radius: var(--border-radius-container);
