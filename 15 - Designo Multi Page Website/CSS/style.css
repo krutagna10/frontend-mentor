@@ -183,6 +183,7 @@ body {
     display: block;
     inset: 0;
     background-color: hsl(var(--rawBlack), 0.4);
+    z-index:2
 }
 
  /* Showing overlay when user clicks on mobile navigation button */
@@ -416,6 +417,7 @@ body {
 
 .call-to-action-button {
     align-self: center;
+    z-index:1
 }
 
 @media (min-width: 30em) {
@@ -428,7 +430,6 @@ body {
 @media (min-width: 35em) {
     .hero-text-box {
         padding-inline: 6rem;
-        place-items: start;
     }
 }
 
@@ -463,6 +464,7 @@ body {
     .hero-text-box {
         padding-inline: 1rem;
         text-align: left;
+        place-items: start;
     }
 
     .call-to-action-button {
