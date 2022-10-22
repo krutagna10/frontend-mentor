@@ -134,6 +134,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--main-background);
+    transition: all 0.5s ease;
 }
 
 /* Calculator Section */
@@ -184,6 +185,11 @@ body {
 /* Theme toggle*/
 label {
     cursor: pointer;
+}
+
+.label-wrapper {
+    gap: 1.5rem;
+    justify-content: end;
 }
 
 input[type='radio'] {
@@ -327,6 +333,9 @@ input[type='radio'] {
     color: var(--text-color-light);
 }
 
+.theme-3-active .equals-button {
+    color: hsl(221, 14%, 31%);
+}
 
 
 

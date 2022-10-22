@@ -6,6 +6,11 @@ const equalsButton = document.querySelector('.equals-button');
 const outputText = document.querySelector('.output-text');
 const resetButton = document.querySelector('.reset-button');
 const deleteButton = document.querySelector('.delete-button');
+const body = document.querySelector('body');
+const theme1Input = document.querySelector('#theme-1-radio');
+const theme2Input = document.querySelector('#theme-2-radio');
+const theme3Input = document.querySelector('#theme-3-radio');
+const themeCheckMarks = document.querySelectorAll('.theme-checkmark');
 
 let operatorIndex = -1;
 let str = '';
@@ -47,7 +52,7 @@ const evaluateExpression = () => {
     }
 }
 
-numberButtons.forEach((numberButton, index) => {
+numberButtons.forEach((numberButton) => {
     numberButton.addEventListener('click', () => {
         let numberValue = numberButton.textContent;
         str = str + numberValue;
@@ -55,7 +60,7 @@ numberButtons.forEach((numberButton, index) => {
     })
 })
 
-operatorButtons.forEach((operatorButton, index) => {
+operatorButtons.forEach((operatorButton) => {
     operatorButton.addEventListener('click', () => {
         let lastStrCharacter = parseInt(str.charAt(str.length - 1));
 
@@ -90,19 +95,12 @@ resetButton.addEventListener('click', () => {
 
 // Deleter Button
 deleteButton.addEventListener('click', () => {
+    console.log(str);
     str = str.replace(str.charAt(str.length - 1), '');
     updateOutputText();
 })
 
-
-
-
-const body = document.querySelector('body');
-const theme1Input = document.querySelector('#theme-1-radio');
-const theme2Input = document.querySelector('#theme-2-radio');
-const theme3Input = document.querySelector('#theme-3-radio');
-const themeCheckMarks = document.querySelectorAll('.theme-checkmark');
-
+// Theme Toggle
 let currentActive = -1;
 
 const updateThemeCheckMarks = () => {
