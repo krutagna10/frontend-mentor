@@ -101,22 +101,56 @@ const body = document.querySelector('body');
 const theme1Input = document.querySelector('#theme-1-radio');
 const theme2Input = document.querySelector('#theme-2-radio');
 const theme3Input = document.querySelector('#theme-3-radio');
+const themeCheckMarks = document.querySelectorAll('.theme-checkmark');
 
-// theme1Input.value = 'on';
+let currentActive = -1;
 
-theme1Input.addEventListener('input', () => {
-    body.classList.remove('theme-2-active');
-    body.classList.remove('theme-3-active');
+const updateThemeCheckMarks = () => {
+    themeCheckMarks.forEach((themeCheckMark, index) => {
+        if (currentActive === index) {
+            themeCheckMark.classList.add('current-active');
+        } else {
+            themeCheckMark.classList.remove('current-active');
+        }
+    })
+}
+
+const updateClasses = () => {
+    for (let index = 0; index < 3; index++) {
+        if (currentActive === index) {
+            body.classList.add(`theme-${index + 1}-active`);
+        } else {
+            body.classList.remove(`theme-${index + 1}-active`);
+        }
+    }
+}
+
+theme1Input.addEventListener('click', () => {
+    //Theme Checkmark
+    currentActive = 0;
+    updateThemeCheckMarks();
+
+    // Updating classes
+    updateClasses();
+
 })
 
-theme2Input.addEventListener('input', () => {
-    body.classList.add('theme-2-active');
-    body.classList.remove('theme-3-active');
+theme2Input.addEventListener('click', () => {
+    //Theme Checkmark
+    currentActive = 1;
+    updateThemeCheckMarks();
+
+    // Updating classes
+    updateClasses();
+
 })
 
-theme3Input.addEventListener('input', () => {
-    body.classList.remove('theme-2-active');
-    body.classList.add('theme-3-active');
+theme3Input.addEventListener('click', () => {
+    //Theme Checkmark
+    currentActive = 2;
+    updateThemeCheckMarks();
+
+    // Updating classes
+    updateClasses();
 });
-
 

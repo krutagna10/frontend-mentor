@@ -12,6 +12,7 @@
     --key-background-3-shadow: hsl(28, 16%, 65%);
     --text-color-dark: hsl(221, 14%, 31%);
     --text-color-light: hsl(0, 0%, 100%);
+    --active-theme-background: #C85402;
 
     /*  Font Size  */
     --font-size-300: 3rem;
@@ -158,11 +159,6 @@ body {
     /*gap: 2rem;*/
 }
 
-.radio-wrapper {
-    /*padding: 0.5rem 0.2rem;*/
-    border-radius: 0.75rem;
-}
-
 label {
     cursor: pointer;
 }
@@ -172,18 +168,41 @@ input[type='radio'] {
 }
 
 .theme-radio-button {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
+.label-wrapper {
+    padding-inline: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-light);
+}
+
+.theme-radio-button:nth-child(1) {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.theme-radio-button:nth-child(3) {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
 .theme-checkmark {
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    background: hsl(6deg,63%,50%);
+    display: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--active-theme-background);
     border-radius: 50%;
-    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.current-active.theme-checkmark {
+   display: inline-block;
 }
 
 /* Output Box*/
