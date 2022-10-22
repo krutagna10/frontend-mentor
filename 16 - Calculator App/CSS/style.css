@@ -18,9 +18,40 @@
     --font-size-200: 1.25rem;
     --font-size-100: 1rem;
 
-/*     Font family*/
+    /*     Font family*/
     --league-spartan: 'League Spartan', sans-serif;
 }
+
+.theme-2-active {
+    /* Theme 2*/
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 5%, 81%);
+    --key-background-1: hsl(185, 42%, 37%);
+    --key-background-1-shadow: hsl(185, 58%, 25%);
+    --key-background-2: hsl(25, 98%, 40%);
+    --key-background-2-shadow: hsl(25, 99%, 27%);
+    --key-background-3: hsl(45, 7%, 89%);
+    --key-background-3-shadow: hsl(35, 11%, 61%);
+    --text-color-dark: hsl(60, 10%, 19%);
+    --text-color-light: hsl(0, 0%, 100%);
+}
+
+.theme-3-active {
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+    --key-background-1: hsl(281, 89%, 26%);
+    --key-background-1-shadow: hsl(285, 91%, 52%);
+    --key-background-2: hsl(176, 100%, 44%);
+    --key-background-2-shadow: hsl(177, 92%, 70%);
+    --key-background-3: hsl(268, 47%, 21%);
+    --key-background-3-shadow: hsl(290, 70%, 36%);
+    --text-color-dark: hsl(198, 20%, 13%);
+    --text-color-medium: hsl(52, 100%, 62%);
+    --text-color-light: hsl(0, 0%, 100%);
+}
+
 
 @media (min-width: 45em) {
     :root {
@@ -45,16 +76,6 @@ img {
 button,
 input {
     font-family: inherit;
-}
-
-body {
-    min-height: 100vh;
-    font-family: var(--league-spartan);
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-background);
 }
 
 /* Utility Class */
@@ -101,22 +122,75 @@ body {
     justify-content: center;
 }
 
+
+/* Body Styling*/
+body {
+    min-height: 100vh;
+    font-family: var(--league-spartan);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background);
+}
+
 /* Calculator Section */
+.calculator-section {
+    padding: 2rem 0;
+}
+
 .container {
     max-width: 35rem;
 }
+
 .calculator-header {
     padding-inline: 1rem;
 }
 
+/* Header */
 .primary-heading {
     color: var(--text-color-light);
     font-size: var(--font-size-200);
 }
 
+/* Theme toggle*/
+.label-wrapper {
+    /*gap: 2rem;*/
+}
+
+.radio-wrapper {
+    /*padding: 0.5rem 0.2rem;*/
+    border-radius: 0.75rem;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.theme-radio-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.theme-checkmark {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background: hsl(6deg,63%,50%);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Output Box*/
+
 .output-box {
     background-color: var(--screen-background);
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
     color: var(--text-color-light);
     display: flex;
     justify-content: center;
@@ -125,7 +199,7 @@ body {
     gap: 0.5rem;
     border: none;
     font-size: var(--font-size-300);
-    min-height: 6rem;
+    min-height: 4rem;
     word-break: break-all;
 }
 
@@ -148,7 +222,7 @@ body {
 
 .buttons-box > button {
     font-weight: 700;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1rem;
     border: none;
     display: flex;
     justify-content: center;
@@ -157,8 +231,14 @@ body {
     cursor: pointer;
 }
 
+@media (min-width: 45em) {
+    .buttons-box > button {
+        padding: 1rem 1.5rem;
+    }
+}
+
 .number-button,
-.operator-button{
+.operator-button {
     background-color: var(--key-background-3);
     color: var(--text-color-dark);
     box-shadow: 0 4px 0 var(--key-background-3-shadow);
@@ -189,8 +269,6 @@ body {
     box-shadow: 0 4px 0 var(--key-background-2-shadow);
     color: var(--text-color-light);
 }
-
-
 
 
 

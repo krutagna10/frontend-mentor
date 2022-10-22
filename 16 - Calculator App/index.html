@@ -18,13 +18,35 @@
                 <div class="heading-container">
                     <h1 class="primary-heading">calc</h1>
                 </div>
-                <div class="theme-toggle-box">
-                    Theme 1
+                <div class="theme-toggle-box flex">
+<!--                    <div class="text">Theme</div>-->
+                    <div class="theme-slider">
+                        <div class="label-wrapper flex flex-justify-content-space-between">
+                            <label for="theme-1-radio">1</label>
+                            <label for="theme-2-radio">2</label>
+                            <label for="theme-3-radio">3</label>
+                        </div>
+                        <div class="radio-wrapper flex flex-justify-content-space-between">
+                            <label class="theme-radio-button" for="theme-1-radio">
+                                <input type="radio" name="theme-1-radio" class="theme-radios" id="theme-1-radio">
+                                <span class="theme-checkmark"></span>
+                            </label>
+                            <label class="theme-radio-button" for="theme-2-radio">
+                                <input type="radio" name="theme-1-radio" class="theme-radios" id="theme-2-radio">
+                                <span class="theme-checkmark"></span>
+                            </label>
+                            <label class="theme-radio-button" for="theme-3-radio">
+                                <input type="radio" name="theme-1-radio" class="theme-radios" id="theme-3-radio">
+                                <span class="theme-checkmark"></span>
+                            </label>
+                        </div>
+
+                    </div>
                 </div>
             </header>
 
             <div class="output-box border-radius-container">
-              <div class="output-text"></div>
+                <div class="output-text"></div>
             </div>
 
             <div class="buttons-box grid grid-4-columns border-radius-container">

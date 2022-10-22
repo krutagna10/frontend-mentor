@@ -33,20 +33,16 @@ const evaluateExpression = () => {
     let operand2 = Number(numbersArray[1]);
 
     if (operatorValue === '+') {
-        let result = (operand1 + operand2).toFixed(12);
-        str = String(result);
+        str = String((operand1 + operand2));
         updateOutputText();
     } else if (operatorValue === '-') {
-        let result = (operand1 - operand2).toFixed(12);
-        str = String(result);
+        str = String((operand1 - operand2));
         updateOutputText()
     } else if (operatorValue === 'x') {
-        let result = (operand1 * operand2).toFixed(12);
-        str = String(result);
+        str = String((operand1 * operand2));
         updateOutputText()
     } else if (operatorValue === '/') {
-        let result = (operand1 / operand2).toFixed(12);
-        str = String(result);
+        str = String((operand1 / operand2));
         updateOutputText();
     }
 }
@@ -97,3 +93,30 @@ deleteButton.addEventListener('click', () => {
     str = str.replace(str.charAt(str.length - 1), '');
     updateOutputText();
 })
+
+
+
+
+const body = document.querySelector('body');
+const theme1Input = document.querySelector('#theme-1-radio');
+const theme2Input = document.querySelector('#theme-2-radio');
+const theme3Input = document.querySelector('#theme-3-radio');
+
+// theme1Input.value = 'on';
+
+theme1Input.addEventListener('input', () => {
+    body.classList.remove('theme-2-active');
+    body.classList.remove('theme-3-active');
+})
+
+theme2Input.addEventListener('input', () => {
+    body.classList.add('theme-2-active');
+    body.classList.remove('theme-3-active');
+})
+
+theme3Input.addEventListener('input', () => {
+    body.classList.remove('theme-2-active');
+    body.classList.add('theme-3-active');
+});
+
+
