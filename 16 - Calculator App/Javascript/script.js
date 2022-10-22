@@ -33,19 +33,19 @@ const evaluateExpression = () => {
     let operand2 = Number(numbersArray[1]);
 
     if (operatorValue === '+') {
-        let result = (operand1 + operand2).toFixed(5);
+        let result = (operand1 + operand2).toFixed(12);
         str = String(result);
         updateOutputText();
     } else if (operatorValue === '-') {
-        let result = (operand1 - operand2).toFixed(5);
+        let result = (operand1 - operand2).toFixed(12);
         str = String(result);
         updateOutputText()
     } else if (operatorValue === 'x') {
-        let result = (operand1 * operand2).toFixed(5);
+        let result = (operand1 * operand2).toFixed(12);
         str = String(result);
         updateOutputText()
     } else if (operatorValue === '/') {
-        let result = (operand1 / operand2).toFixed(5);
+        let result = (operand1 / operand2).toFixed(12);
         str = String(result);
         updateOutputText();
     }
