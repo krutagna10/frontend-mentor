@@ -151,7 +151,7 @@ body {
 /* Header */
 .primary-heading {
     color: var(--text-color-light);
-    font-size: var(--font-size-200);
+    font-size: 2rem;
 }
 
 /* Theme toggle*/
