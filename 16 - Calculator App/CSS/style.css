@@ -12,7 +12,7 @@
     --key-background-3-shadow: hsl(28, 16%, 65%);
     --text-color-dark: hsl(221, 14%, 31%);
     --text-color-light: hsl(0, 0%, 100%);
-    --active-theme-background: #C85402;
+    --active-theme-background: hsl(6, 63%, 50%);
 
     /*  Font Size  */
     --font-size-300: 3rem;
@@ -36,6 +36,7 @@
     --key-background-3-shadow: hsl(35, 11%, 61%);
     --text-color-dark: hsl(60, 10%, 19%);
     --text-color-light: hsl(0, 0%, 100%);
+    --active-theme-background: hsl(185, 42%, 37%);
 }
 
 .theme-3-active {
@@ -48,9 +49,9 @@
     --key-background-2-shadow: hsl(177, 92%, 70%);
     --key-background-3: hsl(268, 47%, 21%);
     --key-background-3-shadow: hsl(290, 70%, 36%);
-    --text-color-dark: hsl(198, 20%, 13%);
-    --text-color-medium: hsl(52, 100%, 62%);
+    --text-color-dark: hsl(52, 100%, 62%);
     --text-color-light: hsl(0, 0%, 100%);
+    --active-theme-background: hsl(176, 100%, 44%);
 }
 
 
@@ -142,6 +143,14 @@ body {
 
 .container {
     max-width: 35rem;
+    padding-inline: 1rem;
+}
+
+@media (min-width: 45em) {
+    .container {
+        max-width: 35rem;
+        min-width: 35rem;
+    }
 }
 
 .calculator-header {
@@ -154,11 +163,25 @@ body {
     font-size: 2rem;
 }
 
-/* Theme toggle*/
-.label-wrapper {
-    /*gap: 2rem;*/
+.theme-2-active .primary-heading,
+.theme-3-active .primary-heading{
+    color: var(--text-color-dark);
 }
 
+.secondary-heading {
+    color: var(--text-color-light);
+    font-size: 0.8125rem;
+    align-self: center;
+    margin-right: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.theme-2-active .secondary-heading,
+.theme-3-active .secondary-heading{
+    color: var(--text-color-dark);
+}
+
+/* Theme toggle*/
 label {
     cursor: pointer;
 }
@@ -178,6 +201,11 @@ input[type='radio'] {
     padding-inline: 0.5rem;
     margin-bottom: 0.5rem;
     color: var(--text-color-light);
+}
+
+.theme-2-active .label-wrapper,
+.theme-3-active .label-wrapper{
+    color: var(--text-color-dark);
 }
 
 .theme-radio-button:nth-child(1) {
@@ -222,11 +250,19 @@ input[type='radio'] {
     word-break: break-all;
 }
 
+.theme-2-active .output-box,
+.theme-3-active .output-box{
+    color: var(--text-color-dark);
+}
+
 @media (min-width: 45em) {
     .output-box {
         padding: 1.5rem 2rem;
+        min-height: 6rem;
     }
 }
+
+/* Button Box */
 
 .buttons-box {
     background-color: var(--toggle-background);
@@ -238,6 +274,8 @@ input[type='radio'] {
         padding-inline: 2rem;
     }
 }
+
+/* Buttons Styling */
 
 .buttons-box > button {
     font-weight: 700;
