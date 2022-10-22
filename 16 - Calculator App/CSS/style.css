@@ -14,6 +14,10 @@
     --text-color-light: hsl(0, 0%, 100%);
     --active-theme-background: hsl(6, 63%, 50%);
 
+    --number-operator-button-hover: #fff;
+    --reset-delete-button-hover: #A2B2E1;
+    --equals-button-hover: #F96B5B;
+
     /*  Font Size  */
     --font-size-300: 3rem;
     --font-size-200: 1.25rem;
@@ -37,6 +41,9 @@
     --text-color-dark: hsl(60, 10%, 19%);
     --text-color-light: hsl(0, 0%, 100%);
     --active-theme-background: hsl(185, 42%, 37%);
+
+    --reset-delete-button-hover: #62B5BC;
+    --equals-button-hover: #FF8A38;
 }
 
 .theme-3-active {
@@ -52,6 +59,10 @@
     --text-color-dark: hsl(52, 100%, 62%);
     --text-color-light: hsl(0, 0%, 100%);
     --active-theme-background: hsl(176, 100%, 44%);
+
+    --number-operator-button-hover: #8631AF;
+    --reset-delete-button-hover: #8631AF;
+    --equals-button-hover: #93FFF8;
 }
 
 
@@ -134,7 +145,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--main-background);
-    transition: all 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
 /* Calculator Section */
@@ -201,6 +212,10 @@ input[type='radio'] {
     height: 1.8rem;
     background-color: rgba(0, 0, 0, 0.3);
     position: relative;
+}
+
+.theme-3-active .theme-radio-button {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .label-wrapper {
@@ -292,6 +307,7 @@ input[type='radio'] {
     align-items: center;
     border-radius: 0.75rem;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 @media (min-width: 45em) {
@@ -306,6 +322,11 @@ input[type='radio'] {
     color: var(--text-color-dark);
     box-shadow: 0 4px 0 var(--key-background-3-shadow);
     font-size: var(--font-size-200);
+}
+
+.number-button:hover,
+.operator-button:hover {
+    background-color: var(--number-operator-button-hover);
 }
 
 .reset-button,
@@ -327,10 +348,19 @@ input[type='radio'] {
     color: var(--text-color-light);
 }
 
+.delete-button:hover,
+.reset-button:hover {
+    background-color: var(--reset-delete-button-hover);
+}
+
 .equals-button {
     background-color: var(--key-background-2);
     box-shadow: 0 4px 0 var(--key-background-2-shadow);
     color: var(--text-color-light);
+}
+
+.equals-button:hover {
+    background-color: var(--equals-button-hover);
 }
 
 .theme-3-active .equals-button {
