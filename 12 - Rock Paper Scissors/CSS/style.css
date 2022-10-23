@@ -123,6 +123,7 @@ body {
     border: 2px solid var(--white);
     border-radius: 50%;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .difficulty-button:hover {
@@ -196,8 +197,22 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.logo-container::after {
+    position: absolute;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.15);
+    inset: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+
 .logo-container:hover img {
     transform: scale(1.15);
+}
+
+.logo-container:hover::after {
+    transform: scale(1.35);
 }
 
 /* Individual container*/
@@ -384,6 +399,7 @@ body {
     position: absolute;
     bottom: 2rem;
     right: 5%;
+    cursor: pointer;
 }
 
 .rules-button:hover {
@@ -414,7 +430,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 1rem 0;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
     border-radius: 0.75rem;
 }
 
@@ -425,6 +442,7 @@ body {
 .close-icon {
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .close-icon img {

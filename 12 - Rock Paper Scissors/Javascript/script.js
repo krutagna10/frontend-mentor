@@ -75,6 +75,11 @@ function displayChoiceImage() {
     computerPickImage.src = `Images/icon-${computerChoiceValue}.svg`;
 }
 
+function removeResultImage() {
+    userPickContainer.classList.remove(`${userChoice}-container`);
+    computerPickContainer.classList.remove(`${computerChoiceValue}-container`);
+}
+
 // Results that can occur during the game
 function userWin() {
     result.textContent = 'You Win';
@@ -231,8 +236,7 @@ lizardElement.addEventListener('click', () => {
 //Play again Button
 playAgainButton.addEventListener('click', () => {
     body.classList.remove('game-finished');
-    userPickContainer.classList.remove(`${userChoice}-container`);
-    computerPickContainer.classList.remove(`${computerChoiceValue}-container`);
+    removeResultImage()
 })
 
 // Difficulty
@@ -241,6 +245,7 @@ easyDifficulty.addEventListener('click', () => {
     body.classList.remove('game-finished');
     easyDifficulty.classList.add('current-active');
     hardDifficulty.classList.remove('current-active');
+    removeResultImage()
 
     // Making the score 0
     score = 0;
@@ -256,6 +261,7 @@ hardDifficulty.addEventListener('click', () => {
     body.classList.remove('game-finished');
     hardDifficulty.classList.add('current-active');
     easyDifficulty.classList.remove('current-active');
+    removeResultImage();
 
     // Making the score 0
     score = 0;
