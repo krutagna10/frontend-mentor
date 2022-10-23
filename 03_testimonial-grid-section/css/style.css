@@ -23,7 +23,7 @@
     --greenCardBackground: linear-gradient(180deg, #32ebc9 0%, rgba(52, 215, 185, 0.9) 100%)
 }
 
-/* CSS Reset */
+/* css Reset */
 * {
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ body {
 
 
 .testimonial-grid {
-    padding: 3.6rem 0rem;
+    padding: 3.6rem 0;
 }
 
 .testimonial {
@@ -57,7 +57,7 @@ body {
     gap: 1.8rem;
     border-radius: 1rem;
     color: var(--White);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     transition: transform 0.6s ease;
 }
 
