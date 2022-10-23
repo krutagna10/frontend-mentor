@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="122d1ede-67ee-428e-9aeb-e69277b242dc" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2GWT6O8pz82fDEkThAbq8AkDccJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -36,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666503167145</updated>
-      <workItem from="1666503168726" duration="317000" />
+      <workItem from="1666503168726" duration="718000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666503445243</created>
@@ -45,7 +51,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666503445243</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".">
+      <created>1666503642617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666503642617</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
