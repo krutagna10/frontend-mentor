@@ -133,7 +133,7 @@
     }
 
     .hero-image::before {
-        background-image: url("../Images/bg-intro-mobile.svg");
+        background-image: url("../images/bg-intro-mobile.svg");
         background-size: cover;
         background-position: center bottom;
         width: 140%;

@@ -2,7 +2,7 @@
 
 ### Screenshot
 
-![](Screenshot/Screenshot.png)
+![](screenshot/Screenshot.png)
 
 ### Links
 
@@ -10,9 +10,9 @@
 
 ### Built with
 
-- Semantic HTML5 markup
-- Flexbox
-- CSS Grid
+- HTML
+- CSS
+- Vanilla Javascript
 
 
 ## Author

@@ -202,7 +202,7 @@ body {
 
 .hero-image::before {
     content: '';
-    background-image: url("../Images/bg-intro-desktop.svg");
+    background-image: url("../images/bg-intro-desktop.svg");
     background-position: center left;
     background-repeat: no-repeat;
     width: 110%;
