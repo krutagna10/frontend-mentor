@@ -27,7 +27,7 @@ const updateOutputText = () => {
 
 const findOperatorIndex = () => {
     for (const element of str) {
-        if (parseInt(element) !== 0 && !parseInt(element)) {
+        if (parseInt(element) !== 0 && !parseInt(element) && element !== '.') {
             operatorIndex = str.indexOf(element);
         }
     }
@@ -77,7 +77,6 @@ operatorButtons.forEach((operatorButton) => {
             let operatorValue = operatorButton.textContent;
             str = str + operatorValue;
             updateOutputText();
-
         }
     })
 })
@@ -98,7 +97,6 @@ resetButton.addEventListener('click', () => {
 
 // Deleter Button
 deleteButton.addEventListener('click', () => {
-    console.log(str);
     str = str.replace(str.charAt(str.length - 1), '');
     updateOutputText();
 })
