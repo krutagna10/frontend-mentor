@@ -11,6 +11,9 @@ const theme1Input = document.querySelector('#theme-1-radio');
 const theme2Input = document.querySelector('#theme-2-radio');
 const theme3Input = document.querySelector('#theme-3-radio');
 const themeCheckMarks = document.querySelectorAll('.theme-checkmark');
+const multiplicationOperatorButton = document.querySelector('.operator-button.multiplication');
+
+multiplicationOperatorButton.textContent = "\u00D7";
 
 let operatorIndex = -1;
 let str = '';
@@ -43,12 +46,12 @@ const evaluateExpression = () => {
     } else if (operatorValue === '-') {
         str = String((operand1 - operand2));
         updateOutputText()
-    } else if (operatorValue === 'x') {
-        str = String((operand1 * operand2));
-        updateOutputText()
     } else if (operatorValue === '/') {
         str = String((operand1 / operand2));
         updateOutputText();
+    } else if (operatorValue === "\u00D7") {
+        str = String((operand1 * operand2));
+        updateOutputText()
     }
 }
 
