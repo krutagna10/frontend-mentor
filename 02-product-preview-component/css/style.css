@@ -47,14 +47,12 @@ body {
     overflow: hidden;
 }
 
-.img img {
+img,
+picture {
     max-width: 100%;
     display: block;
 }
 
-.img .mobile-image {
-    display: none;
-}
 
 .card-content {
     padding: 3.6rem;
@@ -127,13 +125,6 @@ button.call-to-action:hover {
 @media only screen and (max-width: 628px) {
     .grid {
         grid-template-columns: 1fr;
-    }
-    .img .desktop-image {
-        display: none;
-    }
-
-    .img .mobile-image {
-        display: block;
     }
 
     .card-content {

@@ -14,10 +14,10 @@
   <main>
     <div class="container">
       <div class="grid">
-        <div class="img">
-          <img src="images/image-product-desktop.jpg" class="desktop-image" alt="">
-          <img src="images/image-product-mobile.jpg" class="mobile-image" alt="">
-        </div>
+        <picture>
+          <source media="(max-width: 628px)" srcset="images/image-product-mobile.jpg">
+          <img src="images/image-product-desktop.jpg" alt="Product" style="width:auto;">
+        </picture>
         <div class="card-content">
           <h6 class="product-category">Perfume</h6>
           <h2 class="product-name">Gabrielle Essence Eau De Parfum</h2>
