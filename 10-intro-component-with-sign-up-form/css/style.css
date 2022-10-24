@@ -43,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--red);
-    background-image: url('../Images/bg-intro-mobile.png');
+    background-image: url('../images/bg-intro-mobile.png');
 }
 
 .container {
@@ -254,7 +254,7 @@ input {
 
 @media (max-width: 38em) {
     body {
-        background-image: url('../Images/bg-intro-desktop.png');
+        background-image: url('../images/bg-intro-desktop.png');
     }
 
     .container {
