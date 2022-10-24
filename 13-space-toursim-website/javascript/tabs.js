@@ -1,4 +1,4 @@
-// Destination Page
+// destination Page
 const destinationPlanets = document.querySelectorAll('.destination-planet');
 const secondaryNavLinks = document.querySelectorAll('.destination-nav-link');
 const planetImage = document.querySelector('.planet-image');
@@ -34,7 +34,7 @@ secondaryNavLinks.forEach((navLink, index) => {
 })
 
 
-// Crew Page
+// crew Page
 
 const crewNavLinks = document.querySelectorAll('.crew-nav-link');
 const crewImage = document.querySelector('.crew-image');
@@ -56,13 +56,13 @@ function updateCrewLink() {
 
 function updateCrewPicture() {
   if (currentActiveCrewLink === 0) {
-      crewImage.src = 'Images/Crew/image-douglas-hurley.webp';
+      crewImage.src = 'images/crew/image-douglas-hurley.webp';
   } else if (currentActiveCrewLink === 1) {
-      crewImage.src = 'Images/Crew/image-mark-shuttleworth.webp'
+      crewImage.src = 'images/crew/image-mark-shuttleworth.webp'
   } else if (currentActiveCrewLink === 2) {
-      crewImage.src = 'Images/Crew/image-victor-glover.webp'
+      crewImage.src = 'images/crew/image-victor-glover.webp'
   } else {
-      crewImage.src = 'Images/Crew/image-anousheh-ansari.webp'
+      crewImage.src = 'images/crew/image-anousheh-ansari.webp'
   }
 }
 
@@ -75,7 +75,7 @@ crewNavLinks.forEach((crewNavLink, index) => {
 })
 
 
-// Technology Page
+// technology Page
 const technologyNavLinks = document.querySelectorAll('.technology-nav-link');
 const technologyTextContent = document.querySelectorAll('.technology-text-content');
 const landScapeTechnologyImage = document.querySelector('.landscape-image');
@@ -98,14 +98,14 @@ const updateTechnologyLink = () => {
 
 const updateTechnologyImage = () => {
     if (currentActiveTechnologyLink === 0) {
-        landScapeTechnologyImage.src = 'Images/Technology/image-launch-vehicle-landscape.jpg';
-        potraitTechnologyImage.src = 'Images/Technology/image-launch-vehicle-portrait.jpg';
+        landScapeTechnologyImage.src = 'images/technology/image-launch-vehicle-landscape.jpg';
+        potraitTechnologyImage.src = 'images/technology/image-launch-vehicle-portrait.jpg';
     } else if (currentActiveTechnologyLink === 1) {
-        landScapeTechnologyImage.src = 'Images/Technology/image-spaceport-landscape.jpg';
-        potraitTechnologyImage.src = 'Images/Technology/image-spaceport-portrait.jpg';
+        landScapeTechnologyImage.src = 'images/technology/image-spaceport-landscape.jpg';
+        potraitTechnologyImage.src = 'images/technology/image-spaceport-portrait.jpg';
     } else {
-        landScapeTechnologyImage.src = 'Images/Technology/image-space-capsule-landscape.jpg';
-        potraitTechnologyImage.src = 'Images/Technology/image-space-capsule-portrait.jpg';
+        landScapeTechnologyImage.src = 'images/technology/image-space-capsule-landscape.jpg';
+        potraitTechnologyImage.src = 'images/technology/image-space-capsule-portrait.jpg';
     }
 }
 
