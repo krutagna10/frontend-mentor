@@ -159,7 +159,7 @@ body {
     max-width: 30rem;
     margin: 0 auto;
     padding: 1rem 0;
-    background-image: url('../Images/bg-triangle.svg');
+    background-image: url('../images/bg-triangle.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -258,7 +258,7 @@ body {
     max-width: 30rem;
     margin: 0 auto;
     padding: 0 1rem;
-    background-image: url('../Images/bg-pentagon.svg');
+    background-image: url('../images/bg-pentagon.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 60%;

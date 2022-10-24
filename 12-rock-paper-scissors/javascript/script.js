@@ -252,8 +252,8 @@ easyDifficulty.addEventListener('click', () => {
     scoreElement.textContent = 0;
 
     // Changing images according to difficulty level
-    headingLogo.src = 'Images/logo.svg';
-    rulesImageElement.src = 'Images/image-rules.svg';
+    headingLogo.src = 'images/logo.svg';
+    rulesImageElement.src = 'images/image-rules.svg';
 })
 
 hardDifficulty.addEventListener('click', () => {
@@ -268,8 +268,8 @@ hardDifficulty.addEventListener('click', () => {
     scoreElement.textContent = 0;
 
     // Changing images according to difficulty level
-    headingLogo.src = 'Images/logo-bonus.svg';
-    rulesImageElement.src = 'Images/image-rules-bonus.svg';
+    headingLogo.src = 'images/logo-bonus.svg';
+    rulesImageElement.src = 'images/image-rules-bonus.svg';
 })
 
 // Rules
