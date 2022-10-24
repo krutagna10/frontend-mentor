@@ -81,7 +81,7 @@
     }
 }
 
-/* CSS Reset*/
+/* css Reset*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -515,28 +515,28 @@ body {
 }
 
 .project-type.web-design {
-    background-image: url('../Images/home/mobile/image-web-design.jpg');
+    background-image: url('../images/home/mobile/image-web-design.jpg');
 }
 
 .project-type.app-design {
-    background-image: url('../Images/home/mobile/image-app-design.jpg');
+    background-image: url('../images/home/mobile/image-app-design.jpg');
 }
 
 .project-type.graphic-design {
-    background-image: url('../Images/home/mobile/image-graphic-design.jpg');
+    background-image: url('../images/home/mobile/image-graphic-design.jpg');
 }
 
 @media (min-width: 35em) {
     .project-type.web-design {
-        background-image: url('../Images/home/tablet/image-web-design.jpg');
+        background-image: url('../images/home/tablet/image-web-design.jpg');
     }
 
     .project-type.app-design {
-        background-image: url('../Images/home/tablet/image-app-design.jpg');
+        background-image: url('../images/home/tablet/image-app-design.jpg');
     }
 
     .project-type.graphic-design {
-        background-image: url('../Images/home/tablet/image-graphic-design.jpg');
+        background-image: url('../images/home/tablet/image-graphic-design.jpg');
     }
 }
 
@@ -546,16 +546,16 @@ body {
     }
 
     .project-type.web-design {
-        background-image: url('../Images/home/desktop/image-web-design-large.jpg');
+        background-image: url('../images/home/desktop/image-web-design-large.jpg');
         grid-row: span 2;
     }
 
     .project-type.app-design {
-        background-image: url('../Images/home/desktop/image-app-design.jpg');
+        background-image: url('../images/home/desktop/image-app-design.jpg');
     }
 
     .project-type.graphic-design {
-        background-image: url('../Images/home/desktop/image-graphic-design.jpg');
+        background-image: url('../images/home/desktop/image-graphic-design.jpg');
     }
 }
 
@@ -580,7 +580,7 @@ body {
 .advantage-image-container::before {
     content: '';
     position: absolute;
-    background-image: url('../Images/shared/desktop/bg-pattern-small-circle.svg');
+    background-image: url('../images/shared/desktop/bg-pattern-small-circle.svg');
     inset: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -866,15 +866,15 @@ body {
 }
 
 .hero-section .about-us-image-container {
-    background-image: url('../Images/about/mobile/image-about-hero.jpg');
+    background-image: url('../images/about/mobile/image-about-hero.jpg');
 }
 
 .talent-section .about-us-image-container {
-    background-image: url('../Images/about/mobile/image-world-class-talent.jpg');
+    background-image: url('../images/about/mobile/image-world-class-talent.jpg');
 }
 
 .deal-section .about-us-image-container {
-    background-image: url('../Images/about/mobile/image-real-deal.jpg');
+    background-image: url('../images/about/mobile/image-real-deal.jpg');
 }
 
 /* Location grid*/
@@ -889,7 +889,7 @@ body {
 .location .image-container::before {
     content: '';
     position: absolute;
-    background-image: url('../Images/shared/desktop/bg-pattern-small-circle.svg');
+    background-image: url('../images/shared/desktop/bg-pattern-small-circle.svg');
     inset: 0;
     /*transform: translate(-50%, -50%);*/
 }
@@ -902,15 +902,15 @@ body {
 
 @media (min-width: 35em) {
     .hero-section .about-us-image-container {
-        background-image: url('../Images/about/tablet/image-about-hero.jpg');
+        background-image: url('../images/about/tablet/image-about-hero.jpg');
     }
 
     .talent-section .about-us-image-container {
-        background-image: url('../Images/about/tablet/image-world-class-talent.jpg');
+        background-image: url('../images/about/tablet/image-world-class-talent.jpg');
     }
 
     .deal-section .about-us-image-container {
-        background-image: url('../Images/about/tablet/image-real-deal.jpg');
+        background-image: url('../images/about/tablet/image-real-deal.jpg');
     }
 
 }
@@ -923,16 +923,16 @@ body {
 
     .hero-section .about-us-image-container {
         min-height: 30rem;
-        background-image: url('../Images/about/desktop/image-about-hero.jpg');
+        background-image: url('../images/about/desktop/image-about-hero.jpg');
         grid-column-start: 2;
     }
 
     .talent-section .about-us-image-container {
-        background-image: url('../Images/about/desktop/image-world-class-talent.jpg');
+        background-image: url('../images/about/desktop/image-world-class-talent.jpg');
     }
 
     .deal-section .about-us-image-container {
-        background-image: url('../Images/about/desktop/image-real-deal.jpg');
+        background-image: url('../images/about/desktop/image-real-deal.jpg');
     }
 
     .talent-section .about-us-container {
@@ -1005,16 +1005,16 @@ body {
 }
 
 .canada-location-container .location-image-container {
-    background-image: url('../Images/locations/desktop/image-map-canada.png');
+    background-image: url('../images/locations/desktop/image-map-canada.png');
     grid-row-start: 1;
 }
 
 .australia-location-container .location-image-container {
-    background-image: url('../Images/locations/desktop/image-map-australia.png');
+    background-image: url('../images/locations/desktop/image-map-australia.png');
 }
 
 .united-kingdom-location-container .location-image-container {
-    background-image: url('../Images/locations/desktop/image-map-united-kingdom.png');
+    background-image: url('../images/locations/desktop/image-map-united-kingdom.png');
     grid-row-start: 1;
 }
 
@@ -1047,17 +1047,17 @@ body {
     }
 
     .canada-location-container .location-image-container {
-        background-image: url('../Images/locations/tablet/image-map-canada.png');
+        background-image: url('../images/locations/tablet/image-map-canada.png');
         border-radius: 0.75rem;
     }
 
     .australia-location-container .location-image-container {
-        background-image: url('../Images/locations/tablet/image-map-australia.png');
+        background-image: url('../images/locations/tablet/image-map-australia.png');
         border-radius: 0.75rem;
     }
 
     .united-kingdom-location-container .location-image-container {
-        background-image: url('../Images/locations/tablet/image-map-uk.png');
+        background-image: url('../images/locations/tablet/image-map-uk.png');
         border-radius: 0.75rem;
     }
 }
