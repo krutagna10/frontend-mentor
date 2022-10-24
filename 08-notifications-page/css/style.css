@@ -117,7 +117,6 @@ body {
 /* Photos */
 
 .profile-container img {
-    width: 100%;
     object-fit: cover;
     display: block;
     height: 3rem;
@@ -143,7 +142,7 @@ body {
 }
 
 .user-name {
-    font-size: var(--fontSize17);
+    font-size: var(--font-size-17);
     text-decoration: none;
     font-weight: 800;
     margin-right: 0.25rem;
