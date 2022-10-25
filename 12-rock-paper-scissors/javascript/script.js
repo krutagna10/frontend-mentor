@@ -30,27 +30,13 @@ let score = 0;
 // Computer Choice
 let computerChoice = (game) => {
     if (game === 'original') {
-        let random = 1 + parseInt(Math.random() * 3);
-        if (random === 1) {
-            return 'rock';
-        } else if (random === 2) {
-            return 'paper';
-        } else {
-            return 'scissors';
-        }
+        let choices = ['rock', 'paper', 'scissors'];
+        let random = parseInt(Math.random() * 3);
+        return choices[random];
     } else {
-        let random = 1 + parseInt(Math.random() * 5);
-        if (random === 1) {
-            return 'scissors';
-        } else if (random === 2) {
-            return 'spock';
-        } else if (random === 3) {
-            return 'paper';
-        } else if (random === 4) {
-            return 'lizard';
-        } else {
-            return 'rock';
-        }
+        let random = parseInt(Math.random() * 5);
+        let choices = ['scissors', 'spock', 'paper', 'lizard', 'rock'];
+       return choices[random];
     }
 }
 
@@ -70,9 +56,9 @@ const decrementScore = () => {
 // Display images on result tab
 function displayChoiceImage() {
     userPickContainer.classList.add(`${userChoice}-container`);
-    userPickImage.src = `Images/icon-${userChoice}.svg`;
+    userPickImage.src = `images/icon-${userChoice}.svg`;
     computerPickContainer.classList.add(`${computerChoiceValue}-container`);
-    computerPickImage.src = `Images/icon-${computerChoiceValue}.svg`;
+    computerPickImage.src = `images/icon-${computerChoiceValue}.svg`;
 }
 
 function removeResultImage() {

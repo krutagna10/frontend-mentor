@@ -1,4 +1,4 @@
-# Frontend Mentor - Rock Paper Scissors
+# Rock Paper Scissors
 
 ### Screenshot
 
@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://rock-paper-scissors-10.netlify.app/]
+- Live Site URL: [https://rock-paper-scissors-10.vercel.app/]
 
 ### Built with
 
@@ -14,7 +14,6 @@
 - CSS 
 - Vanilla Javascript
 
-## Author
-- Frontend Mentor - [@krutagna10](https://www.frontendmentor.io/profile/krutagna10)
+
 
 
