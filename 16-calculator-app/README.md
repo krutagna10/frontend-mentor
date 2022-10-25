@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://calculator-app-10.vercel.app/]
+- Live Site URL: [https://calculator-app-10.netlify.app/]
 
 ### Built with
 
@@ -14,3 +14,5 @@
 - CSS
 - Vanilla Javascript
 
+## Author
+- Frontend Mentor - [@krutagna10](https://www.frontendmentor.io/profile/krutagna10)
