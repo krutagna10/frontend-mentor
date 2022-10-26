@@ -1,0 +1,20 @@
+:root {
+    /* Font Family*/
+    --font-family-outfit: 'Outfit', sans-serif;
+
+    /*  Colors */
+    --light-blue: hsl(178, 60%, 48%);
+    --light-blue-hover: hsl(178, 75%, 65%);
+    --light-yellow: hsl(39, 88%, 58%);
+    --light-yellow-hover: hsl(39, 100%, 69%);
+    --dark-navy: hsl(202, 32%, 15%);
+    --semi-dark-navy: hsl(199, 35%, 19%);
+    --silver: hsl(198, 23%, 72%);
+    --silver-hover: hsl(197, 33%, 89%);
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: var(--font-family-outfit);
+}
