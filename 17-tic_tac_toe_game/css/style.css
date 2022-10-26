@@ -9,6 +9,10 @@
     --font-size-200: 0.875rem;
     --font-size-100: 0.875rem;
 
+    /* Font weights */
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
     /*  Colors */
     --light-blue: hsl(178, 60%, 48%);
     --light-blue-hover: hsl(178, 75%, 65%);
@@ -49,4 +53,17 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     font-family: var(--font-family-outfit);
+    background-color: var(--dark-navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.choice-button {
+    display: block;
+    min-width: 5rem;
+    min-height: 5rem;
+    border: 1px solid black;
+    background-color: lightgrey;
 }
