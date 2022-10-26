@@ -2,6 +2,13 @@
     /* Font Family*/
     --font-family-outfit: 'Outfit', sans-serif;
 
+    /* Font sizes */
+    --font-size-500: 1.5rem;
+    --font-size-400: 1.25rem;
+    --font-size-300: 1rem;
+    --font-size-200: 0.875rem;
+    --font-size-100: 0.875rem;
+
     /*  Colors */
     --light-blue: hsl(178, 60%, 48%);
     --light-blue-hover: hsl(178, 75%, 65%);
@@ -11,6 +18,31 @@
     --semi-dark-navy: hsl(199, 35%, 19%);
     --silver: hsl(198, 23%, 72%);
     --silver-hover: hsl(197, 33%, 89%);
+}
+
+@media (min-width: 48em) {
+   :root {
+       --font-size-500: 2.5rem;
+       --font-size-400: 1.5rem;
+       --font-size-300: 1.25rem;
+       --font-size-200: 1rem;
+   }
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
 }
 
 body {

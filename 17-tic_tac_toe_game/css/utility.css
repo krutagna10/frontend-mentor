@@ -1,0 +1,74 @@
+.container {
+    max-width: 80rem;
+    padding-inline: 1rem;
+}
+
+/* Layouts */
+.grid {
+    display: grid;
+}
+
+.grid-3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-justify-space-between {
+    justify-content: space-between;
+}
+
+/* Font size */
+.font-size-500 {
+    font-size: var(--font-size-500);
+}
+
+.font-size-400 {
+    font-size: var(--font-size-400);
+}
+
+.font-size-300 {
+    font-size: var(--font-size-300);
+}
+
+.font-size-200 {
+    font-size: var(--font-size-200);
+}
+
+.font-size-100 {
+    font-size: var(--font-size-100);
+}
+
+/* Background*/
+.background-light-blue {
+    background-color: var(--light-blue);
+}
+
+.background-light-yellow {
+    background-color: var(--light-yellow);
+}
+
+.background-dark-navy {
+    background-color: var(--dark-navy);
+}
+
+/* Text Color */
+.text-color-silver {
+    color: var(--silver);
+}
+
+.text-color-dark-navy {
+    color: var(--dark-navy);
+}
+
+
