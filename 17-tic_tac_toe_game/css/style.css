@@ -115,3 +115,17 @@ body {
 .game-active .game-section {
     display: block;
 }
+
+.game__wrapper {
+    gap: 1rem;
+}
+
+.choice-button {
+    min-width: 7rem;
+    min-height: 7rem;
+    border: 1px solid red;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    cursor: pointer;
+}
