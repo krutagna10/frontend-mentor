@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="122d1ede-67ee-428e-9aeb-e69277b242dc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/utility.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/utility.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/choice-selection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README-template.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Web Development/Projects/frontend-mentor/17-tic_tac_toe_game",
+    "last_opened_file_path": "D:/Web Development/Projects/frontend-mentor/05-easy_bank_landing_page",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -67,7 +64,7 @@
       <workItem from="1666762376094" duration="21000" />
       <workItem from="1666795720059" duration="786000" />
       <workItem from="1666800094344" duration="4387000" />
-      <workItem from="1666842300159" duration="4603000" />
+      <workItem from="1666842300159" duration="5192000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666503445243</created>
@@ -132,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666844284677</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=".">
+      <created>1666847112853</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666847112853</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
