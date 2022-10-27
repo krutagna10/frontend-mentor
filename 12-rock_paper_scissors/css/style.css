@@ -376,6 +376,8 @@ body {
     border-radius: 0.4rem;
     background-color: var(--white);
     border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .play-again-btn:hover {
