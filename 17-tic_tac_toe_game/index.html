@@ -16,34 +16,64 @@
 
 <main>
     <section class="choice-selection-section">
-        <div class="container choice-container">
+        <div class="container choice-container flow border-radius">
             <div class="choice__logo-container">
                 <img src="images/logo.svg" alt="Logo" class="margin-auto">
             </div>
-            <div class="mark-selection-wrapper background-semi-dark-navy flow text-align-center">
+
+            <div class="mark-selection-wrapper background-semi-dark-navy flow text-align-center border-radius">
                 <p class="mark-selection__text font-size-200 text-color-silver uppercase font-weight-bold">
                     Pick player 1's mark
                 </p>
-                <div class="mark-selection__buttons background-dark-navy grid grid-2-columns">
-                    <button class="mark-selection__button flex flex-justify-center"><img src="images/icon-x-silver.svg" alt="x icon" class="mark-selection__icon"></button>
-                    <button class="mark-selection__button flex flex-justify-center mark-selection__active-button"><img src="images/icon-o-dark-navy.svg" class="mark-selection__icon" alt="o icon"></button>
+                <div class="mark-selection__buttons background-dark-navy grid grid-2-columns border-radius">
+                    <button class="mark-selection__button flex flex-justify-center x-selection border-radius"><img
+                            src="images/icon-x-silver.svg" alt="x icon" class="mark-selection__icon"></button>
+                    <button class="mark-selection__button flex flex-justify-center mark-selection__active-button o-selection border-radius">
+                        <img src="images/icon-o-dark-navy.svg" class="mark-selection__icon" alt="o icon"></button>
                 </div>
                 <p class="mark-selection__text font-size-100 uppercase">
                     Remember: X goes first
                 </p>
             </div>
+
+            <button class="new-game-button btn font-size-300 background-light-yellow text-color-dark-navy uppercase font-weight-bold border-radius">
+                New Game (vs CPU)
+            </button>
+            <button class="new-game-button btn font-size-300 background-light-blue text-color-dark-navy uppercase font-weight-bold border-radius">
+                New Game (vs player)
+            </button>
         </div>
     </section>
 
     <section class="game-section">
-        <div class="container game-container grid grid-3-columns">
-
+        <div class="container game-container">
+            <header class="game__header flex flex-justify-space-between flex-align-center">
+                <div class="game__logo-container">
+                    <img src="images/logo.svg" alt="logo">
+                </div>
+                <div class="turn">X Turn</div>
+                <button class="restart-button">
+                    <img src="images/icon-restart.svg" alt="restart-icon">
+                </button>
+            </header>
+            <div class="game__wrapper grid grid-3-columns">
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+                <div><img src="images/icon-x.svg" alt="Icon x"></div>
+            </div>
         </div>
     </section>
 </main>
 
 
-<script src="javascript/script.js"></script>
+<script src="javascript/choice-selection.js"></script>
+<script src="javascript/game.js"></script>
 </body>
 </html>
 

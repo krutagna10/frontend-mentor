@@ -62,16 +62,20 @@ body {
 
 
 /* Choice Selection Section */
-.mark-selection-wrapper {
-    padding: 2rem 2rem;
+.game-active .choice-selection-section {
+    display: none;
 }
 
 .choice-container {
-    min-width: 25rem;
+    min-width: 15rem;
+}
+
+.mark-selection-wrapper {
+    padding: 2rem 1rem;
 }
 
 .choice__logo-container {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .mark-selection__buttons {
@@ -84,8 +88,6 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem 2rem;
-    border-radius: 0.5rem;
-
 }
 
 .mark-selection__active-button {
@@ -93,9 +95,23 @@ body {
 }
 
 .mark-selection__button img {
-    max-width: 30% !important;
+    max-width: 50% !important;
 }
 
 .mark-selection-wrapper p:last-child {
     color: hsl(var(--rawSilver), 0.4);
+}
+
+.new-game-button {
+    display: block;
+    width: 100%;
+}
+
+/* Game Section */
+.game-section {
+    display: none;
+}
+
+.game-active .game-section {
+    display: block;
 }
