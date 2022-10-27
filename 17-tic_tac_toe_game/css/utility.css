@@ -25,6 +25,10 @@
     display: grid;
 }
 
+.grid-place-center {
+    place-items: center;
+}
+
 .grid-2-columns {
     grid-template-columns: repeat(2, 1fr);
 }

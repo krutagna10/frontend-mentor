@@ -45,31 +45,67 @@ let options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const gameWrapper = document.querySelector('.game__wrapper');
 const choiceButtons = document.querySelectorAll('.choice-button');
 
-const pickComputerChoice = () => {
-    let computerChoiceImage = document.createElement('img');
-    computerChoiceImage.src = `images/icon-${computerChoice}.svg`;
-    let random = options[parseInt(Math.random() * (options.length))];
-    choiceButtons[random].appendChild(computerChoiceImage);
-    choiceButtons[random].disabled = true;
+let userChoicesArray = [];
+let computerChoicesArray = [];
 
-    let arrayIndex = options.findIndex((element) => element === random);
-    options.splice(arrayIndex, 1);
-    console.log(options);
+const checkForWin = (arr) => {
+    if (arr.length >= 3) {
+        arr.splice(0, arr.length - 3);
+        arr.sort((a, b) => a - b);
+
+        let diff = arr[1] - arr[0];
+        let answer = false;
+        for (let i = 2; i < arr.length; i++) {
+            if (diff !== arr[i] - arr[i - 1]) {
+                return answer;
+            }
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+const pickComputerChoice = () => {
+        let computerChoiceImage = document.createElement('img');
+        computerChoiceImage.src = `images/icon-${computerChoice}.svg`;
+        let random = options[parseInt(Math.random() * (options.length))];
+        choiceButtons[random].appendChild(computerChoiceImage);
+        choiceButtons[random].disabled = true;
+
+        let arrayIndex = options.findIndex((element) => element === random);
+        options.splice(arrayIndex, 1);
+
+        computerChoicesArray.push(random);
+        console.log(computerChoicesArray);
+
+    if (checkForWin(computerChoicesArray)) {
+        body.classList.add('game-finished');
+        document.querySelector('.result').textContent = 'Computer Wins';
+    }
 
 }
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
-        let image = document.createElement('img');
-        image.src = `images/icon-${userChoice}.svg`;
-        choiceButton.appendChild(image);
-        choiceButton.disabled = true;
+            let image = document.createElement('img');
+            image.src = `images/icon-${userChoice}.svg`;
+            choiceButton.appendChild(image);
+            choiceButton.disabled = true;
 
-        let arrayIndex = options.findIndex((element) => element === index);
-        options.splice(arrayIndex, 1);
-        console.log(options);
+            let arrayIndex = options.findIndex((element) => element === index);
+            options.splice(arrayIndex, 1);
 
-        pickComputerChoice();
+            userChoicesArray.push(index);
+            pickComputerChoice();
+
+        if (checkForWin(userChoicesArray)) {
+            body.classList.add('game-finished');
+            document.querySelector('.result').textContent = 'User Wins';
+        }
+
     })
 });
 

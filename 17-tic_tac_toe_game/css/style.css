@@ -123,9 +123,19 @@ body {
 .choice-button {
     min-width: 7rem;
     min-height: 7rem;
-    border: 1px solid red;
-    display: grid;
-    place-items: center;
-    background: transparent;
     cursor: pointer;
+    border: none;
+}
+
+/* Game Finished Section*/
+.game-finished-section {
+    display: none;
+}
+
+.game-finished .game-section {
+    display: none;
+}
+
+.game-finished .game-finished-section {
+    display: block;
 }
