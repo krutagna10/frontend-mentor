@@ -16,19 +16,19 @@
 
 <main>
     <section class="choice-selection-section">
-        <div class="container">
-            <div class="logo-container">
-                <img src="images/logo.svg" alt="Logo">
+        <div class="container choice-container">
+            <div class="choice__logo-container">
+                <img src="images/logo.svg" alt="Logo" class="margin-auto">
             </div>
-            <div class="mark-selection-wrapper background-semi-dark-navy">
+            <div class="mark-selection-wrapper background-semi-dark-navy flow text-align-center">
                 <p class="mark-selection__text font-size-200 text-color-silver uppercase font-weight-bold">
                     Pick player 1's mark
                 </p>
-                <div class="mark-selection">
-                    <img src="images/icon-x.svg" alt="x icon">
-                    <img src="images/icon-o.svg" alt="o icon">
+                <div class="mark-selection__buttons background-dark-navy grid grid-2-columns">
+                    <button class="mark-selection__button flex flex-justify-center"><img src="images/icon-x-silver.svg" alt="x icon" class="mark-selection__icon"></button>
+                    <button class="mark-selection__button flex flex-justify-center mark-selection__active-button"><img src="images/icon-o-dark-navy.svg" class="mark-selection__icon" alt="o icon"></button>
                 </div>
-                <p class="mark-selection__text font-size-100 text-color-silver uppercase">
+                <p class="mark-selection__text font-size-100 uppercase">
                     Remember: X goes first
                 </p>
             </div>
