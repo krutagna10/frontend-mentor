@@ -154,7 +154,7 @@ body {
     min-height: 5rem;
     cursor: pointer;
     border: none;
-    transition: all 0.4s linear;
+    transition: all 0.3s ease-out;
     position: relative;
 }
 
