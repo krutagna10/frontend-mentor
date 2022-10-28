@@ -56,7 +56,6 @@ function updateSelection() {
     })
 }
 
-
 // Mark Selection
 let currentChoiceIndex = -1;
 markSelectionButtons.forEach((markSelectionButton, index) => {
@@ -75,12 +74,10 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
     })
 })
 
-
 // When the user clicks on new game button (Player vs CPU)
 newGameButton.addEventListener('click', () => {
     body.classList.add('game-active');
 })
-
 
 // Checking for Win
 const checkForWin = (arr) => {
@@ -132,7 +129,6 @@ const getComputerChoice = () => {
 
     turnIcon.src = user.icon;
 }
-
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
