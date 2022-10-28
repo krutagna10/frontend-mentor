@@ -1,12 +1,15 @@
 # Frontend Mentor - Tic Tac Toe
 
-### Screenshot
+[//]: # (### Screenshot)
 
-![](screenshot/Screenshot.png)
+[//]: # ()
+[//]: # (![]&#40;screenshot/Screenshot.png&#41;)
 
-### Links
+[//]: # ()
+[//]: # (### Links)
 
-- Live Site URL: [https://tic-tac-toe-game-10.vercel.app/]
+[//]: # ()
+[//]: # (- Live Site URL: [https://tic-tac-toe-game-10.vercel.app/])
 
 ### Built with
 
