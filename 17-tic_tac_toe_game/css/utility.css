@@ -6,7 +6,7 @@
 
 /* Spacing */
 .flow > * + * {
-    margin-top: 1.25rem;
+    margin-top: var(--flow-space);
 }
 
 .margin-auto {

@@ -5,6 +5,7 @@ let player1 = {
     icon: 'images/icon-x.svg',
     iconSilver: 'images/icon-x-silver.svg',
     iconDarkNavy: 'images/icon-x-dark-navy.svg',
+    iconOutline: 'images/icon-x-outline.svg',
 }
 
 let player2 = {
@@ -12,6 +13,7 @@ let player2 = {
     icon: 'images/icon-o.svg',
     iconSilver: 'images/icon-o-silver.svg',
     iconDarkNavy: 'images/icon-o-dark-navy.svg',
+    iconOutline: 'images/icon-o-outline.svg',
 }
 
 let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -32,7 +34,7 @@ let computer = player1;
 
 const changeHoverIcon = () => {
     for (const hoverIcon of hoverIcons) {
-        hoverIcon.src = user.icon;
+        hoverIcon.src = user.iconOutline;
     }
 }
 

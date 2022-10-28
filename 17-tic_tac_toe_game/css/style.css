@@ -16,22 +16,28 @@
     /*  Colors */
     --light-blue: hsl(178, 60%, 48%);
     --light-blue-hover: hsl(178, 75%, 65%);
+    --light-blue-raw: 178, 60%, 48%;
     --light-yellow: hsl(39, 88%, 58%);
+    --light-yellow-raw: 39, 88%, 58%;
     --light-yellow-hover: hsl(39, 100%, 69%);
     --dark-navy: hsl(202, 32%, 15%);
     --semi-dark-navy: hsl(199, 35%, 19%);
     --silver: hsl(198, 23%, 72%);
     --silver-hover: hsl(197, 33%, 89%);
-    --rawSilver: 198, 23%, 72%;
+    --raw-silver: 198, 23%, 72%;
+
+    /* Spacing */
+    --flow-space: 1.25rem;
+
 }
 
 @media (min-width: 48em) {
-   :root {
-       --font-size-500: 2.5rem;
-       --font-size-400: 1.5rem;
-       --font-size-300: 1.25rem;
-       --font-size-200: 1rem;
-   }
+    :root {
+        --font-size-500: 2.5rem;
+        --font-size-400: 1.5rem;
+        --font-size-300: 1.25rem;
+        --font-size-200: 1rem;
+    }
 }
 
 /* CSS Reset */
@@ -60,7 +66,6 @@ body {
     align-items: center;
 }
 
-
 /* Choice Selection Section */
 .game-active .choice-selection-section {
     display: none;
@@ -68,6 +73,10 @@ body {
 
 .choice-container {
     min-width: 15rem;
+}
+
+.choice-container.flow {
+    --flow-space: 1.5rem;
 }
 
 .mark-selection-wrapper {
@@ -88,7 +97,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem 2rem;
-    transition: background-color 0.4s linear;
+    transition: background-color 0.3s ease;
 }
 
 .mark-selection__active-button {
@@ -100,13 +109,22 @@ body {
 }
 
 .mark-selection-wrapper p:last-child {
-    color: hsl(var(--rawSilver), 0.4);
+    color: hsl(var(--raw-silver), 0.4);
 }
 
 .new-game-button {
     display: block;
     width: 100%;
+    padding: 1rem 1rem !important;
     transition: all 0.3s ease;
+}
+
+.new-game-button.player-vs-cpu {
+    box-shadow: 0 6px hsl(var(--light-yellow-raw), 0.6);
+}
+
+.new-game-button.player-vs-player {
+    box-shadow: 0 6px hsl(var(--light-blue-raw), 0.6);
 }
 
 .new-game-button.player-vs-cpu:hover {
@@ -119,21 +137,25 @@ body {
 
 
 @media (min-width: 32em) {
+    .choice-container {
+        min-width: 25rem;
+    }
 
+    .mark-selection__button img {
+        max-width: 25% !important;
+    }
 }
 
 @media (min-width: 48rem) {
     .choice-container {
-        min-width: 25rem;
+        min-width: 30rem;
     }
 
     .mark-selection-wrapper {
         padding: 2rem 2rem;
     }
 
-    .mark-selection__button img {
-        max-width: 35% !important;
-    }
+
 }
 
 /* Game Section */
@@ -200,8 +222,8 @@ body {
 
 @media (min-width: 48rem) {
     .choice-button {
-        min-width: 8rem;
-        min-height: 8rem;
+        min-width: 9rem;
+        min-height: 9rem;
     }
 }
 
