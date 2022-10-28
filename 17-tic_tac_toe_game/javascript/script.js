@@ -50,9 +50,8 @@ newGameButton.addEventListener('click', () => {
     body.classList.add('game-active');
 })
 
-let options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-
+let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
 
 let userChoicesArray = [];
@@ -62,7 +61,7 @@ const checkForWin = (arr) => {
     if (arr.length >= 3) {
         arr.sort((a, b) => a - b);
         console.log(arr);
-        for (const element of winArray) {
+        for (const element of winConditions) {
             if (element.every(element => arr.includes(element))) {
                 return true;
             }
@@ -73,50 +72,55 @@ const checkForWin = (arr) => {
     }
 }
 
+const displayChoice = (player, index) => {
+    let image = document.createElement('img');
+    player === 'computer' ? image.src = `images/icon-${computerChoice}.svg` : image.src = `images/icon-${userChoice}.svg`;
+    choiceButtons[index].appendChild(image);
+    choiceButtons[index].disabled = true;
+}
+
+const updateAvailableChoices = (index) => {
+    availableChoices.splice(index, 1);
+}
+
 
 const getComputerChoice = () => {
-    let computerChoiceImage = document.createElement('img');
-    computerChoiceImage.src = `images/icon-${computerChoice}.svg`;
+    let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
-    let random = options[Math.floor(Math.random() * (options.length))];
-    choiceButtons[random].appendChild(computerChoiceImage);
-    choiceButtons[random].disabled = true;
+    displayChoice('computer', random);
 
-    let arrayIndex = options.findIndex((element) => element === random);
-    options.splice(arrayIndex, 1);
+    updateAvailableChoices(availableChoices.findIndex(element => element === random));
+
     computerChoicesArray.push(random);
 
-    if (options.length === 0) {
+    if (availableChoices.length === 0) {
         body.classList.add('game-finished');
         document.querySelector('.result').textContent = 'Draw';
     }
-
+    console.log(checkForWin(computerChoicesArray))
     if (checkForWin(computerChoicesArray)) {
         body.classList.add('game-finished');
         document.querySelector('.result').textContent = 'Computer Wins';
     }
-
 }
 
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
-        let image = document.createElement('img');
-        image.src = `images/icon-${userChoice}.svg`;
-        choiceButton.appendChild(image);
+        displayChoice('user', index);
         choiceButton.disabled = true;
 
-        let arrayIndex = options.findIndex((element) => element === index);
-        options.splice(arrayIndex, 1);
+        updateAvailableChoices(availableChoices.findIndex(element => element === index));
 
         userChoicesArray.push(index);
-        if (options.length === 0) {
+        if (availableChoices.length === 0) {
             body.classList.add('game-finished');
             document.querySelector('.result').textContent = 'Draw';
         } else {
             getComputerChoice();
         }
 
+        console.log(checkForWin(userChoicesArray))
         if (checkForWin(userChoicesArray)) {
             body.classList.add('game-finished');
             document.querySelector('.result').textContent = 'User Wins';
