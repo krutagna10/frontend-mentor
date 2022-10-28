@@ -41,6 +41,10 @@
     display: flex;
 }
 
+.flex-gap {
+    gap: 1rem;
+}
+
 .flex-direction-column {
     flex-direction: column;
 }
@@ -102,6 +106,10 @@
 
 .background-dark-navy {
     background-color: var(--dark-navy);
+}
+
+.background-silver {
+    background-color: var(--silver);
 }
 
 /* Text Color */

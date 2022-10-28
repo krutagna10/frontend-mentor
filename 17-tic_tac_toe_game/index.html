@@ -25,7 +25,7 @@
                 <p class="mark-selection__text font-size-200 text-color-silver uppercase font-weight-bold">
                     Pick player 1's mark
                 </p>
-                <div class="mark-selection__buttons background-dark-navy grid grid-2-columns border-radius">
+                <div class="mark-selection__buttons-wrapper background-dark-navy grid grid-2-columns border-radius">
                     <button class="mark-selection__button flex flex-justify-center x-selection border-radius"><img
                             src="images/icon-x-silver.svg" alt="x icon" class="mark-selection__icon"></button>
                     <button class="mark-selection__button flex flex-justify-center mark-selection__active-button o-selection border-radius">
@@ -36,23 +36,26 @@
                 </p>
             </div>
 
-            <button class="new-game-button btn font-size-300 background-light-yellow text-color-dark-navy uppercase font-weight-bold border-radius">
+            <button class="new-game-button player-vs-cpu btn font-size-300 background-light-yellow text-color-dark-navy uppercase font-weight-bold border-radius">
                 New Game (vs CPU)
             </button>
-            <button class="new-game-button btn font-size-300 background-light-blue text-color-dark-navy uppercase font-weight-bold border-radius">
+            <button class="new-game-button player-vs-player btn font-size-300 background-light-blue text-color-dark-navy uppercase font-weight-bold border-radius">
                 New Game (vs player)
             </button>
         </div>
     </section>
 
     <section class="game-section">
-        <div class="container game-container">
+        <div class="container game-container flow">
             <header class="game__header flex flex-justify-space-between flex-align-center">
                 <div class="game__logo-container">
                     <img src="images/logo.svg" alt="logo">
                 </div>
-                <div class="turn">X Turn</div>
-                <button class="restart-button">
+                <div class="current-turn-wrapper background-semi-dark-navy border-radius flex flex-align-center flex-justify-center flex-gap">
+                    <img src="images/icon-x-silver.svg" class="current-turn__icon" alt="turn-icon">
+                    <p class="text-color-silver font-size-200 uppercase">Turn</p>
+                </div>
+                <button class="restart-button btn background-silver">
                     <img src="images/icon-restart.svg" alt="restart-icon">
                 </button>
             </header>

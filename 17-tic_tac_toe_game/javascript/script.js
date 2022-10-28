@@ -54,7 +54,7 @@ const checkForWin = (arr) => {
         arr.sort((a, b) => a - b);
         console.log(arr);
         for (const element of winArray) {
-            if (arr.toString().includes(element.toString())) {
+            if (element.every(element => arr.includes(element))) {
                 return true;
             }
         }
@@ -68,7 +68,8 @@ const checkForWin = (arr) => {
 const getComputerChoice = () => {
     let computerChoiceImage = document.createElement('img');
     computerChoiceImage.src = `images/icon-${computerChoice}.svg`;
-    let random = options[parseInt(Math.random() * (options.length))];
+
+    let random = options[Math.floor(Math.random() * (options.length))];
     choiceButtons[random].appendChild(computerChoiceImage);
     choiceButtons[random].disabled = true;
 
@@ -87,15 +88,6 @@ const getComputerChoice = () => {
     }
 
 }
-
-
-function game() {
-    if (userChoice === 'o') {
-        getComputerChoice();
-    }
-}
-
-game();
 
 
 choiceButtons.forEach((choiceButton, index) => {
@@ -123,6 +115,8 @@ choiceButtons.forEach((choiceButton, index) => {
 
     })
 });
+
+// Player 1 vs Player 2
 
 
 

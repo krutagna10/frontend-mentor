@@ -78,7 +78,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.mark-selection__buttons {
+.mark-selection__buttons-wrapper {
     padding: 0.5rem;
 }
 
@@ -88,6 +88,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem 2rem;
+    transition: background-color 0.4s linear;
 }
 
 .mark-selection__active-button {
@@ -105,6 +106,29 @@ body {
 .new-game-button {
     display: block;
     width: 100%;
+    transition: all 0.3s ease;
+}
+
+.new-game-button.player-vs-cpu:hover {
+    background-color: var(--light-yellow-hover) !important;
+}
+
+.new-game-button.player-vs-player:hover {
+    background-color: var(--light-blue-hover) !important
+}
+
+@media (min-width: 48rem) {
+    .choice-container {
+        min-width: 25rem;
+    }
+
+    .mark-selection-wrapper {
+        padding: 2rem 2rem;
+    }
+
+    .mark-selection__button img {
+        max-width: 35% !important;
+    }
 }
 
 /* Game Section */
@@ -125,6 +149,14 @@ body {
     min-height: 7rem;
     cursor: pointer;
     border: none;
+}
+
+.current-turn-wrapper {
+    padding: 0.75rem;
+}
+
+.current-turn__icon {
+    max-width: 15% !important;
 }
 
 /* Game Finished Section*/
