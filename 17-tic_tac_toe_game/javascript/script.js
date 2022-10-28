@@ -16,10 +16,14 @@ let player2 = {
     iconOutline: 'images/icon-o-outline.svg',
 }
 
+let userChoicesArray = [];
+let computerChoicesArray = [];
+
 let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
+// Elements
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
 const markSelectionIcons = document.querySelectorAll('.mark-selection__icon');
 const newGameButton = document.querySelector('.new-game-button');
@@ -28,16 +32,18 @@ const hoverIcons = document.querySelectorAll('.hover-icon');
 const choiceButtons = document.querySelectorAll('.choice-button');
 const turnIcon = document.querySelector('.current-turn__icon');
 
-
+// Initial values of user and computer
 let user = player2;
 let computer = player1;
 
+// Changing hover icon according to user selection
 const changeHoverIcon = () => {
     for (const hoverIcon of hoverIcons) {
         hoverIcon.src = user.iconOutline;
     }
 }
 
+// Updating selection
 function updateSelection() {
     markSelectionButtons.forEach((markSelectionButton, index) => {
         if (currentChoiceIndex === index) {
@@ -50,6 +56,8 @@ function updateSelection() {
     })
 }
 
+
+// Mark Selection
 let currentChoiceIndex = -1;
 markSelectionButtons.forEach((markSelectionButton, index) => {
     markSelectionButton.addEventListener('click', () => {
@@ -67,15 +75,14 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
     })
 })
 
-console.log(user, computer);
 
+// When the user clicks on new game button (Player vs CPU)
 newGameButton.addEventListener('click', () => {
     body.classList.add('game-active');
 })
 
-let userChoicesArray = [];
-let computerChoicesArray = [];
 
+// Checking for Win
 const checkForWin = (arr) => {
     if (arr.length >= 3) {
         arr.sort((a, b) => a - b);
@@ -88,6 +95,7 @@ const checkForWin = (arr) => {
     }
 }
 
+// Displaying choice icon
 const displayChoice = (player, index) => {
     let image = document.createElement('img');
     player === 'computer' ? image.src = computer.icon : image.src = user.icon;
@@ -95,19 +103,23 @@ const displayChoice = (player, index) => {
     choiceButtons[index].disabled = true;
 }
 
+// Updating Choices
 const updateAvailableChoices = (index) => {
     availableChoices.splice(index, 1);
 }
 
-
 const getComputerChoice = () => {
+    // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
+    // Displaying and updating choice
     displayChoice('computer', random);
     updateAvailableChoices(availableChoices.findIndex(element => element === random));
 
+    // Pushing value to computer choice array
     computerChoicesArray.push(random);
 
+    // Checking conditions
     if (availableChoices.length === 0) {
         body.classList.add('game-finished');
         document.querySelector('.result').textContent = 'Draw';
@@ -124,12 +136,14 @@ const getComputerChoice = () => {
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
+        // Displaying and updating choice
         displayChoice('user', index);
-        choiceButton.disabled = true;
-
         updateAvailableChoices(availableChoices.findIndex(element => element === index));
 
+        // Pushing value to user choices array
         userChoicesArray.push(index);
+
+        // Checking conditions
         if (availableChoices.length === 0) {
             body.classList.add('game-finished');
             document.querySelector('.result').textContent = 'Draw';
