@@ -4,9 +4,17 @@ const markSelectionButtons = document.querySelectorAll('.mark-selection__button'
 const markSelectionIcons = document.querySelectorAll('.mark-selection__icon');
 const newGameButton = document.querySelector('.new-game-button');
 const body = document.querySelector('body');
+const hoverIcons = document.querySelectorAll('.hover-icon');
+const choiceButtons = document.querySelectorAll('.choice-button');
 
 let userChoice = 'o';
 let computerChoice = 'x';
+
+const changeHoverIcon = () => {
+    for (const hoverIcon of hoverIcons) {
+        hoverIcon.src = `images/icon-${userChoice}-outline.svg`;
+    }
+}
 
 function updateSelection() {
     markSelectionButtons.forEach((markSelectionButton, index) => {
@@ -26,9 +34,11 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
         if (markSelectionButton.classList.contains('x-selection')) {
             userChoice = 'x';
             computerChoice = 'o';
+            changeHoverIcon();
         } else {
             userChoice = 'o';
             computerChoice = 'x';
+            changeHoverIcon();
         }
         currentChoiceIndex = index;
         updateSelection();
@@ -43,8 +53,7 @@ newGameButton.addEventListener('click', () => {
 let options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
-const gameWrapper = document.querySelector('.game__wrapper');
-const choiceButtons = document.querySelectorAll('.choice-button');
+
 
 let userChoicesArray = [];
 let computerChoicesArray = [];

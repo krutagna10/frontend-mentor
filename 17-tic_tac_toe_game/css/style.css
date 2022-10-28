@@ -117,6 +117,11 @@ body {
     background-color: var(--light-blue-hover) !important
 }
 
+
+@media (min-width: 32em) {
+
+}
+
 @media (min-width: 48rem) {
     .choice-container {
         min-width: 25rem;
@@ -145,18 +150,55 @@ body {
 }
 
 .choice-button {
-    min-width: 7rem;
-    min-height: 7rem;
+    min-width: 5rem;
+    min-height: 5rem;
     cursor: pointer;
     border: none;
+    transition: all 0.4s linear;
+    position: relative;
+}
+
+.hover-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hover-icon {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.choice-button:hover .hover-icon {
+    opacity: 1;
 }
 
 .current-turn-wrapper {
-    padding: 0.75rem;
+    padding: 0.75rem 0;
 }
 
 .current-turn__icon {
     max-width: 15% !important;
+}
+
+.restart-button:hover {
+    background-color: var(--silver-hover) !important;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 32em) {
+    .choice-button {
+        min-width: 6rem;
+        min-height: 6rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .choice-button {
+        min-width: 8rem;
+        min-height: 8rem;
+    }
 }
 
 /* Game Finished Section*/

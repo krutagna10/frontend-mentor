@@ -7,8 +7,8 @@
     <list default="true" id="122d1ede-67ee-428e-9aeb-e69277b242dc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/utility.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/utility.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javascript/practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/practice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +85,7 @@
       <workItem from="1666930711311" duration="245000" />
       <workItem from="1666940358466" duration="43000" />
       <workItem from="1666949185124" duration="1368000" />
-      <workItem from="1666953280936" duration="2454000" />
+      <workItem from="1666953280936" duration="5221000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666503445243</created>
@@ -178,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666950463793</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary=".">
+      <created>1666956385985</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1666956385985</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
