@@ -16,18 +16,20 @@
     /*  Colors */
     --light-blue: hsl(178, 60%, 48%);
     --light-blue-hover: hsl(178, 75%, 65%);
-    --light-blue-raw: 178, 60%, 48%;
     --light-yellow: hsl(39, 88%, 58%);
-    --light-yellow-raw: 39, 88%, 58%;
     --light-yellow-hover: hsl(39, 100%, 69%);
     --dark-navy: hsl(202, 32%, 15%);
     --semi-dark-navy: hsl(199, 35%, 19%);
     --silver: hsl(198, 23%, 72%);
     --silver-hover: hsl(197, 33%, 89%);
+
+    --raw-light-yellow: 39, 88%, 58%;
+    --raw-light-blue: 178, 60%, 48%;
+    --raw-semi-dark-navy: 199, 35%, 19%;
     --raw-silver: 198, 23%, 72%;
 
     /* Spacing */
-    --flow-space: 1.25rem;
+    --flow-space: 1.5rem;
 
 }
 
@@ -80,7 +82,9 @@ body {
 }
 
 .mark-selection-wrapper {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .choice__logo-container {
@@ -120,11 +124,11 @@ body {
 }
 
 .new-game-button.player-vs-cpu {
-    box-shadow: 0 6px hsl(var(--light-yellow-raw), 0.6);
+    box-shadow: 0 6px hsl(var(--raw-light-yellow), 0.6);
 }
 
 .new-game-button.player-vs-player {
-    box-shadow: 0 6px hsl(var(--light-blue-raw), 0.6);
+    box-shadow: 0 6px hsl(var(--raw-light-blue), 0.6);
 }
 
 .new-game-button.player-vs-cpu:hover {
@@ -180,6 +184,10 @@ body {
     position: relative;
 }
 
+.choice-button > img {
+    max-width: 50% !important;
+}
+
 .hover-icon-wrapper {
     position: absolute;
     top: 50%;
@@ -224,6 +232,10 @@ body {
     .choice-button {
         min-width: 9rem;
         min-height: 9rem;
+    }
+
+    .choice-button > img {
+        max-width: 100% !important;
     }
 }
 
