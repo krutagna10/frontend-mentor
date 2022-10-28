@@ -1,18 +1,38 @@
 'use strict';
 
+let player1 = {
+    choice: 'x',
+    icon: 'images/icon-x.svg',
+    iconSilver: 'images/icon-x-silver.svg',
+    iconDarkNavy: 'images/icon-x-dark-navy.svg',
+}
+
+let player2 = {
+    choice: 'o',
+    icon: 'images/icon-o.svg',
+    iconSilver: 'images/icon-o-silver.svg',
+    iconDarkNavy: 'images/icon-o-dark-navy.svg',
+}
+
+let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
 const markSelectionIcons = document.querySelectorAll('.mark-selection__icon');
 const newGameButton = document.querySelector('.new-game-button');
 const body = document.querySelector('body');
 const hoverIcons = document.querySelectorAll('.hover-icon');
 const choiceButtons = document.querySelectorAll('.choice-button');
+const turnIcon = document.querySelector('.current-turn__icon');
 
-let userChoice = 'o';
-let computerChoice = 'x';
+
+let user = player2;
+let computer = player1;
 
 const changeHoverIcon = () => {
     for (const hoverIcon of hoverIcons) {
-        hoverIcon.src = `images/icon-${userChoice}-outline.svg`;
+        hoverIcon.src = user.icon;
     }
 }
 
@@ -20,10 +40,10 @@ function updateSelection() {
     markSelectionButtons.forEach((markSelectionButton, index) => {
         if (currentChoiceIndex === index) {
             markSelectionButton.classList.add('mark-selection__active-button');
-            markSelectionIcons[index].src = `images/icon-${userChoice}-dark-navy.svg`;
+            markSelectionIcons[index].src = user.iconDarkNavy;
         } else {
             markSelectionButton.classList.remove("mark-selection__active-button");
-            markSelectionIcons[index].src = `images/icon-${computerChoice}-silver.svg`;
+            markSelectionIcons[index].src = computer.iconSilver;
         }
     })
 }
@@ -32,12 +52,12 @@ let currentChoiceIndex = -1;
 markSelectionButtons.forEach((markSelectionButton, index) => {
     markSelectionButton.addEventListener('click', () => {
         if (markSelectionButton.classList.contains('x-selection')) {
-            userChoice = 'x';
-            computerChoice = 'o';
+            user = player1;
+            computer = player2;
             changeHoverIcon();
         } else {
-            userChoice = 'o';
-            computerChoice = 'x';
+            user = player2;
+            computer = player1;
             changeHoverIcon();
         }
         currentChoiceIndex = index;
@@ -45,14 +65,11 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
     })
 })
 
+console.log(user, computer);
 
 newGameButton.addEventListener('click', () => {
     body.classList.add('game-active');
 })
-
-let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-
 
 let userChoicesArray = [];
 let computerChoicesArray = [];
@@ -66,15 +83,12 @@ const checkForWin = (arr) => {
                 return true;
             }
         }
-        return false;
-    } else {
-        return false;
     }
 }
 
 const displayChoice = (player, index) => {
     let image = document.createElement('img');
-    player === 'computer' ? image.src = `images/icon-${computerChoice}.svg` : image.src = `images/icon-${userChoice}.svg`;
+    player === 'computer' ? image.src = computer.icon : image.src = user.icon;
     choiceButtons[index].appendChild(image);
     choiceButtons[index].disabled = true;
 }
@@ -88,7 +102,6 @@ const getComputerChoice = () => {
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
     displayChoice('computer', random);
-
     updateAvailableChoices(availableChoices.findIndex(element => element === random));
 
     computerChoicesArray.push(random);
@@ -97,11 +110,13 @@ const getComputerChoice = () => {
         body.classList.add('game-finished');
         document.querySelector('.result').textContent = 'Draw';
     }
-    console.log(checkForWin(computerChoicesArray))
+
     if (checkForWin(computerChoicesArray)) {
         body.classList.add('game-finished');
         document.querySelector('.result').textContent = 'Computer Wins';
     }
+
+    turnIcon.src = user.icon;
 }
 
 
@@ -126,10 +141,11 @@ choiceButtons.forEach((choiceButton, index) => {
             document.querySelector('.result').textContent = 'User Wins';
         }
 
+        turnIcon.src = computer.icon;
+
     })
 });
 
-// Player 1 vs Player 2
 
 
 
