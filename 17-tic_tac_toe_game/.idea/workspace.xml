@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="122d1ede-67ee-428e-9aeb-e69277b242dc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/utility.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/utility.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/practice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascript/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Web Development/Projects/bankist-app",
+    "last_opened_file_path": "D:/Web Development/Projects/frontend-mentor/17-tic_tac_toe_game",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -81,6 +79,7 @@
       <workItem from="1666849027838" duration="3385000" />
       <workItem from="1666855470976" duration="1190000" />
       <workItem from="1666864243379" duration="3621000" />
+      <workItem from="1666928525422" duration="827000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666503445243</created>

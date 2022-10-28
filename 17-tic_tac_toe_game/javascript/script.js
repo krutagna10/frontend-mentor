@@ -41,6 +41,7 @@ newGameButton.addEventListener('click', () => {
 })
 
 let options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
 const gameWrapper = document.querySelector('.game__wrapper');
 const choiceButtons = document.querySelectorAll('.choice-button');
@@ -49,21 +50,21 @@ let userChoicesArray = [];
 let computerChoicesArray = [];
 
 const checkForWin = (arr) => {
+    console.log(arr);
     if (arr.length >= 3) {
         arr.splice(0, arr.length - 3);
         arr.sort((a, b) => a - b);
 
-        let diff = arr[1] - arr[0];
-        let answer = false;
-        for (let i = 2; i < arr.length; i++) {
-            if (diff !== arr[i] - arr[i - 1]) {
-                return answer;
+        for (const element of winArray) {
+            if (element.toString() === arr.toString()) {
+                return true;
             }
         }
-        return true;
+        return false;
     } else {
         return false;
     }
+
 }
 
 
