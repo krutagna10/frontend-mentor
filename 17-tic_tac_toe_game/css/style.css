@@ -220,6 +220,16 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Score */
+.score-box {
+    padding: 1rem;
+    width: 100%;
+}
+
+.score-box p:nth-child(1) > span {
+    margin-left: 0.25rem;
+}
+
 @media (min-width: 32em) {
     .choice-button {
         min-width: 6rem;

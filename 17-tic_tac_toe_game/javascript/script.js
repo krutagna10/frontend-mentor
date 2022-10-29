@@ -2,6 +2,7 @@
 
 let player1 = {
     choice: 'x',
+    score: 0,
     icon: 'images/icon-x.svg',
     iconSilver: 'images/icon-x-silver.svg',
     iconDarkNavy: 'images/icon-x-dark-navy.svg',
@@ -10,6 +11,7 @@ let player1 = {
 
 let player2 = {
     choice: 'o',
+    score: 0,
     icon: 'images/icon-o.svg',
     iconSilver: 'images/icon-o-silver.svg',
     iconDarkNavy: 'images/icon-o-dark-navy.svg',
@@ -31,15 +33,31 @@ const body = document.querySelector('body');
 const hoverIcons = document.querySelectorAll('.hover-icon');
 const choiceButtons = document.querySelectorAll('.choice-button');
 const turnIcon = document.querySelector('.current-turn__icon');
+const xUser = document.querySelector('.x-user');
+const oUser = document.querySelector('.o-user');
+const xScore = document.querySelector('.x-score');
+const oScore = document.querySelector('.o-score');
+
 
 // Initial values of user and computer
 let user = player2;
 let computer = player1;
 
+
 // Changing hover icon according to user selection
 const changeHoverIcon = () => {
     for (const hoverIcon of hoverIcons) {
         hoverIcon.src = user.iconOutline;
+    }
+}
+
+const changeScoreUser = () => {
+    if (user.choice === player1.choice) {
+        xUser.textContent = '(You)';
+        oUser.textContent = '(CPU)';
+    } else {
+        xUser.textContent = '(CPU)';
+        oUser.textContent = '(You)';
     }
 }
 
@@ -64,10 +82,12 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
             user = player1;
             computer = player2;
             changeHoverIcon();
+            changeScoreUser()
         } else {
             user = player2;
             computer = player1;
             changeHoverIcon();
+            changeScoreUser()
         }
         currentChoiceIndex = index;
         updateSelection();
