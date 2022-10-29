@@ -44,7 +44,7 @@ body {
 
 }
 
-.text {
+.text-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -141,7 +141,7 @@ body {
         gap: 1rem;
     }
 
-    .text {
+    .text-content {
         gap: 0.5rem;
     }
 }

@@ -159,7 +159,6 @@ body {
         padding: 2rem 2rem;
     }
 
-
 }
 
 /* Game Section */
@@ -197,7 +196,7 @@ body {
 
 .hover-icon {
     opacity: 0;
-    transition: all 0.4s ease;
+    transition: all 0.7s ease;
 }
 
 .choice-button:hover .hover-icon {
