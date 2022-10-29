@@ -1,5 +1,6 @@
 'use strict';
 
+// Players
 let player1 = {
     choice: 'x',
     score: 0,
@@ -9,7 +10,6 @@ let player1 = {
     iconDarkNavy: 'images/icon-x-dark-navy.svg',
     iconOutline: 'images/icon-x-outline.svg',
 }
-
 let player2 = {
     choice: 'o',
     score: 0,
@@ -20,11 +20,10 @@ let player2 = {
     iconOutline: 'images/icon-o-outline.svg',
 }
 
+// Choices
 let userChoicesArray = [];
 let computerChoicesArray = [];
-
 let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
 const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
 // Elements
@@ -40,12 +39,16 @@ const choiceButtons = document.querySelectorAll('.choice-button');
 const nextRoundButton = document.querySelector('.next-round-button');
 const quitButton = document.querySelector('.quit-button');
 
+// Icons
 const userChoiceIcons = document.querySelector('.choice-button > img');
 const hoverIcons = document.querySelectorAll('.hover-icon');
-
 const turnIcon = document.querySelector('.current-turn__icon');
+
+//Users
 const xUser = document.querySelector('.x-user');
 const oUser = document.querySelector('.o-user');
+
+//Scores
 const xScore = document.querySelector('.x-score');
 const oScore = document.querySelector('.o-score');
 const tiesScore = document.querySelector('.ties-score');
@@ -61,6 +64,7 @@ const changeHoverIcon = () => {
     }
 }
 
+// Changing score User
 const changeScoreUser = () => {
     if (user.choice === player1.choice) {
         xUser.textContent = '(You)';
@@ -144,10 +148,12 @@ const updateAvailableChoices = (index) => {
     availableChoices.splice(index, 1);
 }
 
+// Checking for draw
 const checkForDraw = () => {
     return availableChoices.length === 0;
 }
 
+// Get computer choice
 const getComputerChoice = () => {
     // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
