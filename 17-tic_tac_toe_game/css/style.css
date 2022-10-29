@@ -290,3 +290,7 @@ body {
     display: none;
 }
 
+.game-finished__round-text.x-won {
+    color: var(--light-blue) !important;
+}
+

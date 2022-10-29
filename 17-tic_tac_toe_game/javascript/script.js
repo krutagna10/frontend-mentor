@@ -33,6 +33,9 @@ const body = document.querySelector('body');
 const gameOverlay = document.querySelector('.game-overlay');
 const overlay = document.querySelector('.overlay');
 const opponentThinkingText = document.querySelector('.opponent-thinking-text-wrapper');
+const roundText = document.querySelector('.game-finished__round-text');
+const resultText = document.querySelector('.result');
+const resultIcon = document.querySelector('.result-icon');
 
 // Button elements
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
@@ -132,6 +135,25 @@ const updateAvailableChoices = (index) => {
     availableChoices.splice(index, 1);
 }
 
+
+const displayResult = (winner) => {
+    body.classList.add('game-finished');
+    overlay.classList.remove('hidden');
+    winner.choice === 'x' ? roundText.classList.add('x-won') : roundText.classList.remove('x-won');
+
+    if (winner === 'user') {
+        resultText.textContent = 'You win';
+        resultIcon.src = user.icon;
+        user.score = user.score + 1;
+        displayScore();
+    } else {
+        resultText.textContent = 'Oh no you lose!';
+        resultIcon.src = computer.icon;
+        computer.score = computer.score + 1;
+        displayScore();
+    }
+}
+
 // Checking for Win
 const checkForWin = (arr, player) => {
     if (arr.length >= 3) {
@@ -139,17 +161,11 @@ const checkForWin = (arr, player) => {
         console.log(arr);
         for (const element of winConditions) {
             if (element.every(element => arr.includes(element))) {
-                body.classList.add('game-finished');
-                overlay.classList.remove('hidden');
                 if (player === 'computer') {
-                    document.querySelector('.result').textContent = 'Computer Wins';
-                    computer.score = computer.score + 1;
-                    displayScore();
+                    setTimeout(displayResult, 1300, player);
                     return true;
                 } else {
-                    document.querySelector('.result').textContent = 'User Wins';
-                    user.score = user.score + 1;
-                    displayScore();
+                    displayResult(player)
                     return true;
                 }
             }
@@ -211,7 +227,6 @@ const getComputerChoice = () => {
     // Checking conditions
     checkForDraw();
     checkForWin(computerChoicesArray, 'computer')
-
 
     turnIcon.src = user.icon;
     // opponentThinkingText.style.display = 'none';
