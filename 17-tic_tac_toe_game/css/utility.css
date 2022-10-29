@@ -29,6 +29,10 @@
     place-items: center;
 }
 
+.grid-gap {
+    gap: 1rem;
+}
+
 .grid-2-columns {
     grid-template-columns: repeat(2, 1fr);
 }

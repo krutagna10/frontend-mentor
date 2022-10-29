@@ -171,10 +171,6 @@ body {
     display: block;
 }
 
-.game__wrapper {
-    gap: 1rem;
-}
-
 .choice-button {
     min-width: 5rem;
     min-height: 5rem;

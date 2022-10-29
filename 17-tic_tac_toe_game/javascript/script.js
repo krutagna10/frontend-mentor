@@ -115,31 +115,7 @@ newGameButton.addEventListener('click', () => {
     body.classList.add('game-active');
 })
 
-// Checking for Win
-const checkForWin = (arr, player) => {
-    if (arr.length >= 3) {
-        arr.sort((a, b) => a - b);
-        console.log(arr);
-        for (const element of winConditions) {
-            if (element.every(element => arr.includes(element))) {
-                body.classList.add('game-finished');
-                overlay.classList.remove('hidden');
-                if (player === 'computer') {
-                    document.querySelector('.result').textContent = 'Computer Wins';
-                    computer.score = computer.score + 1;
-                    displayScore()
-                } else {
-                    document.querySelector('.result').textContent = 'User Wins';
-                    user.score = user.score + 1;
-                    displayScore()
-                }
-            }
-        }
-    }
-}
-
 // Displaying choice icon
-
 const displayChoice = (player, index) => {
     if (player === 'computer') {
         choiceButtons[index].style.backgroundImage = computer.iconBackground;
@@ -154,9 +130,44 @@ const updateAvailableChoices = (index) => {
     availableChoices.splice(index, 1);
 }
 
+// Checking for Win
+const checkForWin = (arr, player) => {
+    if (arr.length >= 3) {
+        arr.sort((a, b) => a - b);
+        console.log(arr);
+        for (const element of winConditions) {
+            if (element.every(element => arr.includes(element))) {
+                body.classList.add('game-finished');
+                overlay.classList.remove('hidden');
+                if (player === 'computer') {
+                    document.querySelector('.result').textContent = 'Computer Wins';
+                    computer.score = computer.score + 1;
+                    displayScore();
+                    return true;
+                } else {
+                    document.querySelector('.result').textContent = 'User Wins';
+                    user.score = user.score + 1;
+                    displayScore();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    return false;
+}
+
 // Checking for draw
 const checkForDraw = () => {
-    return availableChoices.length === 0;
+    if (availableChoices.length === 0) {
+        body.classList.add('game-finished');
+        document.querySelector('.result').textContent = 'Draw';
+        tieScore = tieScore + 1;
+        displayScore()
+        return true;
+    } else {
+        return false;
+    }
 }
 
 const displayScore = () => {
@@ -183,13 +194,7 @@ const getComputerChoice = () => {
     computerChoicesArray.push(random);
 
     // Checking conditions
-    if (checkForDraw()) {
-        body.classList.add('game-finished');
-        document.querySelector('.result').textContent = 'Draw';
-        tieScore = tieScore + 1;
-        displayScore()
-    }
-
+    checkForDraw();
     checkForWin(computerChoicesArray, 'computer')
 
 
@@ -206,16 +211,9 @@ choiceButtons.forEach((choiceButton, index) => {
         userChoicesArray.push(index);
 
         // Checking conditions
-        if (checkForDraw()) {
-            body.classList.add('game-finished');
-            document.querySelector('.result').textContent = 'Draw';
-            tieScore = tieScore + 1;
-            displayScore()
-        } else {
-            getComputerChoice();
+        if (!checkForWin(userChoicesArray, 'user') && !checkForDraw()) {
+            setTimeout(getComputerChoice, 1000);
         }
-
-        checkForWin(userChoicesArray, 'user')
 
         turnIcon.src = computer.icon;
 
@@ -224,7 +222,7 @@ choiceButtons.forEach((choiceButton, index) => {
 
 const resetScreen = () => {
     for (const choiceButton of choiceButtons) {
-      choiceButton.style.backgroundImage = '';
+        choiceButton.style.backgroundImage = '';
         userChoicesArray = [];
         computerChoicesArray = [];
         availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
