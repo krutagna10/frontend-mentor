@@ -30,6 +30,7 @@ const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2
 
 // Elements
 const body = document.querySelector('body');
+const gameOverlay = document.querySelector('.game-overlay');
 const overlay = document.querySelector('.overlay');
 const opponentThinkingText = document.querySelector('.opponent-thinking-text-wrapper');
 
@@ -99,7 +100,7 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
             user = player1;
             computer = player2;
             changeHoverIcon();
-            changeScoreUser()
+            changeScoreUser();
         } else {
             user = player2;
             computer = player1;
@@ -186,16 +187,22 @@ const hideText = () => {
     opponentThinkingText.style.display = 'none';
 }
 
+const hideGameOverlay = () => {
+    gameOverlay.classList.add('hidden');
+}
+
 // Get computer choice
 const getComputerChoice = () => {
     opponentThinkingText.style.display = 'block';
-    setTimeout(hideText, 1000);
+    setTimeout(hideText, 1300);
 
+    gameOverlay.classList.remove('hidden');
+    setTimeout(hideGameOverlay, 1300);
     // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
     // Displaying and updating choice
-    setTimeout(displayChoice, 1000, 'computer', random);
+    setTimeout(displayChoice, 1300, 'computer', random);
     updateAvailableChoices(availableChoices.findIndex(element => element === random));
 
     // Pushing value to computer choice array
@@ -248,8 +255,6 @@ nextRoundButton.addEventListener('click', () => {
 
 // Restart Button
 restartButton.addEventListener('click', resetScreen);
-
-
 
 
 
