@@ -31,6 +31,7 @@ const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2
 // Elements
 const body = document.querySelector('body');
 const overlay = document.querySelector('.overlay');
+const opponentThinkingText = document.querySelector('.opponent-thinking-text-wrapper');
 
 // Button elements
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
@@ -181,13 +182,20 @@ const displayScore = () => {
     }
 }
 
+const hideText = () => {
+    opponentThinkingText.style.display = 'none';
+}
+
 // Get computer choice
 const getComputerChoice = () => {
+    opponentThinkingText.style.display = 'block';
+    setTimeout(hideText, 1000);
+
     // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
     // Displaying and updating choice
-    displayChoice('computer', random);
+    setTimeout(displayChoice, 1000, 'computer', random);
     updateAvailableChoices(availableChoices.findIndex(element => element === random));
 
     // Pushing value to computer choice array
@@ -199,6 +207,7 @@ const getComputerChoice = () => {
 
 
     turnIcon.src = user.icon;
+    // opponentThinkingText.style.display = 'none';
 }
 
 choiceButtons.forEach((choiceButton, index) => {
@@ -212,7 +221,7 @@ choiceButtons.forEach((choiceButton, index) => {
 
         // Checking conditions
         if (!checkForWin(userChoicesArray, 'user') && !checkForDraw()) {
-            setTimeout(getComputerChoice, 1000);
+            getComputerChoice();
         }
 
         turnIcon.src = computer.icon;
@@ -239,6 +248,7 @@ nextRoundButton.addEventListener('click', () => {
 
 // Restart Button
 restartButton.addEventListener('click', resetScreen);
+
 
 
 
