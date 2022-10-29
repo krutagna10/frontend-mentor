@@ -4,6 +4,7 @@ let player1 = {
     choice: 'x',
     score: 0,
     icon: 'images/icon-x.svg',
+    iconBackground: "url('../images/icon-x.svg')",
     iconSilver: 'images/icon-x-silver.svg',
     iconDarkNavy: 'images/icon-x-dark-navy.svg',
     iconOutline: 'images/icon-x-outline.svg',
@@ -13,6 +14,7 @@ let player2 = {
     choice: 'o',
     score: 0,
     icon: 'images/icon-o.svg',
+    iconBackground: "url('../images/icon-o.svg')",
     iconSilver: 'images/icon-o-silver.svg',
     iconDarkNavy: 'images/icon-o-dark-navy.svg',
     iconOutline: 'images/icon-o-outline.svg',
@@ -34,6 +36,7 @@ const overlay = document.querySelector('.overlay');
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
 const markSelectionIcons = document.querySelectorAll('.mark-selection__icon');
 const newGameButton = document.querySelector('.new-game-button');
+const restartButton = document.querySelector('.restart-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
 const nextRoundButton = document.querySelector('.next-round-button');
 const quitButton = document.querySelector('.quit-button');
@@ -127,10 +130,13 @@ const checkForWin = (arr, player) => {
 }
 
 // Displaying choice icon
+
 const displayChoice = (player, index) => {
-    let image = document.createElement('img');
-    player === 'computer' ? image.src = computer.icon : image.src = user.icon;
-    choiceButtons[index].appendChild(image);
+    if (player === 'computer') {
+        choiceButtons[index].style.backgroundImage = computer.iconBackground;
+    } else {
+        choiceButtons[index].style.backgroundImage = user.iconBackground;
+    }
     choiceButtons[index].disabled = true;
 }
 
@@ -191,8 +197,11 @@ choiceButtons.forEach((choiceButton, index) => {
 
 const resetScreen = () => {
     for (const choiceButton of choiceButtons) {
-        let image = document.querySelector()
-        choiceButton.removeChild(userChoiceIcon);
+      choiceButton.style.backgroundImage = '';
+        userChoicesArray = [];
+        computerChoicesArray = [];
+        availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        choiceButton.disabled = false;
     }
 }
 
@@ -202,6 +211,10 @@ nextRoundButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
     resetScreen();
 })
+
+// Restart Button
+restartButton.addEventListener('click', resetScreen);
+
 
 
 

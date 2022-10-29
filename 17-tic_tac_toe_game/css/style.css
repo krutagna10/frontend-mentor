@@ -182,6 +182,8 @@ body {
     border: none;
     transition: all 0.3s ease-out;
     position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .choice-button > img {
