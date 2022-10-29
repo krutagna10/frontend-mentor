@@ -127,6 +127,14 @@
     color: var(--dark-navy);
 }
 
+.text-color-light-yellow {
+    color: var(--light-yellow);
+}
+
+.text-color-light-blue {
+    color: var(--light-blue);
+}
+
 .uppercase {
     text-transform: uppercase;
 }

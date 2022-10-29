@@ -25,24 +25,32 @@ let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
+
 // Elements
+const body = document.querySelector('body');
+const overlay = document.querySelector('.overlay');
+
+// Button elements
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
 const markSelectionIcons = document.querySelectorAll('.mark-selection__icon');
 const newGameButton = document.querySelector('.new-game-button');
-const body = document.querySelector('body');
-const hoverIcons = document.querySelectorAll('.hover-icon');
 const choiceButtons = document.querySelectorAll('.choice-button');
+const nextRoundButton = document.querySelector('.next-round-button');
+const quitButton = document.querySelector('.quit-button');
+
+const userChoiceIcons = document.querySelector('.choice-button > img');
+const hoverIcons = document.querySelectorAll('.hover-icon');
+
 const turnIcon = document.querySelector('.current-turn__icon');
 const xUser = document.querySelector('.x-user');
 const oUser = document.querySelector('.o-user');
 const xScore = document.querySelector('.x-score');
 const oScore = document.querySelector('.o-score');
-
+const tiesScore = document.querySelector('.ties-score');
 
 // Initial values of user and computer
 let user = player2;
 let computer = player1;
-
 
 // Changing hover icon according to user selection
 const changeHoverIcon = () => {
@@ -100,13 +108,19 @@ newGameButton.addEventListener('click', () => {
 })
 
 // Checking for Win
-const checkForWin = (arr) => {
+const checkForWin = (arr, player) => {
     if (arr.length >= 3) {
         arr.sort((a, b) => a - b);
         console.log(arr);
         for (const element of winConditions) {
             if (element.every(element => arr.includes(element))) {
-                return true;
+                body.classList.add('game-finished');
+                overlay.classList.remove('hidden');
+                if (player === 'computer') {
+                    document.querySelector('.result').textContent = 'Computer Wins';
+                } else {
+                    document.querySelector('.result').textContent = 'User Wins';
+                }
             }
         }
     }
@@ -125,6 +139,10 @@ const updateAvailableChoices = (index) => {
     availableChoices.splice(index, 1);
 }
 
+const checkForDraw = () => {
+    return availableChoices.length === 0;
+}
+
 const getComputerChoice = () => {
     // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
@@ -137,15 +155,12 @@ const getComputerChoice = () => {
     computerChoicesArray.push(random);
 
     // Checking conditions
-    if (availableChoices.length === 0) {
+    if (checkForDraw()) {
         body.classList.add('game-finished');
         document.querySelector('.result').textContent = 'Draw';
     }
 
-    if (checkForWin(computerChoicesArray)) {
-        body.classList.add('game-finished');
-        document.querySelector('.result').textContent = 'Computer Wins';
-    }
+    checkForWin(computerChoicesArray, 'computer')
 
     turnIcon.src = user.icon;
 }
@@ -160,23 +175,33 @@ choiceButtons.forEach((choiceButton, index) => {
         userChoicesArray.push(index);
 
         // Checking conditions
-        if (availableChoices.length === 0) {
+        if (checkForDraw()) {
             body.classList.add('game-finished');
             document.querySelector('.result').textContent = 'Draw';
         } else {
             getComputerChoice();
         }
 
-        console.log(checkForWin(userChoicesArray))
-        if (checkForWin(userChoicesArray)) {
-            body.classList.add('game-finished');
-            document.querySelector('.result').textContent = 'User Wins';
-        }
+        checkForWin(userChoicesArray, 'user')
 
         turnIcon.src = computer.icon;
 
     })
 });
+
+const resetScreen = () => {
+    for (const choiceButton of choiceButtons) {
+        let image = document.querySelector()
+        choiceButton.removeChild(userChoiceIcon);
+    }
+}
+
+// Next Round Button
+nextRoundButton.addEventListener('click', () => {
+    body.classList.remove('game-finished');
+    overlay.classList.add('hidden');
+    resetScreen();
+})
 
 
 
