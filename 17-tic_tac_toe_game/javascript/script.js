@@ -122,7 +122,7 @@ newGameButton.addEventListener('click', () => {
 
 // Displaying choice icon
 const displayChoice = (player, index) => {
-    if (player === 'computer') {
+    if (player.choice === computer.choice) {
         choiceButtons[index].style.backgroundImage = computer.iconBackground;
     } else {
         choiceButtons[index].style.backgroundImage = user.iconBackground;
@@ -141,7 +141,7 @@ const displayResult = (winner) => {
     overlay.classList.remove('hidden');
     winner.choice === 'x' ? roundText.classList.add('x-won') : roundText.classList.remove('x-won');
 
-    if (winner === 'user') {
+    if (winner.choice === user.choice) {
         resultText.textContent = 'You win';
         resultIcon.src = user.icon;
         user.score = user.score + 1;
@@ -161,7 +161,7 @@ const checkForWin = (arr, player) => {
         console.log(arr);
         for (const element of winConditions) {
             if (element.every(element => arr.includes(element))) {
-                if (player === 'computer') {
+                if (player.choice === computer.choice) {
                     setTimeout(displayResult, 1300, player);
                     return true;
                 } else {
@@ -218,7 +218,7 @@ const getComputerChoice = () => {
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
     // Displaying and updating choice
-    setTimeout(displayChoice, 1300, 'computer', random);
+    setTimeout(displayChoice, 1300, computer, random);
     updateAvailableChoices(availableChoices.findIndex(element => element === random));
 
     // Pushing value to computer choice array
@@ -226,23 +226,22 @@ const getComputerChoice = () => {
 
     // Checking conditions
     checkForDraw();
-    checkForWin(computerChoicesArray, 'computer')
+    checkForWin(computerChoicesArray, computer)
 
     turnIcon.src = user.icon;
-    // opponentThinkingText.style.display = 'none';
 }
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
         // Displaying and updating choice
-        displayChoice('user', index);
+        displayChoice(user, index);
         updateAvailableChoices(availableChoices.findIndex(element => element === index));
 
         // Pushing value to user choices array
         userChoicesArray.push(index);
 
         // Checking conditions
-        if (!checkForWin(userChoicesArray, 'user') && !checkForDraw()) {
+        if (!checkForWin(userChoicesArray, user) && !checkForDraw()) {
             getComputerChoice();
         }
 

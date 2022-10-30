@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92e2f1a7-879d-4a77-b7f9-645da3c635e4" name="Changes" comment="Game overlay added">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,8 @@
       <workItem from="1667046244048" duration="44000" />
       <workItem from="1667047434648" duration="2011000" />
       <workItem from="1667055548856" duration="3513000" />
-      <workItem from="1667059452605" duration="1737000" />
+      <workItem from="1667059452605" duration="2014000" />
+      <workItem from="1667102280748" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666963580391</created>
@@ -214,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667061397713</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Game overlay added">
+      <created>1667061621212</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667061621212</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
