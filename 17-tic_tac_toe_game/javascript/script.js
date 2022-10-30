@@ -209,6 +209,8 @@ const hideGameOverlay = () => {
 
 // Get computer choice
 const getComputerChoice = () => {
+    turnIcon.src = user.iconSilver;
+
     opponentThinkingText.style.display = 'block';
     setTimeout(hideText, 1300);
 
@@ -228,7 +230,6 @@ const getComputerChoice = () => {
     checkForDraw();
     checkForWin(computerChoicesArray, computer)
 
-    turnIcon.src = user.icon;
 }
 
 choiceButtons.forEach((choiceButton, index) => {
@@ -245,7 +246,7 @@ choiceButtons.forEach((choiceButton, index) => {
             getComputerChoice();
         }
 
-        turnIcon.src = computer.icon;
+        turnIcon.src = computer.iconSilver;
 
     })
 });
