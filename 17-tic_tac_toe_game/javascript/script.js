@@ -30,10 +30,12 @@ const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2
 
 // Elements
 const body = document.querySelector('body');
+const gameFinishedSection = document.querySelector('.game-finished-section');
 const gameOverlay = document.querySelector('.game-overlay');
 const overlay = document.querySelector('.overlay');
 const opponentThinkingText = document.querySelector('.opponent-thinking-text-wrapper');
 const roundText = document.querySelector('.game-finished__round-text');
+const resultWrapper = document.querySelector('.result-wrapper');
 const resultText = document.querySelector('.result');
 const resultIcon = document.querySelector('.result-icon');
 
@@ -138,18 +140,18 @@ const updateAvailableChoices = (index) => {
     availableChoices.splice(index, 1);
 }
 
-
 const displayResult = (winner) => {
+    gameFinishedSection.classList.remove('draw');
+
     body.classList.add('game-finished');
     overlay.classList.remove('hidden');
     winner.choice === 'x' ? roundText.classList.add('x-won') : roundText.classList.remove('x-won');
-
     if (winner.choice === user.choice) {
-        resultText.textContent = 'You win';
+        resultText.textContent = 'You won!';
         resultIcon.src = user.icon;
         displayScore();
     } else {
-        resultText.textContent = 'Oh no you lose!';
+        resultText.textContent = 'Oh no, you lost!';
         resultIcon.src = computer.icon;
         displayScore();
     }
@@ -157,25 +159,20 @@ const displayResult = (winner) => {
 
 // Checking for Win
 const checkForWin = (arr, player) => {
-    if (arr.length >= 3) {
-        arr.sort((a, b) => a - b);
-        console.log(arr);
-        for (const element of winConditions) {
-            if (element.every(element => arr.includes(element))) {
-                if (player.choice === computer.choice) {
-                    computerScore = computerScore + 1;
-                    setTimeout(displayResult, 1300, player);
-                    return true;
-                } else {
-                    userScore = userScore + 1;
-                    displayResult(player)
-                    return true;
-                }
+    for (const element of winConditions) {
+        if (element.every(element => arr.includes(element))) {
+            if (player.choice === computer.choice) {
+                computerScore = computerScore + 1;
+                setTimeout(displayResult, 1300, player);
+                return true;
+            } else {
+                userScore = userScore + 1;
+                displayResult(player)
+                return true;
             }
         }
-        return false;
     }
-    return false;
+
 }
 
 // Checking for draw
@@ -186,7 +183,7 @@ const checkForDraw = (player) => {
         } else {
             body.classList.add('game-finished');
         }
-        document.querySelector('.result').textContent = 'Draw';
+        gameFinishedSection.classList.add('draw');
         tieScore = tieScore + 1;
         displayScore()
         return true;
@@ -206,23 +203,18 @@ const displayScore = () => {
     }
 }
 
-const hideText = () => {
-    opponentThinkingText.style.display = 'none';
-}
-
-const hideGameOverlay = () => {
+const hideElements = () => {
     gameOverlay.classList.add('hidden');
+    opponentThinkingText.style.display = 'none';
 }
 
 // Get computer choice
 const getComputerChoice = () => {
-    turnIcon.src = user.iconSilver;
-
+    // When the computer is making its choice
     opponentThinkingText.style.display = 'block';
-    setTimeout(hideText, 1300);
-
     gameOverlay.classList.remove('hidden');
-    setTimeout(hideGameOverlay, 1300);
+    setTimeout(hideElements, 1300);
+
     // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
@@ -234,7 +226,7 @@ const getComputerChoice = () => {
     computerChoicesArray.push(random);
 
     // Checking conditions
-    if(!checkForWin(computerChoicesArray, computer)) {
+    if (!checkForWin(computerChoicesArray, computer)) {
         checkForDraw(computer);
     }
 
@@ -253,9 +245,6 @@ choiceButtons.forEach((choiceButton, index) => {
         if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
             getComputerChoice();
         }
-
-
-        turnIcon.src = computer.iconSilver;
 
     })
 });

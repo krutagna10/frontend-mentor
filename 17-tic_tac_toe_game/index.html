@@ -133,21 +133,30 @@
 </main>
 
 <section class="game-finished-section background-semi-dark-navy">
-    <div class="container flow grid grid-place-center">
-        <p class="result text-color-silver font-size-200">You Win</p>
-        <div class="flex flex-gap flex-align-center">
-            <img src="images/icon-o.svg" alt="icon" class="result-icon">
-            <p class="game-finished__round-text font-size-500 text-color-light-yellow uppercase">Takes the round</p>
+    <div class="container grid-gap grid grid-place-center text-align-center">
+        <div class="result-wrapper flow">
+            <p class="result text-color-silver font-size-200 uppercase">You Won !</p>
+            <div class="win-lose-result flex flex-gap flex-align-center">
+                <img src="images/icon-o.svg" alt="icon" class="result-icon">
+                <p class="game-finished__round-text font-size-500 text-color-light-yellow uppercase">Takes the round</p>
+            </div>
         </div>
+
+        <div class="draw-result">
+            <p class="game-finished__round-text font-weight-bold font-size-500 text-color-silver uppercase">Round
+                Tied</p>
+        </div>
+
         <div class="buttons-wrapper flex flex-gap">
-            <button class="quit-button btn uppercase background-silver text-color-dark-navy border-radius">Quit</button>
-            <button class="next-round-button btn uppercase background-light-yellow text-color-dark-navy border-radius">Next Round
+            <button class="quit-button btn font-size-200 uppercase background-silver text-color-dark-navy border-radius">
+                Quit
+            </button>
+            <button class="next-round-button btn font-size-200 uppercase background-light-yellow text-color-dark-navy border-radius">
+                Next Round
             </button>
         </div>
     </div>
 </section>
-
-
 
 
 <div class="overlay hidden"></div>
@@ -155,35 +164,3 @@
 </body>
 </html>
 
-<!--  &lt;!&ndash; New game menu start &ndash;&gt;-->
-
-<!--  Pick player 1's mark-->
-<!--  Remember: X goes first-->
-
-<!--  New Game (vs CPU)-->
-<!--  New Game (vs player)-->
-
-<!--  &lt;!&ndash; New game menu end &ndash;&gt;-->
-
-<!--  &lt;!&ndash; Game board start &ndash;&gt;-->
-
-<!--  &lt;!&ndash; x/o icon &ndash;&gt; turn-->
-
-<!--  X (You) &lt;!&ndash; Your score &ndash;&gt;-->
-<!--  Ties &lt;!&ndash; Ties score &ndash;&gt;-->
-<!--  X (CPU) &lt;!&ndash; CPU score &ndash;&gt;-->
-
-<!--  Oh no, you lost-->
-<!--  You won!-->
-<!--  Player &lt;!&ndash; 1/2 &ndash;&gt; wins!-->
-
-<!--  &lt;!&ndash; x/o icon &ndash;&gt; takes the round-->
-<!--  Round tied-->
-<!--  Restart game?-->
-
-<!--  Quit-->
-<!--  Next round-->
-<!--  No, cancel-->
-<!--  Yes, restart-->
-
-<!--  &lt;!&ndash; Game board end &ndash;&gt;-->
