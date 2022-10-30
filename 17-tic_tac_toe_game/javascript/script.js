@@ -209,25 +209,17 @@ const displayResult = (winner) => {
 
 // Checking for Win
 const checkForWin = (arr, player) => {
-    if (playerVsCpu) {
-        for (const element of winConditions) {
-            if (element.every(element => arr.includes(element))) {
+    for (const element of winConditions) {
+        if (element.every(element => arr.includes(element))) {
+            if (playerVsCpu) {
                 player.choice === computer.choice ? computerScore = computerScore + 1 : userScore = userScore + 1;
-                displayResult(player);
-                return true;
-            }
-        }
-    } else {
-        for (const element of winConditions) {
-            if (element.every(element => arr.includes(element))) {
-                console.log(arr);
+            } else {
                 player.choice === player1.choice ? player1Score = player1Score + 1 : player2Score = player2Score + 1;
-                displayResult(player);
-                return true;
             }
+            displayResult(player);
+            return true;
         }
     }
-
 }
 
 // Checking for draw
@@ -312,6 +304,7 @@ choiceButtons.forEach((choiceButton, index) => {
                 player1ChoicesArray.push(index);
 
                 checkForWin(player1ChoicesArray, player1);
+                checkForDraw();
 
 
                 // Change Active Player
@@ -324,6 +317,7 @@ choiceButtons.forEach((choiceButton, index) => {
                 player2ChoicesArray.push(index);
 
                 checkForWin(player2ChoicesArray, player2);
+                checkForDraw();
 
                 // Change Active Player
                 player1Active = true;
@@ -365,7 +359,13 @@ const changeUser = () => {
         }
         changeHoverIcon();
     } else {
-
+       if (player1.choice === xElement.choice) {
+           player1 = oElement;
+           player2 = xElement;
+       } else {
+           player1 = xElement;
+           player2 = oElement;
+       }
     }
 }
 
