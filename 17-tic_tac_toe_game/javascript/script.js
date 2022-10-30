@@ -185,10 +185,8 @@ const checkForDraw = (player) => {
         }
         gameFinishedSection.classList.add('draw');
         tieScore = tieScore + 1;
-        displayScore()
+        displayScore();
         return true;
-    } else {
-        return false;
     }
 }
 
@@ -273,6 +271,7 @@ const changeUser = () => {
         changeScoreUser();
         displayScore();
     }
+    changeHoverIcon();
 
 }
 
@@ -282,7 +281,6 @@ nextRoundButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
     resetScreen();
     changeUser();
-    changeHoverIcon();
 })
 
 // Restart Button

@@ -69,17 +69,15 @@ body {
     position: relative;
 }
 
+/****************************/
 /* Choice Selection Section */
+/****************************/
 .game-active .choice-selection-section {
     display: none;
 }
 
 .choice-container {
     min-width: 15rem;
-}
-
-.choice-container.flow {
-    --flow-space: 1.5rem;
 }
 
 .mark-selection-wrapper {
@@ -124,7 +122,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.new-game-button.player-vs-cpu {
+.new-game-button.player-vs-cpu,
+.next-round-button {
     box-shadow: 0 6px hsl(var(--raw-light-yellow), 0.6);
 }
 
@@ -140,7 +139,6 @@ body {
 .new-game-button.player-vs-player:hover {
     background-color: var(--light-blue-hover) !important
 }
-
 
 @media (min-width: 32em) {
     .choice-container {
@@ -163,7 +161,9 @@ body {
 
 }
 
-/* Game Section */
+/*****************/
+/* Game Section  */
+/*****************/
 .game-section {
     display: none;
 }
@@ -261,7 +261,9 @@ body {
     }
 }
 
-/* Game Finished Section*/
+/**************************/
+/* Game Finished Section  */
+/**************************/
 .game-finished-section {
     display: none;
     position: absolute;
@@ -277,6 +279,10 @@ body {
     display: block;
 }
 
+.game-container {
+    --grid-gap: 1.5rem;
+}
+
 .result-icon {
     max-width: 15% !important;
 }
@@ -285,22 +291,12 @@ body {
     display: none;
 }
 
+/* When the result is draw */
 .draw .draw-result {
     display: block;
 }
 
 .draw .result-wrapper {
-    display: none;
-}
-
-.overlay {
-    position: absolute;
-    display: block;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.overlay.hidden {
     display: none;
 }
 
@@ -312,15 +308,21 @@ body {
     color: var(--light-blue) !important;
 }
 
-.next-round-button {
-    box-shadow: 0 6px hsl(var(--raw-light-yellow), 0.6);
-}
-
 .quit-button {
   box-shadow: 0 6px hsl(var(--raw-silver), 0.6);
 }
 
+/* Overlay */
+.overlay {
+    position: absolute;
+    display: block;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
+.overlay.hidden {
+    display: none;
+}
 
 
 
