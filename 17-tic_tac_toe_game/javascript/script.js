@@ -118,6 +118,9 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
 // When the user clicks on new game button (Player vs CPU)
 newGameButton.addEventListener('click', () => {
     body.classList.add('game-active');
+    if (computer.choice === player1.choice) {
+        getComputerChoice();
+    }
 })
 
 // Displaying choice icon
@@ -176,9 +179,13 @@ const checkForWin = (arr, player) => {
 }
 
 // Checking for draw
-const checkForDraw = () => {
+const checkForDraw = (player) => {
     if (availableChoices.length === 0) {
-        body.classList.add('game-finished');
+        if (player.choice === computer.choice) {
+            setTimeout(() => body.classList.add('game-finished'), 1300)
+        } else {
+            body.classList.add('game-finished');
+        }
         document.querySelector('.result').textContent = 'Draw';
         tieScore = tieScore + 1;
         displayScore()
@@ -227,7 +234,7 @@ const getComputerChoice = () => {
     computerChoicesArray.push(random);
 
     // Checking conditions
-    checkForDraw();
+    checkForDraw(computer);
     checkForWin(computerChoicesArray, computer)
 
 }
@@ -242,7 +249,7 @@ choiceButtons.forEach((choiceButton, index) => {
         userChoicesArray.push(index);
 
         // Checking conditions
-        if (!checkForWin(userChoicesArray, user) && !checkForDraw()) {
+        if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
             getComputerChoice();
         }
 
@@ -261,16 +268,31 @@ const resetScreen = () => {
     }
 }
 
+
+const changeUser = () => {
+    if (user.choice === player1.choice) {
+        getComputerChoice();
+    }
+    console.log(user);
+    console.log(computer);
+    let temp = user;
+    user = computer;
+    computer = temp;
+    console.log(user);
+    console.log(computer);
+}
+
 // Next Round Button
 nextRoundButton.addEventListener('click', () => {
     body.classList.remove('game-finished');
     overlay.classList.add('hidden');
     resetScreen();
+    changeUser();
+    changeHoverIcon();
 })
 
 // Restart Button
 restartButton.addEventListener('click', resetScreen);
-
 
 
 
