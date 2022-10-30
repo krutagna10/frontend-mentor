@@ -32,7 +32,7 @@ let player1Score = 0;
 let player2Score = 0;
 
 let playerVsPlayer = false;
-let playerVsCpu = false;
+let playerVsCpu = true;
 
 // Choices
 let userChoicesArray = [];
@@ -127,12 +127,12 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
         if (markSelectionButton.classList.contains('x-selection')) {
             user = xElement;
             computer = oElement;
-            changeHoverIcon();
+            changeHoverIcon('user');
             changeScoreUser();
         } else {
             user = oElement;
             computer = xElement;
-            changeHoverIcon();
+            changeHoverIcon('user');
             changeScoreUser()
         }
         currentChoiceIndex = index;
@@ -159,10 +159,18 @@ newGamePlayerVsPlayer.addEventListener('click', () => {
 
 // Displaying choice icon
 const displayChoice = (player, index) => {
-    if (player.choice === computer.choice) {
-        choiceButtons[index].style.backgroundImage = computer.iconBackground;
+    if (playerVsCpu) {
+        if (player.choice === computer.choice) {
+            choiceButtons[index].style.backgroundImage = computer.iconBackground;
+        } else {
+            choiceButtons[index].style.backgroundImage = user.iconBackground;
+        }
     } else {
-        choiceButtons[index].style.backgroundImage = user.iconBackground;
+        if (player.choice === player1.choice) {
+            choiceButtons[index].style.backgroundImage = player1.iconBackground;
+        } else {
+            choiceButtons[index].style.backgroundImage = player2.iconBackground;
+        }
     }
     choiceButtons[index].disabled = true;
 }
@@ -173,19 +181,29 @@ const updateAvailableChoices = (index) => {
 }
 
 const displayResult = (winner) => {
-    // Removing draw classes
     gameFinishedSection.classList.remove('draw');
-    // Adding game-finished classes
     body.classList.add('game-finished');
     overlay.classList.remove('hidden');
     winner.choice === 'x' ? roundText.classList.add('x-won') : roundText.classList.remove('x-won');
     displayScore();
-    if (winner.choice === user.choice) {
-        resultText.textContent = 'You won!';
-        resultIcon.src = user.icon;
+
+    if (playerVsCpu) {
+        if (winner.choice === user.choice) {
+            resultText.textContent = 'You won!';
+            resultIcon.src = user.icon;
+        } else {
+            resultText.textContent = 'Oh no, you lost!';
+            resultIcon.src = computer.icon;
+        }
     } else {
-        resultText.textContent = 'Oh no, you lost!';
-        resultIcon.src = computer.icon;
+        if (winner.choice === player1.choice) {
+            resultText.textContent = 'Player 1 won';
+            resultIcon.src = player1.icon;
+        } else {
+            resultText.textContent = 'Player 2 won';
+            resultIcon.src = player2.icon;
+
+        }
     }
 }
 
@@ -202,6 +220,7 @@ const checkForWin = (arr, player) => {
     } else {
         for (const element of winConditions) {
             if (element.every(element => arr.includes(element))) {
+                console.log(arr);
                 player.choice === player1.choice ? player1Score = player1Score + 1 : player2Score = player2Score + 1;
                 displayResult(player);
                 return true;
@@ -284,7 +303,6 @@ choiceButtons.forEach((choiceButton, index) => {
                 setTimeout(getComputerChoice, 1300);
             }
 
-
             // Turn icon
             turnIcon.src = computer.iconSilver;
         } else {
@@ -303,7 +321,7 @@ choiceButtons.forEach((choiceButton, index) => {
             } else {
                 displayChoice(player2, index);
                 updateAvailableChoices(availableChoices.findIndex(element => element === index));
-                player1ChoicesArray.push(index);
+                player2ChoicesArray.push(index);
 
                 checkForWin(player2ChoicesArray, player2);
 
@@ -322,6 +340,8 @@ const resetScreen = () => {
         choiceButton.style.backgroundImage = '';
         userChoicesArray = [];
         computerChoicesArray = [];
+        player1ChoicesArray = [];
+        player2ChoicesArray = [];
         availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
         choiceButton.disabled = false;
     }
@@ -329,21 +349,24 @@ const resetScreen = () => {
 
 
 const changeUser = () => {
-    if (user.choice === xElement.choice) {
-        user = oElement;
-        computer = xElement;
-        changeScoreUser();
-        displayScore();
-        showElements();
-        setTimeout(getComputerChoice, 1300);
+    if (playerVsCpu) {
+        if (user.choice === xElement.choice) {
+            user = oElement;
+            computer = xElement;
+            changeScoreUser();
+            displayScore();
+            showElements();
+            setTimeout(getComputerChoice, 1300);
+        } else {
+            user = xElement;
+            computer = oElement;
+            changeScoreUser();
+            displayScore();
+        }
+        changeHoverIcon();
     } else {
-        user = xElement;
-        computer = oElement;
-        changeScoreUser();
-        displayScore();
-    }
-    changeHoverIcon();
 
+    }
 }
 
 // Next Round Button
