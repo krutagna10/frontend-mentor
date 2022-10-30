@@ -28,12 +28,18 @@ let userScore = 0;
 let computerScore = 0;
 let tieScore = 0;
 
+let player1Score = 0;
+let player2Score = 0;
+
 let playerVsPlayer = false;
 let playerVsCpu = false;
 
 // Choices
 let userChoicesArray = [];
 let computerChoicesArray = [];
+let player1ChoicesArray = [];
+let player2ChoicesArray = [];
+
 let availableChoices = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
@@ -74,9 +80,19 @@ const tiesScoreElement = document.querySelector('.ties-score');
 
 
 // Changing hover icon according to user selection
-const changeHoverIcon = () => {
-    for (const hoverIcon of hoverIcons) {
-        hoverIcon.src = user.iconOutline;
+const changeHoverIcon = (currentPlayer) => {
+    if (playerVsCpu) {
+        for (const hoverIcon of hoverIcons) {
+            hoverIcon.src = user.iconOutline;
+        }
+    } else {
+        for (const hoverIcon of hoverIcons) {
+            if (currentPlayer.choice === player1.choice) {
+                hoverIcon.src = player1.iconOutline;
+            } else {
+                hoverIcon.src = player2.iconOutline;
+            }
+        }
     }
 }
 
@@ -175,11 +191,21 @@ const displayResult = (winner) => {
 
 // Checking for Win
 const checkForWin = (arr, player) => {
-    for (const element of winConditions) {
-        if (element.every(element => arr.includes(element))) {
-            player.choice === computer.choice ? computerScore = computerScore + 1 : userScore = userScore + 1;
-            displayResult(player);
-            return true;
+    if (playerVsCpu) {
+        for (const element of winConditions) {
+            if (element.every(element => arr.includes(element))) {
+                player.choice === computer.choice ? computerScore = computerScore + 1 : userScore = userScore + 1;
+                displayResult(player);
+                return true;
+            }
+        }
+    } else {
+        for (const element of winConditions) {
+            if (element.every(element => arr.includes(element))) {
+                player.choice === player1.choice ? player1Score = player1Score + 1 : player2Score = player2Score + 1;
+                displayResult(player);
+                return true;
+            }
         }
     }
 
@@ -239,6 +265,9 @@ const getComputerChoice = () => {
 
 }
 
+let player1Active = true;
+let player2Active = false;
+
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
         if (playerVsCpu) {
@@ -250,17 +279,39 @@ choiceButtons.forEach((choiceButton, index) => {
             userChoicesArray.push(index);
 
             // Checking conditions
-            if (playerVsCpu) {
-                if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
-                    showElements();
-                    setTimeout(getComputerChoice, 1300);
-                }
+            if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
+                showElements();
+                setTimeout(getComputerChoice, 1300);
             }
+
 
             // Turn icon
             turnIcon.src = computer.iconSilver;
         } else {
+            if (player1Active) {
+                displayChoice(player1, index);
+                updateAvailableChoices(availableChoices.findIndex(element => element === index));
+                player1ChoicesArray.push(index);
 
+                checkForWin(player1ChoicesArray, player1);
+
+
+                // Change Active Player
+                player1Active = false;
+                player2Active = true;
+                setTimeout(changeHoverIcon, 500, player2);
+            } else {
+                displayChoice(player2, index);
+                updateAvailableChoices(availableChoices.findIndex(element => element === index));
+                player1ChoicesArray.push(index);
+
+                checkForWin(player2ChoicesArray, player2);
+
+                // Change Active Player
+                player1Active = true;
+                player2Active = false;
+                setTimeout(changeHoverIcon, 500, player1);
+            }
         }
 
     })
