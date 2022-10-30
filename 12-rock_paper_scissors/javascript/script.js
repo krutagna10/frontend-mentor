@@ -47,14 +47,15 @@ let computerChoice = (game) => {
 // Displaying scores and incrementing or decrementing them
 const incrementScore = () => {
     score = score + 1;
-    scoreElement.textContent = score;
+    setTimeout(() => scoreElement.textContent = score, 1300);
+
 }
 const decrementScore = () => {
     score = score - 1;
     if (score < 0) {
         score = 0;
     }
-    scoreElement.textContent = score;
+    setTimeout(() => scoreElement.textContent = score, 1300);
 }
 
 // Display images on result tab
