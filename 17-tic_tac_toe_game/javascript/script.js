@@ -1,7 +1,7 @@
 'use strict';
 
 // Players
-let player1 = {
+let xElement = {
     choice: 'x',
     icon: 'images/icon-x.svg',
     iconBackground: "url('../images/icon-x.svg')",
@@ -9,7 +9,7 @@ let player1 = {
     iconDarkNavy: 'images/icon-x-dark-navy.svg',
     iconOutline: 'images/icon-x-outline.svg',
 }
-let player2 = {
+let oElement = {
     choice: 'o',
     icon: 'images/icon-o.svg',
     iconBackground: "url('../images/icon-o.svg')",
@@ -17,6 +17,12 @@ let player2 = {
     iconDarkNavy: 'images/icon-o-dark-navy.svg',
     iconOutline: 'images/icon-o-outline.svg',
 }
+
+// Initial values of user/computer and player1 and player2
+let user = oElement;
+let computer = xElement;
+let player1 = oElement;
+let player2 = xElement
 
 let userScore = 0;
 let computerScore = 0;
@@ -66,9 +72,6 @@ const xScoreElement = document.querySelector('.x-score');
 const oScoreElement = document.querySelector('.o-score');
 const tiesScoreElement = document.querySelector('.ties-score');
 
-// Initial values of user and computer
-let user = player2;
-let computer = player1;
 
 // Changing hover icon according to user selection
 const changeHoverIcon = () => {
@@ -79,7 +82,7 @@ const changeHoverIcon = () => {
 
 // Changing score User
 const changeScoreUser = () => {
-    if (user.choice === player1.choice) {
+    if (user.choice === xElement.choice) {
         xUser.textContent = '(You)';
         oUser.textContent = '(CPU)';
     } else {
@@ -106,13 +109,13 @@ let currentChoiceIndex = -1;
 markSelectionButtons.forEach((markSelectionButton, index) => {
     markSelectionButton.addEventListener('click', () => {
         if (markSelectionButton.classList.contains('x-selection')) {
-            user = player1;
-            computer = player2;
+            user = xElement;
+            computer = oElement;
             changeHoverIcon();
             changeScoreUser();
         } else {
-            user = player2;
-            computer = player1;
+            user = oElement;
+            computer = xElement;
             changeHoverIcon();
             changeScoreUser()
         }
@@ -125,8 +128,8 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
 newGamePlayerVsCpu.addEventListener('click', () => {
     body.classList.add('game-active');
     playerVsCpu = true;
-    playerVsPlayer = true;
-    if (computer.choice === player1.choice) {
+    playerVsPlayer = false;
+    if (computer.choice === xElement.choice) {
         showElements();
         setTimeout(getComputerChoice, 1300);
     }
@@ -275,16 +278,16 @@ const resetScreen = () => {
 
 
 const changeUser = () => {
-    if (user.choice === player1.choice) {
-        user = player2;
-        computer = player1;
+    if (user.choice === xElement.choice) {
+        user = oElement;
+        computer = xElement;
         changeScoreUser();
         displayScore();
         showElements();
         setTimeout(getComputerChoice, 1300);
     } else {
-        user = player1;
-        computer = player2;
+        user = xElement;
+        computer = oElement;
         changeScoreUser();
         displayScore();
     }
