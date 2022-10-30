@@ -44,7 +44,7 @@ body {
 }
 
 .preview-card-component {
-    padding: 3rem 0rem;
+    padding: 3rem 0;
 }
 
 .column {
@@ -57,7 +57,6 @@ body {
 .icon {
     display: block;
     max-width: 100%;
-    transition: all 1s ease;
 }
 
 .icon.active{
