@@ -22,6 +22,9 @@ let userScore = 0;
 let computerScore = 0;
 let tieScore = 0;
 
+let playerVsPlayer = false;
+let playerVsCpu = false;
+
 // Choices
 let userChoicesArray = [];
 let computerChoicesArray = [];
@@ -42,7 +45,8 @@ const resultIcon = document.querySelector('.result-icon');
 // Button elements
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
 const markSelectionIcons = document.querySelectorAll('.mark-selection__icon');
-const newGameButton = document.querySelector('.new-game-button');
+const newGamePlayerVsCpu = document.querySelector('.new-game-button.player-vs-cpu');
+const newGamePlayerVsPlayer = document.querySelector('.new-game-button.player-vs-player');
 const restartButton = document.querySelector('.restart-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
 const nextRoundButton = document.querySelector('.next-round-button');
@@ -118,11 +122,20 @@ markSelectionButtons.forEach((markSelectionButton, index) => {
 })
 
 // When the user clicks on new game button (Player vs CPU)
-newGameButton.addEventListener('click', () => {
+newGamePlayerVsCpu.addEventListener('click', () => {
     body.classList.add('game-active');
+    playerVsCpu = true;
+    playerVsPlayer = true;
     if (computer.choice === player1.choice) {
-        getComputerChoice();
+        showElements();
+        setTimeout(getComputerChoice, 1300);
     }
+})
+
+newGamePlayerVsPlayer.addEventListener('click', () => {
+    playerVsPlayer = true;
+    playerVsCpu = false;
+    body.classList.add('game-active');
 })
 
 // Displaying choice icon
@@ -141,19 +154,19 @@ const updateAvailableChoices = (index) => {
 }
 
 const displayResult = (winner) => {
+    // Removing draw classes
     gameFinishedSection.classList.remove('draw');
-
+    // Adding game-finished classes
     body.classList.add('game-finished');
     overlay.classList.remove('hidden');
     winner.choice === 'x' ? roundText.classList.add('x-won') : roundText.classList.remove('x-won');
+    displayScore();
     if (winner.choice === user.choice) {
         resultText.textContent = 'You won!';
         resultIcon.src = user.icon;
-        displayScore();
     } else {
         resultText.textContent = 'Oh no, you lost!';
         resultIcon.src = computer.icon;
-        displayScore();
     }
 }
 
@@ -161,28 +174,18 @@ const displayResult = (winner) => {
 const checkForWin = (arr, player) => {
     for (const element of winConditions) {
         if (element.every(element => arr.includes(element))) {
-            if (player.choice === computer.choice) {
-                computerScore = computerScore + 1;
-                setTimeout(displayResult, 1300, player);
-                return true;
-            } else {
-                userScore = userScore + 1;
-                displayResult(player)
-                return true;
-            }
+            player.choice === computer.choice ? computerScore = computerScore + 1 : userScore = userScore + 1;
+            displayResult(player);
+            return true;
         }
     }
 
 }
 
 // Checking for draw
-const checkForDraw = (player) => {
+const checkForDraw = () => {
     if (availableChoices.length === 0) {
-        if (player.choice === computer.choice) {
-            setTimeout(() => body.classList.add('game-finished'), 1300)
-        } else {
-            body.classList.add('game-finished');
-        }
+        body.classList.add('game-finished');
         gameFinishedSection.classList.add('draw');
         tieScore = tieScore + 1;
         displayScore();
@@ -201,23 +204,26 @@ const displayScore = () => {
     }
 }
 
-const hideElements = () => {
-    gameOverlay.classList.add('hidden');
-    opponentThinkingText.style.display = 'none';
+const showElements = () => {
+    gameOverlay.classList.remove('hidden');
+    opponentThinkingText.style.display = 'block';
 }
 
 // Get computer choice
 const getComputerChoice = () => {
+    // Turn icon
+    turnIcon.src = user.iconSilver;
+
+
     // When the computer is making its choice
-    opponentThinkingText.style.display = 'block';
-    gameOverlay.classList.remove('hidden');
-    setTimeout(hideElements, 1300);
+    opponentThinkingText.style.display = 'none';
+    gameOverlay.classList.add('hidden');
 
     // Generating random number for computer Choice
     let random = availableChoices[Math.floor(Math.random() * (availableChoices.length))];
 
     // Displaying and updating choice
-    setTimeout(displayChoice, 1300, computer, random);
+    displayChoice(computer, random);
     updateAvailableChoices(availableChoices.findIndex(element => element === random));
 
     // Pushing value to computer choice array
@@ -232,16 +238,26 @@ const getComputerChoice = () => {
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
-        // Displaying and updating choice
-        displayChoice(user, index);
-        updateAvailableChoices(availableChoices.findIndex(element => element === index));
+        if (playerVsCpu) {
+            // Displaying and updating choice
+            displayChoice(user, index);
+            updateAvailableChoices(availableChoices.findIndex(element => element === index));
 
-        // Pushing value to user choices array
-        userChoicesArray.push(index);
+            // Pushing value to user choices array
+            userChoicesArray.push(index);
 
-        // Checking conditions
-        if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
-            getComputerChoice();
+            // Checking conditions
+            if (playerVsCpu) {
+                if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
+                    showElements();
+                    setTimeout(getComputerChoice, 1300);
+                }
+            }
+
+            // Turn icon
+            turnIcon.src = computer.iconSilver;
+        } else {
+
         }
 
     })
@@ -264,7 +280,8 @@ const changeUser = () => {
         computer = player1;
         changeScoreUser();
         displayScore();
-        getComputerChoice();
+        showElements();
+        setTimeout(getComputerChoice, 1300);
     } else {
         user = player1;
         computer = player2;
@@ -285,6 +302,8 @@ nextRoundButton.addEventListener('click', () => {
 
 // Restart Button
 restartButton.addEventListener('click', resetScreen);
+
+
 
 
 
