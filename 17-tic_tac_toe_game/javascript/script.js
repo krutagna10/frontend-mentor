@@ -3,7 +3,6 @@
 // Players
 let player1 = {
     choice: 'x',
-    score: 0,
     icon: 'images/icon-x.svg',
     iconBackground: "url('../images/icon-x.svg')",
     iconSilver: 'images/icon-x-silver.svg',
@@ -12,7 +11,6 @@ let player1 = {
 }
 let player2 = {
     choice: 'o',
-    score: 0,
     icon: 'images/icon-o.svg',
     iconBackground: "url('../images/icon-o.svg')",
     iconSilver: 'images/icon-o-silver.svg',
@@ -20,6 +18,8 @@ let player2 = {
     iconOutline: 'images/icon-o-outline.svg',
 }
 
+let userScore = 0;
+let computerScore = 0;
 let tieScore = 0;
 
 // Choices
@@ -147,12 +147,10 @@ const displayResult = (winner) => {
     if (winner.choice === user.choice) {
         resultText.textContent = 'You win';
         resultIcon.src = user.icon;
-        user.score = user.score + 1;
         displayScore();
     } else {
         resultText.textContent = 'Oh no you lose!';
         resultIcon.src = computer.icon;
-        computer.score = computer.score + 1;
         displayScore();
     }
 }
@@ -165,9 +163,11 @@ const checkForWin = (arr, player) => {
         for (const element of winConditions) {
             if (element.every(element => arr.includes(element))) {
                 if (player.choice === computer.choice) {
+                    computerScore = computerScore + 1;
                     setTimeout(displayResult, 1300, player);
                     return true;
                 } else {
+                    userScore = userScore + 1;
                     displayResult(player)
                     return true;
                 }
@@ -198,11 +198,11 @@ const checkForDraw = (player) => {
 const displayScore = () => {
     tiesScoreElement.textContent = tieScore;
     if (user.choice === 'x') {
-        xScoreElement.textContent = user.score;
-        oScoreElement.textContent = computer.score;
+        xScoreElement.textContent = userScore;
+        oScoreElement.textContent = computerScore;
     } else {
-        xScoreElement.textContent = computer.score;
-        oScoreElement.textContent = user.score;
+        xScoreElement.textContent = computerScore;
+        oScoreElement.textContent = userScore;
     }
 }
 
@@ -234,8 +234,9 @@ const getComputerChoice = () => {
     computerChoicesArray.push(random);
 
     // Checking conditions
-    checkForDraw(computer);
-    checkForWin(computerChoicesArray, computer)
+    if(!checkForWin(computerChoicesArray, computer)) {
+        checkForDraw(computer);
+    }
 
 }
 
@@ -252,6 +253,7 @@ choiceButtons.forEach((choiceButton, index) => {
         if (!checkForWin(userChoicesArray, user) && !checkForDraw(user)) {
             getComputerChoice();
         }
+
 
         turnIcon.src = computer.iconSilver;
 
@@ -271,15 +273,18 @@ const resetScreen = () => {
 
 const changeUser = () => {
     if (user.choice === player1.choice) {
+        user = player2;
+        computer = player1;
+        changeScoreUser();
+        displayScore();
         getComputerChoice();
+    } else {
+        user = player1;
+        computer = player2;
+        changeScoreUser();
+        displayScore();
     }
-    console.log(user);
-    console.log(computer);
-    let temp = user;
-    user = computer;
-    computer = temp;
-    console.log(user);
-    console.log(computer);
+
 }
 
 // Next Round Button
