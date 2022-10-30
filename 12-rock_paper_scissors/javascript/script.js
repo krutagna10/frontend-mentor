@@ -21,6 +21,10 @@ const easyDifficulty = document.querySelector('.difficulty-buttons .one');
 const hardDifficulty = document.querySelector('.difficulty-buttons .two');
 const rulesImageElement = document.querySelector('.rules-image');
 const headingLogo = document.querySelector('.heading-logo');
+const userWinBackground = document.querySelector('.user-pick-container .win-background');
+const computerWinBackground = document.querySelector('.computer-pick-container .win-background');
+const computerPickBox = document.querySelector('.computer-pick-box');
+const resultBox = document.querySelector('.result-box');
 
 //Initializing variables
 let userChoice;
@@ -31,12 +35,12 @@ let score = 0;
 let computerChoice = (game) => {
     if (game === 'original') {
         let choices = ['rock', 'paper', 'scissors'];
-        let random = parseInt(Math.random() * 3);
+        let random = Math.floor(Math.random() * 3);
         return choices[random];
     } else {
-        let random = parseInt(Math.random() * 5);
+        let random = Math.floor(Math.random() * 5);
         let choices = ['scissors', 'spock', 'paper', 'lizard', 'rock'];
-       return choices[random];
+        return choices[random];
     }
 }
 
@@ -54,9 +58,13 @@ const decrementScore = () => {
 }
 
 // Display images on result tab
-function displayChoiceImage() {
+function displayUserImage() {
     userPickContainer.classList.add(`${userChoice}-container`);
     userPickImage.src = `images/icon-${userChoice}.svg`;
+}
+
+function displayComputerImage() {
+    computerPickBox.style.display = 'flex';
     computerPickContainer.classList.add(`${computerChoiceValue}-container`);
     computerPickImage.src = `images/icon-${computerChoiceValue}.svg`;
 }
@@ -66,20 +74,56 @@ function removeResultImage() {
     computerPickContainer.classList.remove(`${computerChoiceValue}-container`);
 }
 
+function showWinBackground(winner) {
+    if (winner === 'user') {
+        userWinBackground.style.display = 'block';
+        computerWinBackground.style.display = 'none';
+    } else if (winner === 'computer'){
+        computerWinBackground.style.display = 'block';
+        userWinBackground.style.display = 'none';
+    } else {
+        computerWinBackground.style.display = 'none';
+        userWinBackground.style.display = 'none';
+    }
+}
+
+function showResult(winner) {
+    resultBox.style.display = 'flex';
+    if (winner === 'user') {
+        result.textContent = 'You Win';
+    } else if (winner === 'computer') {
+        result.textContent = 'You Lose';
+    } else {
+        result.textContent = 'Draw';
+    }
+}
+
 // Results that can occur during the game
 function userWin() {
-    result.textContent = 'You Win';
-    displayChoiceImage();
+    computerPickBox.style.display = 'none';
+    resultBox.style.display = 'none';
+    displayUserImage();
+    setTimeout(displayComputerImage, 1300);
+    setTimeout(showResult, 1300, 'user');
+    setTimeout(showWinBackground, 1300, 'user');
 }
 
 function userLose() {
-    result.textContent = 'You Lose';
-    displayChoiceImage();
+    computerPickBox.style.display = 'none';
+    resultBox.style.display = 'none';
+    displayUserImage();
+    setTimeout(displayComputerImage, 1300);
+    setTimeout(showResult, 1300, 'computer');
+    setTimeout(showWinBackground, 1300, 'computer');
 }
 
 function draw() {
-    result.textContent = 'Draw';
-    displayChoiceImage();
+    computerPickBox.style.display = 'none';
+    resultBox.style.display = 'none';
+    displayUserImage();
+    setTimeout(displayComputerImage, 1300);
+    setTimeout(showResult, 1300, 'draw');
+    showWinBackground('draw');
 }
 
 // Original Game logic
@@ -165,8 +209,8 @@ function bonusGame() {
 for (let paper of paperElement) {
     paper.addEventListener('click', () => {
         if (body.classList.contains('difficulty-hard')) {
-           userChoice = 'paper';
-           bonusGame();
+            userChoice = 'paper';
+            bonusGame();
             body.classList.add('game-finished');
         } else {
             userChoice = 'paper';
@@ -216,7 +260,6 @@ lizardElement.addEventListener('click', () => {
     bonusGame();
     body.classList.add('game-finished');
 })
-
 
 
 //Play again Button
@@ -273,7 +316,7 @@ closeIcon.addEventListener('click', closeRules)
 
 // When the user clicks Escape key
 document.addEventListener('keydown', (event) => {
-    if(rulesElement.classList.contains('show')) {
+    if (rulesElement.classList.contains('show')) {
         if (event.key === 'Escape') {
             closeRules();
         }
