@@ -91,11 +91,7 @@ const changeHoverIcon = (currentPlayer) => {
         }
     } else {
         for (const hoverIcon of hoverIcons) {
-            if (currentPlayer.choice === player1.choice) {
-                hoverIcon.src = player1.iconOutline;
-            } else {
-                hoverIcon.src = player2.iconOutline;
-            }
+            currentPlayer.choice === player1.choice ? hoverIcon.src = player1.iconOutline : hoverIcon.src = player2.iconOutline;
         }
     }
 }

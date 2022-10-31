@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92e2f1a7-879d-4a77-b7f9-645da3c635e4" name="Changes" comment="." />
+    <list default="true" id="92e2f1a7-879d-4a77-b7f9-645da3c635e4" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/../14-password_generator/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../14-password_generator/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +74,7 @@
       <workItem from="1667196590702" duration="1507000" />
       <workItem from="1667208184699" duration="6792000" />
       <workItem from="1667216977090" duration="106000" />
+      <workItem from="1667228224833" duration="767000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666963580391</created>
