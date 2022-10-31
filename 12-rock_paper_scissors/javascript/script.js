@@ -48,7 +48,6 @@ let computerChoice = (game) => {
 const incrementScore = () => {
     score = score + 1;
     setTimeout(() => scoreElement.textContent = score, 1300);
-
 }
 const decrementScore = () => {
     score = score - 1;
@@ -86,6 +85,11 @@ function showWinBackground(winner) {
         computerWinBackground.style.display = 'none';
         userWinBackground.style.display = 'none';
     }
+}
+
+function removeWinBackground() {
+    computerWinBackground.style.display = 'none';
+    userWinBackground.style.display = 'none';
 }
 
 function showResult(winner) {
@@ -266,7 +270,8 @@ lizardElement.addEventListener('click', () => {
 //Play again Button
 playAgainButton.addEventListener('click', () => {
     body.classList.remove('game-finished');
-    removeResultImage()
+    removeResultImage();
+    removeWinBackground();
 })
 
 // Difficulty

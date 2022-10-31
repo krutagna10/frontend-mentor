@@ -243,6 +243,7 @@ header {
     border-radius: 2rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .learn-more-btn.yellow-background {
