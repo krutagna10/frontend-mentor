@@ -360,8 +360,9 @@ choiceButtons.forEach((choiceButton, index) => {
                 updateAvailableChoices(availableChoices.findIndex(element => element === index));
                 player1ChoicesArray.push(index);
 
-                checkForWin(player1ChoicesArray, player1);
-                checkForDraw();
+                if (!checkForWin(player1ChoicesArray, player1)) {
+                    checkForDraw();
+                }
 
                 // Change Active Player
                 changeActivePlayer();
@@ -375,8 +376,9 @@ choiceButtons.forEach((choiceButton, index) => {
                 updateAvailableChoices(availableChoices.findIndex(element => element === index));
                 player2ChoicesArray.push(index);
 
-                checkForWin(player2ChoicesArray, player2);
-                checkForDraw();
+                if (!checkForWin(player2ChoicesArray, player2)) {
+                    checkForDraw();
+                }
 
                 // Change Active Player
                 changeActivePlayer();
