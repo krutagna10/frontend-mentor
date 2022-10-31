@@ -23,8 +23,8 @@ let oElement = {
 // Initial values of user/computer and player1 and player2
 let user = oElement;
 let computer = xElement;
-let player1 = oElement;
-let player2 = xElement
+let player1 = xElement;
+let player2 = oElement
 
 let userScore = 0;
 let computerScore = 0;
@@ -110,11 +110,11 @@ const changeScoreUser = () => {
         }
     } else {
         if (player1.choice === xElement.choice) {
-            xUser.textContent = '(Player 1)';
-            oUser.textContent = '(Player 2)';
+            xUser.textContent = '(P1)';
+            oUser.textContent = '(P2)';
         } else {
-            xUser.textContent = '(Player 2)';
-            oUser.textContent = '(Player 1)';
+            xUser.textContent = '(P2)';
+            oUser.textContent = '(P1)';
         }
     }
 }
@@ -260,12 +260,22 @@ const checkForDraw = () => {
 
 const displayScore = () => {
     tiesScoreElement.textContent = tieScore;
-    if (user.choice === 'x') {
-        xScoreElement.textContent = userScore;
-        oScoreElement.textContent = computerScore;
+    if (playerVsCpu) {
+        if (user.choice === 'x') {
+            xScoreElement.textContent = userScore;
+            oScoreElement.textContent = computerScore;
+        } else {
+            xScoreElement.textContent = computerScore;
+            oScoreElement.textContent = userScore;
+        }
     } else {
-        xScoreElement.textContent = computerScore;
-        oScoreElement.textContent = userScore;
+        if (player1.choice === 'x') {
+            xScoreElement.textContent = player1Score;
+            oScoreElement.textContent = player2Score;
+        } else {
+            xScoreElement.textContent = player2Score;
+            oScoreElement.textContent = player1Score;
+        }
     }
 }
 
@@ -375,7 +385,6 @@ const resetScreen = () => {
 
 
 const changeUser = () => {
-    changeScoreUser();
     if (playerVsCpu) {
         if (user.choice === xElement.choice) {
             user = oElement;
@@ -386,8 +395,6 @@ const changeUser = () => {
             user = xElement;
             computer = oElement;
         }
-        displayScore();
-        changeHoverIcon();
     } else {
        if (player1.choice === xElement.choice) {
            player1 = oElement;
@@ -396,7 +403,11 @@ const changeUser = () => {
            player1 = xElement;
            player2 = oElement;
        }
+
     }
+    displayScore();
+    changeHoverIcon();
+    changeScoreUser();
 }
 
 // Next Round Button
