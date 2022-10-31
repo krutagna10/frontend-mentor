@@ -123,7 +123,8 @@ body {
 }
 
 .new-game-button.player-vs-cpu,
-.next-round-button {
+.next-round-button,
+.agree-restart {
     box-shadow: 0 6px hsl(var(--raw-light-yellow), 0.6);
 }
 
@@ -132,7 +133,8 @@ body {
 }
 
 .new-game-button.player-vs-cpu:hover,
-.next-round-button:hover {
+.next-round-button:hover,
+.agree-restart:hover {
     background-color: var(--light-yellow-hover) !important;
 }
 
@@ -214,7 +216,8 @@ body {
 }
 
 .restart-button:hover,
-.quit-button:hover {
+.quit-button:hover,
+.cancel-button:hover {
     background-color: var(--silver-hover) !important;
     transition: all 0.3s ease;
 }
@@ -264,7 +267,8 @@ body {
 /**************************/
 /* Game Finished Section  */
 /**************************/
-.game-finished-section {
+.game-finished-section,
+.restart-section {
     display: none;
     position: absolute;
     left: 0;
@@ -308,7 +312,8 @@ body {
     color: var(--light-blue) !important;
 }
 
-.quit-button {
+.quit-button,
+.cancel-button {
   box-shadow: 0 6px hsl(var(--raw-silver), 0.6);
 }
 
@@ -325,5 +330,11 @@ body {
 }
 
 
+/********************/
+/* Restart Section  */
+/********************/
 
+.restart-prompt .restart-section {
+    display: block;
+}
 

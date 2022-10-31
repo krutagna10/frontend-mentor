@@ -65,6 +65,8 @@ const restartButton = document.querySelector('.restart-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
 const nextRoundButton = document.querySelector('.next-round-button');
 const quitButton = document.querySelector('.quit-button');
+const cancelRestartButton = document.querySelector('.cancel-button');
+const agreeRestartButton = document.querySelector('.agree-restart');
 
 // Icons
 const userChoiceIcons = document.querySelector('.choice-button > img');
@@ -96,6 +98,21 @@ const changeHoverIcon = (currentPlayer) => {
             }
         }
     }
+}
+
+const resetScore = () => {
+    userScore = 0;
+    computerScore = 0;
+    tieScore = 0;
+    player1Score = 0;
+    player2Score = 0;
+    xScoreElement.textContent = 0;
+    oScoreElement.textContent = 0;
+}
+
+const resetConditions = () => {
+    playerVsPlayer = false;
+    playerVsCpu = true;
 }
 
 // Changing score User
@@ -289,7 +306,6 @@ const getComputerChoice = () => {
     // Turn icon
     turnIcon.src = user.iconSilver;
 
-
     // When the computer is making its choice
     opponentThinkingText.style.display = 'none';
     gameOverlay.classList.add('hidden');
@@ -313,6 +329,16 @@ const getComputerChoice = () => {
 
 let player1Active = true;
 let player2Active = false;
+
+const changeActivePlayer = () => {
+    if (player1Active === true) {
+        player1Active = false;
+        player2Active = true;
+    } else {
+        player1Active = true;
+        player2Active = false;
+    }
+}
 
 choiceButtons.forEach((choiceButton, index) => {
     choiceButton.addEventListener('click', () => {
@@ -341,11 +367,10 @@ choiceButtons.forEach((choiceButton, index) => {
                 checkForWin(player1ChoicesArray, player1);
                 checkForDraw();
 
-
                 // Change Active Player
-                player1Active = false;
-                player2Active = true;
-                setTimeout(changeHoverIcon, 500, player2);
+                changeActivePlayer();
+
+                setTimeout(changeHoverIcon, 200, player2);
 
                 // Turn Icon
                 turnIcon.src = player2.iconSilver;
@@ -358,15 +383,14 @@ choiceButtons.forEach((choiceButton, index) => {
                 checkForDraw();
 
                 // Change Active Player
-                player1Active = true;
-                player2Active = false;
-                setTimeout(changeHoverIcon, 500, player1);
+                changeActivePlayer();
+
+                setTimeout(changeHoverIcon, 200, player1);
 
                 // Turn Icon
                 turnIcon.src = player1.iconSilver;
             }
         }
-
     })
 });
 
@@ -395,18 +419,18 @@ const changeUser = () => {
             user = xElement;
             computer = oElement;
         }
+        changeHoverIcon();
     } else {
-       if (player1.choice === xElement.choice) {
-           player1 = oElement;
-           player2 = xElement;
-       } else {
-           player1 = xElement;
-           player2 = oElement;
-       }
-
+        if (player1.choice === xElement.choice) {
+            player1 = oElement;
+            player2 = xElement;
+        } else {
+            player1 = xElement;
+            player2 = oElement;
+        }
+        changeHoverIcon(player1);
     }
     displayScore();
-    changeHoverIcon();
     changeScoreUser();
 }
 
@@ -419,7 +443,31 @@ nextRoundButton.addEventListener('click', () => {
 })
 
 // Restart Button
-restartButton.addEventListener('click', resetScreen);
+restartButton.addEventListener('click', () => {
+    body.classList.add('restart-prompt');
+    overlay.classList.remove('hidden');
+    cancelRestartButton.addEventListener('click', () => {
+        body.classList.remove('restart-prompt');
+        overlay.classList.add('hidden');
+    })
+
+    agreeRestartButton.addEventListener('click', () => {
+        resetScreen();
+        resetScore();
+        body.classList.remove('restart-prompt');
+        overlay.classList.add('hidden');
+    })
+});
+
+// Quit Button
+quitButton.addEventListener('click', () => {
+    body.classList.remove('game-active');
+    body.classList.remove('game-finished');
+    overlay.classList.add('hidden');
+    resetScreen();
+    resetScore();
+    resetConditions();
+})
 
 
 
