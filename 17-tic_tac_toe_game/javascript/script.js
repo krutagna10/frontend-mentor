@@ -205,6 +205,7 @@ const updateAvailableChoices = (index) => {
 }
 
 const displayResult = (winner) => {
+    gameOverlay.classList.add('hidden');
     gameFinishedSection.classList.remove('draw');
     body.classList.add('game-finished');
     overlay.classList.remove('hidden');
@@ -252,6 +253,7 @@ const checkForWin = (arr, player) => {
             } else {
                 player.choice === player1.choice ? player1Score = player1Score + 1 : player2Score = player2Score + 1;
             }
+            gameOverlay.classList.remove('hidden');
             setTimeout(displayResult, 1300, player);
             return true;
         }
