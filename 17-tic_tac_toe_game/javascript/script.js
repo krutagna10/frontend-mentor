@@ -52,9 +52,9 @@ const gameOverlay = document.querySelector('.game-overlay');
 const overlay = document.querySelector('.overlay');
 const opponentThinkingText = document.querySelector('.opponent-thinking-text-wrapper');
 const roundText = document.querySelector('.game-finished__round-text');
-const resultWrapper = document.querySelector('.result-wrapper');
 const resultText = document.querySelector('.result');
 const resultIcon = document.querySelector('.result-icon');
+const logoLinks = document.querySelectorAll('.logo-link');
 
 // Button elements
 const markSelectionButtons = document.querySelectorAll('.mark-selection__button');
@@ -125,14 +125,6 @@ const changeScoreUser = () => {
             xUser.textContent = '(CPU)';
             oUser.textContent = '(You)';
         }
-    } else {
-        if (player1.choice === xElement.choice) {
-            xUser.textContent = '(P1)';
-            oUser.textContent = '(P2)';
-        } else {
-            xUser.textContent = '(P2)';
-            oUser.textContent = '(P1)';
-        }
     }
 }
 
@@ -183,7 +175,9 @@ newGamePlayerVsCpu.addEventListener('click', () => {
 newGamePlayerVsPlayer.addEventListener('click', () => {
     playerVsPlayer = true;
     playerVsCpu = false;
-    changeScoreUser();
+    changeHoverIcon(player1);
+    xUser.textContent = '(P1)';
+    oUser.textContent = '(P2)';
     body.classList.add('game-active');
 })
 
@@ -420,18 +414,9 @@ const changeUser = () => {
             computer = oElement;
         }
         changeHoverIcon();
-    } else {
-        if (player1.choice === xElement.choice) {
-            player1 = oElement;
-            player2 = xElement;
-        } else {
-            player1 = xElement;
-            player2 = oElement;
-        }
-        changeHoverIcon(player1);
+        displayScore();
+        changeScoreUser();
     }
-    displayScore();
-    changeScoreUser();
 }
 
 // Next Round Button
@@ -459,15 +444,21 @@ restartButton.addEventListener('click', () => {
     })
 });
 
-// Quit Button
-quitButton.addEventListener('click', () => {
+const resetEverything = () => {
     body.classList.remove('game-active');
     body.classList.remove('game-finished');
     overlay.classList.add('hidden');
     resetScreen();
     resetScore();
     resetConditions();
-})
+}
+
+// Quit Button
+quitButton.addEventListener('click', resetEverything);
+
+for (const logoLink of logoLinks) {
+    logoLink.addEventListener('click', resetEverything);
+}
 
 
 

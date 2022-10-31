@@ -29,7 +29,7 @@
     --raw-silver: 198, 23%, 72%;
 
     /* Spacing */
-    --flow-space: 1.5rem;
+    --flow-space: 1.25rem;
 
 }
 
@@ -39,6 +39,7 @@
         --font-size-400: 1.5rem;
         --font-size-300: 1.25rem;
         --font-size-200: 1rem;
+        --flow-space: 1.5rem;
     }
 }
 
@@ -276,7 +277,15 @@ body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 999;
-    padding: 1.75rem 0;
+    padding: 1.5rem 0;
+}
+
+@media (min-width: 48rem) {
+    .game-finished-section,
+    .restart-section {
+        padding: 2rem 0;
+    }
+
 }
 
 .game-finished .game-finished-section {
