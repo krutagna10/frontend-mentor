@@ -7,6 +7,7 @@ let xElement = {
     iconBackground: "url('../images/icon-x.svg')",
     iconSilver: 'images/icon-x-silver.svg',
     iconDarkNavy: 'images/icon-x-dark-navy.svg',
+    iconDarkNavyBackground: "url('../images/icon-x-dark-navy.svg')",
     iconOutline: 'images/icon-x-outline.svg',
 }
 let oElement = {
@@ -15,6 +16,7 @@ let oElement = {
     iconBackground: "url('../images/icon-o.svg')",
     iconSilver: 'images/icon-o-silver.svg',
     iconDarkNavy: 'images/icon-o-dark-navy.svg',
+    iconDarkNavyBackground: "url('../images/icon-o-dark-navy.svg')",
     iconOutline: 'images/icon-o-outline.svg',
 }
 
@@ -98,12 +100,22 @@ const changeHoverIcon = (currentPlayer) => {
 
 // Changing score User
 const changeScoreUser = () => {
-    if (user.choice === xElement.choice) {
-        xUser.textContent = '(You)';
-        oUser.textContent = '(CPU)';
+    if (playerVsCpu) {
+        if (user.choice === xElement.choice) {
+            xUser.textContent = '(You)';
+            oUser.textContent = '(CPU)';
+        } else {
+            xUser.textContent = '(CPU)';
+            oUser.textContent = '(You)';
+        }
     } else {
-        xUser.textContent = '(CPU)';
-        oUser.textContent = '(You)';
+        if (player1.choice === xElement.choice) {
+            xUser.textContent = '(Player 1)';
+            oUser.textContent = '(Player 2)';
+        } else {
+            xUser.textContent = '(Player 2)';
+            oUser.textContent = '(Player 1)';
+        }
     }
 }
 
@@ -154,6 +166,7 @@ newGamePlayerVsCpu.addEventListener('click', () => {
 newGamePlayerVsPlayer.addEventListener('click', () => {
     playerVsPlayer = true;
     playerVsCpu = false;
+    changeScoreUser();
     body.classList.add('game-active');
 })
 
@@ -207,16 +220,28 @@ const displayResult = (winner) => {
     }
 }
 
+const displayWin = (arr, player) => {
+    for (const index of arr) {
+        choiceButtons[index].style.backgroundImage = player.iconDarkNavyBackground;
+        if (player.choice === xElement.choice) {
+            choiceButtons[index].style.backgroundColor = 'hsl(178, 60%, 48%)';
+        } else {
+            choiceButtons[index].style.backgroundColor = 'hsl(39, 88%, 58%)';
+        }
+    }
+}
+
 // Checking for Win
 const checkForWin = (arr, player) => {
     for (const element of winConditions) {
         if (element.every(element => arr.includes(element))) {
+            displayWin(element, player);
             if (playerVsCpu) {
                 player.choice === computer.choice ? computerScore = computerScore + 1 : userScore = userScore + 1;
             } else {
                 player.choice === player1.choice ? player1Score = player1Score + 1 : player2Score = player2Score + 1;
             }
-            displayResult(player);
+            setTimeout(displayResult, 1300, player);
             return true;
         }
     }
@@ -311,6 +336,9 @@ choiceButtons.forEach((choiceButton, index) => {
                 player1Active = false;
                 player2Active = true;
                 setTimeout(changeHoverIcon, 500, player2);
+
+                // Turn Icon
+                turnIcon.src = player2.iconSilver;
             } else {
                 displayChoice(player2, index);
                 updateAvailableChoices(availableChoices.findIndex(element => element === index));
@@ -323,6 +351,9 @@ choiceButtons.forEach((choiceButton, index) => {
                 player1Active = true;
                 player2Active = false;
                 setTimeout(changeHoverIcon, 500, player1);
+
+                // Turn Icon
+                turnIcon.src = player1.iconSilver;
             }
         }
 
@@ -332,6 +363,7 @@ choiceButtons.forEach((choiceButton, index) => {
 const resetScreen = () => {
     for (const choiceButton of choiceButtons) {
         choiceButton.style.backgroundImage = '';
+        choiceButton.style.backgroundColor = 'hsl(202, 32%, 15%)';
         userChoicesArray = [];
         computerChoicesArray = [];
         player1ChoicesArray = [];
@@ -343,20 +375,18 @@ const resetScreen = () => {
 
 
 const changeUser = () => {
+    changeScoreUser();
     if (playerVsCpu) {
         if (user.choice === xElement.choice) {
             user = oElement;
             computer = xElement;
-            changeScoreUser();
-            displayScore();
             showElements();
             setTimeout(getComputerChoice, 1300);
         } else {
             user = xElement;
             computer = oElement;
-            changeScoreUser();
-            displayScore();
         }
+        displayScore();
         changeHoverIcon();
     } else {
        if (player1.choice === xElement.choice) {
