@@ -363,7 +363,7 @@ choiceButtons.forEach((choiceButton, index) => {
 const resetScreen = () => {
     for (const choiceButton of choiceButtons) {
         choiceButton.style.backgroundImage = '';
-        choiceButton.style.backgroundColor = 'hsl(202, 32%, 15%)';
+        choiceButton.style.backgroundColor = 'hsl(199, 35%, 19%)';
         userChoicesArray = [];
         computerChoicesArray = [];
         player1ChoicesArray = [];
