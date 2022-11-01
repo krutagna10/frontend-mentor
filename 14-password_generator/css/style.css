@@ -311,7 +311,6 @@ body {
 
 }
 
-
 .bar:nth-child(1).bar-active {
     background-color: var(--red);
     border: transparent;
