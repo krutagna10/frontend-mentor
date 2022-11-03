@@ -1,0 +1,11 @@
+@forward 'base';
+@forward 'layout';
+@forward 'components';
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/pattern-background-mobile.svg');
+  background-size: cover;
+}

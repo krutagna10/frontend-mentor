@@ -160,4 +160,15 @@ select {
   align-items: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+.card {
+  background-color: white;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-size: cover;
+}
+
+/*# sourceMappingURL=main.css.map */

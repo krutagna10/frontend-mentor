@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
   <title>Frontend Mentor | Order summary card</title>
 
 </head>
@@ -15,11 +15,23 @@
 
 <main>
   <section class="order-component-section">
-    <div class="container order-component background">
-      <div class="order-component__image-container">
-        <img src="images/illustration-hero.svg" alt="Person with headphone">
+    <div class="container card">
+      <div class="card__image-container">
+        <img src="images/illustration-hero.svg" class="card__image" alt="Person with headphone">
       </div>
-      <div class="order-component__text-content">
+      <div class="card__text-content">
+        <h1 class="card__heading">Order Summary</h1>
+        <p class="card__text">
+          You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+        </p>
+        <div class="card__plan">
+          <img src="images/icon-music.svg" class="card__plan-image" alt="music icon">
+          <div class="card__plan-text">
+            <h2 class="card__plan-heading">Annual Plan</h2>
+            <p class="card__plan-price">$59.99/year</p>
+          </div>
+          <button></button>
+        </div>
 
       </div>
 
@@ -29,8 +41,7 @@
 </main>
 <!--  Order Summary-->
 
-<!--  You can now listen to millions of songs, audiobooks, and podcasts on any -->
-<!--  device anywhere you like!-->
+
 
 <!--  Annual Plan-->
 <!--  $59.99/year-->
