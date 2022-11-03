@@ -1,10 +1,17 @@
 :root {
+  // Typography
   --font-family-red-hat: 'Red Hat Display', sans-serif;
-
   --font-size-400: 1.375rem;
   --font-size-300: 0.9375rem;
   --font-size-200: 0.9375rem;
   --font-size-100: 0.8125rem;
+
+ // Colors
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
 }
 
 @media (min-width: 48rem) {
@@ -16,18 +23,3 @@
   }
 }
 
-.font-size-400 {
-  font-size: var(--font-size-400);
-}
-
-.font-size-300 {
-  font-size: var(--font-size-300);
-}
-
-.font-size-200 {
-  font-size: var(--font-size-200);
-}
-
-.font-size-100 {
-  font-size: var(--font-size-100);
-}

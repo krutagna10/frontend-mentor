@@ -1,7 +1,47 @@
 .card {
   background-color: white;
+  text-align: center;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.75rem;
+  overflow: hidden;
 
   &__text-content {
-
+    padding: 2rem;
   }
+
+  &__heading {
+    font-size: var(--font-size-400);
+    color: var(--dark-blue);
+  }
+
+  &__text {
+    font-size: var(--font-size-200);
+    color: var(--desaturated-blue);
+  }
+
+  &__plan {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__plan-btn {
+    margin-left: auto;
+  }
+
+  &__payment-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    border: none;
+  }
+
+  &__cancel-btn {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+  }
+
 }

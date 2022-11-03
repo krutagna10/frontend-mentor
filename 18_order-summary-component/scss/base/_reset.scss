@@ -4,41 +4,38 @@
   box-sizing: border-box;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
+
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: var(--font-family-red-hat);
+  background-color: var(--very-pale-blue);
+  background-image: url('../../images/pattern-background-mobile.svg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+@media (min-width: 48rem) {
+  body {
+    background-image: url('../../images/pattern-background-desktop.svg');
+  }
 }
 
-/* Make images easier to work with */
-img,
-picture {
+img {
   max-width: 100%;
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
+button {
   font: inherit;
 }
 
