@@ -74,6 +74,7 @@ button {
 }
 .container {
   max-width: 25rem;
+  padding-inline: 1rem;
 }
 
 .card {
