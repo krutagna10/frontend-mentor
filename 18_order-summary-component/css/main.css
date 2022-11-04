@@ -109,7 +109,7 @@ button {
   padding: 1rem 1rem;
 }
 .card__content > * + * {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 .card__text-content > * + * {
   margin-top: 1rem;
