@@ -177,7 +177,7 @@ button {
 .card__cancel-btn:hover {
   color: var(--dark-blue);
 }
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
   .card__content {
     padding: 2rem 1.5rem;
   }
