@@ -5,7 +5,7 @@
 
 ### Links
 
-- Live Site URL: [https://tic-tac-toe-game-10.vercel.app/]
+- Live Site URL: [https://order-summary-component-10.netlify.app/]
 
 ### Built with
 
