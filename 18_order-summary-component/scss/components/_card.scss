@@ -6,8 +6,12 @@
   overflow: hidden;
   margin-inline: 1rem;
 
-  &__text-content {
-    padding: 2rem 1rem;
+  &__content {
+    padding: 1rem 1rem;
+  }
+
+  &__content > * + * {
+    margin-top: 1.5rem;
   }
 
   &__text-content > * + * {
@@ -92,8 +96,12 @@
   }
 
   @media (min-width: 48rem) {
+    &__content {
+      padding: 2rem 1.5rem;
+    }
+
     &__text-content {
-      padding: 2rem 2.5rem;
+      padding: 0 1.5rem;
     }
 
     &__plan {
