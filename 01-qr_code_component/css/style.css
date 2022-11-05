@@ -44,26 +44,26 @@ body {
 
 }
 
-.text-content {
+.container__text-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding: 0 0.5rem;
 }
 
-.image {
+.container__image {
     display: block;
     max-width: 100%;
     border-radius: 1rem;
 }
 
-.heading {
+.container__heading {
     font-size: 1.375rem;
     text-align: center;
     font-weight: 700;
 }
 
-.para {
+.container__text {
     text-align: center;
     font-weight: 400;
     font-size: 0.9375rem;
@@ -95,11 +95,11 @@ body {
     background-color: var(--containerDarkBackground);
 }
 
-.dark-mode .heading{
+.dark-mode .container__heading{
     color: var(--white);
 }
 
-.dark-mode .para {
+.dark-mode .container__text {
     color: rgb(227, 217, 217);
 }
 
@@ -123,11 +123,11 @@ body {
 
 
 @media (max-width: 25em) {
-    .heading {
+    .container__heading {
         font-size: 1.25rem;
     }
 
-    .para {
+    .container__text {
         font-size: 0.75rem;
     }
 
@@ -141,7 +141,7 @@ body {
         gap: 1rem;
     }
 
-    .text-content {
+    .container__text-content {
         gap: 0.5rem;
     }
 }
