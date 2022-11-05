@@ -1,5 +1,5 @@
-const lightModeIcon = document.querySelector('.light-mode-icon');
-const darkModeIcon = document.querySelector('.dark-mode-icon');
+const lightModeIcon = document.querySelector('.icon__light-mode');
+const darkModeIcon = document.querySelector('.icon__dark-mode');
 const body = document.querySelector('body');
 
 darkModeIcon.addEventListener('click', () => {

@@ -72,15 +72,16 @@ body {
 /* Dark Mode */
 
 
-.icons{
+.icon{
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     position: absolute;
     right: 3rem;
     top: 2rem;
+    cursor: pointer;
 }
 
-.light-mode-icon {
+.icon__light-mode {
     display: none;
 }
 
@@ -101,21 +102,21 @@ body {
     color: rgb(227, 217, 217);
 }
 
-.dark-mode .dark-mode-icon {
+.dark-mode .icon__dark-mode {
     display: none;
 }
 
-.dark-mode-icon:hover {
+.icon__dark-mode:hover {
     color: rgb(107, 19, 107);
 }
 
 
-.dark-mode .light-mode-icon {
+.dark-mode .icon__light-mode {
     display: block;
     color: white;
 }
 
-.light-mode-icon:hover {
+.icon__light-mode:hover {
     color: orange;
 }
 
@@ -129,7 +130,7 @@ body {
         font-size: 0.75rem;
     }
 
-    .icons {
+    .icon {
         top: 1rem;
         right: 1rem;
     }
