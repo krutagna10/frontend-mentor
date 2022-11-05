@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-
 :root {
     --outfitRegular: 'Outfit', sans-serif;
     --white : hsl(0, 0%, 100%);
@@ -30,7 +28,7 @@ body {
     position: relative;
 }
 
-.container {
+.card {
     max-width: 19rem;
     background-color: var(--white);
     display: flex;
@@ -44,26 +42,26 @@ body {
 
 }
 
-.container__text-content {
+.card__text-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding: 0 0.5rem;
 }
 
-.container__image {
+.card__image {
     display: block;
     max-width: 100%;
     border-radius: 1rem;
 }
 
-.container__heading {
+.card__heading {
     font-size: 1.375rem;
     text-align: center;
     font-weight: 700;
 }
 
-.container__text {
+.card__text {
     text-align: center;
     font-weight: 400;
     font-size: 0.9375rem;
@@ -91,15 +89,15 @@ body {
     background: linear-gradient(var(--darkModeBackground1),var(--darkModeBackground2))
 }
 
-.dark-mode .container {
+.dark-mode .card {
     background-color: var(--containerDarkBackground);
 }
 
-.dark-mode .container__heading{
+.dark-mode .card__heading{
     color: var(--white);
 }
 
-.dark-mode .container__text {
+.dark-mode .card__text {
     color: rgb(227, 217, 217);
 }
 
@@ -123,11 +121,11 @@ body {
 
 
 @media (max-width: 25em) {
-    .container__heading {
+    .card__heading {
         font-size: 1.25rem;
     }
 
-    .container__text {
+    .card__text {
         font-size: 0.75rem;
     }
 
@@ -136,12 +134,12 @@ body {
         right: 1rem;
     }
 
-    .container {
+    .card {
         max-width: 17rem;
         gap: 1rem;
     }
 
-    .container__text-content {
+    .card__text-content {
         gap: 0.5rem;
     }
 }
