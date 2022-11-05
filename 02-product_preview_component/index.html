@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
   <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Product preview card component</title>
 
@@ -12,26 +13,27 @@
 <body>
 
   <main>
-    <div class="container">
-      <div class="grid">
-        <picture>
+    <section class="card-section">
+      <div class="card grid">
+        <picture class="card__picture">
           <source media="(max-width: 628px)" srcset="images/image-product-mobile.jpg">
-          <img src="images/image-product-desktop.jpg" alt="Product" style="width:auto;">
+          <img src="images/image-product-desktop.jpg" class="card__image" alt="Product" style="width:auto;">
         </picture>
-        <div class="card-content">
-          <h6 class="product-category">Perfume</h6>
-          <h2 class="product-name">Gabrielle Essence Eau De Parfum</h2>
-          <p class="product-description">  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+        <div class="card__body">
+          <h6 class="card__sub-title">Perfume</h6>
+          <h2 class="card__title">Gabrielle Essence Eau De Parfum</h2>
+          <p class="card__description">  A floral, solar and voluptuous interpretation composed by Olivier Polge,
             Perfumer-Creator for the House of CHANEL.
           </p>
-           <div class="product-price">
-            <p class="current-price">$149.99</p>
-            <p class="old-price">$169.99</p>
+           <div class="card__price">
+            <p class="card__current-price">$149.99</p>
+            <p class="card__old-price">$169.99</p>
            </div>
-           <button class="call-to-action"><img src="images/icon-cart.svg" alt="">Add to Cart</button>
+           <button class="card__btn"><img src="images/icon-cart.svg" alt="">Add to Cart</button>
         </div>
       </div>
-    </div>
+    </section>
   </main>
+
 </body>
 </html>

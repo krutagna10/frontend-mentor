@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
 
-/* Spacing System :  2px / 4px / 8px / 12px / 16px / 24px / 32px / 64px / 80px / 96px / 128px */
 :root {
     --Dark-cyan: hsl(158, 36%, 37%);
     --Cream: hsl(30, 38%, 92%);
@@ -33,7 +32,7 @@ body {
     font-size: 1.4rem;
 }
 
-.container {
+.card-section {
     margin: 3.2rem auto;
     padding: 0 3.2rem;
 }
@@ -54,14 +53,14 @@ picture {
 }
 
 
-.card-content {
+.card__body {
     padding: 3.6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-h6.product-category {
+.card__sub-title {
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     font-size: 1.3rem;
@@ -69,36 +68,36 @@ h6.product-category {
     font-weight: 500;
 }
 
-h2.product-name {
+.card__title {
     font-family: var(--Fraunces);
     font-size: 3.6rem;
     line-height: 3.2rem;
     color: var(--Very-dark-blue);
 }
 
-p.product-description {
+.card__description {
     color: var(--Dark-grayish-blue);
     line-height: 2.4rem;
 }
 
-.product-price {
+.card__price {
     display: flex;
     align-items: center;
     gap: 1.6rem;
 }
 
-p.current-price {
+.card__current-price {
     font-family: var(--Fraunces);
     font-size: 3.6rem;
     color: var(--Dark-cyan);
 }
 
-p.old-price {
+.card__old-price {
     color: var(--Dark-grayish-blue);
     text-decoration: line-through;
 }
 
-.call-to-action {
+.card__btn {
     background-color: var(--Dark-cyan);
     color: var(--White);
     font-family: inherit;
@@ -114,44 +113,39 @@ p.old-price {
     transition: background-color 0.3s ease;
 }
 
-button.call-to-action:hover {
+button.card__btn:hover {
     background-color: hsl(158, 36%, 23%)
 }
 
-/**************************************/
-/* MOBILE DESIGN */
-/**************************************/
-
-@media only screen and (max-width: 628px) {
+@media (max-width: 628px) {
     .grid {
         grid-template-columns: 1fr;
     }
 
-    .card-content {
+    .card__body {
         gap: 1.6rem;
     }
   
 }
-@media only screen and (max-width: 395px) {
-    .container {
+@media (max-width: 395px) {
+    .card {
         margin: 1.2rem auto;
         padding: 0 1.2rem;
     }
-    h2.product-name {
+    .card__title {
         font-size:2.6rem;
     }
     
-    p.product-description {
+    .card__description {
         font-size: 1.2rem;
     }
-    p.current-price {
+    .card__current-price {
         font-size: 2.4rem;
     }
 
-    .call-to-action {
+    .card__btn {
         font-size: 1.4rem;
     }
-
 
 }
 
