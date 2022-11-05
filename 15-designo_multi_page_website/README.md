@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://designo-multi-page-website-10.vercel.app/]
+- Live Site URL: [https://designo-multi-page-10.netlify.app/]
 
 ### Built with
 
