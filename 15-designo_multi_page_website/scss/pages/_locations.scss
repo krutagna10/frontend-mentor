@@ -1,0 +1,108 @@
+.location-section > * + * {
+  margin-top: 1.25rem;
+}
+
+.location {
+  padding-inline: 0 !important;
+  gap: 0 !important;
+
+  &__text-content {
+    padding: 3rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image-wrapper {
+    min-height: 20rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  &--canada &__image-wrapper {
+    background-image: url('/images/locations/desktop/image-map-canada.png');
+    grid-row-start: 1;
+  }
+
+  &--australia &__image-wrapper {
+    background-image: url('/images/locations/desktop/image-map-australia.png');
+  }
+
+  &--uk &__image-wrapper {
+    background-image: url('/images/locations/desktop/image-map-united-kingdom.png');
+    grid-row-start: 1;
+  }
+
+  &__contact-link {
+    display: block;
+  }
+
+  @media (min-width: 35em) {
+    & {
+      gap: 1.25rem !important;
+      padding-inline: 1rem !important;
+    }
+
+    &__heading {
+      grid-column: span 2;
+    }
+
+    &__text-content {
+      text-align: left;
+      border-radius: 0.75rem;
+      padding-inline: 2rem;
+    }
+
+    &__contact-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--canada &__image-wrapper {
+      background-image: url('/images/locations/tablet/image-map-canada.png');
+      grid-row-start: 1;
+    }
+
+    &--australia &__image-wrapper {
+      background-image: url('/images/locations/tablet/image-map-australia.png');
+    }
+
+    &--uk &__image-wrapper {
+      background-image: url('/images/locations/tablet/image-map-uk.png');
+      grid-row-start: 1;
+    }
+
+  }
+
+  @media (min-width: 45em) {
+    &--canada,
+    &--uk {
+      grid-template-columns: 70fr 30fr;
+    }
+
+    &--australia {
+      grid-template-columns: 30fr 70fr;
+    }
+
+    &__image-wrapper {
+      border-radius: 0.75rem;
+    }
+
+    &--canada &__image-wrapper,
+    &--uk &__image-wrapper {
+      grid-column-start: 2;
+    }
+  }
+
+  @media (min-width: 65em) {
+    &__text-content {
+      text-align: left;
+      border-radius: 0.75rem;
+      padding-inline: 4rem;
+    }
+  }
+}
+
+

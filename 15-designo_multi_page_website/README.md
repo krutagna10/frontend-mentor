@@ -6,12 +6,12 @@
 
 ### Links
 
-- Live Site URL: [https://designo-multi-page-10.netlify.app/]
+- Live Site URL: [https://designo-multi-page-website-10.vercel.app/]
 
 ### Built with
 
 - HTML
-- CSS
+- SCSS
 - Vanilla Javascript
 
 ## Author

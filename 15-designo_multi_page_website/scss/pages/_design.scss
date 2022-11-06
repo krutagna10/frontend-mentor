@@ -1,0 +1,62 @@
+.hero-design {
+  min-height: 18rem;
+  gap: 3rem;
+  border-radius: var(--border-radius-container);
+
+  @media (min-width: 45em) {
+    &__text-content {
+      width: 50%;
+    }
+  }
+}
+
+.card {
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &__image-wrapper {
+    overflow: hidden;
+  }
+
+  &:hover {
+    background-color: var(--peach) !important;
+  }
+
+  &:hover &__image {
+    transform: scale(1.03);
+  }
+
+  &:hover &__heading {
+    color: var(--white);
+  }
+
+  &:hover &__text {
+    color: var(--white);
+  }
+
+  &__image {
+    transition: all 0.4s ease;
+  }
+
+  &__text-content {
+    padding: 2.125rem;
+  }
+
+  @media (min-width: 30em) {
+    & {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 45em) {
+    & {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+}
+

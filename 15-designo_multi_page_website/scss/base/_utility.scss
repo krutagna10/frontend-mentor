@@ -1,0 +1,129 @@
+// Spacing
+.section-padding {
+  padding: var(--section-padding);
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
+
+.hero-flow > * + * {
+  margin-top: 1.75rem;
+}
+
+// Headings
+.primary-heading {
+  font-size: var(--font-size-500);
+}
+
+.secondary-heading {
+  font-size: var(--font-size-400);
+}
+
+.tertiary-heading {
+  font-size: var(--font-size-200);
+}
+
+// Typography
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-align-center {
+  text-align: center
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+/* Letter Spacing*/
+.letter-spacing-2 {
+  letter-spacing: 5px;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 2px;
+}
+
+/* Font Size */
+.font-size-500 {
+  font-size: var(--font-size-500);
+}
+
+.font-size-400 {
+  font-size: var(--font-size-400);
+}
+
+.font-size-300 {
+  font-size: var(--font-size-300);
+}
+
+.font-size-200 {
+  font-size: var(--font-size-200);
+}
+
+.font-size-100 {
+  font-size: var(--font-size-100);
+}
+
+
+// List
+.list-style-none {
+  list-style: none;
+}
+
+// Colors
+.background-peach {
+  background-color: var(--peach);
+}
+
+.background-light-peach {
+  background-color: var(--light-peach);
+}
+
+.background-very-light-peach {
+  background-color: var(--very-light-peach);
+}
+
+.background-white {
+  background-color: var(--white);
+}
+
+.background-black {
+  background-color: var(--black);
+}
+
+.text-color-dark-grey {
+  color: var(--dark-grey);
+}
+
+.text-color-peach {
+  color: var(--peach);
+}
+
+.text-color-light-grey {
+  color: var(--light-grey);
+}
+
+.text-color-white {
+  color: var(--white);
+}
+
+.text-color-black {
+  color: var(--black);
+}
+
+.footer-text-color {
+  color: var(--footer-text-color)
+}
+
+

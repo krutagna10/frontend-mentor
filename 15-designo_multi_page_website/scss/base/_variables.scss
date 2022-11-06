@@ -1,0 +1,69 @@
+:root {
+  /* Font Family */
+  --font-family-jost: 'Jost', sans-serif;
+
+  /* Font Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* Font Sizes */
+  --font-size-500: 1.75rem;
+  --font-size-400: 1.75rem;
+  --font-size-300: 1.5rem;
+  --font-size-200: 1.25rem;
+  --font-size-100: 0.9375rem;
+
+  /* Colors */
+  --peach: hsl(11, 73%, 66%);
+  --dark-peach: hsl(11, 66%, 64%);
+  --black: hsl(270, 3%, 11%);
+  --white: hsl(0, 0%, 100%);
+  --light-peach: hsl(11, 100%, 80%);
+  --very-light-peach: #FDF3F0;
+  --dark-grey: hsl(264, 5%, 20%);
+  --light-grey: hsl(210, 17%, 95%);
+  --footer-text-color: hsl(0, 0%, 100%, 0.65);
+  --rawBlack: 270, 3%, 11%;
+  --rawPeach: 1, 73%, 66%;
+
+  /* Spacing */
+  --flex-gap: 1rem;
+  --flow-space: 1.25rem;
+  --section-padding: 3.75rem 0;
+
+  /* Border Radius*/
+  --border-radius-container: 0;
+
+}
+
+@media (min-width: 25rem) {
+  :root {
+    --font-size-500: 2rem;
+  }
+}
+
+@media (min-width: 45rem) {
+  :root {
+    --font-size-500: 3rem;
+    --font-size-300: 0.875rem;
+    --font-size-400: 2.5rem;
+    --font-size-100: 1rem;
+
+    --flex-gap: 1rem;
+    --section-padding: 5rem 0;
+
+
+  }
+}
+
+@media (min-width: 65em) {
+  :root {
+    --section-padding: 4rem 0;
+  }
+}
+
+@media (min-width: 80rem) {
+  :root {
+    --border-radius-container: 0.75rem;
+  }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <title>Frontend Mentor | Designo Agency Website Challenge</title>
+</head>
+<body>
+
+<header class="header-section">
+    <div class="header container flex flex-justify-space-between flex-align-center">
+        <a href="../index.html" class="header__logo-wrapper">
+            <img src="/images/shared/desktop/logo-dark.png" class="header__logo" alt="Designo logo">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__nav-list flex">
+                <li><a href="about.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Our Content</a></li>
+                <li><a href="locations.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Locations</a></li>
+                <li><a href="contact.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header__mobile-nav">
+            <button class="header__nav-open-btn grid grid-place-center"><img src="/images/shared/mobile/icon-hamburger.svg" alt=""></button>
+            <button class="header__nav-close-btn grid grid-place-center"><img src="/images/shared/mobile/icon-close.svg" alt=""></button>
+        </div>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="container about about--hero background-peach grid">
+        <div class="about__image-wrapper about__image-wrapper--hero"></div>
+        <div class="about__text-content hero-flow">
+            <h1 class="about__heading primary-heading text-color-white">
+                About Us
+            </h1>
+            <p class="about__text font-size-100 text-color-white">
+                Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered
+                with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re
+                always looking forward to creating brands, products, and digital experiences that connect with our
+                clients’ audiences.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="talent-section section-padding">
+    <div class="container about about--talent background-very-light-peach grid">
+        <div class="about__image-wrapper about__image-wrapper--talent"></div>
+        <div class="about__text-content hero-flow">
+            <h1 class="about__heading secondary-heading text-color-peach">
+                World-class talent
+            </h1>
+            <p class="about__text font-size-100 text-color-dark-grey">
+                We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully crafted
+                from concept to launch, ensuring success in its given market. We are constantly updating our skills in a
+                myriad of platforms.
+            </p>
+            <p class="about__text font-size-100 text-color-dark-grey">
+                Our team is multi-disciplinary and we are not merely interested in form — content and meaning are just
+                as important. We give great importance to craftsmanship, service, and prompt delivery. Clients have
+                always been impressed with our high-quality outcomes that encapsulates their brand’s story and mission.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="locations-section section-padding">
+    <div class="container locations grid">
+        <div class="locations__item flex flex-column flex-align-center">
+            <div class="locations__image-wrapper">
+                <img src="/images/shared/desktop/illustration-canada.svg" class="locations__image" alt="Canada illustration">
+            </div>
+            <div class="locations__text-content grid grid-place-center text-align-center">
+                <h3 class="locations__heading tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
+                    Canada
+                </h3>
+                <a href="locations.html" class="btn btn--dark locations__btn uppercase text-decoration-none">
+                    See Location
+                </a>
+            </div>
+        </div>
+
+        <div class="locations__item flex flex-column flex-align-center">
+            <div class="locations__image-wrapper">
+                <img src="/images/shared/desktop/illustration-australia.svg" class="locations__image" alt="Australia illustration">
+            </div>
+            <div class="locations__text-content grid grid-place-center text-align-center">
+                <h3 class="locations__heading tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
+                    Australia
+                </h3>
+                <a href="locations.html" class="btn btn--dark locations__btn uppercase text-decoration-none">
+                    See Location
+                </a>
+            </div>
+        </div>
+
+        <div class="locations__item flex flex-column flex-align-center">
+            <div class="locations__image-wrapper">
+                <img src="/images/shared/desktop/illustration-united-kingdom.svg" class="locations__image" alt="United Kingdom illustration">
+            </div>
+            <div class="locations__heading locations__text-content grid grid-place-center text-align-center">
+                <h3 class="tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
+                    United Kingdom
+                </h3>
+                <a href="locations.html" class="btn btn--dark locations__btn uppercase text-decoration-none">
+                    See Location
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="deal-section section-padding">
+    <div class="container about about--deal grid background-very-light-peach">
+        <div class="about__image-wrapper about__image-wrapper--deal"></div>
+        <div class="about__text-content hero-flow">
+            <h1 class="about__heading secondary-heading text-color-peach">
+                The real deal
+            </h1>
+            <p class="about__text font-size-100 text-color-dark-grey">
+                As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own. Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every opportunity. We make design and technology more accessible and give you tools to measure success.
+            </p>
+            <p class="about__text font-size-100 text-color-dark-grey">
+                We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies, we inspire audiences to take action and drive real results.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-section section-padding background-black">
+    <section class="footer-contact-section">
+        <div class="footer-contact container background-peach grid grid--2-columns">
+            <div class="footer-contact__text-content flow">
+                <h2 class="footer-contact__heading secondary-heading text-color-white">
+                    Let’s talk about your project
+                </h2>
+                <p class="footer-contact__text font-size-100 text-color-white">
+                    Ready to take it to the next level? Contact us today and find out how our expertise can help your
+                    business grow.
+                </p>
+            </div>
+            <div class="footer-contact__button-wrapper grid">
+                <a href="contact.html" class="footer-contact__btn btn btn--light text-color-dark-grey text-decoration-none uppercase">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container footer">
+        <div class="footer__logo-wrapper">
+            <a class="footer__logo-link flex flex-align-center flex-justify-center" href="../index.html">
+                <img src="/images/shared/desktop/logo-light.png" class="footer__logo" alt="Logo light">
+            </a>
+        </div>
+        <nav class="footer__nav">
+            <ul class="footer__nav-list list-style-none flex flex-column flex-gap">
+                <li><a href="about.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Our
+                    company</a></li>
+                <li><a href="locations.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Locations</a>
+                </li>
+                <li><a href="contact.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer__address-wrapper">
+            <p class="footer__address footer-text-color text-bold">Designo Central Office</p>
+            <p class="footer__address footer-text-color">3886 Wellington Street</p>
+            <p class="footer__address footer-text-color">Toronto, Ontario M9C 3J5</p>
+        </div>
+        <div class="footer__contact-box">
+            <p class="footer__contact-heading footer-text-color text-bold">Contact Us (Central Office)</p>
+            <a class="footer__contact-link footer-text-color text-decoration-none" href="tel: +1 253-863-8967">P : +1
+                253-863-8967</a>
+            <a class="footer__contact-link footer-text-color text-decoration-none" href="contact@designo.co">M :
+                contact@designo.co</a>
+        </div>
+        <div class="footer__social-logos-wrapper flex flex-gap">
+            <a class="footer__social-logo-link" href="https://www.facebook.com/"><ion-icon name="logo-facebook" class="footer__social-logo"></ion-icon></a>
+            <a class="footer__social-logo-link" href="https://www.youtube.com/"><ion-icon name="logo-youtube" class="footer__social-logo"></ion-icon></a>
+            <a class="footer__social-logo-link" href="https://twitter.com/"><ion-icon name="logo-twitter" class="footer__social-logo"></ion-icon></a>
+            <a class="footer__social-logo-link" href="https://in.pinterest.com/"><ion-icon name="logo-pinterest" class="footer__social-logo"></ion-icon></a>
+            <a class="footer__social-logo-link" href="https://www.instagram.com/"><ion-icon name="logo-instagram" class="footer__social-logo"></ion-icon></a>
+        </div>
+    </div>
+</footer>
+
+<div class="overlay hidden"></div>
+<script src="../javascript/script.js"></script>
+
+</body>
+</html>

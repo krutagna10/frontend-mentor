@@ -1,0 +1,121 @@
+.service {
+  min-height: 15rem;
+  border-radius: 0.75rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: hsl(var(--rawBlack), 0.45);
+    transition: all 0.4s ease;
+  }
+
+  &:hover::before {
+    background-color: hsl(var(--rawPeach), 0.5);
+  }
+
+  &__heading,
+  &__link {
+    position: relative;
+    z-index: 999;
+  }
+
+  &__link-symbol {
+    color: var(--peach);
+    margin-left: 0.5rem;
+  }
+
+  &--web-design {
+    background-image: url('/images/home/mobile/image-web-design.jpg');
+  }
+
+  &--app-design {
+    background-image: url('/images/home/mobile/image-app-design.jpg');
+  }
+
+  &--graphic-design {
+    background-image: url('/images/home/mobile/image-graphic-design.jpg');
+  }
+
+  @media (min-width: 35em) {
+    &--web-design {
+      background-image: url('/images/home/tablet/image-web-design.jpg')
+    }
+
+    &--app-design {
+      background-image: url('/images/home/tablet/image-app-design.jpg');
+    }
+
+    &--graphic-design {
+      background-image: url('/images/home/tablet/image-graphic-design.jpg');
+    }
+  }
+
+  @media (min-width: 45em) {
+    & {
+      min-height: 20rem;
+    }
+    .home &--web-design {
+      background-image: url('/images/home/desktop/image-web-design-large.jpg');
+      grid-row: span 2;
+    }
+
+    &--app-design {
+      background-image: url('/images/home/desktop/image-app-design.jpg');
+    }
+
+    &--graphic-design {
+      background-image: url('/images/home/desktop/image-graphic-design.jpg');
+    }
+  }
+}
+
+/* Features Section */
+@media (min-width: 55em) {
+  .features-section .container {
+    gap: 3rem !important;
+  }
+}
+
+.feature {
+  gap: 1.25rem;
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image-wrapper::before {
+    content: '';
+    position: absolute;
+    background-image: url('/images/shared/desktop/bg-pattern-small-circle.svg');
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__image {
+    margin: 0 auto;
+  }
+
+  @media (min-width: 35em) {
+    & {
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+    }
+  }
+
+  @media (min-width: 45em) {
+    & {
+      flex-direction: column;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+

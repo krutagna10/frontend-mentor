@@ -1,0 +1,158 @@
+.footer-section {
+  margin-top: 15rem;
+  position: relative;
+}
+
+.footer-contact-section {
+  position: absolute;
+  width: 90%;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+@media (min-width: 25em) {
+  .footer-contact-section {
+    top: -35%;
+    transform: translate(-50%, 35%);
+  }
+}
+
+@media (min-width: 35em) {
+  .footer-contact-section {
+    top: -50%;
+    transform: translate(-50%, 50%);
+  }
+}
+
+@media (min-width: 45em) {
+  .footer-contact-section {
+    top: -80%;
+    transform: translate(-50%, 80%);
+  }
+}
+
+@media (min-width: 75em) {
+  .footer-contact-section {
+    top: -60%;
+    transform: translate(-50%, 60%);
+  }
+}
+
+.footer-contact {
+  padding: 4rem 1rem;
+  border-radius: 0.75rem;
+
+  &__text-content {
+    text-align: center;
+    place-items: center;
+  }
+
+  &__btn {
+    place-self: center
+  }
+
+  @media (min-width: 35em) {
+    & {
+      padding-inline: 3rem;
+    }
+
+    &.grid--2-columns {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__text-content {
+      text-align: left;
+    }
+
+    &__btn {
+      margin-left: auto;
+    }
+  }
+
+  @media (min-width: 75em) {
+    & {
+      padding-inline: 6rem;
+    }
+  }
+
+}
+
+.footer {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  text-align: center;
+  padding-top: 12rem;
+
+  &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 60% !important;
+  }
+
+  &__nav-link {
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+
+  &__nav-link:hover {
+    color: var(--peach);
+  }
+
+  &__contact-link {
+    display: block;
+  }
+
+  &__social-logo {
+    font-size: 1.75rem;
+    color: var(--white);
+    transition: all 0.3s ease;
+  }
+
+  &__social-logo:hover {
+    color: var(--peach);
+  }
+
+  @media (min-width: 35em) {
+    padding-top: 9rem;
+  }
+
+  @media (min-width: 45em) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      row-gap: 5rem;
+      text-align: left;
+      place-items: start;
+    }
+
+    &__logo-link {
+      justify-content: flex-start !important;
+    }
+
+    &__nav {
+      grid-column: span 2;
+      justify-self: end;
+    }
+
+    &__nav-list {
+      flex-direction: row !important;
+      gap: 3rem !important;
+    }
+
+    &__social-logos-wrapper {
+      place-self: center
+    }
+  }
+
+  @media (min-width: 65em) {
+    &__nav-list {
+      gap: 5rem !important;
+    }
+  }
+}

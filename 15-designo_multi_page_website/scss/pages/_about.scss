@@ -1,0 +1,130 @@
+.about {
+  padding-inline: 0 !important;
+  gap: 0 !important;
+  border-radius: var(--border-radius-container);
+  overflow: hidden;
+
+  &__text-content {
+    padding: 4rem 1rem;
+    text-align: center
+  }
+
+  &__image-wrapper {
+    min-height: 20rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-inline: 0;
+  }
+
+  &__image-wrapper--hero {
+    background-image: url('/images/about/mobile/image-about-hero.jpg');
+  }
+
+  &__image-wrapper--talent {
+    background-image: url('/images/about/mobile/image-world-class-talent.jpg');
+  }
+
+  &__image-wrapper--deal {
+    background-image: url('/images/about/mobile/image-real-deal.jpg');
+  }
+
+  @media (min-width: 35em) {
+    &__image-wrapper--hero {
+      background-image: url('/images/about/tablet/image-about-hero.jpg');
+    }
+
+    &__image-wrapper--hero {
+      background-image: url('/images/about/tablet/image-world-class-talent.jpg');
+    }
+
+    &__image-wrapper--deal {
+      background-image: url('/images/about/tablet/image-real-deal.jpg');
+    }
+  }
+
+  @media (min-width: 45em) {
+    &__image-wrapper--hero {
+      min-height: 30rem;
+      background-image: url('/images/about/desktop/image-about-hero.jpg');
+      grid-column-start: 2;
+    }
+
+    &__image-wrapper--talent {
+      background-image: url('/images/about/desktop/image-world-class-talent.jpg');
+      min-height: 40rem;
+    }
+
+    &__image-wrapper--deal {
+      background-image: url('/images/about/desktop/image-real-deal.jpg');
+      min-height: 40rem;
+      grid-column-start: 2;
+    }
+
+    &--hero {
+      padding-inline: 0 !important;
+      grid-template-columns: 55fr 45fr;
+    }
+
+     &--talent {
+      padding-inline: 0 !important;
+      grid-template-columns: 45fr 55fr;
+    }
+
+    &--deal {
+      grid-template-columns: 55fr 45fr;
+    }
+
+    &__text-content {
+      padding-inline: 2rem;
+      text-align: left !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-section &__text-content {
+      grid-row-start: 1;
+    }
+
+    .deal-section &__text-content {
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+  }
+
+  @media (min-width: 65em) {
+    &__text-content {
+      padding-inline: 4rem;
+    }
+  }
+}
+
+
+/* Location grid*/
+.locations {
+  &__text-content {
+    padding: 2rem 2rem;
+  }
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image-wrapper::before {
+    content: '';
+    position: absolute;
+    background-image: url('/images/shared/desktop/bg-pattern-small-circle.svg');
+    inset: 0;
+  }
+
+  &__btn {
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 65em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+

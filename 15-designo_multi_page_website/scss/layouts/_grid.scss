@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.grid--2-columns {
+  grid-template-columns: 1fr;
+}
+
+.grid--3-columns {
+  grid-template-columns: 1fr;
+}
+
+.grid-place-center {
+  place-items: center;
+}
+
+@media (min-width: 45em) {
+  .grid--2-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid--3-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

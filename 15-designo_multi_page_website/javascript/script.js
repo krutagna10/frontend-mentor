@@ -1,25 +1,29 @@
 'use strict';
 
-const mainHeader = document.querySelector('.main-header')
+const mainHeader = document.querySelector('.header-section')
 const overlay = document.querySelector('.overlay');
-const webDesignProjects = document.querySelectorAll('.web-design');
-const appDesignProjects = document.querySelectorAll('.app-design');
-const graphicDesignProjects = document.querySelectorAll('.graphic-design');
+const webDesignProjects = document.querySelectorAll('.service--web-design');
+const appDesignProjects = document.querySelectorAll('.service--app-design');
+const graphicDesignProjects = document.querySelectorAll('.service--graphic-design');
 
 // Navigation
-let mobileNavigationButton = document.querySelector('.mobile-navigation-button');
+let openNavigationButton = document.querySelector('.header__nav-open-btn');
+let closeNavigationButton = document.querySelector('.header__nav-close-btn');
 
-mobileNavigationButton.addEventListener('click', () => {
-    mainHeader.classList.toggle('navigation-open');
-    mobileNavigationButton.classList.toggle('active');
-    overlay.classList.toggle('hidden');
-});
+openNavigationButton.addEventListener('click', () => {
+    mainHeader.classList.add('navigation-open');
+    overlay.classList.remove('hidden');
+})
+
+closeNavigationButton.addEventListener('click', () => {
+    mainHeader.classList.remove('navigation-open');
+    overlay.classList.add('hidden');
+})
 
 // Removing overlay
 const hideMobileNavigation = () => {
     overlay.classList.add('hidden');
     mainHeader.classList.remove('navigation-open');
-    mobileNavigationButton.classList.remove('active')
 }
 
 // When the user click on escape key
@@ -41,19 +45,19 @@ window.addEventListener("resize", function() {
 // When the user clicks on any project container
 for (const webDesignProject of webDesignProjects) {
     webDesignProject.addEventListener('click', () => {
-        window.location.href = 'web-design.html';
+        window.location.href = 'pages/web-design.html';
     });
 }
 
 for (const appDesignProject of appDesignProjects) {
     appDesignProject.addEventListener('click', () => {
-        window.location.href = 'app-design.html';
+        window.location.href = 'pages/app-design.html';
     });
 }
 
 for (const graphicDesignProject of graphicDesignProjects) {
     graphicDesignProject.addEventListener('click', () => {
-        window.location.href = 'graphic-design.html';
+        window.location.href = 'pages/graphic-design.html';
     });
 }
 

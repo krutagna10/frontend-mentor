@@ -1,18 +1,20 @@
 'use strict';
 
-const inputContainers = document.querySelectorAll('.input-container');
-const nameContainer = document.querySelector('.name-container')
-const emailContainer = document.querySelector('.email-container');
-const phoneNumberContainer = document.querySelector('.phone-number-container');
-const messageContainer = document.querySelector('.message-container');
-const nameElement = document.querySelector('#person-name');
-const phoneNumberElement = document.querySelector('#phone-number');
-const emailElement = document.querySelector('#email-address');
-const messageElement = document.querySelector('#message');
-const formSubmitButton = document.querySelector('.submit-button');
-const form = document.querySelector('.form');
-const inputs = document.querySelectorAll('.input');
-const phoneNumberErrorMessage = document.querySelector('.phone-number-container .error-message');
+const inputContainers = document.querySelectorAll('.contact__input-wrapper');
+
+const nameContainer = document.querySelector('.contact__name-wrapper')
+const emailContainer = document.querySelector('.contact__email-wrapper');
+const phoneNumberContainer = document.querySelector('.contact__number-wrapper');
+const messageContainer = document.querySelector('.contact__message-wrapper');
+
+const nameElement = document.querySelector('#contact__name');
+const emailElement = document.querySelector('#contact__email');
+const phoneNumberElement = document.querySelector('#contact__phone-number');
+const messageElement = document.querySelector('#contact__message');
+const formSubmitButton = document.querySelector('.contact__submit-btn');
+const form = document.querySelector('.contact__form');
+const inputs = document.querySelectorAll('.contact__form-input');
+const phoneNumberErrorMessage = document.querySelector('.contact__error-message--phone');
 
 // Stop form from refreshing page on submit
 function handleForm(event) {

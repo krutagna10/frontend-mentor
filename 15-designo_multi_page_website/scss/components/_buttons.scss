@@ -1,0 +1,28 @@
+.btn {
+  display: block;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  max-width: 10rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.btn--light {
+  background-color: var(--white);
+}
+
+.btn--light:hover {
+  background-color: var(--light-peach);
+  color: var(--white);
+}
+
+.btn--dark {
+  background-color: var(--peach);
+  color: var(--white);
+}
+
+.btn--dark:hover {
+  background-color: var(--light-peach);
+  color: var(--white);
+}
