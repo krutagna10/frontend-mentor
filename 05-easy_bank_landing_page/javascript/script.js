@@ -1,6 +1,6 @@
-let openNavigation = document.querySelector(".open-nav");
-let closeNavigation = document.querySelector(".close-nav");
-let header = document.querySelector("header");
+let openNavigation = document.querySelector(".header__open-nav-btn");
+let closeNavigation = document.querySelector(".header__close-nav-btn");
+let header = document.querySelector(".header-section");
 
 openNavigation.addEventListener("click", () => {
     header.classList.add("show-navigation");
