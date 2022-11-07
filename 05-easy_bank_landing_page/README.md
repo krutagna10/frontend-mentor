@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://easy-bank-landing-page-10.netlify.app/]
+- Live Site URL: [https://easy-bank-landing-page-10.vercel.app/]
 
 ### Built with
 
