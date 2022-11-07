@@ -1,8 +1,3 @@
-/* Spacing System ->   2px / 4px / 8px / 12px / 16px / 24px / 32px / 64px / 80px / 96px / 128px */
-
-/* Importing Font */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
-
 :root {
     --Barlow-Semi-Condensed: 'Barlow Semi Condensed', sans-serif;
 
@@ -15,12 +10,16 @@
     /* Neutral Colors */
     --Light-gray: hsl(0, 0%, 81%);
     --Light-grayish-blue: hsl(210 46% 95%);
-    --lightModeBackground: linear-gradient(111.34deg, #F6F9FB 0%, #CCDDEE 100%);
+    --body-background: linear-gradient(111.34deg, #F6F9FB 0%, #CCDDEE 100%);
 
     /* Dark mode colours */
     --darkModeBackground: linear-gradient(180deg, #293343 0%, #1d1f31 100%);
     --containerDarkBackground: rgb(61, 51, 85);
     --greenCardBackground: linear-gradient(180deg, #32ebc9 0%, rgba(52, 215, 185, 0.9) 100%)
+}
+
+.dark-mode--active {
+    --body-background: linear-gradient(180deg, #293343 0%, #1d1f31 100%);
 }
 
 /* css Reset */
@@ -41,12 +40,12 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    background: var(--lightModeBackground);
+    background: var(--body-background);
     position: relative;
 }
 
 
-.testimonial-grid {
+.testimonials-section {
     padding: 3.6rem 0;
 }
 
@@ -58,17 +57,18 @@ body {
     border-radius: 1rem;
     color: var(--White);
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-    transition: transform 0.6s ease;
+    transition: transform 1s ease;
+    cursor: pointer;
 }
 
-.testimonial-grid {
+.testimonials-section {
     display: grid;
     gap: 2.4rem;
     max-width: 125rem;
     margin: 2.4rem 1.8rem;
 }
 
-.person-information {
+.testimonial__person-info {
     display: flex;
     gap: 2.4rem;
     align-items: center;
@@ -80,111 +80,191 @@ body {
 }
 
 
-.person-information .name {
+.testimonial__person-name {
     font-size: 1.6rem;
     margin-bottom: 0.4rem;
 }
 
-.person-information .position {
+.testimonial__person-pos {
     font-size: 1.4rem;
     opacity: 70%;
 }
 
-.testimonial-heading {
+.testimonial__title {
     font-size: 1.8rem;
     font-weight: 600;
 }
 
-.testimonial-paragraph {
+.testimonial__text {
     opacity: 50%;
     line-height: 1.6;
     font-size: 1.4rem;
 }
 
-.testimonial.Daniel-Clifford {
-    background-color: var(--Moderate-violet);  
+.testimonial--daniel {
+    background-color: var(--Moderate-violet);
 }
 
-.testimonial.Jonathan-Walters {
-    background-color: var(--Very-dark-grayish-blue);   
+.testimonial--jonathan {
+    background-color: var(--Very-dark-grayish-blue);
 }
 
-.testimonial.Jeanette-Harmon {
+.testimonial--jeanette {
     font-size: 1.4rem;
 }
 
-.testimonial.Jeanette-Harmon, 
-.testimonial.Kira-Whittle {
+.testimonial--jeanette,
+.testimonial--kira {
     background-color: var(--White);
     color: var(--Very-dark-grayish-blue);
 }
 
-.testimonial.Jeanette-Harmon .position,
-.testimonial.Kira-Whittle .position {
+.testimonial__person-pos--jeanette,
+.testimonial__person-pos--kira {
     opacity: 70%;
 }
 
-.testimonial.Jeanette-Harmon .testimonial-paragraph,
-.testimonial.Kira-Whittle .testimonial-paragraph {
-   opacity: 70%;
+.testimonial__text--jeanette,
+.testimonial__text--kira {
+    opacity: 70%;
 }
 
-.testimonial.Patrick-Abrams {
+.testimonial--patrick {
     background-color: var(--Very-dark-blackish-blue);
     grid-row-start: 4;
 }
 
+/* Above 576 pixels */
+@media (min-width: 36em) {
+    .testimonials-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.4rem;
+    }
 
+    .testimonial--patrick {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
 
+    .testimonial--kira {
+        grid-row-start: 1;
+        grid-column-start: 2;
+    }
+
+    .testimonial--jonathan {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    .testimonial--daniel {
+        grid-row: span 2;
+    }
+}
+
+/* Media Queries*/
+@media (min-width: 56em) {
+    .testimonials-section {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.4rem;
+        max-width: 110rem;
+        margin: 3.2rem;
+    }
+
+    .testimonial--daniel {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .testimonial--jonathan {
+        grid-column: 3 / 4;
+        grid-row-start: 1;
+    }
+
+    .testimonial--patrick {
+        grid-row-start: 2 !important;
+        grid-column: 2 / 4 !important;
+    }
+
+    .testimonial--patrick {
+        grid-column: span 2;
+    }
+
+    .testimonial--kira {
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    /* Hover effects */
+    .testimonial--daniel:hover,
+    .testimonial--jeanette:hover {
+        transform: translateX(-1.4rem);
+    }
+
+    .testimonial--jonathan:hover {
+        transform: translateY(-1.4rem);
+    }
+
+    .testimonial.testimonial--kira:hover {
+        transform: translateX(1.4rem);
+    }
+
+    .testimonial--patrick:hover {
+        transform: translateY(1.4rem);
+    }
+
+}
 
 /* Dark Mode */
-.icons{
+.icon {
     display: block;
     font-size: 2.2rem;
     position: absolute;
-    right: 3rem;
-    top: 2rem;
+    right: 2rem;
+    top: 1.5rem;
+    cursor: pointer;
 }
 
-.light-mode-icon {
+
+.icon__light-mode {
     display: none;
 }
 
-.dark-mode .dark-mode-icon {
+.dark-mode--active .icon__dark-mode {
     display: none;
 }
 
-.dark-mode-icon:hover {
+.icon__dark-mode:hover {
     color: rgb(107, 19, 107);
 }
 
-.dark-mode .light-mode-icon {
+.dark-mode--active .icon__light-mode {
     display: block;
     color: white;
 }
 
-.light-mode-icon:hover {
+.icon__light-mode:hover {
     color: orange;
 }
 
-.dark-mode {
-    background: var(--darkModeBackground);
+.dark-mode--active .testimonial {
+    box-shadow: rgba(255, 255, 255, 0.1) 1px 2px 5px;
 }
 
-.dark-mode .testimonial.Daniel-Clifford {
+.dark-mode--active .testimonial--daniel {
     background: linear-gradient(180deg, #21e8c4 0%, rgba(21, 183, 153, 0.9) 100%);
 }
 
-.dark-mode .testimonial.Kira-Whittle {
+.dark-mode--active .testimonial--kira {
     background-image: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
-.dark-mode .testimonial.Patrick-Abrams {
+.dark-mode--active .testimonial--patrick {
     background-image: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.85) 100%);
 }
 
-.dark-mode .testimonial.Jeanette-Harmon {
+.dark-mode--active .testimonial--jeanette {
     background: linear-gradient(180deg, #9357F5 0%, rgba(131, 55, 255, 0.81) 100%);
     color: white;
 
