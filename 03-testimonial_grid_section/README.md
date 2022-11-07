@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://testimonial-grid-section-10.netlify.app/]
+- Live Site URL: [https://testimonial-grid-section-10.vercel.app/]
 
 ### Built with
 
