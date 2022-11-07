@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b609917d-811a-4bce-a2ff-d8c8cc541588" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/../03-testimonial_grid_section/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../03-testimonial_grid_section/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="b609917d-811a-4bce-a2ff-d8c8cc541588" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +27,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Web Development/Projects/frontend-mentor/03-testimonial_grid_section",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,7 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666533009911</updated>
       <workItem from="1666533013442" duration="80000" />
-      <workItem from="1667801866430" duration="649000" />
+      <workItem from="1667801866430" duration="839000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666533083822</created>
@@ -57,7 +53,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666533083822</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".">
+      <created>1667802801729</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667802801729</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
