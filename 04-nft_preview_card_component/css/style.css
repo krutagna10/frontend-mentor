@@ -1,5 +1,3 @@
-/* Spacing System -> 2px / 4px / 8px / 12px / 16px / 24px / 32px / 64px / 80px / 96px / 128px */
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 :root {
@@ -22,6 +20,11 @@ html {
     font-size: 62.5%;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 body {
     background-color: var(--Dark-blue-background);
     color: var(--White);
@@ -34,7 +37,7 @@ body {
 }
 
 
-.NFT-Preview-Card {
+.card-section {
     max-width: 35rem;
     background-color: var(--Dark-blue-card);
     padding: 2.4rem;
@@ -43,24 +46,22 @@ body {
     transition: all 0.5s ease;
 }
 
-.NFT-Preview-Card:hover {
-    /* Some additional styling */
+.card-section:hover {
     transform: translateY(-2rem);
 }
 
-.image-container {
+.card__image-wrapper {
     position: relative;
 }
 
-.image-container img {
+.card__image {
     display: block;
     max-width: 100%;
     border-radius: 1.2rem;
     margin-bottom: 1.8rem;
-    
 }
 
-.image-overlay {
+.card__overlay {
     position: absolute;
     inset: 0;
     background-color:hsl(178, 100%, 50%, 50%);
@@ -69,50 +70,50 @@ body {
     z-index: 999;
 }
 
-.image-overlay:hover {
+.card__overlay:hover {
     opacity: 1;
     cursor: pointer;
 }
 
-.image-overlay img {
+.card__overlay-image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-.text-content {
+.card__text-content {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
 }
 
-.heading {
+.card__title {
     font-size: 2.2rem;
     font-weight: 600;
     transition: all 0.4s ease;
 }
 
-.paragraph {
+.card__description {
     font-weight: 300;
     color: var(--Soft-blue);
 }
 
-.crypto-information {
+.card__crypto-info {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--Dark-blue-line);
     padding-bottom: 2rem;
 }
 
-.ethereum {
+.card__ethereum {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     color: var(--Cyan);
 }
 
-.days-left {
+.card__days-left {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -120,30 +121,30 @@ body {
 }
 
 
-.author-information {
+.card__author-info {
     display: flex;
     align-items: center;
     gap: 1.4rem;
 }
 
-.author-image img {
+.card__author-image {
     display: block;
     height: 3.6rem;
     border: 2px solid white;
     border-radius: 50%;
 }
 
-.created-by {
+.card__creator {
     color: var(--Soft-blue);
 }
 
-.author-name {
+.card__author-name {
     color: var(--White);
     transition: all 0.4s ease;
 }
 
-.heading:hover,
-.author-name:hover {
+.card__title:hover,
+.card__author-name:hover {
     color: var(--Cyan);
     cursor: pointer;
 }

@@ -27,6 +27,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Web Development/Projects/frontend-mentor/03-testimonial_grid_section",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,6 +46,7 @@
       <workItem from="1666532865556" duration="108000" />
       <workItem from="1666962573278" duration="16000" />
       <workItem from="1667797930975" duration="2192000" />
+      <workItem from="1667800355990" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666532966101</created>
@@ -67,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667800131918</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <created>1667800377149</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667800377149</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
