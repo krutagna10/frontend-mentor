@@ -1,5 +1,26 @@
 'use strict';
 
+// Data
+const winConditionsOriginal = [
+    ['rock', 'scissors'],
+    ['scissors', 'paper'],
+    ['paper', 'rock'],
+]
+
+const winConditionsBonus = [
+    ['scissors', 'paper', 'lizard'],
+    ['paper', 'rock', 'spock'],
+    ['rock', 'lizard', 'scissors'],
+    ['lizard', 'spock', 'paper'],
+    ['spock', 'scissors', 'rock']
+]
+
+let userChoice;
+let computerChoice;
+let choices = [];
+let score = 0;
+
+// Elements
 const body = document.querySelector('body');
 const rulesButton = document.querySelector('.rules-button');
 const rulesElement = document.querySelector('.rules');
@@ -27,20 +48,18 @@ const computerPickBox = document.querySelector('.computer-pick-box');
 const resultBox = document.querySelector('.result-box');
 
 //Initializing variables
-let userChoice;
-let computerChoiceValue;
-let score = 0;
+
 
 // Computer Choice
-let computerChoice = (game) => {
+let computerChoiceGenerator = (game) => {
     if (game === 'original') {
-        let choices = ['rock', 'paper', 'scissors'];
+        let choiceOptions = ['rock', 'paper', 'scissors'];
         let random = Math.floor(Math.random() * 3);
-        return choices[random];
+        return choiceOptions[random];
     } else {
         let random = Math.floor(Math.random() * 5);
-        let choices = ['scissors', 'spock', 'paper', 'lizard', 'rock'];
-        return choices[random];
+        let choiceOptions = ['scissors', 'spock', 'paper', 'lizard', 'rock'];
+        return choiceOptions[random];
     }
 }
 
@@ -65,20 +84,20 @@ function displayUserImage() {
 
 function displayComputerImage() {
     computerPickBox.style.display = 'flex';
-    computerPickContainer.classList.add(`${computerChoiceValue}-container`);
-    computerPickImage.src = `images/icon-${computerChoiceValue}.svg`;
+    computerPickContainer.classList.add(`${computerChoice}-container`);
+    computerPickImage.src = `images/icon-${computerChoice}.svg`;
 }
 
 function removeResultImage() {
     userPickContainer.classList.remove(`${userChoice}-container`);
-    computerPickContainer.classList.remove(`${computerChoiceValue}-container`);
+    computerPickContainer.classList.remove(`${computerChoice}-container`);
 }
 
 function showWinBackground(winner) {
     if (winner === 'user') {
         userWinBackground.style.display = 'block';
         computerWinBackground.style.display = 'none';
-    } else if (winner === 'computer'){
+    } else if (winner === 'computer') {
         computerWinBackground.style.display = 'block';
         userWinBackground.style.display = 'none';
     } else {
@@ -131,84 +150,46 @@ function draw() {
     showWinBackground('draw');
 }
 
+const checkWinOriginal = (choices) => {
+    return winConditionsOriginal.findIndex(element => element.join() === choices.join()) !== -1
+}
+
+const checkWinBonus = (choices) => {
+    const winConditionArray = winConditionsBonus.find(element => element[0] === choices[0]);
+    return choices.every(element => winConditionArray.includes(element));
+}
+
 // Original Game logic
 function originalGame() {
-    computerChoiceValue = computerChoice('original');
-    if (userChoice === computerChoiceValue) {
+    computerChoice = computerChoiceGenerator('original');
+    choices = [userChoice, computerChoice];
+
+    if (userChoice === computerChoice) {
         draw();
-    } else if (userChoice === 'rock') {
-        if (computerChoiceValue === 'paper') {
-            decrementScore();
-            userLose();
-        } else {
-            incrementScore()
-            userWin();
-        }
-    } else if (userChoice === 'paper') {
-        if (computerChoiceValue === 'rock') {
-            incrementScore();
-            userWin();
-        } else {
-            decrementScore();
-            userLose();
-        }
+    } else if (checkWinOriginal(choices)) {
+        incrementScore()
+        userWin();
     } else {
-        if (computerChoiceValue === 'rock') {
-            decrementScore();
-            userLose();
-        } else {
-            incrementScore();
-            userWin();
-        }
+        decrementScore();
+        userLose();
     }
 }
 
 // Bonus Game Logic
 function bonusGame() {
-    computerChoiceValue = computerChoice('bonus-game');
-    if (userChoice === computerChoiceValue) {
+    computerChoice = computerChoiceGenerator('bonus-game');
+    choices = [userChoice, computerChoice];
+
+    if (userChoice === computerChoice) {
         draw();
-    } else if (userChoice === 'scissors') {
-        if (computerChoiceValue === 'paper' || computerChoiceValue === 'lizard') {
-            incrementScore();
-            userWin();
-        } else {
-            decrementScore();
-            userLose();
-        }
-    } else if (userChoice === 'paper') {
-        if (computerChoiceValue === 'rock' || computerChoiceValue === 'spock') {
-            incrementScore();
-            userWin();
-        } else {
-            decrementScore();
-            userLose();
-        }
-    } else if (userChoice === 'rock') {
-        if (computerChoiceValue === 'lizard' || computerChoiceValue === 'scissors') {
-            incrementScore();
-            userWin();
-        } else {
-            decrementScore();
-            userLose();
-        }
-    } else if (userChoice === 'lizard') {
-        if (computerChoiceValue === 'spock' || computerChoiceValue === 'paper') {
-            incrementScore();
-            userWin();
-        } else {
-            decrementScore();
-            userLose();
-        }
+    } else if (checkWinBonus(choices)) {
+        incrementScore();
+        userWin();
     } else {
-        if (computerChoiceValue === 'scissor' || computerChoiceValue === 'rock') {
-            incrementScore();
-            userWin();
-        } else {
-            decrementScore();
-            userLose();
-        }
+        decrementScore();
+        userLose();
     }
+
 }
 
 for (let paper of paperElement) {
