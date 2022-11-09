@@ -97,6 +97,10 @@ button {
     gap: 1rem;
   }
 }
+.card-section {
+  padding: 1rem 0;
+}
+
 .card {
   background-color: white;
   text-align: center;
@@ -105,10 +109,10 @@ button {
   overflow: hidden;
   margin-inline: 1rem;
 }
-.card__content {
-  padding: 1rem 1rem;
+.card__description {
+  padding: 1.75rem 1rem;
 }
-.card__content > * + * {
+.card__description > * + * {
   margin-top: 1.25rem;
 }
 .card__text-content > * + * {
@@ -178,7 +182,7 @@ button {
   color: var(--dark-blue);
 }
 @media (min-width: 48em) {
-  .card__content {
+  .card__description {
     padding: 2rem 1.5rem;
   }
   .card__text-content {
