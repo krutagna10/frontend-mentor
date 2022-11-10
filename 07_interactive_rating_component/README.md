@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://interactive-rating-component-10.netlify.app/]
+- Live Site URL: [https://interactive-rating-component-10.vercel.app/]
 
 ### Built with
 

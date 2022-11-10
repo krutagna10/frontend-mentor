@@ -2,66 +2,83 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="css/queries.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-  <title>Frontend Mentor | Interactive rating component</title>
+    <title>Frontend Mentor | Interactive rating component</title>
 </head>
 <body>
-  <main>
-    <section class="rating-component">
-      <div class="container start-state">
-        <figure class="logo-container">
-          <img src="images/icon-star.svg" alt="Star logo">
-        </figure>
-        <div class="text-content">
-          <h1 class="primary-heading">How did we do?</h1>
-          <p class="text">
-            Please let us know how we did with your support request. All feedback is appreciated
-            to help us improve our offering!
-          </p>
+<main>
+    <section class="rating-card-section">
+        <div class="rating-card rating-card--start-state">
+            <figure class="rating-card__logo-wrapper">
+                <img class="rating-card__logo" src="images/icon-star.svg" alt="Star logo">
+            </figure>
+            <div class="rating__card-text-content">
+                <h1 class="rating-card__title primary-heading">How did we do?</h1>
+                <p class="rating-card__text">
+                    Please let us know how we did with your support request. All feedback is appreciated
+                    to help us improve our offering!
+                </p>
+            </div>
+            <div class="rating-card__ratings">
+                <label for="rating-card__rating--1" class="rating-card__label">
+                    <span class="rating_card__label-text">1</span>
+                    <input type="radio" name="rating-card__rating" id="rating-card__rating--1" class="rating-card__rating">
+                </label>
+
+                <label for="rating-card__rating--2" class="rating-card__label">
+                    <span class="rating_card__label-text">2</span>
+                     <input type="radio" name="rating-card__rating" id="rating-card__rating--2" class="rating-card__rating">
+                </label>
+
+                <label for="rating-card__rating--3" class="rating-card__label">
+                    <span class="rating_card__label-text">3</span>
+                    <input type="radio" name="rating-card__rating" id="rating-card__rating--3" class="rating-card__rating">
+                </label>
+
+                <label for="rating-card__rating--4" class="rating-card__label">
+                    <span class="rating_card__label-text">4</span>
+                    <input type="radio" name="rating-card__rating" id="rating-card__rating--4" class="rating-card__rating">
+                </label>
+
+                <label for="rating_card__rating--5" class="rating-card__label">
+                    <span class="rating_card__label-text">5</span>
+                    <input type="radio" name="rating-card__rating" id="rating_card__rating--5" class="rating-card__rating">
+                </label>
+            </div>
+            <p class="rating-card__error-message hidden">Please select a rating!</p>
+            <button class="rating-card__btn--submit btn">
+                Submit
+            </button>
         </div>
-        <div class="ratings-container">
-          <button class="rating">1</button>
-          <button class="rating">2</button>
-          <button class="rating">3</button>
-          <button class="rating">4</button>
-          <button class="rating">5</button>
+
+        <div class="rating-card rating-card--end-state">
+            <figure class="rating-card__image-wrapper">
+                <img class="rating-card__image" src="images/illustration-thank-you.svg" alt="Thank you Illustration">
+            </figure>
+            <div class="rating-card__choice-label">
+                <p>You have selected <span class="rating-card__choice">4</span> out of 5</p>
+            </div>
+            <div class="rating-card__text-content">
+                <h2 class="secondary-heading">Thank you!</h2>
+                <p class="rating-card__text">
+                    We appreciate you taking the time to give a rating. If you ever need more support,
+                    don’t hesitate to get in touch!
+                </p>
+            </div>
+            <button class="rating-card__btn--again btn">
+                Rate Again
+            </button>
         </div>
-        <p class="no-rating">Kindly select a rating !</p>
-        <button class="btn submit-button">
-          Submit
-        </button>
-      </div>
-
-      <div class="container end-state">
-        <figure class="image-container">
-          <img src="images/illustration-thank-you.svg" alt="Thank you Illustration">
-        </figure>
-         <div class="user-choice">
-          <p>You have selected <span class="input">4</span> out of 5</p>
-         </div>
-         <div class="text-content">
-          <h2 class="secondary-heading">Thank you!</h2>
-          <p class="text">
-            We appreciate you taking the time to give a rating. If you ever need more support, 
-            don’t hesitate to get in touch!
-          </p>
-         </div>
-         <button class="btn rate-again">
-          Rate Again
-         </button>
-
-      </div>
-
-
     </section>
-  </main>
- <script src="javascript/script.js"></script>
+</main>
+<script src="js/script.js"></script>
 </body>
 
 </html>
