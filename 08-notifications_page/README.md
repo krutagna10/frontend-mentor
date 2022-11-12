@@ -14,6 +14,9 @@
 - CSS
 - Vanilla Javascript
 
+### What I Learned
+- Tabindex Property
+
 ## Author
 - Frontend Mentor - [@krutagna10](https://www.frontendmentor.io/profile/krutagna10)
 
