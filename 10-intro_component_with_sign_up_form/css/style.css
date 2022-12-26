@@ -64,7 +64,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.text {
+.card__text {
     color: var(--white);
     line-height: 1.6;
     word-spacing: 0.2rem;
@@ -201,39 +201,6 @@ input {
     color: red;
 }
 
-.thank-you-container {
-    background: linear-gradient(#8ce99a, #51cf66);
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    padding: 15rem 1.5rem;
-    display: none;
-    border-radius: 0.75rem;
-    box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
-}
-
-.submitted .thank-you-container {
-    display: flex;
-}
-
-.submitted .input-content {
-    display: none;
-}
-
-.trophy-icon {
-    display: block;
-    color: gold;
-    font-size: var(--font-size-48);
-    margin-bottom: 2rem;
-}
-
-.thank-you-message {
-    font-size: var(--font-size-24);
-    text-align: center;
-}
-
 /* Media queries*/
 @media (max-width: 58em) {
     .container {
@@ -241,7 +208,7 @@ input {
          padding: 3rem 5rem;
     }
 
-    .text-content {
+    .card__text-content {
         text-align: center;
     }
 
@@ -264,7 +231,7 @@ input {
     .primary-heading {
         font-size: var(--font-size-32);
     }
-    .text {
+    .card__text {
         font-size: var(--font-size-15);
     }
 }

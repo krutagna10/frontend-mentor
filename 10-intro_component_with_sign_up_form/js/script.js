@@ -64,9 +64,6 @@ claimButton.addEventListener('click', () => {
         lastNameInputBox.classList.remove('error');
         emailInputBox.classList.remove('error');
         passwordInputBox.classList.remove('error');
-
-    //    Adding submitted clas
-        document.querySelector('.container').classList.add('submitted');
     }
 
 })
