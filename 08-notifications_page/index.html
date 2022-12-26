@@ -2,163 +2,176 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/dark-mode-style.css">
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <title>Frontend Mentor | Notifications page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Frontend Mentor | Notifications page</title>
 </head>
 <body class="dark-mode">
+<main>
+    <section class="notifications-section">
+        <div class="notifications container">
+            <header class="notifications__header flex">
+                <div class="notifications__content flex">
+                    <h1 class="notifications__title">
+                        Notifications
+                    </h1>
+                    <div class="notifications__number">3</div>
+                </div>
+                <div class="notifications__header-buttons flex">
+                    <button class="notifications__read-btn btn">Mark all as read</button>
+                    <div class="notifications__theme-icons">
+                        <button class="notifications__btn-theme">
+                            <ion-icon class="notifications__icon notifications__icon--light" name="sunny-outline"></ion-icon>
+                            <ion-icon class="notifications__icon notifications__icon--dark" name="moon-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </header>
 
-  <main>
-    <section class="notification-section">
-      <div class="container">
-        <header class="notification-header">
-          <h1 class="primary-heading">
-            Notifications
-          </h1>
-          <div class="number-of-notifications">3</div>
-          <button class="btn mark-as-read">Mark all as read</button>
-        </header>
+            <div class="notifications__body flow">
+                <div class="notification notification--unchecked">
+                    <div class="notification__profile-wrapper">
+                        <img class="notification__profile-pic" src="images/avatar-mark-webber.webp"
+                             alt="Mark Webber profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Mark Webber</a>
+                            reacted to your recent post
+                            <a href="#" class="notification__recent-post">My first tournament today!</a>
+                            <span class="notification__unread-icon"></span>
+                        </p>
+                        <p class="notification__time">
+                            1m ago
+                        </p>
+                    </div>
+                </div>
 
-        <div class="notifications">
+                <div class="notification notification--unchecked">
+                    <div class="notification__profile-wrapper">
+                        <img class="notification__profile-pic" src="images/avatar-angela-gray.webp"
+                             alt="Angela Gray profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Angela gray </a>
+                            followed you
+                            <span class="notification__unread-icon"></span>
+                        </p>
 
-          <div class="notification unread-background">
-            <figure class="profile-container">
-              <img src="images/avatar-mark-webber.webp" alt="Mark Webber profile picture">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Mark Webber</a>
-                reacted to your recent post
-                <a href="#" class="recent-post-heading">My first tournament today!</a>
-                <span class="unread-icon"></span>
-              </p>
-              <p class="time">
-                1m ago
-              </p>
+                        <p class="notification__time">
+                            5m ago
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notification notification--unchecked">
+                    <div class="notification__profile-wrapper">
+                        <img class="notification__profile-pic" src="images/avatar-jacob-thompson.webp"
+                             alt="Jacob Thompson profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Jacon Thompson </a>
+                            has joined your group
+                            <a href="#" class="notification__group-message">Chess Club</a>
+                            <span class="notification__unread-icon"></span>
+                        </p>
+                        <p class="notification__time">
+                            1 day ago
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <div class="notification__profile-wrapper temp">
+                        <img class="notification__profile-pic" src="images/avatar-rizky-hasanuddin.webp"
+                             alt="Rizky Hasanuddin profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Rizky Hasanudding </a>
+                            sent you a private message
+                        </p>
+                        <p class="notification__time">
+                            5 days ago
+                        </p>
+                        <div class="notification__private-message-wrapper">
+                            <p class="notification__private-message">
+                                Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+                                I'm already having lots of fun and improving my game.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <div class="notification__profile-wrapper">
+                        <img class="notification__profile-pic" src="images/avatar-kimberly-smith.webp"
+                             alt="Kimberly Smith profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Kimberly Smith </a>
+                            commented on your picture
+                        </p>
+                        <p class="notification__time">
+                            1 week ago
+                        </p>
+                    </div>
+                    <div class="notification__post-photo-wrapper">
+                        <img class="notification__post-photo" src="images/image-chess.webp" alt="A girl playing chess">
+                    </div>
+                </div>
+
+
+                <div class="notification">
+                    <div class="notification__profile-wrapper">
+                        <img class="notification__profile-pic" src="images/avatar-nathan-peterson.webp"
+                             alt="Nathan Peterson profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Nathan Peterson </a>
+                            reacted to your recent post
+                            <a href="#" class="notification__recent-post">5 end-game strategies to increase your win
+                                rate</a>
+                        </p>
+                        <p class="notification__time">
+                            2 weeks ago
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <div class="notification__profile-wrapper">
+                        <img class="notification__profile-pic" src="images/avatar-anna-kim.webp"
+                             alt="Anna Kim profile picture">
+                    </div>
+                    <div class="notification__description">
+                        <p class="notification__message">
+                            <a href="#" class="notification__user-name">Anna Kim </a>
+                            left the group
+                            <a href="#" class="notification__group-message">Chess Club</a>
+                        </p>
+                        <p class="notification__time">
+                            1 day ago
+                        </p>
+                    </div>
+                </div>
+
             </div>
-          </div>
-
-          <div class="notification unread-background">
-            <figure class="profile-container">
-              <img src="images/avatar-angela-gray.webp" alt="Angela Gray profile pictrure">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Angela gray </a>
-                followed you
-                <span class="unread-icon"></span>
-              </p>
-
-              <p class="time">
-                5m ago
-              </p>
-            </div>
-          </div>
-
-          <div class="notification unread-background">
-            <figure class="profile-container">
-              <img src="images/avatar-jacob-thompson.webp" alt="Jacob Thompson profile picture">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Jacon Thompson </a>
-                has joined your group
-                <a href="#" class="group-message">Chess Club</a>
-                <span class="unread-icon"></span>
-              </p>
-              <p class="time">
-                1 day ago
-              </p>
-            </div>
-          </div>
-
-          <div class="notification">
-            <figure class="profile-container temp">
-              <img src="images/avatar-rizky-hasanuddin.webp" alt="Rizky Hasanuddin profile picture">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Rizky Hasanudding </a>
-                sent you a private message
-              </p>
-              <p class="time">
-                5 days ago
-              </p>
-              <div class="private-message-container">
-                <p>Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already
-                  having lots of fun and improving my game.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="notification">
-            <figure class="profile-container">
-              <img src="images/avatar-kimberly-smith.webp" alt="Kimberly Smith profile picture">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Kimberly Smith </a>
-                  commented on your picture
-              </p>
-              <p class="time">
-                1 week ago
-              </p>
-            </div>
-            <figure class="user-photo-container">
-              <img src="images/image-chess.webp" alt="A girl playin g chess">
-            </figure>
-          </div>
-
-
-          <div class="notification">
-            <figure class="profile-container">
-              <img src="images/avatar-nathan-peterson.webp" alt="Nathan Peterson profile picture">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Nathan Peterson </a>
-                 reacted to your recent post 
-                 <a href="#" class="recent-post-heading">5 end-game strategies to increase your win rate</a>
-              </p>
-              <p class="time">
-                2 weeks ago
-              </p>
-            </div>
-          </div>
-
-          <div class="notification">
-            <figure class="profile-container">
-              <img src="images/avatar-anna-kim.webp" alt="Anna Kim profile picture">
-            </figure>
-            <div class="text-content">
-              <p class="message-text">
-                <a href="#" class="user-name">Anna Kim </a>
-                 left the group 
-                <a href="#" class="group-message">Chess Club</a>
-              </p>
-              <p class="time">
-                1 day ago
-              </p>
-            </div>
-          </div>
 
         </div>
-
-        <div class="icons">
-          <ion-icon class="light-mode-icon" name="sunny-outline"></ion-icon>
-          <ion-icon class="dark-mode-icon" name="moon-outline"></ion-icon>
-      </div>
-      </div>
     </section>
-  </main>
+</main>
 
-  <script src="javascript/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

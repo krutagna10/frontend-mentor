@@ -4,296 +4,328 @@
     /* Colours */
     --red: hsl(1, 90%, 64%);
     --blue: hsl(219, 85%, 26%);
-    --hoverBlue: hsl(219, 74%, 36%);
+    --hoverColor: hsl(219, 74%, 36%);
     --white: hsl(0, 0%, 100%);
     --very-light-grayish-blue: hsl(210, 60%, 98%);
     --light-grayish-blue-1: hsl(211, 68%, 94%);
-    --light-grayish-blue-2: hsl(205, 33%, 90%);
-    --grayish-blue: hsl(219, 14%, 63%) ;
-    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --dark-gray-blue: hsl(219, 12%, 42%);
     --very-dark-blue: hsl(224, 21%, 14%);
 
+    /* Typography*/
+    --font-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
 
-    /* Dark Mode Colors */
-    --lightBlue: #15aabf;
-    --darkModeBackground: #212121;
-    --containerDarkBackground: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.8) 100%);
-    --darkModeTextColor: #adb5bd;
-    --darkModeGroupMessage: #1098ad;
-
-    /* Typography */
-    --plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-size-200: 1.25rem;
+    --font-size-100: 0.875rem;
     --font-weight-medium: 400;
     --font-weight-bold: 700;
-    --font-size-12: 0.75rem;
-    --font-size-14: 0.875rem;
-    --font-size-15: 0.9375rem;
-    --font-size-16: 1rem;
-    --font-size-17: 1.0625rem;
-    --font-size-18: 1.125rem;
-    --font-size-20: 1.25rem;
-    --font-size-22: 1.375rem;
-    --font-size-24: 1.5rem;
-    --font-size-32: 2rem;
-    --font-size-48: 3rem;
-    --font-size-64: 4rem;
+    --font-weight-extra-bold: 800;
+
+    /* Spacing */
+    --flow-space: 0.5rem;
 }
 
+@media (min-width: 48rem) {
+    :root {
+        --font-size-200: 2rem;
+        --font-size-100: 1rem;
+    }
+}
+
+/* Dark Mode*/
+.dark-mode {
+    --hoverColor: #15aabf;
+    --very-light-grayish-blue: #212121;
+    --very-dark-blue: hsl(0, 0%, 100%);
+    --dark-gray-blue: hsl(202, 29%, 87%);
+    --blue: #15aabf;
+    --grayish-blue: hsl(218, 21%, 77%);
+    --light-grayish-blue-1: #212121;
+    --container-dark-background: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* CSS Reset*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+/* Body Styling */
 body {
+    font-family: var(--font-jakarta-sans);
+    color: var(--dark-gray-blue);
+    background-color: var(--very-light-grayish-blue);
+    font-size: var(--font-size-100);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--plus-jakarta-sans);
-    background-color: var(--very-light-grayish-blue);
-    font-size: var(--font-size-16);
 }
 
+
+/* Utility Classes */
 .container {
-    background-color: var(--white);
-    border-radius: 1rem;
-    padding: 1.75rem 2rem;
+    background: var(--white);
+    padding: 1.75rem 1rem;
     max-width: 48rem;
     position: relative;
 }
 
-/* Notification Header */
-.notification-header {
+.dark-mode .container {
+    background-image: var(--container-dark-background);
+}
+
+@media (min-width: 32rem) {
+    .container {
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .container {
+        border-radius: 1rem;
+        padding-inline: 2rem;
+        box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space);
+}
+
+.flex {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+}
+
+/* Notification Header */
+.notifications__header {
     align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
 }
 
-.primary-heading {
-    font-size: var(--font-size-32);
-    font-weight: 800;
+@media (min-width: 48rem) {
+    .notification__header {
+        gap: 1rem;
+    }
 }
 
-.number-of-notifications {
+.notifications__title {
+    font-size: var(--font-size-200);
+    font-weight: var(--font-weight-extra-bold);
+    color: var(--very-dark-blue);
+}
+
+.notifications__number {
     background-color: var(--blue);
     color: var(--white);
-    font-weight: 800;
-    font-size: var(--font-size-20);
-    padding: 0.25rem 0.75rem;
+    font-weight: var(--font-weight-bold);
     border-radius: 0.5rem;
-    width: 2.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 2rem;
+    display: grid;
+    place-items: center;
+    margin-left: 0.75rem;
 }
 
-.mark-as-read {
+.notifications__theme-icons {
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+}
+
+.notifications__read-btn {
     margin-left: auto;
     border: none;
     background: transparent;
-    font-family: inherit;
-    color: var(--dark-grayish-blue);
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: var(--font-size-18);
+    font-size: var(--font-size-100);
+}
+
+/* Theme Buttons */
+.notifications__btn-theme {
+    background: transparent;
+    border: none;
+    display: grid;
+    place-items: center;
+}
+
+.notifications__icon {
+    display: block;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.notifications__icon--light {
+    display: none;
+}
+
+.notifications__icon--light:hover {
+    color: orange;
+}
+
+.notification__icon-dark {
+    display: block;
+}
+
+.notifications__icon--dark:hover {
+    color: lightseagreen;
+}
+
+.dark-mode .notifications__icon--dark {
+    display: none;
+}
+
+.dark-mode .notifications__icon--light {
+    display: block;
+}
+
+
+
+@media (min-width: 24rem) {
+    .notifications__header-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .notifications__theme-icons {
+        position: static;
+    }
+}
+
+@media (min-width: 48rem) {
+    .notifications__number {
+        width: 2.5rem;
+        margin-left: 1rem;
+    }
 }
 
 /* Notifications */
-.notifications {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 .notification {
     display: flex;
-    padding: 1rem 1.5rem;
-    gap: 1.25rem;
+    padding: 1rem;
+    gap: 1rem;
     transition: all 0.3s ease;
 }
 
-/* Photos */
-
-.profile-container img {
-    object-fit: cover;
-    display: block;
-    height: 3rem;
-    width: 3rem;
+@media (min-width: 48rem) {
+    .notification {
+        padding-inline: 1.25rem;
+        gap: 1.5rem;
+    }
 }
 
-.user-photo-container {
+.notification--unchecked {
+    background-color: var(--very-light-grayish-blue);
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.notification__profile-pic,
+.notification__post-photo {
+    max-height: 3rem;
+    max-width: 3rem;
+}
+
+.notification__post-photo-wrapper {
     margin-left: auto;
 }
 
-.user-photo-container img {
-    height: 3rem;
-    width: 3rem;
-    display: block;
-   
+.notification__message {
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-medium);
 }
 
-/* Messages */
-.message-text {
-   margin-bottom: 0.5rem;
-   color: var(--dark-grayish-blue);
-   font-weight: 500;
+.notification__user-name,
+.notification__recent-post,
+.notification__group-message {
+    transition: all 0.3s ease;
+    font-weight: var(--font-weight-bold);
 }
 
-.user-name {
-    font-size: var(--font-size-17);
+.notification__user-name {
     text-decoration: none;
-    font-weight: 800;
     margin-right: 0.25rem;
-    color: black;
-    transition: all 0.3s ease;
+    color: var(--very-dark-blue);
 }
 
-
-.recent-post-heading { 
-    color: var(--dark-grayish-blue);
+.notification__recent-post {
     text-decoration: none;
-    font-weight: 700;
     margin-left: 0.25rem;
-    font-size: var(--font-size-17);
-    transition: all 0.3s ease;
 }
 
-.group-message {
+.notification__group-message {
     color: var(--blue);
     text-decoration: none;
-    font-weight: 800;
     margin-left: 0.2rem;
-    font-size: var(--font-size-17);
-    transition: all 0.3s ease;
 }
 
-.user-name:hover,
-.recent-post-heading:hover,
-.group-message:hover,
-.mark-as-read:hover {
-    color: var(--hoverBlue);
+.notification__user-name:hover,
+.notification__recent-post:hover,
+.notification__group-message:hover,
+.notifications__read-btn:hover {
+    color: var(--hoverColor) !important;
 }
 
-.unread-icon {
+.notification__unread-icon {
+    margin-left: 0.35rem;
     display: inline-block;
-    margin-left: 0.5rem;
     height: 0.6rem;
     width: 0.6rem;
     background-color: var(--red);
     border-radius: 50%;
 }
 
-.time {
+@media (min-width: 48rem) {
+    .notification__unread-icon {
+        margin-left: 0.5rem;
+    }
+}
+
+.notification__time {
     color: var(--grayish-blue);
 }
 
-.private-message-container {
-    padding: 1.5rem;
+.notification__private-message-wrapper {
+    padding: 1rem;
     margin-top: 0.75rem;
     border-radius: 0.5em;
     border: 1px solid var(--grayish-blue);
-    color: var(--dark-grayish-blue);
+    color: var(--dark-gray-blue);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.private-message-container:hover {
+.notification__private-message-wrapper {
+    padding: 1.25rem;
+}
+
+.notification__private-message-wrapper:hover {
     background-color: var(--light-grayish-blue-1);
 }
 
 
-.unread-background {
-    background-color: var(--very-light-grayish-blue);
-    transition: all 0.3s ease;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
- .no-unread-message .unread-icon {
-    display: none;
-    transition: all 0.3s ease;
- }
 
 
 
- 
 
 
- @media (max-width: 40em) {
-    .container {
-        padding: 1.75rem 1.25rem;;
-    }
-
-    .primary-heading {
-        font-size: var(--font-size-24);
-    }
-
-    .number-of-notifications {
-        font-size: var(--font-size-18);
-    }
-
-    .mark-as-read {
-        font-size: var(--font-size-16);
-    }
-
-    .private-message-container {
-        font-size: var(--font-size-15);
-        padding: 1rem;
-    }
-
-    .message-text {
-        font-size: var(--font-size-15);
-    }
-
-    .user-name,
-    .recent-post-heading,
-    .group-message {
-        font-size: var(--font-size-16);
-    }
-
- }
-
- @media (max-width: 27em) {
-    .container {
-        padding: 1.75rem 0.75rem;;
-    }
-    
-    .primary-heading {
-        font-size: var(--font-size-20);
-    }
-
-    .number-of-notifications {
-        font-size: var(--font-size-15);
-        padding: 0.2rem 0.5rem;
-    }
-
-    .icons {
-        font-size: 0.95rem !important;
-    }
-
-    .notification-header {
-        gap: 0.5rem;
-    }
-
-    .mark-as-read {
-        font-size: var(--font-size-14);
-    }
-
-    .notification {
-        padding: 1rem;
-    }
-
-    .message-text {
-        font-size: var(--font-size-14);
-    }
-
-    .user-name,
-    .recent-post-heading,
-    .group-message {
-        font-size: var(--font-size-15);
-    }
-
- }
 
