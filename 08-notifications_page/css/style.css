@@ -25,7 +25,7 @@
     --flow-space: 0.5rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
     :root {
         --font-size-200: 2rem;
         --font-size-100: 1rem;
@@ -91,7 +91,7 @@ body {
     background-image: var(--container-dark-background);
 }
 
-@media (min-width: 32rem) {
+@media (min-width: 32em) {
     .container {
         padding-inline: 1.5rem;
     }
@@ -121,7 +121,7 @@ body {
     margin-bottom: 2rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
     .notification__header {
         gap: 1rem;
     }
@@ -199,7 +199,7 @@ body {
 
 
 
-@media (min-width: 24rem) {
+@media (min-width: 24em) {
     .notifications__header-buttons {
         flex-direction: row;
         gap: 1rem;
@@ -210,7 +210,7 @@ body {
     }
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
     .notifications__number {
         width: 2.5rem;
         margin-left: 1rem;
@@ -225,7 +225,7 @@ body {
     transition: all 0.3s ease;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
     .notification {
         padding-inline: 1.25rem;
         gap: 1.5rem;
@@ -294,7 +294,7 @@ body {
     border-radius: 50%;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
     .notification__unread-icon {
         margin-left: 0.5rem;
     }
