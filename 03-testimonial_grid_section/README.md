@@ -1,4 +1,4 @@
-# Frontend Mentor - Testimonials grid section solution
+# Frontend Mentor - Testimonial Grid Section
 
 ### Screenshot
 
