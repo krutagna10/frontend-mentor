@@ -85,7 +85,7 @@ function update() {
         // When the value of bill is negative
         billContainer.classList.add('error');
         billErrorMessage.textContent = 'Bill cannot be negative';
-    } else if (numberOfPersons == '') {
+    } else if (numberOfPersons === '') {
         //   If the code reaches here, then we will remove error class from bill container
         billContainer.classList.remove('error');
 
