@@ -11,13 +11,13 @@
 }
 
 .header {
-  &__logo {
-    max-width: 60% !important;
+  &__logo-wrapper {
+    max-width: 10rem;
   }
 
   &__nav {
     background-color: var(--black);
-    position: absolute;;
+    position: absolute;
     height: 45vh;
     top: 100%;
     left: 0;
@@ -30,6 +30,7 @@
 
     opacity: 0;
     transform: translateX(100%);
+    pointer-events: none;
     visibility: hidden;
   }
 
@@ -49,53 +50,36 @@
 
   &__nav-link {
     text-decoration: none;
-    color: var(--white);
+    color: hsl(var(--raw-white), 0.75);
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
   }
 
-  &__mobile-nav {
-    display: block;
+  &__nav-link:hover {
+    color: var(--white);
   }
 
-  &__nav-open-btn,
-  &__nav-close-btn {
+  &__mobile-nav-toggle {
+    display: block;
     border: none;
+    width: 2rem;
+    height: 1.5rem;
+    background: transparent url('/images/shared/mobile/icon-hamburger.svg') no-repeat center;
     cursor: pointer;
-    background: transparent;
-    position: relative;
     z-index: 999;
   }
 
-  &__nav-open-btn {
-    display: block;
-  }
-
-  &__nav-close-btn {
-    display: none;
-  }
-
-  .navigation-open &__nav-open-btn {
-    display: none;
-  }
-
-  .navigation-open &__nav-close-btn {
-    display: block;
-  }
-
-  @media (min-width: 30em) {
-    &__logo {
-      max-width: 50% !important;
-    }
+  .navigation-open &__mobile-nav-toggle {
+    background-image: url('/images/shared/mobile/icon-close.svg');
   }
 
   @media (min-width: 45em) {
-    &__mobile-nav {
+    &__mobile-nav-toggle {
       display: none;
     }
 
     &__logo-wrapper {
-      max-width: 40%;
+      max-width: 12rem;
     }
 
     &__nav {
@@ -103,8 +87,6 @@
       position: static;
       height: 100%;
       padding-left: 0;
-      display: flex;
-      align-items: center;
 
       opacity: 1;
       transform: translateX(0);
@@ -118,10 +100,11 @@
     }
 
     &__nav-link {
-      color: var(--black);
+      color: hsl(var(--raw-black), 0.8);
     }
 
     &__nav-link:hover {
+      color: var(--black);
       border-color: var(--black);
     }
   }
@@ -131,7 +114,7 @@
   position: absolute;
   display: block;
   inset: 0;
-  background-color: hsl(var(--rawBlack), 0.4);
+  background-color: hsl(var(--raw-black), 0.4);
   z-index: 2;
 
   &.hidden {

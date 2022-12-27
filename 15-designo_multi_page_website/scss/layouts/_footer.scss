@@ -86,13 +86,7 @@
   padding-top: 12rem;
 
   &__logo-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__logo {
-    max-width: 60% !important;
+     max-width: 10rem;
   }
 
   &__nav-link {
@@ -131,6 +125,10 @@
       place-items: start;
     }
 
+    &__logo-wrapper {
+      max-width: 12rem;
+    }
+
     &__logo-link {
       justify-content: flex-start !important;
     }
@@ -153,6 +151,10 @@
   @media (min-width: 65em) {
     &__nav-list {
       gap: 5rem !important;
+    }
+
+    &__logo-wrapper {
+      max-width: 13rem;
     }
   }
 }

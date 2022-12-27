@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main.min.css">
 
-    <title>Frontend Mentor | Designo Agency Website Challenge</title>
+    <title>Designo | Contact Us</title>
 </head>
 <body class="contact-page">
 
 <header class="header-section">
-    <div class="header container flex flex-justify-space-between flex-align-center">
+    <div class="header container flex flex--justify-space-between flex--align-center">
         <a href="../index.html" class="header__logo-wrapper">
             <img src="/images/shared/desktop/logo-dark.png" class="header__logo" alt="Designo logo">
         </a>
         <nav class="header__nav">
             <ul class="header__nav-list flex">
-                <li><a href="about.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Our Content</a></li>
-                <li><a href="locations.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Locations</a></li>
-                <li><a href="contact.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Contact</a></li>
+                <li><a href="about.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Our
+                    Content</a></li>
+                <li><a href="locations.html"
+                       class="header__nav-link font-size-300 uppercase letter-spacing-1">Locations</a></li>
+                <li><a href="contact.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Contact</a>
+                </li>
             </ul>
         </nav>
-        <div class="header__mobile-nav">
-            <button class="header__nav-open-btn grid grid-place-center"><img src="/images/shared/mobile/icon-hamburger.svg" alt=""></button>
-            <button class="header__nav-close-btn grid grid-place-center"><img src="/images/shared/mobile/icon-close.svg" alt=""></button>
-        </div>
+        <button class="header__mobile-nav-toggle"></button>
     </div>
 </header>
 
 <section class="contact-section hero-section">
     <div class="contact container grid grid--2-columns background-peach">
-        <div class="contact__text-content flow flex flex-column flex-justify-center">
+        <div class="contact__text-content flow flex flex--column flex--justify-center">
             <h1 class="contact__heading primary-heading text-color-white">
                 Contact us
             </h1>
@@ -52,9 +52,10 @@
             <form action="#" class="contact__form flow grid">
                 <div class="contact__input-wrapper contact__name-wrapper">
                     <label for="contact__name">
-                        <input type="text" name="contact__name" class="contact__form-input" id="contact__name" placeholder="Name">
+                        <input type="text" name="contact__name" class="contact__form-input" id="contact__name"
+                               placeholder="Name">
                     </label>
-                    <div class="contact__error-wrapper flex flex-gap">
+                    <div class="contact__error-wrapper flex flex--gap">
                         <p class="contact__error-message text-color-white">Name can't be empty</p>
                         <img src="/images/contact/desktop/icon-error.svg" class="contact__error-icon" alt="Error icon">
                     </div>
@@ -65,7 +66,7 @@
                         <input type="email" name="contact__email" class="contact__form-input" id="contact__email"
                                placeholder="Email Address">
                     </label>
-                    <div class="contact__error-wrapper flex flex-gap">
+                    <div class="contact__error-wrapper flex flex--gap">
                         <p class="contact__error-message text-color-white">Enter a valid email</p>
                         <img src="/images/contact/desktop/icon-error.svg" class="contact__error-icon" alt="Error icon">
                     </div>
@@ -73,21 +74,24 @@
 
                 <div class="contact__input-wrapper contact__number-wrapper">
                     <label for="contact__phone-number">
-                        <input type="number" name="contact__phone-number" class="contact__form-input" id="contact__phone-number"
+                        <input type="number" name="contact__phone-number" class="contact__form-input"
+                               id="contact__phone-number"
                                placeholder="Phone Number">
                     </label>
-                    <div class="contact__error-wrapper flex flex-gap">
-                        <p class="contact__error-message contact__error-message--phone text-color-white">Phone number can't be empty</p>
+                    <div class="contact__error-wrapper flex flex--gap">
+                        <p class="contact__error-message contact__error-message--phone text-color-white">Phone number
+                            can't be empty</p>
                         <img src="/images/contact/desktop/icon-error.svg" class="contact__error-icon" alt="Error icon">
                     </div>
                 </div>
 
                 <div class="contact__input-wrapper contact__message-wrapper">
                     <label for="contact__message">
-                    <textarea name="contact__message" id="contact__message" cols="30" rows="5" class="contact__form-input"
+                    <textarea name="contact__message" id="contact__message" cols="30" rows="5"
+                              class="contact__form-input"
                               placeholder="Your Message"></textarea>
                     </label>
-                    <div class="contact__error-wrapper flex flex-gap">
+                    <div class="contact__error-wrapper flex flex--gap">
                         <p class="contact__error-message text-color-white">Message can't be empty</p>
                         <img src="/images/contact/desktop/icon-error.svg" class="contact__error-icon" alt="Error icon">
                     </div>
@@ -103,11 +107,12 @@
 
 <section class="locations-section section-padding">
     <div class="container locations grid">
-        <div class="locations__item flex flex-column flex-align-center">
+        <div class="locations__item flex flex--column flex--align-center">
             <div class="locations__image-wrapper">
-                <img src="/images/shared/desktop/illustration-canada.svg" class="locations__image" alt="Canada illustration">
+                <img src="/images/shared/desktop/illustration-canada.svg" class="locations__image"
+                     alt="Canada illustration">
             </div>
-            <div class="locations__text-content grid grid-place-center text-align-center">
+            <div class="locations__text-content grid grid--items-center text-align-center">
                 <h3 class="locations__heading tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
                     Canada
                 </h3>
@@ -117,11 +122,12 @@
             </div>
         </div>
 
-        <div class="locations__item flex flex-column flex-align-center">
+        <div class="locations__item flex flex--column flex--align-center">
             <div class="locations__image-wrapper">
-                <img src="/images/shared/desktop/illustration-australia.svg" class="locations__image" alt="Australia illustration">
+                <img src="/images/shared/desktop/illustration-australia.svg" class="locations__image"
+                     alt="Australia illustration">
             </div>
-            <div class="locations__text-content grid grid-place-center text-align-center">
+            <div class="locations__text-content grid grid--items-center text-align-center">
                 <h3 class="locations__heading tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
                     Australia
                 </h3>
@@ -131,11 +137,12 @@
             </div>
         </div>
 
-        <div class="locations__item flex flex-column flex-align-center">
+        <div class="locations__item flex flex--column flex--align-center">
             <div class="locations__image-wrapper">
-                <img src="/images/shared/desktop/illustration-united-kingdom.svg" class="locations__image" alt="United Kingdom illustration">
+                <img src="/images/shared/desktop/illustration-united-kingdom.svg" class="locations__image"
+                     alt="United Kingdom illustration">
             </div>
-            <div class="locations__heading locations__text-content grid grid-place-center text-align-center">
+            <div class="locations__heading locations__text-content grid grid--items-center text-align-center">
                 <h3 class="tertiary-heading text-color-dark-grey uppercase letter-spacing-2">
                     United Kingdom
                 </h3>
@@ -149,18 +156,19 @@
 
 <footer class="footer-section section-padding background-black">
     <div class="container footer">
-        <div class="footer__logo-wrapper">
-            <a class="footer__logo-link flex flex-align-center flex-justify-center" href="../index.html">
-                <img src="/images/shared/desktop/logo-light.png" class="footer__logo" alt="Logo light">
-            </a>
-        </div>
+        <a class="footer__logo-wrapper flex flex--align-center flex--justify-center" href="../index.html">
+            <img src="/images/shared/desktop/logo-light.png" class="footer__logo" alt="Logo light">
+        </a>
         <nav class="footer__nav">
-            <ul class="footer__nav-list list-style-none flex flex-column flex-gap">
-                <li><a href="about.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Our
+            <ul class="footer__nav-list list-style-none flex flex--column flex--gap">
+                <li><a href="about.html"
+                       class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Our
                     company</a></li>
-                <li><a href="locations.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Locations</a>
+                <li><a href="locations.html"
+                       class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Locations</a>
                 </li>
-                <li><a href="contact.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Contact</a>
+                <li><a href="contact.html"
+                       class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -176,17 +184,27 @@
             <a class="footer__contact-link footer-text-color text-decoration-none" href="contact@designo.co">M :
                 contact@designo.co</a>
         </div>
-        <div class="footer__social-logos-wrapper flex flex-gap">
-            <a class="footer__social-logo-link" href="https://www.facebook.com/"><ion-icon name="logo-facebook" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://www.youtube.com/"><ion-icon name="logo-youtube" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://twitter.com/"><ion-icon name="logo-twitter" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://in.pinterest.com/"><ion-icon name="logo-pinterest" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://www.instagram.com/"><ion-icon name="logo-instagram" class="footer__social-logo"></ion-icon></a>
+        <div class="footer__social-logos-wrapper flex flex--gap">
+            <a class="footer__social-logo-link" href="https://www.facebook.com/">
+                <ion-icon name="logo-facebook" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://www.youtube.com/">
+                <ion-icon name="logo-youtube" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://twitter.com/">
+                <ion-icon name="logo-twitter" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://in.pinterest.com/">
+                <ion-icon name="logo-pinterest" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://www.instagram.com/">
+                <ion-icon name="logo-instagram" class="footer__social-logo"></ion-icon>
+            </a>
         </div>
     </div>
 </footer>
 <div class="overlay hidden"></div>
-<script src="../javascript/script.js"></script>
-<script src="../javascript/form-validation.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/form-validation.js"></script>
 </body>
 </html>

@@ -3,6 +3,10 @@
   gap: 1.25rem;
 }
 
+.inline-grid {
+  display: inline-grid;
+}
+
 .grid--2-columns {
   grid-template-columns: 1fr;
 }
@@ -11,8 +15,16 @@
   grid-template-columns: 1fr;
 }
 
-.grid-place-center {
+.grid--items-center {
   place-items: center;
+}
+
+.grid--content-center {
+  place-content: center;
+}
+
+.grid-gap {
+  gap: var(--gap);
 }
 
 @media (min-width: 45em) {

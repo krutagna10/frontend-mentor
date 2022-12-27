@@ -61,13 +61,15 @@
       grid-column-start: 2;
     }
 
-    &--hero {
+    & {
       padding-inline: 0 !important;
-      grid-template-columns: 55fr 45fr;
     }
 
-     &--talent {
-      padding-inline: 0 !important;
+    &--hero {
+      grid-template-columns: 60fr 40fr;
+    }
+
+    &--talent {
       grid-template-columns: 45fr 55fr;
     }
 
@@ -127,4 +129,5 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 

@@ -4,34 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.min.css">
 
-    <title>Frontend Mentor | Designo Agency Website Challenge</title>
+    <title>Designo | Digital Branding Solutions</title>
 </head>
 <body class="home">
 
 <header class="header-section">
-    <div class="header container flex flex-justify-space-between flex-align-center">
+    <div class="header container flex flex--justify-space-between flex--align-center">
         <a href="index.html" class="header__logo-wrapper">
             <img src="/images/shared/desktop/logo-dark.png" class="header__logo" alt="Designo logo">
         </a>
+
         <nav class="header__nav">
-            <ul class="header__nav-list flex">
-                <li><a href="pages/about.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Our Content</a></li>
-                <li><a href="pages/locations.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Locations</a></li>
-                <li><a href="pages/contact.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Contact</a></li>
+            <ul id="header__nav-list" class="header__nav-list flex">
+                <li><a href="pages/about.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Our
+                    Content</a></li>
+                <li><a href="pages/locations.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Locations</a>
+                </li>
+                <li><a href="pages/contact.html" class="header__nav-link font-size-300 uppercase letter-spacing-1">Contact</a>
+                </li>
             </ul>
         </nav>
-        <div class="header__mobile-nav">
-            <button class="header__nav-open-btn grid grid-place-center"><img src="/images/shared/mobile/icon-hamburger.svg" alt=""></button>
-            <button class="header__nav-close-btn grid grid-place-center"><img src="/images/shared/mobile/icon-close.svg" alt=""></button>
-        </div>
+
+        <button class="header__mobile-nav-toggle"></button>
     </div>
 </header>
 
@@ -46,7 +48,8 @@
                     With over 10 years in the industry, we are experienced in creating fully responsive websites, app
                     design, and engaging brand experiences. Find out more about our services.
                 </p>
-                <a href="pages/about.html" class="btn btn--light hero__btn text-decoration-none font-size-100 text-color-black background-white uppercase">
+                <a href="pages/about.html"
+                   class="btn btn--light hero__btn text-decoration-none font-size-100 text-color-black background-white uppercase">
                     Learn more
                 </a>
             </div>
@@ -58,38 +61,42 @@
 
     <section class="services-section section-padding">
         <div class="container grid grid--2-columns">
-            <div class="service service--web-design flex flex-justify-center flex-align-center flex-column flex-gap">
-                <h2 class="service__heading secondary-heading text-color-white uppercase letter-spacing-1">
-                    Web Design
-                </h2>
-                <a class="service__link font-size-100 text-color-white uppercase text-decoration-none letter-spacing-2">
-                    View Projects <span class="service__link-symbol">&#62;</span>
+                <a href="pages/web-design.html" class="service service--web grid grid--content-center grid-gap text-decoration-none">
+                    <h2 class="service__heading secondary-heading text-color-white uppercase letter-spacing-1">
+                        Web Design
+                    </h2>
+                    <p class="service__text font-size-100 text-color-white uppercase letter-spacing-2">
+                        View Projects <span class="service__link-symbol">&#62;</span>
+                    </p>
+                </a>
+
+                <a href="pages/app-design.html" class="service service--app grid grid--content-center grid-gap text-decoration-none">
+                    <h2 class="service__heading secondary-heading text-color-white uppercase letter-spacing-1">
+                        App Design
+                    </h2>
+                    <p class="service__text font-size-100 text-color-white uppercase letter-spacing-2">
+                        View Projects <span class="service__link-symbol">&#62;</span>
+                    </p>
+                </a>
+
+
+                <a href="pages/graphic-design.html" class="service service--graphic grid grid--content-center grid-gap text-decoration-none">
+                    <h2 class="service__heading secondary-heading text-color-white uppercase letter-spacing-1">
+                        Graphic Design
+                    </h2>
+                    <p class="service__text font-size-100 text-color-white uppercase letter-spacing-2">
+                        View Projects <span class="service__link-symbol">&#62;</span>
+                    </p>
                 </a>
             </div>
-            <div class="service service--app-design flex flex-justify-center flex-align-center flex-column flex-gap">
-                <h2 class="service__heading secondary-heading text-color-white uppercase letter-spacing-1">
-                    App Design
-                </h2>
-                <a class="service__link font-size-100 text-color-white uppercase text-decoration-none letter-spacing-2">
-                    View Projects <span class="service__link-symbol">&#62;</span>
-                </a>
-            </div>
-            <div class="service service--graphic-design flex flex-justify-center flex-align-center flex-column flex-gap">
-                <h2 class="service__heading secondary-heading text-color-white uppercase letter-spacing-1">
-                    Graphic Design
-                </h2>
-                <a class="service__link font-size-100 text-color-white uppercase text-decoration-none letter-spacing-2">
-                    View Projects <span class="service__link-symbol">&#62;</span>
-                </a>
-            </div>
-        </div>
     </section>
 
     <section class="features-section section-padding">
         <div class="container grid grid--3-columns">
             <div class="feature grid">
                 <div class="feature__image-wrapper">
-                    <img src="images/home/desktop/illustration-passionate.svg" class="feature__image" alt="Designo advantage">
+                    <img src="images/home/desktop/illustration-passionate.svg" class="feature__image"
+                         alt="Designo advantage">
                 </div>
                 <div class="feature__text-content flow text-align-center">
                     <h3 class="feature__heading tertiary-heading font-size-200 uppercase letter-spacing-2">
@@ -104,7 +111,8 @@
             </div>
             <div class="feature grid">
                 <div class="feature__image-wrapper">
-                    <img src="images/home/desktop/illustration-resourceful.svg" class="feature__image" alt="Designo advantage">
+                    <img src="images/home/desktop/illustration-resourceful.svg" class="feature__image"
+                         alt="Designo advantage">
                 </div>
                 <div class="feature__text-content flow text-align-center">
                     <h3 class="feature__heading tertiary-heading font-size-200 uppercase letter-spacing-2">
@@ -119,7 +127,8 @@
             </div>
             <div class="feature grid">
                 <div class="feature__image-wrapper">
-                    <img src="images/home/desktop/illustration-friendly.svg" class="feature__image" alt="Designo advantage">
+                    <img src="images/home/desktop/illustration-friendly.svg" class="feature__image"
+                         alt="Designo advantage">
                 </div>
                 <div class="feature__text-content flow text-align-center">
                     <h3 class="feature__heading tertiary-heading font-size-200 uppercase letter-spacing-2">
@@ -148,7 +157,8 @@
                 </p>
             </div>
             <div class="footer-contact__button-wrapper grid">
-                <a href="pages/contact.html" class="footer-contact__btn btn btn--light text-color-dark-grey text-decoration-none uppercase">
+                <a href="pages/contact.html"
+                   class="footer-contact__btn btn btn--light text-color-dark-grey text-decoration-none uppercase">
                     Get in Touch
                 </a>
             </div>
@@ -156,18 +166,19 @@
     </section>
 
     <div class="container footer">
-        <div class="footer__logo-wrapper">
-            <a class="footer__logo-link flex flex-align-center flex-justify-center" href="#">
-                <img src="/images/shared/desktop/logo-light.png" class="footer__logo" alt="Logo light">
-            </a>
-        </div>
+        <a class="footer__logo-wrapper flex flex--align-center flex--justify-center" href="#">
+            <img src="/images/shared/desktop/logo-light.png" class="footer__logo" alt="Logo light">
+        </a>
         <nav class="footer__nav">
-            <ul class="footer__nav-list list-style-none flex flex-column flex-gap">
-                <li><a href="pages/about.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Our
+            <ul class="footer__nav-list list-style-none flex flex--column flex--gap">
+                <li><a href="pages/about.html"
+                       class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Our
                     company</a></li>
-                <li><a href="pages/locations.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Locations</a>
+                <li><a href="pages/locations.html"
+                       class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Locations</a>
                 </li>
-                <li><a href="pages/contact.html" class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Contact</a>
+                <li><a href="pages/contact.html"
+                       class="footer__nav-link text-color-white text-decoration-none uppercase letter-spacing-1">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -183,18 +194,28 @@
             <a class="footer__contact-link footer-text-color text-decoration-none" href="contact@designo.co">M :
                 contact@designo.co</a>
         </div>
-        <div class="footer__social-logos-wrapper flex flex-gap">
-            <a class="footer__social-logo-link" href="https://www.facebook.com/"><ion-icon name="logo-facebook" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://www.youtube.com/"><ion-icon name="logo-youtube" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://twitter.com/"><ion-icon name="logo-twitter" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://in.pinterest.com/"><ion-icon name="logo-pinterest" class="footer__social-logo"></ion-icon></a>
-            <a class="footer__social-logo-link" href="https://www.instagram.com/"><ion-icon name="logo-instagram" class="footer__social-logo"></ion-icon></a>
+        <div class="footer__social-logos-wrapper flex flex--gap">
+            <a class="footer__social-logo-link" href="https://www.facebook.com/">
+                <ion-icon name="logo-facebook" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://www.youtube.com/">
+                <ion-icon name="logo-youtube" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://twitter.com/">
+                <ion-icon name="logo-twitter" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://in.pinterest.com/">
+                <ion-icon name="logo-pinterest" class="footer__social-logo"></ion-icon>
+            </a>
+            <a class="footer__social-logo-link" href="https://www.instagram.com/">
+                <ion-icon name="logo-instagram" class="footer__social-logo"></ion-icon>
+            </a>
         </div>
     </div>
 </footer>
 
 <div class="overlay hidden"></div>
-<script src="javascript/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
 

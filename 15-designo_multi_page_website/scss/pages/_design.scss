@@ -14,9 +14,15 @@
   border-radius: 0.75rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 
   &__image-wrapper {
     overflow: hidden;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
   }
 
   &:hover {
@@ -44,14 +50,14 @@
   }
 
   @media (min-width: 30em) {
-    & {
+    &__link {
       display: flex;
       align-items: center;
     }
   }
 
   @media (min-width: 45em) {
-    & {
+    &__link {
       display: flex;
       flex-direction: column;
       align-items: center;

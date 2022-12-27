@@ -2,22 +2,27 @@
   display: flex;
 }
 
-.flex-gap {
-  gap: var(--flex-gap);
+.flex--gap {
+  gap: var(--gap);
 }
 
-.flex-justify-space-between {
-  justify-content: space-between;
-}
-
-.flex-justify-center {
+.flex--center {
   justify-content: center;
-}
-
-.flex-align-center {
   align-items: center;
 }
 
-.flex-column {
+.flex--justify-space-between {
+  justify-content: space-between;
+}
+
+.flex--justify-center {
+  justify-content: center;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--column {
   flex-direction: column;
 }

@@ -89,3 +89,31 @@
     padding-top: 2.5rem;
   }
 }
+
+// Input Reset
+textarea {
+  resize: none;
+}
+
+::placeholder {
+  color: var(--white);
+  opacity: 0.5;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--white) !important;
+}

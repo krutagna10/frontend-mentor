@@ -43,18 +43,6 @@
     z-index: 1
   }
 
-  @media(min-width: 30em) {
-    &__description {
-      padding-inline: 2rem;
-    }
-  }
-
-  @media (min-width: 35em) {
-    &__description {
-      padding-inline: 6rem;
-    }
-  }
-
   @media (min-width: 45em) {
     & {
       min-height: 40rem;
@@ -63,7 +51,6 @@
     }
 
     &__description {
-      padding-inline: 1rem;
       text-align: left;
       place-items: start;
     }
