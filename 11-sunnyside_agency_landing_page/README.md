@@ -6,7 +6,7 @@
 
 ### Links
 
-- Live Site URL: [https://sunnyside-agency-landing-page-10.netlify.app/]
+- Live Site URL: [https://sunnyside-agency-landing-page-10.vercel.app/]
 
 ### Built with
 
@@ -16,4 +16,8 @@
 
 ## Author
 - Frontend Mentor - [@krutagna10](https://www.frontendmentor.io/profile/krutagna10)
+
+
+
+
 

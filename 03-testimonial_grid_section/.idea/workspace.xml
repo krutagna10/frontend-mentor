@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4709536-79da-4e55-999a-4f65b57a940e" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="e4709536-79da-4e55-999a-4f65b57a940e" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +27,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Coding/Web Development/Projects/testimonial-grid-section",
+    "last_opened_file_path": "D:/Coding/Web Development/Projects/frontend-mentor/05-easy_bank_landing_page",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,6 +51,7 @@
       <workItem from="1668016834186" duration="31000" />
       <workItem from="1668017071514" duration="28000" />
       <workItem from="1672077399737" duration="45000" />
+      <workItem from="1672077518396" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1666532966101</created>
