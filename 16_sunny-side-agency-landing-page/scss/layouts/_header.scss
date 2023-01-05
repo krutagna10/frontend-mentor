@@ -1,0 +1,222 @@
+.header-section {
+  background-image: url('/images/desktop/image-header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1.5rem 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (min-width: 48em) {
+  .header-section {
+    padding: 2.25rem 0;
+  }
+}
+
+.header {
+  display: flex;
+  padding-inline: 1rem;
+
+  &__nav {
+    position: absolute;
+    background-color: var(--white);
+    height: 50vh;
+    top: 20%;
+    left: 50%;
+    width: 80%;
+    z-index: 999;
+    transition: all 0.3s ease;
+
+
+    // Hiding navigation
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  @media (min-width: 32em) {
+    &__nav {
+      width: 65%;
+    }
+  }
+
+  .nav-open &__nav {
+    opacity: 1;
+    transform: translateX(-50%);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-open &__nav::before {
+    position: absolute;
+    content: "";
+    top: -2.5rem;
+    right: 0;
+    border-top: 2.5rem solid transparent;
+    border-right: 2.5rem solid var(--white);
+  }
+
+  &__nav-list {
+    --gap: 1.5rem;
+    list-style: none;
+    flex-direction: column;
+  }
+
+  &__nav-link,
+  &__contact-link {
+    font-size: var(--font-size-400);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  &__nav-link {
+    color: var(--very-dark-desaturated-blue);
+    display: block;
+    position: relative;
+  }
+
+  &__contact-link {
+    background-color: var(--yellow);
+    color: var(--white);
+    display: block;
+    border: 2px solid transparent;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  &__contact-link:hover {
+    background-color: transparent;
+    color: var(--yellow);
+    border-color: var(--yellow);
+  }
+
+  &__mobile-nav-toggle {
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    border: none;
+    background: transparent url('/images/icon-hamburger.svg') no-repeat center;
+    z-index: 99;
+  }
+
+  .nav-open &__mobile-nav-toggle {
+    background-image: url('/images/icon-close.svg');
+  }
+
+  &__heading {
+    margin-top: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    text-align: center;
+  }
+
+  &__arrow-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 40%;
+    transform: translateX(-50%);
+    animation: arrow-animation infinite 1.5s linear;
+  }
+
+  @keyframes arrow-animation {
+    0% {
+      transform: translateY(0%);
+    }
+
+    50% {
+      transform: translateY(20%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @media (min-width: 48em) {
+    & {
+      padding-inline: 2rem;
+    }
+
+    &__nav {
+      position: static;
+      background: transparent;
+      width: auto;
+      height: 100%;
+
+
+      // Showing navigation
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    &__nav-list {
+      --gap: 3rem;
+      flex-direction: row;
+    }
+
+    &__nav-link, {
+      color: var(--white);
+      padding: 0.6rem 0;
+    }
+
+    &__nav-link::before {
+      content: '';
+      position: absolute;
+      border-bottom: 3px solid var(--white);
+      bottom: 0;
+      left: 0;
+      width: 0;
+    }
+
+    &__nav-link:hover::before {
+      animation: border_animation 0.35s linear forwards;
+    }
+
+    @keyframes border_animation {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    &__contact-link {
+      background-color: var(--white);
+      color: var(--light-blue);
+    }
+
+    &__contact-link:hover {
+      background-color: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    &__mobile-nav-toggle {
+      display: none;
+    }
+
+    &__heading {
+      margin-top: 5rem;
+    }
+  }
+}
+
+// Overlay
+.overlay.hidden {
+  display: none;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}

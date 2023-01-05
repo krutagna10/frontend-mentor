@@ -1,0 +1,54 @@
+:root {
+  // Colors
+  --soft-red: hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  --dark-desaturated-cyan: hsl(167, 40%, 24%);
+  --dark-blue: hsl(198, 62%, 26%);
+  --dark-moderate-cyan: hsl(168, 34%, 41%);
+  --cyan: #90D4C6;
+  --light-blue: #2695b9;
+  --light-cyan: #8ed0c4;
+  --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --dark-grayish-blue: hsl(232, 10%, 55%);
+  --grayish-blue: hsl(210, 4%, 67%);
+  --white: hsl(0, 0%, 100%);
+
+  // Font family
+  --font-barlow: 'Barlow', sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+
+  // Font Size
+  --font-size-700: 2.25rem;
+  --font-size-600: 2rem;
+  --font-size-500: 1.75rem;
+  --font-size-400: 1.25rem;
+  --font-size-300: 1.125rem;
+  --font-size-200: 1rem;
+  --font-size-100: 0.9375rem;
+
+  // Font weight
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+
+//  Spacing
+  --flow-space: 1rem;
+  --gap: 1rem;
+}
+
+@media (min-width: 32em) {
+  :root {
+    --font-size-700: 2.5rem;
+  }
+}
+
+@media (min-width: 48em) {
+  :root {
+    --font-size-700: 3.75rem;
+    --font-size-600: 2.5rem;
+    --font-size-400: 1.125rem;
+
+    --gap: 1.25rem;
+  }
+}
