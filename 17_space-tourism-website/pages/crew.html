@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer type="module" src="../js/script.js"></script>
+
+    <title>Space Tourism | Crew</title>
+</head>
+<body class="crew-page">
+
+<header class="header flex flex--justify-space flex--align-center">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <a class="header__logo-link" href="../index.html">
+        <img class="header__logo" src="/images/icons/logo.svg" alt="Space Tourism - Home">
+    </a>
+    <nav class="header__nav" aria-label="primary navigation">
+        <ul id="header__nav-list" class="header__nav-list flex" data-visible="false">
+            <li>
+                <a href="../index.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">00</span>Home
+                </a>
+            </li>
+            <li>
+                <a href="destination.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">01</span>Destination
+                </a>
+            </li>
+            <li>
+                <a href="crew.html" class="header__nav-link active">
+                    <span class="header__link-number" aria-hidden="true">02</span>Crew
+                </a>
+            </li>
+            <li>
+                <a href="technology.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">03</span>Technology
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <button class="header__mobile-nav-toggle" aria-controls="header__nav-list" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+    </button>
+</header>
+
+<main id="main">
+    <section class="crew-section">
+        <div class="crew container grid grid--2-columns grid--items-center">
+            <div class="crew__heading-wrapper numbered-heading-wrapper">
+                <h1 class="crew__heading numbered-heading text-white"><span class="heading-number">02</span>Meet your
+                    Crew</h1>
+            </div>
+            <div class="crew__content grid">
+                <nav class="crew__nav" aria-label="Secondary Navigation">
+                    <ul class="crew__nav-list flex flex--align-center flex--gap">
+                        <li><a href="#" class="crew__nav-link active-link"></a></li>
+                        <li><a href="#" class="crew__nav-link"></a></li>
+                        <li><a href="#" class="crew__nav-link"></a></li>
+                        <li><a href="#" class="crew__nav-link"></a></li>
+                    </ul>
+                </nav>
+
+                <div class="crew__text-content flow">
+                    <div class="crew__person-post font-size-600 uppercase">Commander</div>
+                    <h2 class="crew__person-name font-size-700 text-white uppercase ">
+                        Douglas Herley
+                    </h2>
+                    <p class="crew__person-bio font-size-200">
+                        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA
+                        astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.
+                    </p>
+                </div>
+            </div>
+
+            <div class="crew__image-wrapper flex">
+                <img class="crew__image" src="../images/crew/image-douglas-hurley.webp" alt="Douglas Hurley image">
+            </div>
+        </div>
+    </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer type="module" src="../js/script.js"></script>
+
+    <title>Space Tourism | Technology</title>
+
+</head>
+<body class="technology-page">
+
+<header class="header flex flex--justify-space flex--align-center">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <a class="header__logo-link" href="../index.html">
+        <img class="header__logo" src="/images/icons/logo.svg" alt="Space Tourism - Home">
+    </a>
+    <nav class="header__nav" aria-label="primary navigation">
+        <ul id="header__nav-list" class="header__nav-list flex" data-visible="false">
+            <li>
+                <a href="../index.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">00</span>Home
+                </a>
+            </li>
+            <li>
+                <a href="destination.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">01</span>Destination
+                </a>
+            </li>
+            <li>
+                <a href="crew.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">02</span>Crew
+                </a>
+            </li>
+            <li>
+                <a href="technology.html" class="header__nav-link active">
+                    <span class="header__link-number" aria-hidden="true">03</span>Technology
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <button class="header__mobile-nav-toggle" aria-controls="header__nav-list" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+    </button>
+</header>
+
+<main id="main">
+    <section class="hero-section technology-section">
+        <div class="technology container grid grid--2-columns grid--items-center">
+            <div class="technology__heading-wrapper numbered-heading-wrapper">
+                <h1 class="technology__heading numbered-heading text-white">
+                    <span class="heading-number">03</span>Space Launch 101</h1>
+            </div>
+
+            <div class="technology__content">
+                <nav class="technology__nav" aria-label="Secondary Navigation">
+                    <ul class="technology__nav-list flex flex--gap flex--align-center">
+                        <li><a href="#" class="technology__nav-link active-link flex flex--center">1</a></li>
+                        <li><a href="#" class="technology__nav-link flex flex--center">2</a></li>
+                        <li><a href="#" class="technology__nav-link flex flex--center">3</a></li>
+                    </ul>
+                </nav>
+
+                <div class="technology__text-content flow">
+                    <p class="technology__terminology-text font-barlow-condensed font-size-200 uppercase letter-spacing-3">
+                        The Terminology ...
+                    </p>
+                    <h2 class="technology__name font-bellefair uppercase font-size-700 text-white">
+                        Launch Vehicle
+                    </h2>
+                    <p class="technology__text font-size-200">
+                        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!
+                    </p>
+                </div>
+            </div>
+
+            <picture class="technology__image-wrapper">
+                <source class="technology__portrait-image" media="(min-width:48em)" srcset="/images/technology/image-launch-vehicle-portrait.jpg">
+                <img class="technology__landscape-image" src="/images/technology/image-launch-vehicle-landscape.jpg" alt="Technology image">
+            </picture>
+        </div>
+    </section>
+</main>
+</body>
+</html>

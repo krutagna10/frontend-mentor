@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+}
+
+.grid--items-center {
+  place-items: center;
+}
+
+.grid--content-center {
+  place-content: center;
+}
+
+.grid--gap {
+  gap: var(--gap);
+}
+
+.grid--2-columns {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48em) {
+  .grid--2-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+

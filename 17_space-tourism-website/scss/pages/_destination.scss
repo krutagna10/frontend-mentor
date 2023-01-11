@@ -1,0 +1,165 @@
+.destination-page {
+  background-image: url(/images/destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 32em) {
+  .destination-page {
+    background-image: url(/images/destination/background-destination-tablet.jpg);
+  }
+}
+
+@media (min-width: 48em) {
+  .destination-page {
+    background-image: url(/images/destination/background-destination-desktop.jpg);
+  }
+}
+
+.destination {
+  min-height: 70vh;
+  padding-inline: 1.5rem;
+  gap: 4.5rem;
+  position: relative;
+  text-align: center;
+
+  &__planet-wrapper {
+    justify-content: center;
+    margin: 0.75rem;
+  }
+
+  &__planet-image {
+    max-width: 80%;
+    animation: spinning 120s infinite linear forwards;
+  }
+
+  @keyframes spinning {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Destination Navigation */
+  &__nav {
+    margin-bottom: 0.75rem;
+  }
+
+  &__nav-list {
+    list-style: none;
+    justify-content: center;
+  }
+
+  &__nav-link {
+    display: block;
+    color: hsl(var(--clr-light));
+    font-size: var(--font-size-100);
+    font-family: var(--font-barlow-condensed);
+    letter-spacing: var(--letter-spacing-2);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.4s ease;
+  }
+
+  &__nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border-bottom: 3px solid hsl(var(--clr-light));
+  }
+
+  &__nav-link.active-link {
+    color: hsl(var(--clr-white));
+  }
+
+  &__nav-link:hover::before {
+    animation: border-animation-destination 0.8s linear forwards;
+  }
+
+  &__nav-link.active-link::before {
+    animation: none !important;
+    width: 100%;
+  }
+
+  @keyframes border-animation-destination {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+  &__planet {
+    font-family: var(--font-bellefair);
+  }
+
+  &__horizontal-line {
+    height: 1.25px;
+    margin: 1rem 0;
+    width: 90%;
+    background-color: hsl(var(--clr-light) / 0.3);
+    margin-inline: auto;
+  }
+
+  &__distance,
+  &__travel-time {
+    font-family: var(--font-bellefair);
+  }
+
+  &__details-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 32em) {
+    &__description {
+      padding: 0 3rem;
+    }
+
+    &__details-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 48em) {
+    & {
+      text-align: left;
+    }
+
+    &__heading-wrapper {
+      grid-column: span 2;
+      justify-self: left;
+    }
+
+    &__description {
+      padding: 0;
+    }
+
+    &__nav-list {
+      --gap: 1.75rem;
+
+      justify-content: left;
+    }
+
+    &__planet-image {
+      max-width: 92.5%;
+    }
+
+    &__horizontal-line {
+      margin-inline: 0;
+    }
+  }
+
+  @media (min-width: 64em) {
+    &__planet-image {
+      max-width: 100%;
+    }
+  }
+}
+

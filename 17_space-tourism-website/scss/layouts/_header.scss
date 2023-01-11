@@ -1,0 +1,189 @@
+.header {
+  padding: 2rem 1.75rem;
+  position: relative;
+
+  &__nav-list {
+    position: fixed;
+    background-color: hsl(var(--clr-white) / 0.05);
+    backdrop-filter: blur(1.5rem);
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    inset: 0 0 0 40%;
+    transform: translateX(100%);
+    transition: all 0.4s ease;
+    z-index: 99;
+    padding-inline: 2rem;
+    justify-content: center;
+
+    // Hiding navigation
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  &__nav-list[data-visible='true'] {
+    transform: translateX(0);
+
+    // Showing Navigation
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  // Dark background when technology page is opened
+  .technology-page &__nav-list[data-visible='true'] {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  &__nav-link {
+    display: block;
+    color: hsl(var(--clr-light));
+    font-size: var(--font-size-200);
+    font-family: var(--font-barlow-condensed);
+    letter-spacing: var(--letter-spacing-3);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 1.75rem 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  &__nav-link:hover {
+    color: hsl(var(--clr-white));
+  }
+
+  &__link-number {
+    font-size: var(--font-size-200);
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+
+  // Mobile Nav Toggle
+  &__mobile-nav-toggle {
+    background: url('/images/icons/icon-hamburger.svg') transparent no-repeat center;
+    border: none;
+    width: 2.4rem;
+    height: 1.6rem;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  &__mobile-nav-toggle[aria-expanded='true'] {
+    background-image: url('/images/icons/icon-close.svg');
+  }
+
+  @media (min-width: 36em) {
+    &__nav-list {
+      left: 50%;
+    }
+  }
+
+  @media (min-width: 48em) {
+    & {
+      padding: 0;
+    }
+
+    &__logo-link {
+      padding-inline: 1.75rem;
+    }
+
+    &__nav {
+      order: 2;
+    }
+
+    &__nav-list {
+      position: static;
+      opacity: 1;
+      padding-inline: clamp(3rem, 8vw, 5.5rem);
+      flex-direction: row;
+      gap: clamp(1.5rem, 4vw, 3rem);
+
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateX(0%);
+    }
+
+    &__nav-link {
+      display: block;
+      color: hsl(var(--clr-white));
+      font-size: var(--font-size-200);
+      font-family: var(--font-barlow-condensed);
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+      padding: 2.25rem 0;
+      transition: all 0.3s ease;
+    }
+
+    &__nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      bottom: 0;
+      left: 0;
+      border-bottom: 0.2rem solid hsl(var(--clr-white) / 0.6);
+    }
+
+    &__link-number {
+      display: none;
+    }
+
+    &__mobile-nav-toggle {
+      display: none;
+    }
+
+    &__nav-link:hover::before,
+    &__nav-link:focus::before {
+      animation: border-animation 0.3s linear forwards;
+    }
+
+    &__nav-link.active::before {
+      border-bottom: 0.2rem solid hsl(var(--clr-white));
+      animation: none !important;
+      width: 100%;
+    }
+
+    @keyframes border-animation {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 64em) {
+    & {
+      padding: 2rem 0 2rem 2rem;
+      overflow: hidden;
+    }
+
+    &__logo-link {
+      padding-inline: 0;
+    }
+
+    &__logo {
+      margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+    }
+
+    // Styling the header horizontal line
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: hsl( var(--clr-white) / .25);;
+      position: relative;
+      margin-right: -4rem;
+      z-index: -1;
+    }
+
+    &__link-number {
+      display: inline;
+    }
+  }
+}
+

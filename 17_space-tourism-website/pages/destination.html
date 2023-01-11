@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer type="module" src="../js/script.js"></script>
+
+    <title>Space Tourism | Destination</title>
+</head>
+<body class="destination-page">
+
+<header class="header flex flex--justify-space flex--align-center">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <a class="header__logo-link" href="../index.html">
+        <img class="header__logo" src="/images/icons/logo.svg" alt="Space Tourism - Home">
+    </a>
+    <nav class="header__nav" aria-label="primary navigation">
+        <ul id="header__nav-list" class="header__nav-list flex" data-visible="false">
+            <li>
+                <a href="../index.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">00</span>Home
+                </a>
+            </li>
+            <li>
+                <a href="destination.html" class="header__nav-link active">
+                    <span class="header__link-number" aria-hidden="true">01</span>Destination
+                </a>
+            </li>
+            <li>
+                <a href="crew.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">02</span>Crew
+                </a>
+            </li>
+            <li>
+                <a href="technology.html" class="header__nav-link">
+                    <span class="header__link-number" aria-hidden="true">03</span>Technology
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <button class="header__mobile-nav-toggle" aria-controls="header__nav-list" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+    </button>
+</header>
+
+<main id="main">
+    <section class="destination-section hero-section">
+        <div class="destination container grid grid--2-columns grid--items-center">
+            <div class="destination__heading-wrapper numbered-heading-wrapper">
+                <h1 class="destination__heading numbered-heading">
+                    <span class="heading-number">01</span> Pick your Destination
+                </h1>
+            </div>
+
+            <div class="destination__planet-wrapper flex">
+                <img class="destination__planet-image" src="/images/destination/image-moon.webp" alt="Moon image">
+            </div>
+
+            <div class="destination__content">
+                <nav class="destination__nav" aria-label="Secondary Navigation">
+                    <ul class="destination__nav-list flex flex--gap">
+                        <li><a href="#" class="destination__nav-link active-link">Moon</a></li>
+                        <li><a href="#" class="destination__nav-link">Mars</a></li>
+                        <li><a href="#" class="destination__nav-link">Europa</a></li>
+                        <li><a href="#" class="destination__nav-link">Titan</a></li>
+                    </ul>
+                </nav>
+                <div class="destination__description flow">
+                    <h2 class="destination__planet font-size-800 uppercase text-white">Moon</h2>
+                    <p class="destination__planet-text font-size-200">
+                        See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+                        regain perspective and come back refreshed. While you’re there, take in some history
+                        by visiting the Luna 2 and Apollo 11 landing sites.
+                    </p>
+                    <div class="destination__horizontal-line"></div>
+                    <div class="destination__details-wrapper uppercase grid grid--gap">
+                        <div class="destination__detail">
+                            <h3 class="destination__distance-label font-size-100 text-white">Avg. distance</h3>
+                            <p class="destination__distance font-size-500">384,400 km</p>
+                        </div>
+                        <div class="destination__detail">
+                            <h3 class="destination__time-label font-size-100 text-white">Est. travel time</h3>
+                            <p class="destination__travel-time font-size-500">3 days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+</body>
+</html>

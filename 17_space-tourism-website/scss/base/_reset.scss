@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: 400;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-barlow);
+  font-size: var(--font-size-200);
+  min-height: 100vh;
+  line-height: 1.5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: hsl(var(--clr-light));
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
+}
+
+/* Remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

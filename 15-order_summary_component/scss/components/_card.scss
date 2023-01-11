@@ -1,0 +1,115 @@
+.card-section {
+  padding: 1rem 0;
+}
+
+.card {
+  background-color: white;
+  text-align: center;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-inline: 1rem;
+
+  &__description {
+    padding: 1.75rem 1rem;
+  }
+
+  &__description > * + * {
+    margin-top: 1.25rem;
+  }
+
+  &__text-content > * + * {
+    margin-top: 1rem;
+  }
+
+  &__heading {
+    font-size: var(--font-size-400);
+    color: var(--dark-blue);
+    font-weight: var(--font-weight-extra-bold);
+  }
+
+  &__text {
+    font-size: var(--font-size-300);
+    color: var(--desaturated-blue);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__plan {
+    padding: 1rem 0.5rem;
+    background-color: var(--very-pale-blue);
+    border-radius: 0.5rem;
+    margin: 1.75rem 0;
+  }
+
+  &__plan-heading {
+    font-size: var(--font-size-300);
+    font-weight: var(--font-weight-extra-bold);
+    color: var(--dark-blue);
+  }
+
+  &__plan-price {
+    font-size: var(--font-size-300);
+    font-weight: var(--font-weight-medium);
+    color: var(--desaturated-blue);
+  }
+
+  &__plan-btn {
+    margin-left: auto;
+    font-size: var(--font-size-100);
+    font-weight: var(--font-weight-bold);
+    color: var(--bright-blue);
+    transition: all 0.3s ease;
+  }
+
+  &__plan-btn:hover,
+  &__plan-btn:active {
+    color: hsl(var(--raw-bright-blue), 0.7);
+  }
+
+  &__payment-btn,
+  &__cancel-btn {
+    display: block;
+    width: 100%;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-200);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__payment-btn {
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    padding: 0.75rem 1rem;
+    box-shadow: 3px 2px 14px hsl(var(--raw-bright-blue), 0.7);
+  }
+
+  &__payment-btn:hover {
+    background-color: hsl(var(--raw-bright-blue), 0.7);
+  }
+
+  &__cancel-btn {
+    background-color: transparent;
+    padding: 0.25rem 1rem;
+    color: var(--desaturated-blue);
+  }
+
+  &__cancel-btn:hover {
+    color: var(--dark-blue);
+  }
+
+  @media (min-width: 48em) {
+    &__description {
+      padding: 2rem 1.5rem;
+    }
+
+    &__text-content {
+      padding: 0 1.5rem;
+    }
+
+    &__plan {
+      padding: 1rem 1rem;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.crew-page {
+  background-image: url(/images/crew/background-crew-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  .crew-page {
+    background-image: url(/images/crew/background-crew-tablet.jpg);
+  }
+}
+
+@media (min-width: 45em) {
+  .crew-page {
+    background-image: url(/images/crew/background-crew-desktop.jpg);
+  }
+}
+
+.crew {
+  min-height: 80vh;
+  padding-top: 1.25rem;
+  gap: 1.75rem;
+
+
+  &__image-wrapper {
+    grid-row: 2;
+    justify-content: center;
+  }
+
+  &__image {
+    max-width: 50%;
+  }
+
+  &__person-post {
+    font-family: var(--font-bellefair);
+    color: hsl(var(--clr-white) / 0.6);
+    letter-spacing: var(--letter-spacing-2);
+  }
+
+  &__person-name {
+    font-family: var(--font-bellefair);
+  }
+
+  &__nav {
+    margin: 1.5rem 0;
+  }
+
+  &__nav-list {
+    --gap: 1.5rem;
+
+    list-style: none;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  &__nav-link {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: hsl(var(--clr-white) / 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  &__nav-link.active-link {
+    background-color: hsl(var(--clr-white));
+  }
+
+  &__nav-link:hover {
+    background-color: hsl(var(--clr-white) / 0.75);
+  }
+
+  &__text-content {
+    text-align: center;
+  }
+
+  &__person-bio {
+    line-height: 2;
+  }
+
+  @media (min-width: 32em) {
+    & {
+      padding-inline: 5rem;
+      padding-bottom: 0;
+    }
+
+    &__image-wrapper {
+      grid-row: 3;
+    }
+
+    &__image {
+      max-width: 70%;
+    }
+  }
+
+  @media (min-width: 48em) {
+    & {
+      padding-inline: 1rem;
+    }
+
+    &__heading-wrapper {
+      grid-column: span 2;
+      justify-self: left;
+    }
+
+    &__nav {
+      margin-top: 5rem;
+      grid-row: 3;
+    }
+
+    &__nav-list {
+      justify-content: left;
+    }
+
+    &__text-content {
+      text-align: left;
+    }
+
+    &__image-wrapper {
+      grid-column-start: 2;
+      grid-row-start: 2;
+    }
+
+    &__image {
+      max-width: 100%;
+
+    }
+  }
+}

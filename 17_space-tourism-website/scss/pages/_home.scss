@@ -1,0 +1,131 @@
+.home-page {
+  background-image: url('/images/home/background-home-mobile.jpg');
+}
+
+@media (min-width: 32em) {
+  .home-page {
+    background-image: url('/images/home/background-home-tablet.jpg');
+  }
+}
+
+@media (min-width: 48em) {
+  .home-page {
+    background-image: url('/images/home/background-home-desktop.jpg');
+  }
+}
+
+.hero-section {
+  padding: 1rem 0;
+}
+
+@media (min-width: 32em) {
+  .hero-section {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (min-width: 48em) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+}
+
+.hero {
+  min-height: 70vh;
+  gap: 4.5rem;
+  place-items: center;
+
+  &__text-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    font-family: var(--font-barlow-condensed);
+    font-size: var(--font-size-300);
+    text-transform: uppercase;
+  }
+
+  &__text {
+    line-height: 2;
+  }
+
+  &__space-text {
+    font-family: var(--font-bellefair);
+    font-size: var(--font-size-900);
+    display: block;
+  }
+
+  &__btn-wrapper {
+    justify-self: center;
+  }
+
+  &__btn {
+    font-family: var(--font-barlow);
+    background-color: hsl(var(--clr-white));
+    position: relative;
+    display: inline-grid;
+    z-index: 1;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
+    aspect-ratio: 1;
+    padding: 3rem;
+  }
+
+  &__btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: hsl(var(--clr-white) / 0.15);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__btn:hover::after,
+  &__btn:focus::after {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  @media (min-width: 32em) {
+    &__text {
+      padding: 0 3rem;
+    }
+  }
+
+  @media (min-width: 48em) {
+    & {
+      justify-content: end;
+    }
+
+    &__text-content {
+      text-align: left;
+    }
+
+    &__text {
+      padding: 0;
+    }
+
+    &__btn-wrapper {
+      justify-self: end;
+    }
+
+    &__btn {
+      padding: 3rem;
+    }
+  }
+
+  @media (min-width: 56em) {
+    &__btn {
+      padding: 4rem;
+    }
+  }
+}
+
+

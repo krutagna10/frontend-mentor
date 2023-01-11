@@ -1,0 +1,66 @@
+:root {
+  /* Colors*/
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
+
+  /* Font-families*/
+  --font-bellefair: 'Bellefair', serif;;
+  --font-barlow-condensed: 'Barlow Condensed', sans-serif;
+  --font-barlow: 'Barlow', serif;
+
+  /* Font-sizes*/
+  --font-size-900: 4.5rem;
+  --font-size-800: 3.5rem;
+  --font-size-700: 1.5rem;
+  --font-size-600: 1rem;
+  --font-size-500: 1.75rem;
+  --font-size-400: 1rem;
+  --font-size-300: 1.25rem;
+  --font-size-200: 1rem;
+  --font-size-100: 0.875rem;
+
+  /* Spacing */
+  --gap: 1rem;
+  --flow-space: 1rem;
+
+//  Letter Spacing
+  --letter-spacing-1: 4.75px;
+  --letter-spacing-2: 2.7px;
+  --letter-spacing-3: 2.36px;
+}
+
+
+@media (min-width: 32em) {
+  :root {
+    --font-size-700: 2.5rem;
+    --font-size-600: 1.5rem;
+
+    /*Spacing*/
+    --gap: 1.25rem;
+  }
+}
+
+@media (min-width: 48em) {
+  :root {
+    --font-size-900: 7.25rem;
+    --font-size-800: 6.25rem;
+    --font-size-700: 3.5rem;
+    --font-size-600: 2rem;
+    --font-size-500: 1.75rem;
+    --font-size-400: 1rem;
+    --font-size-300: 1.75rem;
+    --font-size-200: 1.125rem;
+    --font-size-100: 0.9375rem;
+
+    /*Spacing*/
+    --gap: 1.5rem;
+    --container-gap: 2.25rem;
+  }
+}
+
+@media (min-width: 64em) {
+  :root {
+    --font-size-900: 9.375rem;
+  }
+}

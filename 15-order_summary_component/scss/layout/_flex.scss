@@ -1,0 +1,17 @@
+.flex {
+  display: flex;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-gap {
+  gap: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .flex-gap {
+    gap: 1rem;
+  }
+}

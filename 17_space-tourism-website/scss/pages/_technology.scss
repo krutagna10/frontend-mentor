@@ -1,0 +1,117 @@
+.technology-page {
+  background-image: url('/images/technology/background-technology-mobile.jpg');
+}
+
+@media (min-width: 32em) {
+  .technology-page {
+    background-image: url('/images/technology/background-technology-tablet.jpg');
+  }
+}
+
+@media (min-width: 48em) {
+  .technology-page {
+    background-image: url('/images/technology/background-technology-desktop.jpg');
+  }
+}
+
+.technology {
+  gap: 2rem;
+  min-height: 70vh;
+  padding-inline: 0 !important;
+
+  &__nav-list {
+    --gap: 1.5rem;
+
+    list-style: none;
+    justify-content: center;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__nav-link {
+    color: hsl(var(--clr-white));
+    font-size: var(--font-size-600);
+    text-decoration: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 1.25rem;
+    border-radius: 50%;
+    background-color: hsl(var(--clr-dark));
+    border: 1.75px solid hsl(var(--clr-white) / 0.45);
+    transition: all 0.3s ease;
+  }
+
+  &__nav-link:hover {
+    border-color: hsl(var(--clr-white));
+  }
+
+  &__nav-link.active-link {
+    background-color: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+  }
+
+  &__text-content {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  &__terminology-text {
+    color: hsl(var(--clr-white) / 0.7);
+  }
+
+  &__image-wrapper {
+    grid-row: 2;
+  }
+
+  @media(min-width: 48em) {
+    &__image-wrapper {
+      grid-column: 2;
+    }
+
+    &__nav-list {
+      justify-content: left;
+    }
+
+    &__nav-link {
+      padding: 1.5rem;
+    }
+
+    &__text-content {
+      text-align: left;
+    }
+
+    &__heading-wrapper {
+      grid-column: span 2;
+      justify-self: left;
+    }
+  }
+
+  @media(min-width: 56em) {
+    &__content {
+      display: flex;
+    }
+
+    &__name {
+      white-space: nowrap;
+    }
+
+    &__nav-list {
+      flex-direction: column;
+    }
+
+    &__nav-link {
+      padding: 2rem;
+    }
+
+    &__nav-list {
+      margin-right: 2rem;
+      margin-bottom: 0;
+      align-items: center;
+      gap: 2.75rem;
+    }
+  }
+
+
+}
+
+

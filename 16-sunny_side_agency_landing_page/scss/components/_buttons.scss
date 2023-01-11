@@ -1,0 +1,32 @@
+.btn {
+  font-size: var(--font-size-100);
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn--yellow {
+  background-color: var(--yellow);
+}
+
+.btn--yellow:hover {
+  background-color: transparent;
+  color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.btn--red {
+  background-color: var(--soft-red);
+}
+
+.btn--red:hover {
+  background-color: transparent;
+  color: var(--soft-red);
+  border-color: var(--soft-red);
+}
+
